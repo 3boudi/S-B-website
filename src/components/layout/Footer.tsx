@@ -9,7 +9,7 @@ import { MessageSquare, Camera, MonitorPlay } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 
 const FOOTER_NAV = [
   { key: "features", href: "#features" },
@@ -20,10 +20,13 @@ const FOOTER_NAV = [
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const pathname = usePathname();
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (pathname === "/") {
+      e.preventDefault();
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -55,13 +58,13 @@ export default function Footer() {
             <ul className="space-y-2">
               {FOOTER_NAV.map((item) => (
                 <li key={item.key}>
-                  <a
-                    href={item.href}
+                  <Link
+                    href={`/${item.href}`}
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
                   >
                     {t(`links.${item.key}`)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

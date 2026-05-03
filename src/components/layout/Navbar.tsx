@@ -12,7 +12,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 
 const NAV_ITEMS = [
   { key: "features", href: "#features" },
@@ -23,6 +23,8 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -44,9 +46,13 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
-    e.preventDefault();
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (pathname === "/") {
+      e.preventDefault();
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Allow Link to handle cross-page navigation natively
+    }
   };
 
   return (
@@ -60,22 +66,22 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
+          <Link href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
             <Image src="/logo.png" alt="Coiffer logo" width={24} height={24} className="h-6 w-auto" />
             <span className="text-lg font-bold font-[var(--font-display)]">Coiffer</span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.key}
-                href={item.href}
+                href={`/${item.href}`}
                 onClick={(e) => handleNavClick(e, item.href)}
                 className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {t(item.key)}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -135,14 +141,14 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => (
-                <a
+                <Link
                   key={item.key}
-                  href={item.href}
+                  href={`/${item.href}`}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className="rounded-lg px-4 py-3 text-base font-medium transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   {t(item.key)}
-                </a>
+                </Link>
               ))}
             </div>
 
