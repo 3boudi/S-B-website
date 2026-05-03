@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "tryFree": "Try Free",
+    "buy": "Buy Now"
+  },
+  "hero": {
+    "badge": "Built for Algerian Barbershops & Salons",
+    "title": "Run Your Salon Like a Pro",
+    "titleHighlight": "Zero Internet Required",
+    "subtitle": "Coiffer is the complete offline management system for barbershops and hair salons. Appointments, payroll, inventory, loyalty — all in one beautiful dashboard.",
+    "tryFree": "Try Free Demo",
+    "buyNow": "Buy License",
+    "noCredit": "No credit card. No internet. Runs on your Windows PC.",
+    "demoLink": "https://salonsoftware.netlify.app/"
+  },
+  "dashboard": {
+    "title": "Everything in One Place",
+    "subtitle": "See your entire business at a glance — revenue, appointments, clients, and staff, all in a clean, fast dashboard.",
+    "caption": "Coiffer Dashboard — Live preview",
+    "livePreview": "Live Preview",
+    "tryFree": "Try Free Demo"
+  },
+  "features": {
+    "title": "Every Tool Your Salon Needs",
+    "subtitle": "Coiffer replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
+    "list": [
+      { "key": "dashboard", "title": "Command Center Dashboard", "description": "Live revenue tracking, top client leaderboard, today's appointments and completed transactions — the moment you open the app." },
+      { "key": "pos", "title": "Lightning-Fast Point of Sale", "description": "Add services and products in seconds, apply smart loyalty discounts, and print professional receipts instantly." },
+      { "key": "appointments", "title": "Smart Appointment Booking", "description": "Visual barber schedule with conflict prevention. The system stops double-bookings automatically and marks no-shows at midnight." },
+      { "key": "payroll", "title": "Automated Employee Payroll", "description": "One-click attendance marking. The system calculates daily salary, tracks advances, and manages withdrawals with zero math errors." },
+      { "key": "inventory", "title": "Intelligent Inventory Control", "description": "Track every product — shampoos, blades, gels, towels. Visual low-stock alerts tell you exactly what to reorder." },
+      { "key": "loyalty", "title": "Built-in Loyalty Program", "description": "Automatic points for every service. Complete client history — services, frequency, and lifetime spend — always at your fingertips." },
+      { "key": "analytics", "title": "Advanced Business Analytics", "description": "Best-seller services, automated net profit calculation after expenses and salaries, and one-click PDF financial reports." },
+      { "key": "multilang", "title": "Arabic, French & English", "description": "Switch the entire interface between three languages instantly. Full RTL layout when Arabic is selected. Dark and light mode included." }
+    ]
+  },
+  "howItWorks": {
+    "title": "Up and Running in Minutes",
+    "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon.",
+    "steps": [
+      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install Coiffer on your reception computer. No internet subscription, no monthly fee." },
+      { "number": "02", "title": "Set Up Your Services & Staff", "description": "Enter your barbers, services, and prices once. The system handles everything from there." },
+      { "number": "03", "title": "Start Running Your Business", "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard." }
+    ]
+  },
+  "pricing": {
+    "title": "Simple, One-Time Pricing",
+    "subtitle": "No monthly subscriptions. No hidden fees. Pay once, own it forever.",
+    "contactToBuy": "Contact to Buy",
+    "whatsIncluded": "What's included",
+    "plans": [
+      {
+        "name": "Single Shop License",
+        "price": "Contact Us",
+        "period": "one-time payment",
+        "description": "Everything you need to run one salon or barbershop, forever.",
+        "features": [
+          "Full dashboard & POS system",
+          "Unlimited appointments",
+          "Employee & payroll management",
+          "Inventory & low-stock alerts",
+          "Client loyalty program",
+          "PDF financial reports",
+          "English, French & Arabic UI",
+          "Dark & light mode",
+          "Lifetime updates",
+          "Free installation support"
+        ],
+        "cta": "Buy License",
+        "highlighted": true
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Trusted by Salon Owners",
+    "subtitle": "Real feedback from barbershop owners across Algeria."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know before buying.",
+    "items": [
+      { "q": "Does Coiffer require an internet connection?", "a": "No. Coiffer runs 100% offline on your Windows PC. There are no cloud fees, no loading screens, and your data never leaves your shop." },
+      { "q": "What operating systems are supported?", "a": "Coiffer runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
+      { "q": "Can I try the software before buying?", "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster." },
+      { "q": "How do I purchase a license?", "a": "Click 'Buy Now' and choose to contact us on Facebook Messenger or Instagram. Our team will handle payment and installation." },
+      { "q": "Is there Arabic and RTL support?", "a": "Yes. You can switch the entire interface to Arabic at any time. The layout automatically flips to right-to-left." },
+      { "q": "Can I use it for multiple shops?", "a": "Each license covers one installation. Contact us for multi-shop pricing." },
+      { "q": "What happens after I buy?", "a": "We deliver the installer file and help you set it up. Installation typically takes under 15 minutes." }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Take Control of Your Salon?",
+    "subtitle": "Try the demo now — no signup, no credit card. See why salon owners across Algeria choose Coiffer.",
+    "tryFree": "Try Free Demo",
+    "buyNow": "Buy License",
+    "offlineNote": "Runs 100% offline on your Windows PC"
+  },
+  "footer": {
+    "tagline": "The offline management system built for Algerian barbershops and salons.",
+    "tryFree": "Try Free Demo",
+    "links": {
+      "title": "Navigation",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "pricing": "Pricing",
+      "faq": "FAQ"
+    },
+    "contact": {
+      "title": "Contact",
+      "facebook": "Facebook Messenger",
+      "instagram": "Instagram"
+    },
+    "copyright": "© 2025 Coiffer. All rights reserved."
+  },
+  "buyModal": {
+    "title": "Choose How to Contact Us",
+    "subtitle": "Select a platform to message us. We will confirm your order and arrange delivery.",
+    "facebook": "Message on Facebook",
+    "instagram": "Message on Instagram",
+    "chatDescription": "Chat with us to order",
+    "facebookUrl": "https://m.me/YOUR_FACEBOOK_PAGE",
+    "instagramUrl": "https://ig.me/m/YOUR_INSTAGRAM_HANDLE"
+  },
+  "demoBar": {
+    "label": "Try the live demo — no signup required",
+    "button": "Open Free Demo",
+    "url": "https://salonsoftware.netlify.app/"
+  }
+}

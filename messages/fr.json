@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "faq": "FAQ",
+    "tryFree": "Essai Gratuit",
+    "buy": "Acheter"
+  },
+  "hero": {
+    "badge": "Conçu pour les salons de coiffure algériens",
+    "title": "Gérez votre salon comme un pro",
+    "titleHighlight": "Sans connexion internet",
+    "subtitle": "Coiffer est le système de gestion hors ligne complet pour les salons de coiffure. Rendez-vous, paie, inventaire, fidélité — tout dans un seul tableau de bord.",
+    "tryFree": "Essai Gratuit",
+    "buyNow": "Acheter une licence",
+    "noCredit": "Pas de carte bancaire. Pas d'internet. Fonctionne sur votre PC Windows.",
+    "demoLink": "https://salonsoftware.netlify.app/"
+  },
+  "dashboard": {
+    "title": "Tout au même endroit",
+    "subtitle": "Visualisez votre activité en un coup d'œil — revenus, rendez-vous, clients et employés, dans un tableau de bord rapide et élégant.",
+    "caption": "Tableau de bord Coiffer — Aperçu en direct",
+    "livePreview": "Aperçu en direct",
+    "tryFree": "Essai Gratuit"
+  },
+  "features": {
+    "title": "Tous les outils pour votre salon",
+    "subtitle": "Coiffer remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
+    "list": [
+      { "key": "dashboard", "title": "Tableau de bord central", "description": "Suivi des revenus en temps réel, classement des meilleurs clients, rendez-vous du jour et transactions — dès l'ouverture de l'application." },
+      { "key": "pos", "title": "Point de vente ultra-rapide", "description": "Ajoutez services et produits en quelques secondes, appliquez les remises fidélité et imprimez des reçus professionnels." },
+      { "key": "appointments", "title": "Réservation intelligente", "description": "Planning visuel par coiffeur avec prévention des conflits. Le système bloque les doubles réservations et marque les absences automatiquement." },
+      { "key": "payroll", "title": "Paie automatisée", "description": "Pointage en un clic. Le système calcule le salaire journalier, suit les avances et gère les retraits sans erreur." },
+      { "key": "inventory", "title": "Gestion d'inventaire intelligente", "description": "Suivez chaque produit — shampoings, lames, gels, serviettes. Les alertes visuelles de stock bas vous indiquent quoi commander." },
+      { "key": "loyalty", "title": "Programme de fidélité intégré", "description": "Points automatiques pour chaque service. Historique complet du client — services, fréquence et dépenses — toujours à portée de main." },
+      { "key": "analytics", "title": "Analyses avancées", "description": "Services les plus vendus, calcul automatique du bénéfice net après charges et salaires, et rapports financiers PDF en un clic." },
+      { "key": "multilang", "title": "Arabe, Français & Anglais", "description": "Changez la langue de l'interface instantanément. Mise en page RTL complète en arabe. Mode sombre et clair inclus." }
+    ]
+  },
+  "howItWorks": {
+    "title": "Opérationnel en quelques minutes",
+    "subtitle": "Aucune connaissance technique requise. Pas de configuration cloud. Installez et commencez.",
+    "steps": [
+      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez Coiffer sur votre ordinateur d'accueil. Pas d'abonnement internet, pas de frais mensuels." },
+      { "number": "02", "title": "Configurez vos services et employés", "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste." },
+      { "number": "03", "title": "Lancez votre activité", "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord." }
+    ]
+  },
+  "pricing": {
+    "title": "Tarification simple et unique",
+    "subtitle": "Pas d'abonnement mensuel. Pas de frais cachés. Payez une fois, utilisez pour toujours.",
+    "contactToBuy": "Contactez-nous pour acheter",
+    "whatsIncluded": "Ce qui est inclus",
+    "plans": [
+      {
+        "name": "Licence salon unique",
+        "price": "Contactez-nous",
+        "period": "paiement unique",
+        "description": "Tout ce dont vous avez besoin pour gérer un salon, pour toujours.",
+        "features": [
+          "Tableau de bord complet & système de caisse",
+          "Rendez-vous illimités",
+          "Gestion des employés & de la paie",
+          "Inventaire & alertes de stock bas",
+          "Programme de fidélité client",
+          "Rapports financiers PDF",
+          "Interface en anglais, français & arabe",
+          "Mode sombre & clair",
+          "Mises à jour à vie",
+          "Support d'installation gratuit"
+        ],
+        "cta": "Acheter une licence",
+        "highlighted": true
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "La confiance des propriétaires de salons",
+    "subtitle": "Retours réels de propriétaires de salons à travers l'Algérie."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Tout ce que vous devez savoir avant d'acheter.",
+    "items": [
+      { "q": "Coiffer nécessite-t-il une connexion internet ?", "a": "Non. Coiffer fonctionne 100% hors ligne sur votre PC Windows. Pas de frais cloud, pas d'écrans de chargement, et vos données ne quittent jamais votre salon." },
+      { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "Coiffer fonctionne sur Windows 10 et Windows 11. Il est installé directement sur votre ordinateur d'accueil ou de bureau." },
+      { "q": "Puis-je essayer le logiciel avant d'acheter ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
+      { "q": "Comment acheter une licence ?", "a": "Cliquez sur 'Acheter' et choisissez de nous contacter sur Facebook Messenger ou Instagram. Notre équipe s'occupe du paiement et de l'installation." },
+      { "q": "Y a-t-il un support arabe et RTL ?", "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche." },
+      { "q": "Puis-je l'utiliser pour plusieurs salons ?", "a": "Chaque licence couvre une installation. Contactez-nous pour un tarif multi-salons." },
+      { "q": "Que se passe-t-il après l'achat ?", "a": "Nous livrons le fichier d'installation et vous aidons à le configurer. L'installation prend généralement moins de 15 minutes." }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à prendre le contrôle de votre salon ?",
+    "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons en Algérie choisissent Coiffer.",
+    "tryFree": "Essai Gratuit",
+    "buyNow": "Acheter une licence",
+    "offlineNote": "Fonctionne 100% hors ligne sur votre PC Windows"
+  },
+  "footer": {
+    "tagline": "Le système de gestion hors ligne conçu pour les salons de coiffure algériens.",
+    "tryFree": "Essai Gratuit",
+    "links": {
+      "title": "Navigation",
+      "features": "Fonctionnalités",
+      "howItWorks": "Comment ça marche",
+      "pricing": "Tarifs",
+      "faq": "FAQ"
+    },
+    "contact": {
+      "title": "Contact",
+      "facebook": "Facebook Messenger",
+      "instagram": "Instagram"
+    },
+    "copyright": "© 2025 Coiffer. Tous droits réservés."
+  },
+  "buyModal": {
+    "title": "Choisissez comment nous contacter",
+    "subtitle": "Sélectionnez une plateforme pour nous envoyer un message. Nous confirmerons votre commande et organiserons la livraison.",
+    "facebook": "Message sur Facebook",
+    "instagram": "Message sur Instagram",
+    "chatDescription": "Discutez avec nous pour commander",
+    "facebookUrl": "https://m.me/YOUR_FACEBOOK_PAGE",
+    "instagramUrl": "https://ig.me/m/YOUR_INSTAGRAM_HANDLE"
+  },
+  "demoBar": {
+    "label": "Essayez la démo en direct — sans inscription",
+    "button": "Ouvrir la démo gratuite",
+    "url": "https://salonsoftware.netlify.app/"
+  }
+}
