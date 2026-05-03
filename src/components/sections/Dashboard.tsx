@@ -13,7 +13,7 @@ export default function Dashboard() {
   const t = useTranslations("dashboard");
 
   return (
-    <section id="dashboard" className="relative overflow-hidden bg-[var(--bg-secondary)] dark:bg-[var(--bg-secondary)]">
+    <section id="dashboard" className="relative overflow-hidden bg-[#F8FAF9] dark:bg-[#111815]">
       <ContainerScroll
         titleComponent={
           <div className="space-y-4 mb-8">

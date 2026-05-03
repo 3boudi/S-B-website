@@ -25,7 +25,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[var(--bg-primary)] dark:bg-[#0A0F0D]" />
+      <div className="absolute inset-0 bg-white dark:bg-[#0A0F0D]" />
       <div
         className="absolute inset-0 dark:block hidden"
         style={{
