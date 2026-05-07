@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://salonalgeria.netlify.app"),
   title: "Solon Tech DZ | Logiciel Salon de Coiffure Algérie | برنامج تسيير صالون حلاقة",
   description:
     "Solon Tech DZ is the ultimate offline software for barbershops in Algeria. لوجيسيال سالون كوافار, gestion salon dz, appointments, POS, sans internet. Logicel ta3 salon coiffer.",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: "fr_DZ",
-    alternateLocales: ["ar_DZ", "en_US"],
+    alternateLocale: ["ar_DZ", "en_US"],
     type: "website",
   },
   twitter: {
