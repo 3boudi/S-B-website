@@ -36,8 +36,8 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Solon Tech DZ logo" width={40} height={40} className="h-10 w-auto rounded-xl shadow-sm" />
-              <span className="text-xl font-bold font-[var(--font-display)]">Solon Tech DZ</span>
+              <Image src="/logo.png" alt="Salon Tech DZ logo" width={40} height={40} className="h-10 w-auto rounded-xl shadow-sm" />
+              <span className="text-xl font-bold font-[var(--font-display)]">Salon Tech DZ</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("tagline")}

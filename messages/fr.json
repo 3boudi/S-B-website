@@ -11,7 +11,7 @@
     "badge": "Conçu pour les salons de coiffure algériens",
     "title": "Gérez votre salon comme un pro",
     "titleHighlight": "Sans connexion internet",
-    "subtitle": "Solon Tech DZ est le système de gestion hors ligne complet pour les salons de coiffure. Rendez-vous, paie, inventaire, fidélité — tout dans un seul tableau de bord.",
+    "subtitle": "Salon Tech DZ est le système de gestion hors ligne complet pour les salons de coiffure. Rendez-vous, paie, inventaire, fidélité — tout dans un seul tableau de bord.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Acheter une licence",
     "noCredit": "Pas de carte bancaire. Pas d'internet. Fonctionne sur votre PC Windows.",
@@ -20,13 +20,13 @@
   "dashboard": {
     "title": "Tout au même endroit",
     "subtitle": "Visualisez votre activité en un coup d'œil — revenus, rendez-vous, clients et employés, dans un tableau de bord rapide et élégant.",
-    "caption": "Tableau de bord Solon Tech DZ — Aperçu en direct",
+    "caption": "Tableau de bord Salon Tech DZ — Aperçu en direct",
     "livePreview": "Aperçu en direct",
     "tryFree": "Essai Gratuit"
   },
   "features": {
     "title": "Tous les outils pour votre salon",
-    "subtitle": "Solon Tech DZ remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
+    "subtitle": "Salon Tech DZ remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
     "list": [
       { "key": "dashboard", "title": "Tableau de bord central", "description": "Suivi des revenus en temps réel, classement des meilleurs clients, rendez-vous du jour et transactions — dès l'ouverture de l'application." },
       { "key": "pos", "title": "Point de vente ultra-rapide", "description": "Ajoutez services et produits en quelques secondes, appliquez les remises fidélité et imprimez des reçus professionnels." },
@@ -42,7 +42,7 @@
     "title": "Opérationnel en quelques minutes",
     "subtitle": "Aucune connaissance technique requise. Pas de configuration cloud. Installez et commencez.",
     "steps": [
-      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez Solon Tech DZ sur votre ordinateur d'accueil. Pas d'abonnement internet, pas de frais mensuels." },
+      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez Salon Tech DZ sur votre ordinateur d'accueil. Pas d'abonnement internet, pas de frais mensuels." },
       { "number": "02", "title": "Configurez vos services et employés", "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste." },
       { "number": "03", "title": "Lancez votre activité", "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord." }
     ]
@@ -83,8 +83,8 @@
     "title": "Questions fréquentes",
     "subtitle": "Tout ce que vous devez savoir avant d'acheter.",
     "items": [
-      { "q": "Solon Tech DZ nécessite-t-il une connexion internet ?", "a": "Non. Solon Tech DZ fonctionne 100% hors ligne sur votre PC Windows. Pas de frais cloud, pas d'écrans de chargement, et vos données ne quittent jamais votre salon." },
-      { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "Solon Tech DZ fonctionne sur Windows 10 et Windows 11. Il est installé directement sur votre ordinateur d'accueil ou de bureau." },
+      { "q": "Salon Tech DZ nécessite-t-il une connexion internet ?", "a": "Non. Salon Tech DZ fonctionne 100% hors ligne sur votre PC Windows. Pas de frais cloud, pas d'écrans de chargement, et vos données ne quittent jamais votre salon." },
+      { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "Salon Tech DZ fonctionne sur Windows 10 et Windows 11. Il est installé directement sur votre ordinateur d'accueil ou de bureau." },
       { "q": "Puis-je essayer le logiciel avant d'acheter ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
       { "q": "Comment acheter une licence ?", "a": "Cliquez sur 'Acheter' et choisissez de nous contacter sur Facebook Messenger ou Instagram. Notre équipe s'occupe du paiement et de l'installation." },
       { "q": "Y a-t-il un support arabe et RTL ?", "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche." },
@@ -94,7 +94,7 @@
   },
   "cta": {
     "title": "Prêt à prendre le contrôle de votre salon ?",
-    "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons en Algérie choisissent Solon Tech DZ.",
+    "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons en Algérie choisissent Salon Tech DZ.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Acheter une licence",
     "offlineNote": "Fonctionne 100% hors ligne sur votre PC Windows"
@@ -114,7 +114,7 @@
       "facebook": "Facebook Messenger",
       "instagram": "Instagram"
     },
-    "copyright": "© 2025 Solon Tech DZ. Tous droits réservés."
+    "copyright": "© 2025 Salon Tech DZ. Tous droits réservés."
   },
   "buyModal": {
     "title": "Choisissez comment nous contacter",

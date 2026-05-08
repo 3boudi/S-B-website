@@ -11,7 +11,7 @@
     "badge": "Built for Algerian Barbershops & Salons",
     "title": "Run Your Salon Like a Pro",
     "titleHighlight": "Zero Internet Required",
-    "subtitle": "Solon Tech DZ is the complete offline management system for barbershops and hair salons. Appointments, payroll, inventory, loyalty — all in one beautiful dashboard.",
+    "subtitle": "Salon Tech DZ is the complete offline management system for barbershops and hair salons. Appointments, payroll, inventory, loyalty — all in one beautiful dashboard.",
     "tryFree": "Try Free Demo",
     "buyNow": "Buy License",
     "noCredit": "No credit card. No internet. Runs on your Windows PC.",
@@ -20,13 +20,13 @@
   "dashboard": {
     "title": "Everything in One Place",
     "subtitle": "See your entire business at a glance — revenue, appointments, clients, and staff, all in a clean, fast dashboard.",
-    "caption": "Solon Tech DZ Dashboard — Live preview",
+    "caption": "Salon Tech DZ Dashboard — Live preview",
     "livePreview": "Live Preview",
     "tryFree": "Try Free Demo"
   },
   "features": {
     "title": "Every Tool Your Salon Needs",
-    "subtitle": "Solon Tech DZ replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
+    "subtitle": "Salon Tech DZ replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
     "list": [
       { "key": "dashboard", "title": "Command Center Dashboard", "description": "Live revenue tracking, top client leaderboard, today's appointments and completed transactions — the moment you open the app." },
       { "key": "pos", "title": "Lightning-Fast Point of Sale", "description": "Add services and products in seconds, apply smart loyalty discounts, and print professional receipts instantly." },
@@ -42,7 +42,7 @@
     "title": "Up and Running in Minutes",
     "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon.",
     "steps": [
-      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install Solon Tech DZ on your reception computer. No internet subscription, no monthly fee." },
+      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install Salon Tech DZ on your reception computer. No internet subscription, no monthly fee." },
       { "number": "02", "title": "Set Up Your Services & Staff", "description": "Enter your barbers, services, and prices once. The system handles everything from there." },
       { "number": "03", "title": "Start Running Your Business", "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard." }
     ]
@@ -83,8 +83,8 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know before buying.",
     "items": [
-      { "q": "Does Solon Tech DZ require an internet connection?", "a": "No. Solon Tech DZ runs 100% offline on your Windows PC. There are no cloud fees, no loading screens, and your data never leaves your shop." },
-      { "q": "What operating systems are supported?", "a": "Solon Tech DZ runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
+      { "q": "Does Salon Tech DZ require an internet connection?", "a": "No. Salon Tech DZ runs 100% offline on your Windows PC. There are no cloud fees, no loading screens, and your data never leaves your shop." },
+      { "q": "What operating systems are supported?", "a": "Salon Tech DZ runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
       { "q": "Can I try the software before buying?", "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster." },
       { "q": "How do I purchase a license?", "a": "Click 'Buy Now' and choose to contact us on Facebook Messenger or Instagram. Our team will handle payment and installation." },
       { "q": "Is there Arabic and RTL support?", "a": "Yes. You can switch the entire interface to Arabic at any time. The layout automatically flips to right-to-left." },
@@ -94,7 +94,7 @@
   },
   "cta": {
     "title": "Ready to Take Control of Your Salon?",
-    "subtitle": "Try the demo now — no signup, no credit card. See why salon owners across Algeria choose Solon Tech DZ.",
+    "subtitle": "Try the demo now — no signup, no credit card. See why salon owners across Algeria choose Salon Tech DZ.",
     "tryFree": "Try Free Demo",
     "buyNow": "Buy License",
     "offlineNote": "Runs 100% offline on your Windows PC"
@@ -114,7 +114,7 @@
       "facebook": "Facebook Messenger",
       "instagram": "Instagram"
     },
-    "copyright": "© 2025 Solon Tech DZ. All rights reserved."
+    "copyright": "© 2025 Salon Tech DZ. All rights reserved."
   },
   "buyModal": {
     "title": "Choose How to Contact Us",

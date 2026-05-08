@@ -1,5 +1,5 @@
 "use client";
-// Design intent: Feature grid showcasing all Solon Tech DZ capabilities.
+// Design intent: Feature grid showcasing all Salon Tech DZ capabilities.
 // Layout: 4-column desktop, 2-column tablet, 1-column mobile.
 // Each card has whileInView fade-up animation with stagger.
 // States: default (border, shadow-sm), hover (green border, shadow-md, translateY(-2px)).

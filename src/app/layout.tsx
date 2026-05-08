@@ -3,9 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://salonalgeria.netlify.app"),
-  title: "Solon Tech DZ | Logiciel Salon de Coiffure Algérie | برنامج تسيير صالون حلاقة",
+  title: "Salon Tech DZ | Logiciel Salon de Coiffure Algérie | برنامج تسيير صالون حلاقة",
   description:
-    "Solon Tech DZ is the ultimate offline software for barbershops in Algeria. لوجيسيال سالون كوافار, gestion salon dz, appointments, POS, sans internet. Logicel ta3 salon coiffer.",
+    "Salon Tech DZ is the ultimate offline software for barbershops in Algeria. لوجيسيال سالون كوافار, gestion salon dz, appointments, POS, sans internet. Logicel ta3 salon coiffer.",
   keywords: [
     // Official Arabic
     "برنامج تسيير صالون حلاقة الجزائر",
@@ -28,19 +28,19 @@ export const metadata: Metadata = {
     "gestion salon dz",
     "application ta3 coiffeur"
   ],
-  authors: [{ name: "Solon Tech DZ" }],
-  creator: "Solon Tech DZ",
-  publisher: "Solon Tech DZ",
+  authors: [{ name: "Salon Tech DZ" }],
+  creator: "Salon Tech DZ",
+  publisher: "Salon Tech DZ",
   openGraph: {
-    title: "Solon Tech DZ | Logiciel Salon de Coiffure Algérie",
+    title: "Salon Tech DZ | Logiciel Salon de Coiffure Algérie",
     description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure en Algérie. Gagnez du temps et gérez votre salon comme un pro.",
-    siteName: "Solon Tech DZ",
+    siteName: "Salon Tech DZ",
     images: [
       {
         url: "/dashboard.png",
         width: 1200,
         height: 630,
-        alt: "Solon Tech DZ Salon Management Dashboard Preview",
+        alt: "Salon Tech DZ Salon Management Dashboard Preview",
       },
     ],
     locale: "fr_DZ",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Solon Tech DZ | Logiciel Salon Coiffure Algérie",
+    title: "Salon Tech DZ | Logiciel Salon Coiffure Algérie",
     description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure en Algérie.",
     images: ["/dashboard.png"],
   },
