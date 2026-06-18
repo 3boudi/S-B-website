@@ -58,7 +58,7 @@ export default function LanguageSwitcher() {
 
       {open && (
         <div
-          className="absolute end-0 mt-2 w-36 rounded-lg border border-border bg-popover p-1 shadow-lg z-50"
+          className="absolute start-0 md:start-auto md:end-0 mt-2 w-36 rounded-lg border border-border bg-popover p-1 shadow-lg z-50"
           role="listbox"
           aria-label="Language options"
         >
