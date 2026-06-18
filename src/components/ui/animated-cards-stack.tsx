@@ -69,7 +69,7 @@ export const ContainerScroll: React.FC<React.HTMLAttributes<HTMLDivElement>> = (
       <div
         ref={scrollRef}
         className={cn("relative min-h-svh w-full", className)}
-        style={{ perspective: "1000px", ...style }}
+        style={{ position: "relative", perspective: "1000px", ...style }}
         {...props}
       >
         {children}

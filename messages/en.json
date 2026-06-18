@@ -35,6 +35,7 @@
       { "key": "inventory", "title": "Intelligent Inventory Control", "description": "Track every product — shampoos, blades, gels, towels. Visual low-stock alerts tell you exactly what to reorder." },
       { "key": "loyalty", "title": "Built-in Loyalty Program", "description": "Automatic points for every service. Complete client history — services, frequency, and lifetime spend — always at your fingertips." },
       { "key": "analytics", "title": "Advanced Business Analytics", "description": "Best-seller services, automated net profit calculation after expenses and salaries, and one-click PDF financial reports." },
+      { "key": "whatsapp", "title": "Automated WhatsApp Integration", "description": "Send instant booking confirmations, 1-hour appointment reminders, late warnings, and digital checkout receipts automatically to client phones." },
       { "key": "multilang", "title": "Arabic, French & English", "description": "Switch the entire interface between three languages instantly. Full RTL layout when Arabic is selected. Dark and light mode included." }
     ]
   },
@@ -52,26 +53,64 @@
     "subtitle": "No monthly subscriptions. No hidden fees. Pay once, own it forever.",
     "contactToBuy": "Contact to Buy",
     "whatsIncluded": "What's included",
+    "bestChoice": "Best Choice",
     "plans": [
       {
-        "name": "Single Shop License",
-        "price": "Contact Us",
+        "name": "Standard License",
+        "price": "19,000 DA",
         "period": "one-time payment",
-        "description": "Everything you need to run one salon or barbershop, forever.",
+        "description": "Perfect for neighborhood barbershops with 1-3 chairs.",
         "features": [
           "Full dashboard & POS system",
-          "Unlimited appointments",
-          "Employee & payroll management",
+          "3 barbers/workers maximum",
+          "Basic client database",
           "Inventory & low-stock alerts",
-          "Client loyalty program",
-          "PDF financial reports",
           "English, French & Arabic UI",
-          "Dark & light mode",
-          "Lifetime updates",
+          "Dark & light mode theme",
+          "Lifetime offline database",
           "Free installation support"
         ],
-        "cta": "Buy License",
+        "cta": "Buy Standard",
+        "highlighted": false
+      },
+      {
+        "name": "Premium License",
+        "price": "35,000 DA",
+        "period": "one-time payment",
+        "description": "Complete automation for modern salons and VIP lounges.",
+        "features": [
+          "Everything in Standard",
+          "Unlimited barbers/workers",
+          "Automated WhatsApp integration",
+          "1-Hour reminders & late notices",
+          "Custom branding (your logo/theme)",
+          "Advanced payroll & commission system",
+          "Built-in customer loyalty program",
+          "Consumables stock deduction",
+          "PDF financial reports (P&L)",
+          "Automated local log system",
+          "Priority installation support"
+        ],
+        "cta": "Buy Premium",
         "highlighted": true
+      },
+      {
+        "name": "Flexible Plan",
+        "price": "2,000 DA",
+        "period": "/month (billed annually)",
+        "description": "Start with all premium features, no upfront license cost.",
+        "features": [
+          "Everything in Premium",
+          "No large upfront setup fee",
+          "Paid as 24,000 DA / year",
+          "Free online backup option",
+          "Priority customer support",
+          "Cancel or transfer anytime",
+          "English, French & Arabic UI",
+          "Dark & light mode theme"
+        ],
+        "cta": "Subscribe Now",
+        "highlighted": false
       }
     ]
   },
@@ -119,11 +158,13 @@
   "buyModal": {
     "title": "Choose How to Contact Us",
     "subtitle": "Select a platform to message us. We will confirm your order and arrange delivery.",
+    "whatsapp": "Message on WhatsApp",
     "facebook": "Message on Facebook",
     "instagram": "Message on Instagram",
     "chatDescription": "Chat with us to order",
-    "facebookUrl": "https://m.me/YOUR_FACEBOOK_PAGE",
-    "instagramUrl": "https://ig.me/m/YOUR_INSTAGRAM_HANDLE"
+    "whatsappUrl": "https://wa.me/213782549228",
+    "facebookUrl": "https://www.facebook.com/share/1FuxcTwdHM/",
+    "instagramUrl": "https://www.instagram.com/salontech.dz/"
   },
   "demoBar": {
     "label": "Try the live demo — no signup required",

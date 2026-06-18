@@ -25,7 +25,7 @@ export default function DemoButton() {
         href="https://salonsoftware.netlify.app/"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-4 text-sm font-bold text-white shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-green-500/25 hover:shadow-[0_0_40px_rgba(22,163,74,0.3)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green"
+        className="relative inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-4 text-sm font-bold text-white shadow-2xl transition-all duration-200 hover:scale-105 hover:shadow-brand-green/25 hover:shadow-[0_0_40px_rgba(37,211,102,0.3)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green"
         title={t("noCredit")}
         aria-label={t("tryFree")}
       >

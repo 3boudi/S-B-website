@@ -9,7 +9,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { MonitorPlay, ShoppingCart, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/routing";
+import { useBuyModal } from "@/components/ui/BuyModal";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -18,6 +18,7 @@ const fadeUp = {
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const { openModal } = useBuyModal();
 
   return (
     <section
@@ -83,11 +84,9 @@ export default function Hero() {
                   {t("tryFree")}
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
-                <Link href="/contact">
-                  <ShoppingCart className="h-5 w-5" />
-                  {t("buyNow")}
-                </Link>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={() => openModal()}>
+                <ShoppingCart className="h-5 w-5" />
+                {t("buyNow")}
               </Button>
             </motion.div>
 

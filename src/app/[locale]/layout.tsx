@@ -3,6 +3,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BuyModalProvider } from "@/components/ui/BuyModal";
 import { routing } from "@/i18n/routing";
+import Script from "next/script";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -21,9 +22,14 @@ export default async function LocaleLayout({
   const isRTL = locale === "ar";
 
   return (
-    <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning>
+    <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning data-scroll-behavior="smooth">
+      <head>
+        <Script id="theme-loader" strategy="beforeInteractive">
+          {`(function(){try{var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`}
+        </Script>
+      </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <BuyModalProvider>{children}</BuyModalProvider>
           </NextIntlClientProvider>
@@ -32,3 +38,4 @@ export default async function LocaleLayout({
     </html>
   );
 }
+

@@ -17,6 +17,7 @@ export const ContainerScroll = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    offset: ["start start", "end end"],
   });
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -42,6 +43,7 @@ export const ContainerScroll = ({
   return (
     <div
       className="h-[45rem] sm:h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      style={{ position: "relative" }}
       ref={containerRef}
     >
       <div
@@ -89,7 +91,7 @@ export const Card = ({
         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
         willChange: "transform",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[20rem] sm:h-[30rem] md:h-[40rem] w-full border-4 border-green-500/30 p-2 md:p-6 dark:bg-[#151E19] bg-white rounded-[30px] shadow-2xl"
+      className="max-w-5xl -mt-12 mx-auto h-[20rem] sm:h-[30rem] md:h-[40rem] w-full border-4 border-brand-green/30 p-2 md:p-6 dark:bg-[#151E19] bg-white rounded-[30px] shadow-2xl"
     >
       <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
         {children}

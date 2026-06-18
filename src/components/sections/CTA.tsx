@@ -6,13 +6,14 @@
 import { useTranslations } from "next-intl";
 import { MonitorPlay, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/routing";
+import { useBuyModal } from "@/components/ui/BuyModal";
 
 export default function CTA() {
   const t = useTranslations("cta");
+  const { openModal } = useBuyModal();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-green-600 to-green-700 py-20 md:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-green-dark to-brand-green py-20 md:py-28">
       {/* Decorative pattern */}
       <div
         className="absolute inset-0 opacity-10"
@@ -34,7 +35,7 @@ export default function CTA() {
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center w-full">
           <Button
             size="lg"
-            className="bg-white text-green-700 hover:bg-white/90 active:scale-[0.98] w-full sm:w-auto"
+            className="bg-white text-brand-green-dark hover:bg-white/90 active:scale-[0.98] w-full sm:w-auto"
             asChild
           >
             <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
@@ -46,12 +47,10 @@ export default function CTA() {
             size="lg"
             variant="outline"
             className="border-white/30 bg-white text-black hover:bg-gray-100 w-full sm:w-auto"
-            asChild
+            onClick={() => openModal()}
           >
-            <Link href="/contact">
-              <ShoppingCart className="h-5 w-5" />
-              {t("buyNow")}
-            </Link>
+            <ShoppingCart className="h-5 w-5" />
+            {t("buyNow")}
           </Button>
         </div>
 

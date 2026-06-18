@@ -30,7 +30,7 @@ export default function HowItWorks() {
         <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
           {/* Desktop connector line */}
           <div className="absolute top-16 left-[16.67%] right-[16.67%] hidden md:block">
-            <div className="h-0.5 w-full bg-gradient-to-r from-green-500 to-green-500/0" />
+            <div className="h-0.5 w-full bg-gradient-to-r from-brand-green to-brand-green/0" />
           </div>
 
           {[0, 1, 2].map((index) => {
@@ -46,17 +46,17 @@ export default function HowItWorks() {
               >
                 {/* Mobile connector line */}
                 {index < 2 && (
-                  <div className="absolute left-1/2 top-full h-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-green-500 to-green-500/0 md:hidden" />
+                  <div className="absolute left-1/2 top-full h-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-brand-green to-brand-green/0 md:hidden" />
                 )}
 
                 {/* Step number */}
-                <span className="mb-4 block text-5xl font-extrabold text-green-500/30 font-[var(--font-display)]">
+                <span className="mb-4 block text-5xl font-extrabold text-brand-green/30 font-[var(--font-display)]">
                   {t(`steps.${index}.number`)}
                 </span>
 
                 {/* Icon */}
-                <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/40">
-                  <Icon className="h-6 w-6 text-green-600" />
+                <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-brand-green-muted dark:bg-brand-green-dark/40">
+                  <Icon className="h-6 w-6 text-brand-green-dark dark:text-brand-green" />
                 </div>
 
                 {/* Title */}

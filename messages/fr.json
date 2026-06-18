@@ -35,6 +35,7 @@
       { "key": "inventory", "title": "Gestion d'inventaire intelligente", "description": "Suivez chaque produit — shampoings, lames, gels, serviettes. Les alertes visuelles de stock bas vous indiquent quoi commander." },
       { "key": "loyalty", "title": "Programme de fidélité intégré", "description": "Points automatiques pour chaque service. Historique complet du client — services, fréquence et dépenses — toujours à portée de main." },
       { "key": "analytics", "title": "Analyses avancées", "description": "Services les plus vendus, calcul automatique du bénéfice net après charges et salaires, et rapports financiers PDF en un clic." },
+      { "key": "whatsapp", "title": "Relances WhatsApp Auto", "description": "Envoyez des confirmations de réservation, rappels 1h, alertes retard 30m/1h et reçus de paiement directement sur le téléphone des clients." },
       { "key": "multilang", "title": "Arabe, Français & Anglais", "description": "Changez la langue de l'interface instantanément. Mise en page RTL complète en arabe. Mode sombre et clair inclus." }
     ]
   },
@@ -52,26 +53,64 @@
     "subtitle": "Pas d'abonnement mensuel. Pas de frais cachés. Payez une fois, utilisez pour toujours.",
     "contactToBuy": "Contactez-nous pour acheter",
     "whatsIncluded": "Ce qui est inclus",
+    "bestChoice": "Meilleur choix",
     "plans": [
       {
-        "name": "Licence salon unique",
-        "price": "Contactez-nous",
+        "name": "Licence Standard",
+        "price": "19 000 DA",
         "period": "paiement unique",
-        "description": "Tout ce dont vous avez besoin pour gérer un salon, pour toujours.",
+        "description": "Idéal pour les salons de quartier avec 1 à 3 postes.",
         "features": [
-          "Tableau de bord complet & système de caisse",
-          "Rendez-vous illimités",
-          "Gestion des employés & de la paie",
-          "Inventaire & alertes de stock bas",
-          "Programme de fidélité client",
-          "Rapports financiers PDF",
-          "Interface en anglais, français & arabe",
+          "Tableau de bord & POS complet",
+          "3 employés/coiffeurs max",
+          "Base de données clients de base",
+          "Gestion de stock & alertes",
+          "Interface en FR, AR et EN",
           "Mode sombre & clair",
-          "Mises à jour à vie",
+          "Base de données locale à vie",
           "Support d'installation gratuit"
         ],
-        "cta": "Acheter une licence",
+        "cta": "Acheter Standard",
+        "highlighted": false
+      },
+      {
+        "name": "Licence Premium",
+        "price": "35 000 DA",
+        "period": "paiement unique",
+        "description": "Automatisation complète pour les salons modernes et salons VIP.",
+        "features": [
+          "Tout ce qui est inclus dans Standard",
+          "Nombre de coiffeurs illimité",
+          "Intégration WhatsApp automatisée",
+          "Rappels 1h, alertes retard 30m & 1h",
+          "Personnalisation (votre logo/thème)",
+          "Calcul commissions & paie avancé",
+          "Programme de fidélité clients",
+          "Déduction automatique des consommables",
+          "Rapports financiers PDF (P&L)",
+          "Système de logs automatisé",
+          "Support prioritaire d'installation"
+        ],
+        "cta": "Acheter Premium",
         "highlighted": true
+      },
+      {
+        "name": "Abonnement Flexible",
+        "price": "2 000 DA",
+        "period": "/mois (facturé annuellement)",
+        "description": "Démarrez avec toutes les fonctions Premium sans investissement initial.",
+        "features": [
+          "Toutes les fonctionnalités Premium",
+          "Pas de frais de licence initiaux",
+          "Payé sous forme de 24 000 DA / an",
+          "Option de sauvegarde en ligne gratuite",
+          "Support client prioritaire",
+          "Résiliable ou transférable à tout moment",
+          "Interface en trois langues",
+          "Thème sombre et clair"
+        ],
+        "cta": "S'abonner maintenant",
+        "highlighted": false
       }
     ]
   },
@@ -119,11 +158,13 @@
   "buyModal": {
     "title": "Choisissez comment nous contacter",
     "subtitle": "Sélectionnez une plateforme pour nous envoyer un message. Nous confirmerons votre commande et organiserons la livraison.",
+    "whatsapp": "Message sur WhatsApp",
     "facebook": "Message sur Facebook",
     "instagram": "Message sur Instagram",
     "chatDescription": "Discutez avec nous pour commander",
-    "facebookUrl": "https://m.me/YOUR_FACEBOOK_PAGE",
-    "instagramUrl": "https://ig.me/m/YOUR_INSTAGRAM_HANDLE"
+    "whatsappUrl": "https://wa.me/213782549228",
+    "facebookUrl": "https://www.facebook.com/share/1FuxcTwdHM/",
+    "instagramUrl": "https://www.instagram.com/salontech.dz/"
   },
   "demoBar": {
     "label": "Essayez la démo en direct — sans inscription",

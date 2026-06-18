@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
+import { useBuyModal } from "@/components/ui/BuyModal";
 
 const NAV_ITEMS = [
   { key: "features", href: "#features" },
@@ -28,6 +29,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
+  const { openModal } = useBuyModal();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 20);
@@ -67,7 +69,7 @@ export default function Navbar() {
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
-            <Image src="/logo.png" alt="Salon Tech DZ logo" width={40} height={40} className="h-10 w-auto rounded-xl shadow-sm" />
+            <Image src="/logo.png" alt="Salon Tech DZ logo" width={40} height={40} className="rounded-xl shadow-sm" />
             <span className="text-xl font-bold font-[var(--font-display)]">Salon Tech DZ</span>
           </Link>
 
@@ -95,11 +97,9 @@ export default function Navbar() {
                 {t("tryFree")}
               </a>
             </Button>
-            <Button size="sm" asChild>
-              <Link href="/contact">
-                <ShoppingCart className="h-4 w-4" />
-                {t("buy")}
-              </Link>
+            <Button size="sm" onClick={() => openModal()}>
+              <ShoppingCart className="h-4 w-4" />
+              {t("buy")}
             </Button>
           </div>
 
@@ -163,11 +163,9 @@ export default function Navbar() {
                   {t("tryFree")}
                 </a>
               </Button>
-              <Button className="w-full" asChild onClick={() => setMobileOpen(false)}>
-                <Link href="/contact">
-                  <ShoppingCart className="h-4 w-4" />
-                  {t("buy")}
-                </Link>
+              <Button className="w-full" onClick={() => { setMobileOpen(false); openModal(); }}>
+                <ShoppingCart className="h-4 w-4" />
+                {t("buy")}
               </Button>
             </div>
           </motion.div>

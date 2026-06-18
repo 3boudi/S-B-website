@@ -3,7 +3,7 @@
 // States: default, hover (bg-accent), focus-visible (ring), active.
 // Accessibility: aria-label describes current action, keyboard accessible via button.
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 

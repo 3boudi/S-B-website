@@ -49,19 +49,19 @@ export default function FAQ() {
               key={index}
               className={`border-b border-border transition-all duration-200 ${
                 openIndex === index
-                  ? "border-l-2 border-l-green-500 pl-4"
-                  : "pl-0"
+                  ? "border-s-2 border-s-brand-green ps-4"
+                  : "ps-0"
               }`}
             >
               {/* Question */}
               <button
                 onClick={() => toggleItem(index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
-                className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm cursor-pointer"
+                className="flex w-full items-center justify-between py-5 text-start transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm cursor-pointer"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="text-base font-semibold text-[var(--text-primary)] pr-4">
+                <span className="text-base font-semibold text-[var(--text-primary)] pe-4">
                   {item.q}
                 </span>
                 <ChevronDown

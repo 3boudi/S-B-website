@@ -1,12 +1,29 @@
 "use client";
+// Design intent: 3 large, glowing cards for direct user messaging on contact page.
+// Hover effects translate cards upward and add platform-colored shadows.
+// Accessibility: proper labeling, targets open in new tabs with rel="noopener noreferrer".
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function ContactContent() {
   const t = useTranslations("buyModal");
-  const c = useTranslations("footer.contact");
+  const locale = useLocale();
+
+  // Create custom WhatsApp pre-filled text
+  let message = "";
+  if (locale === "ar") {
+    message = "مرحباً! أنا مهتم بالاستفسار عن برنامج صالون الحلاقة (Salon Tech DZ)";
+  } else if (locale === "fr") {
+    message = "Bonjour ! Je souhaite obtenir des informations sur l'application Coiffeur (Salon Tech DZ)";
+  } else {
+    message = "Hello! I would like to inquire about the Coiffeur app (Salon Tech DZ)";
+  }
+
+  const whatsappUrl = `https://wa.me/213782549228?text=${encodeURIComponent(message)}`;
+  const facebookUrl = "https://www.facebook.com/share/1FuxcTwdHM/";
+  const instagramUrl = "https://www.instagram.com/salontech.dz/";
 
   return (
     <section className="mx-auto max-w-4xl px-4 md:px-6">
@@ -25,15 +42,15 @@ export default function ContactContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          href="https://wa.me/213000000000" // Replace with real WhatsApp link
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center gap-4 rounded-2xl bg-[#25D366] p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#25D366]/20"
+          className="group flex flex-col items-center gap-4 rounded-2xl bg-[#25D366] p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#25D366]/20 cursor-pointer"
         >
           <div className="rounded-full bg-white/20 p-4 transition-transform duration-300 group-hover:scale-110">
             <FaWhatsapp className="h-12 w-12" />
           </div>
-          <span className="text-xl font-bold">WhatsApp</span>
+          <span className="text-xl font-bold">{t("whatsapp")}</span>
           <span className="text-sm text-white/90 text-center">
             {t("chatDescription")}
           </span>
@@ -44,10 +61,10 @@ export default function ContactContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          href={t("facebookUrl")}
+          href={facebookUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center gap-4 rounded-2xl bg-[#1877F2] p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1877F2]/20"
+          className="group flex flex-col items-center gap-4 rounded-2xl bg-[#1877F2] p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1877F2]/20 cursor-pointer"
         >
           <div className="rounded-full bg-white/20 p-4 transition-transform duration-300 group-hover:scale-110">
             <FaFacebook className="h-12 w-12" />
@@ -63,10 +80,10 @@ export default function ContactContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          href={t("instagramUrl")}
+          href={instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#833AB4] p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#F56040]/20"
+          className="group flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-tr from-[#FFDC80] via-[#F56040] to-[#833AB4] p-6 sm:p-8 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#F56040]/20 cursor-pointer"
         >
           <div className="rounded-full bg-white/20 p-4 transition-transform duration-300 group-hover:scale-110">
             <FaInstagram className="h-12 w-12" />
