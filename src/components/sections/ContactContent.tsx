@@ -14,11 +14,11 @@ export default function ContactContent() {
   // Create custom WhatsApp pre-filled text
   let message = "";
   if (locale === "ar") {
-    message = "مرحباً! أنا مهتم بالاستفسار عن برنامج صالون الحلاقة (Salon Tech DZ)";
+    message = "مرحباً! أنا مهتم بالاستفسار عن برنامج صالون الحلاقة (salondztech)";
   } else if (locale === "fr") {
-    message = "Bonjour ! Je souhaite obtenir des informations sur l'application Coiffeur (Salon Tech DZ)";
+    message = "Bonjour ! Je souhaite obtenir des informations sur l'application Coiffeur (salondztech)";
   } else {
-    message = "Hello! I would like to inquire about the Coiffeur app (Salon Tech DZ)";
+    message = "Hello! I would like to inquire about the Coiffeur app (salondztech)";
   }
 
   const whatsappUrl = `https://wa.me/213782549228?text=${encodeURIComponent(message)}`;

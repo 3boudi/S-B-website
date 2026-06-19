@@ -8,10 +8,10 @@
     "buy": "Buy Now"
   },
   "hero": {
-    "badge": "Built for Algerian Barbershops & Salons",
+    "badge": "Complete Management System for Barbershops & Salons",
     "title": "Run Your Salon Like a Pro",
     "titleHighlight": "Zero Internet Required",
-    "subtitle": "Salon Tech DZ is the complete offline management system for barbershops and hair salons. Appointments, payroll, inventory, loyalty — all in one beautiful dashboard.",
+    "subtitle": "salondztech is the complete offline management system for barbershops and hair salons. Appointments, payroll, inventory, loyalty — all in one beautiful dashboard.",
     "tryFree": "Try Free Demo",
     "buyNow": "Buy License",
     "noCredit": "No credit card. No internet. Runs on your Windows PC.",
@@ -20,13 +20,13 @@
   "dashboard": {
     "title": "Everything in One Place",
     "subtitle": "See your entire business at a glance — revenue, appointments, clients, and staff, all in a clean, fast dashboard.",
-    "caption": "Salon Tech DZ Dashboard — Live preview",
+    "caption": "salondztech Dashboard — Live preview",
     "livePreview": "Live Preview",
     "tryFree": "Try Free Demo"
   },
   "features": {
     "title": "Every Tool Your Salon Needs",
-    "subtitle": "Salon Tech DZ replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
+    "subtitle": "salondztech replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
     "list": [
       { "key": "dashboard", "title": "Command Center Dashboard", "description": "Live revenue tracking, top client leaderboard, today's appointments and completed transactions — the moment you open the app." },
       { "key": "pos", "title": "Lightning-Fast Point of Sale", "description": "Add services and products in seconds, apply smart loyalty discounts, and print professional receipts instantly." },
@@ -43,71 +43,83 @@
     "title": "Up and Running in Minutes",
     "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon.",
     "steps": [
-      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install Salon Tech DZ on your reception computer. No internet subscription, no monthly fee." },
+      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install salondztech on your reception computer. No internet subscription, no monthly fee." },
       { "number": "02", "title": "Set Up Your Services & Staff", "description": "Enter your barbers, services, and prices once. The system handles everything from there." },
       { "number": "03", "title": "Start Running Your Business", "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard." }
     ]
   },
   "pricing": {
-    "title": "Simple, One-Time Pricing",
-    "subtitle": "No monthly subscriptions. No hidden fees. Pay once, own it forever.",
-    "contactToBuy": "Contact to Buy",
+    "title": "Simple Pricing Plans",
+    "subtitle": "Choose the perfect license for your business. Pay and get your activation code instantly.",
+    "contactToBuy": "Contact Us for Purchase and Instant Activation",
     "whatsIncluded": "What's included",
     "bestChoice": "Best Choice",
+    "paymentsTitle": "Accepted Payment Methods for Instant Activation",
+    "activationNotice": "Pay, we send you the activation code instantly",
+    "toggleDzd": "Algerian Dinar (DZD)",
+    "toggleUsd": "US Dollar (USD)",
     "plans": [
       {
         "name": "Standard License",
-        "price": "19,000 DA",
-        "period": "one-time payment",
-        "description": "Perfect for neighborhood barbershops with 1-3 chairs.",
+        "priceDzd": "19,000 DA",
+        "priceUsd": "$99",
+        "periodDzd": "one-time payment",
+        "periodUsd": "one-time payment",
+        "description": "Perfect for growing salons with up to 5 workers.",
         "features": [
-          "Full dashboard & POS system",
-          "3 barbers/workers maximum",
-          "Basic client database",
-          "Inventory & low-stock alerts",
-          "English, French & Arabic UI",
-          "Dark & light mode theme",
+          "Full statistics & net profit dashboard",
+          "Integrated POS & client checkout payments",
+          "Appointment booking with system notifications",
+          "Product inventory with timer reminders",
+          "Worker management & salaries calculation",
+          "Up to 5 workers/barbers maximum",
+          "Custom branded interface theme",
           "Lifetime offline database",
-          "Free installation support"
+          "Free installation and setup support"
         ],
         "cta": "Buy Standard",
         "highlighted": false
       },
       {
-        "name": "Premium License",
-        "price": "35,000 DA",
-        "period": "one-time payment",
-        "description": "Complete automation for modern salons and VIP lounges.",
+        "name": "Premium License (VIP)",
+        "priceDzd": "35,000 DA",
+        "priceUsd": "$249",
+        "periodDzd": "one-time payment",
+        "periodUsd": "one-time payment",
+        "description": "Complete automation and advanced features for elite salons.",
         "features": [
-          "Everything in Standard",
-          "Unlimited barbers/workers",
-          "Automated WhatsApp integration",
-          "1-Hour reminders & late notices",
-          "Custom branding (your logo/theme)",
-          "Advanced payroll & commission system",
-          "Built-in customer loyalty program",
-          "Consumables stock deduction",
-          "PDF financial reports (P&L)",
-          "Automated local log system",
-          "Priority installation support"
+          "Everything in Standard License",
+          "Unlimited workers & barbers",
+          "Automated client WhatsApp notifications & receipts",
+          "Worker WhatsApp messages (appointments & presence)",
+          "Weekly client visit-reminders (WhatsApp Broadcast)",
+          "Consumables auto-stock deduction on checkouts",
+          "Advanced payroll, commissions, advances & withdrawals tracking",
+          "Customer loyalty program, points & purchase history",
+          "Professional PDF financial reports (P&L statements)",
+          "Automated LIFO message queue & logs to ensure delivery",
+          "Free promotional showcase website (Showcase Page)",
+          "Priority lifetime installation and support"
         ],
-        "cta": "Buy Premium",
+        "cta": "Buy Premium VIP",
         "highlighted": true
       },
       {
         "name": "Flexible Plan",
-        "price": "2,000 DA",
-        "period": "/month (billed annually)",
+        "priceDzd": "2,000 DA",
+        "priceUsd": "$10",
+        "periodDzd": "/month (billed annually 24,000 DA)",
+        "periodUsd": "/month (billed annually $120)",
         "description": "Start with all premium features, no upfront license cost.",
         "features": [
-          "Everything in Premium",
+          "All Premium VIP advanced features",
           "No large upfront setup fee",
-          "Paid as 24,000 DA / year",
-          "Free online backup option",
-          "Priority customer support",
-          "Cancel or transfer anytime",
-          "English, French & Arabic UI",
-          "Dark & light mode theme"
+          "Unlimited workers & barbers",
+          "Automated client & worker WhatsApp alerts",
+          "Excludes promotional showcase website",
+          "Excludes custom branded interface theme",
+          "Cancel or transfer subscription anytime",
+          "Continuous customer support and updates"
         ],
         "cta": "Subscribe Now",
         "highlighted": false
@@ -116,30 +128,30 @@
   },
   "testimonials": {
     "title": "Trusted by Salon Owners",
-    "subtitle": "Real feedback from barbershop owners across Algeria."
+    "subtitle": "Real feedback from barbershop and salon owners who trust our system."
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know before buying.",
     "items": [
-      { "q": "Does Salon Tech DZ require an internet connection?", "a": "No. Salon Tech DZ runs 100% offline on your Windows PC. There are no cloud fees, no loading screens, and your data never leaves your shop." },
-      { "q": "What operating systems are supported?", "a": "Salon Tech DZ runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
+      { "q": "Does salondztech require an internet connection?", "a": "No. salondztech runs 100% offline on your Windows PC. There are no cloud fees, no loading screens, and your data never leaves your shop." },
+      { "q": "What operating systems are supported?", "a": "salondztech runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
       { "q": "Can I try the software before buying?", "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster." },
-      { "q": "How do I purchase a license?", "a": "Click 'Buy Now' and choose to contact us on Facebook Messenger or Instagram. Our team will handle payment and installation." },
+      { "q": "How do I purchase a license?", "a": "Click 'Buy Now' and choose to contact us on WhatsApp, Facebook Messenger, or Instagram. Once paid, we send you the activation code." },
       { "q": "Is there Arabic and RTL support?", "a": "Yes. You can switch the entire interface to Arabic at any time. The layout automatically flips to right-to-left." },
       { "q": "Can I use it for multiple shops?", "a": "Each license covers one installation. Contact us for multi-shop pricing." },
-      { "q": "What happens after I buy?", "a": "We deliver the installer file and help you set it up. Installation typically takes under 15 minutes." }
+      { "q": "What happens after I buy?", "a": "We deliver your activation code and help you set up the application. Setup takes less than 15 minutes." }
     ]
   },
   "cta": {
     "title": "Ready to Take Control of Your Salon?",
-    "subtitle": "Try the demo now — no signup, no credit card. See why salon owners across Algeria choose Salon Tech DZ.",
+    "subtitle": "Try the demo now — no signup, no credit card. See why salon owners trust salondztech to run their business.",
     "tryFree": "Try Free Demo",
     "buyNow": "Buy License",
     "offlineNote": "Runs 100% offline on your Windows PC"
   },
   "footer": {
-    "tagline": "The offline management system built for Algerian barbershops and salons.",
+    "tagline": "The offline management system built for barbershops and salons.",
     "tryFree": "Try Free Demo",
     "links": {
       "title": "Navigation",
@@ -153,11 +165,11 @@
       "facebook": "Facebook Messenger",
       "instagram": "Instagram"
     },
-    "copyright": "© 2025 Salon Tech DZ. All rights reserved."
+    "copyright": "© 2026 salondztech. All rights reserved."
   },
   "buyModal": {
     "title": "Choose How to Contact Us",
-    "subtitle": "Select a platform to message us. We will confirm your order and arrange delivery.",
+    "subtitle": "Select a platform to message us. Pay, we send you the activation code instantly!",
     "whatsapp": "Message on WhatsApp",
     "facebook": "Message on Facebook",
     "instagram": "Message on Instagram",

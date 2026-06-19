@@ -8,10 +8,10 @@
     "buy": "Acheter"
   },
   "hero": {
-    "badge": "Conçu pour les salons de coiffure algériens",
+    "badge": "Le système de gestion idéal pour salons de coiffure & beauté",
     "title": "Gérez votre salon comme un pro",
     "titleHighlight": "Sans connexion internet",
-    "subtitle": "Salon Tech DZ est le système de gestion hors ligne complet pour les salons de coiffure. Rendez-vous, paie, inventaire, fidélité — tout dans un seul tableau de bord.",
+    "subtitle": "salondztech est le système de gestion hors ligne complet pour les salons de coiffure et d'esthétique. Rendez-vous, paie, inventaire, fidélité — tout dans un seul tableau de bord.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Acheter une licence",
     "noCredit": "Pas de carte bancaire. Pas d'internet. Fonctionne sur votre PC Windows.",
@@ -20,13 +20,13 @@
   "dashboard": {
     "title": "Tout au même endroit",
     "subtitle": "Visualisez votre activité en un coup d'œil — revenus, rendez-vous, clients et employés, dans un tableau de bord rapide et élégant.",
-    "caption": "Tableau de bord Salon Tech DZ — Aperçu en direct",
+    "caption": "Tableau de bord salondztech — Aperçu en direct",
     "livePreview": "Aperçu en direct",
     "tryFree": "Essai Gratuit"
   },
   "features": {
     "title": "Tous les outils pour votre salon",
-    "subtitle": "Salon Tech DZ remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
+    "subtitle": "salondztech remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
     "list": [
       { "key": "dashboard", "title": "Tableau de bord central", "description": "Suivi des revenus en temps réel, classement des meilleurs clients, rendez-vous du jour et transactions — dès l'ouverture de l'application." },
       { "key": "pos", "title": "Point de vente ultra-rapide", "description": "Ajoutez services et produits en quelques secondes, appliquez les remises fidélité et imprimez des reçus professionnels." },
@@ -43,71 +43,83 @@
     "title": "Opérationnel en quelques minutes",
     "subtitle": "Aucune connaissance technique requise. Pas de configuration cloud. Installez et commencez.",
     "steps": [
-      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez Salon Tech DZ sur votre ordinateur d'accueil. Pas d'abonnement internet, pas de frais mensuels." },
+      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez salondztech sur votre ordinateur d'accueil. Pas d'abonnement internet, pas de frais mensuels." },
       { "number": "02", "title": "Configurez vos services et employés", "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste." },
       { "number": "03", "title": "Lancez votre activité", "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord." }
     ]
   },
   "pricing": {
-    "title": "Tarification simple et unique",
-    "subtitle": "Pas d'abonnement mensuel. Pas de frais cachés. Payez une fois, utilisez pour toujours.",
-    "contactToBuy": "Contactez-nous pour acheter",
+    "title": "Tarification simple et flexible",
+    "subtitle": "Choisissez la licence idéale pour votre salon. Payez, nous envoyons le code d'activation.",
+    "contactToBuy": "Contactez-nous pour acheter et activer instantanément",
     "whatsIncluded": "Ce qui est inclus",
     "bestChoice": "Meilleur choix",
+    "paymentsTitle": "Moyens de paiement acceptés pour activation immédiate",
+    "activationNotice": "Payez, nous vous envoyons le code d'activation immédiatement",
+    "toggleDzd": "Dinar algérien (DZD)",
+    "toggleUsd": "Dollar américain (USD)",
     "plans": [
       {
         "name": "Licence Standard",
-        "price": "19 000 DA",
-        "period": "paiement unique",
-        "description": "Idéal pour les salons de quartier avec 1 à 3 postes.",
+        "priceDzd": "19 000 DA",
+        "priceUsd": "99 $",
+        "periodDzd": "paiement unique",
+        "periodUsd": "paiement unique",
+        "description": "Idéal pour les salons en croissance avec jusqu'à 5 employés.",
         "features": [
-          "Tableau de bord & POS complet",
-          "3 employés/coiffeurs max",
-          "Base de données clients de base",
-          "Gestion de stock & alertes",
-          "Interface en FR, AR et EN",
-          "Mode sombre & clair",
-          "Base de données locale à vie",
-          "Support d'installation gratuit"
+          "Tableau de bord avec statistiques & bénéfices nets",
+          "Système de caisse & paiement client intégré (POS)",
+          "Réservation de rendez-vous avec alertes système",
+          "Gestion des stocks & alertes de produits bas",
+          "Gestion des employés & calcul des salaires",
+          "Jusqu'à 5 employés/coiffeurs max",
+          "Thème d'interface personnalisé à votre marque",
+          "Base de données locale à vie (hors ligne)",
+          "Support d'installation et de configuration gratuit"
         ],
         "cta": "Acheter Standard",
         "highlighted": false
       },
       {
-        "name": "Licence Premium",
-        "price": "35 000 DA",
-        "period": "paiement unique",
-        "description": "Automatisation complète pour les salons modernes et salons VIP.",
+        "name": "Licence Premium (VIP)",
+        "priceDzd": "35 000 DA",
+        "priceUsd": "249 $",
+        "periodDzd": "paiement unique",
+        "periodUsd": "paiement unique",
+        "description": "Automatisation complète et fonctionnalités avancées pour les salons d'élite.",
         "features": [
-          "Tout ce qui est inclus dans Standard",
-          "Nombre de coiffeurs illimité",
-          "Intégration WhatsApp automatisée",
-          "Rappels 1h, alertes retard 30m & 1h",
-          "Personnalisation (votre logo/thème)",
-          "Calcul commissions & paie avancé",
-          "Programme de fidélité clients",
-          "Déduction automatique des consommables",
-          "Rapports financiers PDF (P&L)",
-          "Système de logs automatisé",
-          "Support prioritaire d'installation"
+          "Tout ce qui est inclus dans Licence Standard",
+          "Nombre de coiffeurs et employés illimité",
+          "Notifications et reçus WhatsApp automatiques (clients)",
+          "Notifications WhatsApp pour les coiffeurs (rdv & présence)",
+          "Rappels de visite hebdomadaires (WhatsApp Broadcast)",
+          "Déduction automatique des consommables lors du paiement",
+          "Calcul avancé des commissions, avances, retraits et salaires",
+          "Programme de fidélité, points & historique complet clients",
+          "Rapports financiers PDF détaillés (états Pertes & Profits)",
+          "File d'attente LIFO automatisée pour garantir l'envoi des messages",
+          "Site web vitrine professionnel gratuit pour votre salon",
+          "Support prioritaire d'installation et mises à jour à vie"
         ],
-        "cta": "Acheter Premium",
+        "cta": "Acheter Premium VIP",
         "highlighted": true
       },
       {
         "name": "Abonnement Flexible",
-        "price": "2 000 DA",
-        "period": "/mois (facturé annuellement)",
+        "priceDzd": "2 000 DA",
+        "priceUsd": "10 $",
+        "periodDzd": "/mois (facturé annuellement 24 000 DA)",
+        "periodUsd": "/mois (facturé annuellement 120 $)",
         "description": "Démarrez avec toutes les fonctions Premium sans investissement initial.",
         "features": [
-          "Toutes les fonctionnalités Premium",
-          "Pas de frais de licence initiaux",
-          "Payé sous forme de 24 000 DA / an",
-          "Option de sauvegarde en ligne gratuite",
-          "Support client prioritaire",
+          "Toutes les fonctionnalités avancées de la Licence VIP",
+          "Pas de frais de licence initiaux importants",
+          "Nombre de coiffeurs et employés illimité",
+          "Alertes WhatsApp automatiques clients et employés",
+          "Sans site web vitrine professionnel",
+          "Sans design d'interface personnalisé à la marque",
           "Résiliable ou transférable à tout moment",
-          "Interface en trois langues",
-          "Thème sombre et clair"
+          "Support client et mises à jour continus"
         ],
         "cta": "S'abonner maintenant",
         "highlighted": false
@@ -116,30 +128,30 @@
   },
   "testimonials": {
     "title": "La confiance des propriétaires de salons",
-    "subtitle": "Retours réels de propriétaires de salons à travers l'Algérie."
+    "subtitle": "Retours réels des propriétaires de salons de coiffure qui nous font confiance."
   },
   "faq": {
     "title": "Questions fréquentes",
     "subtitle": "Tout ce que vous devez savoir avant d'acheter.",
     "items": [
-      { "q": "Salon Tech DZ nécessite-t-il une connexion internet ?", "a": "Non. Salon Tech DZ fonctionne 100% hors ligne sur votre PC Windows. Pas de frais cloud, pas d'écrans de chargement, et vos données ne quittent jamais votre salon." },
-      { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "Salon Tech DZ fonctionne sur Windows 10 et Windows 11. Il est installé directement sur votre ordinateur d'accueil ou de bureau." },
+      { "q": "Est-ce que salondztech nécessite une connexion internet ?", "a": "Non. salondztech fonctionne 100% hors ligne sur votre PC. Pas de frais cloud, pas d'écrans de chargement, et vos données ne quittent jamais votre salon." },
+      { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "salondztech fonctionne sous Windows 10 et Windows 11. Il s'installe directement sur votre ordinateur d'accueil ou de bureau." },
       { "q": "Puis-je essayer le logiciel avant d'acheter ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
-      { "q": "Comment acheter une licence ?", "a": "Cliquez sur 'Acheter' et choisissez de nous contacter sur Facebook Messenger ou Instagram. Notre équipe s'occupe du paiement et de l'installation." },
+      { "q": "Comment acheter une licence ?", "a": "Cliquez sur 'Acheter' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois payé, nous vous envoyons le code d'activation." },
       { "q": "Y a-t-il un support arabe et RTL ?", "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche." },
       { "q": "Puis-je l'utiliser pour plusieurs salons ?", "a": "Chaque licence couvre une installation. Contactez-nous pour un tarif multi-salons." },
-      { "q": "Que se passe-t-il après l'achat ?", "a": "Nous livrons le fichier d'installation et vous aidons à le configurer. L'installation prend généralement moins de 15 minutes." }
+      { "q": "Que se passe-t-il après l'achat ?", "a": "Nous vous envoyons le code d'activation et nous vous aidons à le configurer. L'installation prend moins de 15 minutes." }
     ]
   },
   "cta": {
     "title": "Prêt à prendre le contrôle de votre salon ?",
-    "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons en Algérie choisissent Salon Tech DZ.",
+    "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons font confiance à salondztech.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Acheter une licence",
     "offlineNote": "Fonctionne 100% hors ligne sur votre PC Windows"
   },
   "footer": {
-    "tagline": "Le système de gestion hors ligne conçu pour les salons de coiffure algériens.",
+    "tagline": "Le système de gestion hors ligne conçu pour les salons de coiffure et d'esthétique.",
     "tryFree": "Essai Gratuit",
     "links": {
       "title": "Navigation",
@@ -153,11 +165,11 @@
       "facebook": "Facebook Messenger",
       "instagram": "Instagram"
     },
-    "copyright": "© 2025 Salon Tech DZ. Tous droits réservés."
+    "copyright": "© 2026 salondztech. Tous droits réservés."
   },
   "buyModal": {
     "title": "Choisissez comment nous contacter",
-    "subtitle": "Sélectionnez une plateforme pour nous envoyer un message. Nous confirmerons votre commande et organiserons la livraison.",
+    "subtitle": "Sélectionnez une plateforme pour nous envoyer un message. Payez, nous vous envoyons le code d'activation instantanément !",
     "whatsapp": "Message sur WhatsApp",
     "facebook": "Message sur Facebook",
     "instagram": "Message sur Instagram",

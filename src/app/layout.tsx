@@ -2,13 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://salonalgeria.netlify.app"),
-  title: "Salon Tech DZ | Logiciel Salon de Coiffure Algérie | برنامج تسيير صالون حلاقة",
+  metadataBase: new URL("https://salondz.tech"),
+  title: "salondztech | Premium Barber & Salon Management Software | برنامج تسيير صالون حلاقة وتجميل",
   description:
-    "Salon Tech DZ is the ultimate offline software for barbershops in Algeria. لوجيسيال سالون كوافار, gestion salon dz, appointments, POS, sans internet. Logicel ta3 salon coiffer.",
+    "salondztech is the ultimate offline software for barbershops and beauty salons. Manage appointments, staff, client loyalty, payments, and automated WhatsApp notifications with zero internet required.",
   keywords: [
+    // International
+    "barbershop software",
+    "salon management system",
+    "barber POS software",
+    "beauty salon booking app",
+    "offline salon database",
+    "logiciel salon de coiffure",
+    "logiciel de caisse coiffeur",
     // Official Arabic
-    "برنامج تسيير صالون حلاقة الجزائر",
+    "برنامج تسيير صالون حلاقة وتجميل",
     "نظام إدارة صالونات التجميل",
     "برنامج نقاط البيع للحلاقين",
     // Algerian Arabic (Darija)
@@ -16,11 +24,6 @@ export const metadata: Metadata = {
     "سيستام تاع حفاف",
     "برنامج كاسيطة للحلاق",
     "تطبيق تسيير الحوانت",
-    // Official French
-    "Logiciel de gestion pour salon de coiffure Algérie",
-    "système POS coiffeur",
-    "application salon de beauté dz",
-    "logiciel de caisse algerie",
     // Franco-Arabic (Derja Typed in Latin)
     "logicel ta3 salon coiffer",
     "logisiel coiffure dz",
@@ -28,29 +31,29 @@ export const metadata: Metadata = {
     "gestion salon dz",
     "application ta3 coiffeur"
   ],
-  authors: [{ name: "Salon Tech DZ" }],
-  creator: "Salon Tech DZ",
-  publisher: "Salon Tech DZ",
+  authors: [{ name: "salondztech" }],
+  creator: "salondztech",
+  publisher: "salondztech",
   openGraph: {
-    title: "Salon Tech DZ | Logiciel Salon de Coiffure Algérie",
-    description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure en Algérie. Gagnez du temps et gérez votre salon comme un pro.",
-    siteName: "Salon Tech DZ",
+    title: "salondztech | Premium Barber & Salon Management Software",
+    description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure et beauté. Gagnez du temps et gérez votre salon comme un pro.",
+    siteName: "salondztech",
     images: [
       {
         url: "/dashboard.png",
         width: 1200,
         height: 630,
-        alt: "Salon Tech DZ Salon Management Dashboard Preview",
+        alt: "salondztech Salon Management Dashboard Preview",
       },
     ],
-    locale: "fr_DZ",
+    locale: "fr_FR",
     alternateLocale: ["ar_DZ", "en_US"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Salon Tech DZ | Logiciel Salon Coiffure Algérie",
-    description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure en Algérie.",
+    title: "salondztech | Premium Barber & Salon Management Software",
+    description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure et beauté.",
     images: ["/dashboard.png"],
   },
   robots: {

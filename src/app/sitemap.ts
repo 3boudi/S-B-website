@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 
-const host = "https://salonalgeria.netlify.app";
+const host = "https://salondz.tech";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const sitemapEntries: MetadataRoute.Sitemap = [];

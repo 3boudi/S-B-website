@@ -121,14 +121,14 @@ export default function Hero() {
                   <div className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
                   <div className="h-3 w-3 rounded-full bg-[#28C840]" />
                   <div className="flex-1 text-center">
-                    <span className="text-xs text-[var(--text-muted)]">Salon Tech DZ Dashboard</span>
+                    <span className="text-xs text-[var(--text-muted)]">salondztech Dashboard</span>
                   </div>
                 </div>
                 {/* Screenshot */}
                 <div className="overflow-hidden">
                   <Image
                     src="/dashboard.png"
-                    alt="Salon Tech DZ salon management dashboard preview"
+                    alt="salondztech salon management dashboard preview"
                     width={800}
                     height={500}
                     className="w-full h-auto"

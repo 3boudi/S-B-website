@@ -31,7 +31,7 @@ export default function Dashboard() {
       >
         <Image
           src="/dashboard.png"
-          alt="Salon Tech DZ salon management dashboard — full preview"
+          alt="salondztech salon management dashboard — full preview"
           width={1200}
           height={750}
           className="w-full h-full object-cover object-left-top"

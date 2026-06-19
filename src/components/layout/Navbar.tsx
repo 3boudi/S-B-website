@@ -60,17 +60,16 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
             ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-sm"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
-            <Image src="/logo.png" alt="Salon Tech DZ logo" width={40} height={40} className="rounded-xl shadow-sm" />
-            <span className="text-xl font-bold font-[var(--font-display)]">Salon Tech DZ</span>
+            <Image src="/logo.png" alt="salondztech logo" width={40} height={40} className="rounded-xl shadow-sm" />
+            <span className="text-xl font-bold font-[var(--font-display)]">Salon DZ tech</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -129,7 +128,7 @@ export default function Navbar() {
             className="absolute right-0 top-0 h-full w-[80%] max-w-sm bg-background border-l border-border p-6 shadow-xl"
           >
             <div className="flex items-center justify-between mb-8">
-              <span className="text-lg font-bold font-[var(--font-display)]">Salon Tech DZ</span>
+              <span className="text-lg font-bold font-[var(--font-display)]">salondztech</span>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
