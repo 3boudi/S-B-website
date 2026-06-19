@@ -5,16 +5,20 @@
     "pricing": "Tarifs",
     "faq": "FAQ",
     "tryFree": "Essai Gratuit",
-    "buy": "Acheter"
+    "buy": "Acheter",
+    "download": "Télécharger l'app",
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe"
   },
   "hero": {
     "badge": "Le système de gestion idéal pour salons de coiffure & beauté",
     "title": "Gérez votre salon comme un pro",
-    "titleHighlight": "Sans connexion internet",
-    "subtitle": "salondztech est le système de gestion hors ligne complet pour les salons de coiffure et d'esthétique. Rendez-vous, paie, inventaire, fidélité — tout dans un seul tableau de bord.",
+    "titleHighlight": "Système local hors ligne",
+    "subtitle": "salondztech est un système de gestion locale pour les salons de coiffure et d'esthétique. Il fonctionne hors ligne pour l'encaissement et la gestion quotidienne, et requiert internet uniquement pour l'activation et les notifications WhatsApp.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Acheter une licence",
-    "noCredit": "Pas de carte bancaire. Pas d'internet. Fonctionne sur votre PC Windows.",
+    "downloadApp": "Télécharger l'app (Essai 7 jours)",
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "noCredit": "Pas de carte bancaire. Fonctionne en local sur Windows (Internet requis pour l'activation & WhatsApp).",
     "demoLink": "https://salonsoftware.netlify.app/"
   },
   "dashboard": {
@@ -43,7 +47,7 @@
     "title": "Opérationnel en quelques minutes",
     "subtitle": "Aucune connaissance technique requise. Pas de configuration cloud. Installez et commencez.",
     "steps": [
-      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez salondztech sur votre ordinateur d'accueil. Pas d'abonnement internet, pas de frais mensuels." },
+      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez salondztech sur votre ordinateur d'accueil. Base locale, pas d'internet requis pour la gestion quotidienne." },
       { "number": "02", "title": "Configurez vos services et employés", "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste." },
       { "number": "03", "title": "Lancez votre activité", "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord." }
     ]
@@ -134,7 +138,7 @@
     "title": "Questions fréquentes",
     "subtitle": "Tout ce que vous devez savoir avant d'acheter.",
     "items": [
-      { "q": "Est-ce que salondztech nécessite une connexion internet ?", "a": "Non. salondztech fonctionne 100% hors ligne sur votre PC. Pas de frais cloud, pas d'écrans de chargement, et vos données ne quittent jamais votre salon." },
+      { "q": "Est-ce que salondztech nécessite une connexion internet ?", "a": "L'application fonctionne et stocke vos données localement sur votre PC (sans frais cloud ni lenteurs). Cependant, une connexion internet est nécessaire uniquement pour l'activation initiale de la licence et pour l'envoi des messages WhatsApp automatisés." },
       { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "salondztech fonctionne sous Windows 10 et Windows 11. Il s'installe directement sur votre ordinateur d'accueil ou de bureau." },
       { "q": "Puis-je essayer le logiciel avant d'acheter ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
       { "q": "Comment acheter une licence ?", "a": "Cliquez sur 'Acheter' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois payé, nous vous envoyons le code d'activation." },
@@ -148,10 +152,12 @@
     "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons font confiance à salondztech.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Acheter une licence",
-    "offlineNote": "Fonctionne 100% hors ligne sur votre PC Windows"
+    "downloadApp": "Télécharger l'app (Essai 7 jours)",
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "offlineNote": "Fonctionne en local sur votre PC (Internet pour activation & WhatsApp)"
   },
   "footer": {
-    "tagline": "Le système de gestion hors ligne conçu pour les salons de coiffure et d'esthétique.",
+    "tagline": "Le système de gestion locale conçu pour les salons de coiffure et d'esthétique.",
     "tryFree": "Essai Gratuit",
     "links": {
       "title": "Navigation",

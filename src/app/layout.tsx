@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://salondz.tech"),
   title: "salondztech | Premium Barber & Salon Management Software | برنامج تسيير صالون حلاقة وتجميل",
   description:
-    "salondztech is the ultimate offline software for barbershops and beauty salons. Manage appointments, staff, client loyalty, payments, and automated WhatsApp notifications with zero internet required.",
+    "salondztech is the ultimate local software for barbershops and beauty salons. Manage checkouts, staff, loyalty, and inventory offline, with internet needed only for activation and WhatsApp notifications.",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   publisher: "salondztech",
   openGraph: {
     title: "salondztech | Premium Barber & Salon Management Software",
-    description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure et beauté. Gagnez du temps et gérez votre salon comme un pro.",
+    description: "تسيير محلي أوفلاين مع تفعيل ورسائل واتساب عبر الإنترنت. Logiciel de gestion locale pour salon de coiffure et beauté.",
     siteName: "salondztech",
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "salondztech | Premium Barber & Salon Management Software",
-    description: "لوجيسيال سالون كوافار يخدم 100% أوفلاين. Logiciel de gestion pour salon de coiffure et beauté.",
+    description: "تسيير محلي أوفلاين مع تفعيل ورسائل واتساب عبر الإنترنت. Logiciel de gestion locale pour salon de coiffure et beauté.",
     images: ["/dashboard.png"],
   },
   robots: {

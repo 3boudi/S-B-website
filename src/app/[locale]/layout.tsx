@@ -23,12 +23,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning data-scroll-behavior="smooth">
-      <head>
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <Script id="theme-loader" strategy="beforeInteractive">
           {`(function(){try{var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`}
         </Script>
-      </head>
-      <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <BuyModalProvider>{children}</BuyModalProvider>

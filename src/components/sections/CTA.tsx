@@ -4,7 +4,7 @@
 // Accessibility: semantic heading, clear button labels, adequate contrast.
 
 import { useTranslations } from "next-intl";
-import { MonitorPlay, ShoppingCart } from "lucide-react";
+import { MonitorPlay, ShoppingCart, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBuyModal } from "@/components/ui/BuyModal";
 
@@ -38,6 +38,17 @@ export default function CTA() {
             className="bg-white text-brand-green-dark hover:bg-white/90 active:scale-[0.98] w-full sm:w-auto"
             asChild
           >
+            <a href={t("downloadLink")}>
+              <Download className="h-5 w-5" />
+              {t("downloadApp")}
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white/10 w-full sm:w-auto"
+            asChild
+          >
             <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
               <MonitorPlay className="h-5 w-5" />
               {t("tryFree")}
@@ -46,7 +57,7 @@ export default function CTA() {
           <Button
             size="lg"
             variant="outline"
-            className="border-white/30 bg-white text-black hover:bg-gray-100 w-full sm:w-auto"
+            className="border-white bg-white text-black hover:bg-gray-100 w-full sm:w-auto"
             onClick={() => openModal()}
           >
             <ShoppingCart className="h-5 w-5" />

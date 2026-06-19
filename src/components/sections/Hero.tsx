@@ -7,7 +7,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MonitorPlay, ShoppingCart, ShieldCheck } from "lucide-react";
+import { MonitorPlay, ShoppingCart, ShieldCheck, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBuyModal } from "@/components/ui/BuyModal";
 
@@ -78,7 +78,13 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 w-full"
             >
-              <Button size="lg" className="w-full sm:w-auto" asChild>
+              <Button size="lg" className="w-full sm:w-auto bg-brand-green hover:bg-brand-green/90 text-white font-semibold" asChild>
+                <a href={t("downloadLink")}>
+                  <Download className="h-5 w-5" />
+                  {t("downloadApp")}
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
                 <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
                   <MonitorPlay className="h-5 w-5" />
                   {t("tryFree")}

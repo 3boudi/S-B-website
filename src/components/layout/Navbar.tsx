@@ -7,7 +7,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Menu, X, MonitorPlay, ShoppingCart } from "lucide-react";
+import { Menu, X, MonitorPlay, ShoppingCart, Download } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
@@ -91,6 +91,12 @@ export default function Navbar() {
             <LanguageSwitcher />
             <ThemeToggle />
             <Button variant="ghost" size="sm" asChild>
+              <a href={t("downloadLink")}>
+                <Download className="h-4 w-4" />
+                {t("download")}
+              </a>
+            </Button>
+            <Button variant="ghost" size="sm" asChild>
               <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
                 <MonitorPlay className="h-4 w-4" />
                 {t("tryFree")}
@@ -156,6 +162,12 @@ export default function Navbar() {
                 <LanguageSwitcher />
                 <ThemeToggle />
               </div>
+              <Button className="w-full" asChild>
+                <a href={t("downloadLink")}>
+                  <Download className="h-4 w-4" />
+                  {t("download")}
+                </a>
+              </Button>
               <Button variant="outline" className="w-full" asChild>
                 <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
                   <MonitorPlay className="h-4 w-4" />

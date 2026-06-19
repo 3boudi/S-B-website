@@ -5,16 +5,20 @@
     "pricing": "Pricing",
     "faq": "FAQ",
     "tryFree": "Try Free",
-    "buy": "Buy Now"
+    "buy": "Buy Now",
+    "download": "Download App",
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe"
   },
   "hero": {
     "badge": "Complete Management System for Barbershops & Salons",
     "title": "Run Your Salon Like a Pro",
-    "titleHighlight": "Zero Internet Required",
-    "subtitle": "salondztech is the complete offline management system for barbershops and hair salons. Appointments, payroll, inventory, loyalty — all in one beautiful dashboard.",
+    "titleHighlight": "Local Offline System",
+    "subtitle": "salondztech is a local management system for barbershops and beauty salons. It runs offline for daily POS, appointments, and inventory, and only requires internet for application activation and WhatsApp notifications.",
     "tryFree": "Try Free Demo",
     "buyNow": "Buy License",
-    "noCredit": "No credit card. No internet. Runs on your Windows PC.",
+    "downloadApp": "Download App (7-Day Trial)",
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "noCredit": "No credit card. Runs locally on Windows (Internet required for activation & WhatsApp).",
     "demoLink": "https://salonsoftware.netlify.app/"
   },
   "dashboard": {
@@ -43,7 +47,7 @@
     "title": "Up and Running in Minutes",
     "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon.",
     "steps": [
-      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install salondztech on your reception computer. No internet subscription, no monthly fee." },
+      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install salondztech on your reception computer. Local database, no internet needed for daily use." },
       { "number": "02", "title": "Set Up Your Services & Staff", "description": "Enter your barbers, services, and prices once. The system handles everything from there." },
       { "number": "03", "title": "Start Running Your Business", "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard." }
     ]
@@ -134,7 +138,7 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know before buying.",
     "items": [
-      { "q": "Does salondztech require an internet connection?", "a": "No. salondztech runs 100% offline on your Windows PC. There are no cloud fees, no loading screens, and your data never leaves your shop." },
+      { "q": "Does salondztech require an internet connection?", "a": "The application runs locally and stores all your data offline on your PC (meaning no cloud fees and no loading screens). However, you will need an active internet connection for the initial license activation and for sending automated WhatsApp messages to clients." },
       { "q": "What operating systems are supported?", "a": "salondztech runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
       { "q": "Can I try the software before buying?", "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster." },
       { "q": "How do I purchase a license?", "a": "Click 'Buy Now' and choose to contact us on WhatsApp, Facebook Messenger, or Instagram. Once paid, we send you the activation code." },
@@ -148,10 +152,12 @@
     "subtitle": "Try the demo now — no signup, no credit card. See why salon owners trust salondztech to run their business.",
     "tryFree": "Try Free Demo",
     "buyNow": "Buy License",
-    "offlineNote": "Runs 100% offline on your Windows PC"
+    "downloadApp": "Download App (7-Day Trial)",
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "offlineNote": "Runs locally on your Windows PC (Internet for activation & WhatsApp)"
   },
   "footer": {
-    "tagline": "The offline management system built for barbershops and salons.",
+    "tagline": "The local management system built for barbershops and salons.",
     "tryFree": "Try Free Demo",
     "links": {
       "title": "Navigation",

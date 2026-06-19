@@ -51,7 +51,7 @@ export default function Features() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {list.map((item, index) => {
             const Icon = ICON_MAP[item.key];
             return (
@@ -61,7 +61,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group rounded-xl border border-border bg-[var(--bg-card)] p-6 shadow-sm transition-all duration-200 hover:border-brand-green hover:shadow-md hover:-translate-y-0.5"
+                className="group rounded-xl border border-border bg-[var(--bg-card)] p-4 sm:p-6 shadow-sm transition-all duration-200 hover:border-brand-green hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-green-muted dark:bg-brand-green-dark/40 transition-colors group-hover:bg-brand-green-muted/80 dark:group-hover:bg-brand-green-dark/60">
                   {Icon && <Icon className="h-5 w-5 text-brand-green-dark dark:text-brand-green" />}
