@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "salondztech | Premium Barber & Salon Management Software | برنامج تسيير صالون حلاقة وتجميل",
   description:
     "salondztech is the ultimate offline software for barbershops and beauty salons. Manage appointments, staff, client loyalty, payments, and automated WhatsApp notifications with zero internet required.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   keywords: [
     // International
     "barbershop software",
