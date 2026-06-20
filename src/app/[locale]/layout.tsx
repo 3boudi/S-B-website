@@ -39,7 +39,13 @@ export default async function LocaleLayout({
       ? "salondztech هو نظام إدارة محلي للحلاقين وصالونات التجميل. يعمل أوفلاين للتسيير اليومي والكاش والمخزون، ويحتاج للإنترنت فقط لتفعيل الرخصة والواتساب."
       : locale === "fr"
       ? "salondztech est un système de gestion locale pour les salons de coiffure et d'esthétique. Il fonctionne hors ligne pour l'encaissement et la gestion quotidienne, et requiert internet uniquement pour l'activation et les notifications WhatsApp."
-      : "salondztech is a local management system for barbershops and beauty salons. It runs offline for daily POS, appointments, and inventory, and only requires internet for application activation and WhatsApp notifications."
+      : "salondztech is a local management system for barbershops and beauty salons. It runs offline for daily POS, appointments, and inventory, and only requires internet for application activation and WhatsApp notifications.",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61589216799202",
+      "https://www.instagram.com/salontech.dz/",
+      "https://www.tiktok.com/@salondztech",
+      "https://www.youtube.com/@SalonDZtech"
+    ]
   };
 
   // FAQ Page Schema

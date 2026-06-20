@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { Link, usePathname } from "@/i18n/routing";
+import { FaYoutube, FaTiktok } from "react-icons/fa";
 
 const FOOTER_NAV = [
   { key: "features", href: "#features" },
@@ -93,6 +94,28 @@ export default function Footer() {
                   <Camera className="h-4 w-4" />
                   {t("contact.instagram")}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@SalonDZtech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm cursor-pointer"
+                >
+                  <FaYoutube className="h-4 w-4 text-[#FF0000]" />
+                  {t("contact.youtube")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@salondztech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm cursor-pointer"
+                >
+                  <FaTiktok className="h-4 w-4 text-[#000000] dark:text-[#FFFFFF]" />
+                  {t("contact.tiktok")}
+                </a>
               </li>
             </ul>
           </div>
