@@ -78,7 +78,7 @@ function BuyModalDialog({
 
   const whatsappUrl = `https://wa.me/213782549228?text=${encodeURIComponent(message)}`;
   const instagramUrl = "https://www.instagram.com/salontech.dz/";
-  const facebookUrl = "https://www.facebook.com/share/1FuxcTwdHM/";
+  const facebookUrl = "https://www.facebook.com/profile.php?id=61589216799202";
 
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
