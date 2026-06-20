@@ -18,7 +18,7 @@
     "buyNow": "Buy License",
     "downloadApp": "Download App (7-Day Trial)",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
-    "noCredit": "No credit card. Runs locally on Windows (Internet required for activation & WhatsApp).",
+    "noCredit": "Runs locally on Windows (Internet required for activation & WhatsApp).",
     "demoLink": "https://salonsoftware.netlify.app/"
   },
   "dashboard": {

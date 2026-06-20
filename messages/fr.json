@@ -18,7 +18,7 @@
     "buyNow": "Acheter une licence",
     "downloadApp": "Télécharger l'app (Essai 7 jours)",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
-    "noCredit": "Pas de carte bancaire. Fonctionne en local sur Windows (Internet requis pour l'activation & WhatsApp).",
+    "noCredit": "Fonctionne en local sur Windows (Internet requis pour l'activation & WhatsApp).",
     "demoLink": "https://salonsoftware.netlify.app/"
   },
   "dashboard": {
