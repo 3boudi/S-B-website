@@ -18,7 +18,6 @@ import { useBuyModal } from "@/components/ui/BuyModal";
 const NAV_ITEMS = [
   { key: "features", href: "#features" },
   { key: "pricing", href: "#pricing" },
-  { key: "downloadPage", href: "download" },
   { key: "guide", href: "guide" },
   { key: "tutorials", href: "tutorials" },
 ] as const;
@@ -90,10 +89,10 @@ export default function Navbar() {
             <LanguageSwitcher />
             <ThemeToggle />
             <Button variant="ghost" size="sm" asChild>
-              <a href={t("downloadLink")}>
+              <Link href="/download">
                 <Download className="h-4 w-4" />
                 {t("download")}
-              </a>
+              </Link>
             </Button>
             <Button variant="ghost" size="sm" asChild>
               <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
@@ -162,10 +161,10 @@ export default function Navbar() {
                 <ThemeToggle />
               </div>
               <Button className="w-full" asChild>
-                <a href={t("downloadLink")}>
+                <Link href="/download" onClick={() => setMobileOpen(false)}>
                   <Download className="h-4 w-4" />
                   {t("download")}
-                </a>
+                </Link>
               </Button>
               <Button variant="outline" className="w-full" asChild>
                 <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">

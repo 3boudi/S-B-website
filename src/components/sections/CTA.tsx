@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { MonitorPlay, ShoppingCart, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBuyModal } from "@/components/ui/BuyModal";
+import { Link } from "@/i18n/routing";
 
 export default function CTA() {
   const t = useTranslations("cta");
@@ -32,37 +33,39 @@ export default function CTA() {
           {t("subtitle")}
         </p>
 
-        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center w-full">
+        <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto w-full">
           <Button
             size="lg"
-            className="bg-white text-brand-green-dark hover:bg-white/90 active:scale-[0.98] w-full sm:w-auto"
+            className="bg-white text-brand-green-dark hover:bg-white/90 active:scale-[0.98] w-full justify-center"
             asChild
           >
-            <a href={t("downloadLink")}>
+            <Link href="/download">
               <Download className="h-5 w-5" />
               {t("downloadApp")}
-            </a>
+            </Link>
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-white/10 w-full sm:w-auto"
-            asChild
-          >
-            <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-              <MonitorPlay className="h-5 w-5" />
-              {t("tryFree")}
-            </a>
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white bg-white text-black hover:bg-gray-100 w-full sm:w-auto"
-            onClick={() => openModal()}
-          >
-            <ShoppingCart className="h-5 w-5" />
-            {t("buyNow")}
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/10 w-full sm:w-1/2 justify-center"
+              asChild
+            >
+              <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <MonitorPlay className="h-5 w-5" />
+                {t("tryFree")}
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white bg-white text-black hover:bg-gray-100 w-full sm:w-1/2 justify-center"
+              onClick={() => openModal()}
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {t("buyNow")}
+            </Button>
+          </div>
         </div>
 
         <p className="mt-6 text-sm text-white/60">
