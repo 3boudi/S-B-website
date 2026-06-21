@@ -14,9 +14,10 @@ import { FaYoutube, FaTiktok } from "react-icons/fa";
 
 const FOOTER_NAV = [
   { key: "features", href: "#features" },
-  { key: "howItWorks", href: "#how-it-works" },
   { key: "pricing", href: "#pricing" },
-  { key: "faq", href: "#faq" },
+  { key: "downloadPage", href: "download" },
+  { key: "guide", href: "guide" },
+  { key: "tutorials", href: "tutorials" },
 ] as const;
 
 export default function Footer() {
@@ -24,7 +25,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
-    if (pathname === "/") {
+    if (href.startsWith("#") && pathname === "/") {
       e.preventDefault();
       document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     }

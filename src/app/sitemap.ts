@@ -6,7 +6,7 @@ const host = "https://salondz.tech";
 export default function sitemap(): MetadataRoute.Sitemap {
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  const routes = ['', '/contact'];
+  const routes = ['', '/contact', '/download', '/guide', '/tutorials'];
 
   routes.forEach((route) => {
     routing.locales.forEach((locale) => {

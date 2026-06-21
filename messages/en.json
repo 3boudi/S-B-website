@@ -7,7 +7,10 @@
     "tryFree": "Try Free",
     "buy": "Buy Now",
     "download": "Download App",
-    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe"
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "downloadPage": "Download App",
+    "guide": "User Guide",
+    "tutorials": "Tutorials"
   },
   "hero": {
     "badge": "Complete Management System for Barbershops & Salons",
@@ -164,7 +167,10 @@
       "features": "Features",
       "howItWorks": "How It Works",
       "pricing": "Pricing",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "downloadPage": "Download App",
+      "guide": "User Guide",
+      "tutorials": "Tutorials"
     },
     "contact": {
       "title": "Contact",
@@ -190,5 +196,30 @@
     "label": "Try the live demo — no signup required",
     "button": "Open Free Demo",
     "url": "https://salonsoftware.netlify.app/"
+  },
+  "downloadPage": {
+    "title": "Download salondztech Software",
+    "subtitle": "Choose the right version for your computer and get started instantly.",
+    "vipTitle": "VIP Premium License (7-Day Trial)",
+    "vipDesc": "Complete version to download and try free for 7 days with all advanced features enabled (WhatsApp, inventory, staff). Contact us after the trial to purchase an activation code.",
+    "vipCta": "Download Free Trial (7 Days)",
+    "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
+    "standardTitle": "Standard License (Purchase Only)",
+    "standardDesc": "Standard version for growing salons (up to 5 workers). This version requires a purchased license and active activation code to operate.",
+    "standardCta": "Download for Activation",
+    "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
+    "pricingTitle": "Pricing Plans & License Offers"
+  },
+  "guidePage": {
+    "title": "User Guide",
+    "comingSoon": "User Guide - Coming Soon...",
+    "desc": "We are currently writing a comprehensive, step-by-step user manual with screenshots and videos to help you set up, install, and configure salondztech on your PC.",
+    "backHome": "Back to Home"
+  },
+  "tutorialsPage": {
+    "title": "Program Learning Series",
+    "comingSoon": "Tutorial Video Series - Coming Soon...",
+    "desc": "We will soon release a detailed series of video lessons explaining how to use the cash checkout screen, manage employees, track advances, and check analytics.",
+    "backHome": "Back to Home"
   }
 }

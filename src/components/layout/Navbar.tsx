@@ -17,9 +17,10 @@ import { useBuyModal } from "@/components/ui/BuyModal";
 
 const NAV_ITEMS = [
   { key: "features", href: "#features" },
-  { key: "howItWorks", href: "#how-it-works" },
   { key: "pricing", href: "#pricing" },
-  { key: "faq", href: "#faq" },
+  { key: "downloadPage", href: "download" },
+  { key: "guide", href: "guide" },
+  { key: "tutorials", href: "tutorials" },
 ] as const;
 
 export default function Navbar() {
@@ -49,11 +50,9 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     setMobileOpen(false);
-    if (pathname === "/") {
+    if (href.startsWith("#") && pathname === "/") {
       e.preventDefault();
       document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Allow Link to handle cross-page navigation natively
     }
   };
 

@@ -7,7 +7,10 @@
     "tryFree": "تجربة مجانية",
     "buy": "اشتري الآن",
     "download": "تحميل التطبيق",
-    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe"
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "downloadPage": "تحميل التطبيق",
+    "guide": "دليل المستخدم",
+    "tutorials": "سلسلة التعلم"
   },
   "hero": {
     "badge": "نظام الإدارة المتكامل والأقوى لصالونات الحلاقة والتجميل",
@@ -164,7 +167,10 @@
       "features": "المزايا",
       "howItWorks": "كيف يعمل",
       "pricing": "الأسعار",
-      "faq": "أسئلة شائعة"
+      "faq": "أسئلة شائعة",
+      "downloadPage": "تحميل التطبيق",
+      "guide": "دليل المستخدم",
+      "tutorials": "سلسلة التعلم"
     },
     "contact": {
       "title": "اتصل بنا",
@@ -190,5 +196,30 @@
     "label": "جرّب الديمو المباشر — بلا تسجيل",
     "button": "افتح الديمو المجاني",
     "url": "https://salonsoftware.netlify.app/"
+  },
+  "downloadPage": {
+    "title": "تحميل برنامج salondztech",
+    "subtitle": "اختر النسخة المناسبة لجهازك وابدأ تشغيل وتسيير صالونك فوراً.",
+    "vipTitle": "نسخة VIP الاحترافية (تجربة 7 أيام مجاناً)",
+    "vipDesc": "نسخة كاملة للتثبيت والتجربة مجاناً لمدة 7 أيام مع تفعيل كافة الميزات المتطورة والواتساب. تواصل معنا بعد انتهاء المدة لشراء كود التفعيل.",
+    "vipCta": "تحميل للتجربة (7 أيام مجاناً)",
+    "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
+    "standardTitle": "نسخة Standard العادية (للشراء فقط)",
+    "standardDesc": "النسخة العادية مخصصة للصالونات المتوسطة (حتى 5 عمال). هذه النسخة تحتاج إلى شراء رخصة وكود تفعيل مباشر لكي تعمل.",
+    "standardCta": "تحميل للشراء والتفعيل",
+    "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
+    "pricingTitle": "باقات الأسعار والترخيص المتاحة"
+  },
+  "guidePage": {
+    "title": "دليل المستخدم",
+    "comingSoon": "دليل المستخدم - قريباً...",
+    "desc": "نحن نعمل حالياً على كتابة دليل تفصيلي وشامل لمساعدتك في إعداد وضبط وتثبيت برنامج salondztech على حاسوبك خطوة بخطوة بالصور والفيديو.",
+    "backHome": "العودة للرئيسية"
+  },
+  "tutorialsPage": {
+    "title": "سلسلة تعلم البرنامج",
+    "comingSoon": "سلسلة الدروس والتعلم - قريباً...",
+    "desc": "قريباً سنقوم بنشر سلسلة فيديوهات تعليمية تفصيلية لشرح كيفية استخدام شاشة الكاش، المبيعات، إدارة الموظفين، تتبع السلفات وحساب العمولات.",
+    "backHome": "العودة للرئيسية"
   }
 }

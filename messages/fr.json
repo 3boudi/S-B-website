@@ -7,7 +7,10 @@
     "tryFree": "Essai Gratuit",
     "buy": "Acheter",
     "download": "Télécharger l'app",
-    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe"
+    "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
+    "downloadPage": "Télécharger l'app",
+    "guide": "Guide de l'utilisateur",
+    "tutorials": "Tutoriels"
   },
   "hero": {
     "badge": "Le système de gestion idéal pour salons de coiffure & beauté",
@@ -164,7 +167,10 @@
       "features": "Fonctionnalités",
       "howItWorks": "Comment ça marche",
       "pricing": "Tarifs",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "downloadPage": "Télécharger l'app",
+      "guide": "Guide de l'utilisateur",
+      "tutorials": "Tutoriels"
     },
     "contact": {
       "title": "Contact",
@@ -190,5 +196,30 @@
     "label": "Essayez la démo en direct — sans inscription",
     "button": "Ouvrir la démo gratuite",
     "url": "https://salonsoftware.netlify.app/"
+  },
+  "downloadPage": {
+    "title": "Télécharger le logiciel salondztech",
+    "subtitle": "Choisissez la version adaptée à votre PC et démarrez immédiatement.",
+    "vipTitle": "Licence Premium VIP (Essai 7 jours)",
+    "vipDesc": "Version complète à télécharger et à essayer gratuitement pendant 7 jours avec toutes les fonctionnalités avancées activées (WhatsApp, stocks, employés). Contactez-nous après l'essai pour acheter un code d'activation.",
+    "vipCta": "Télécharger l'essai (7 jours gratuit)",
+    "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
+    "standardTitle": "Licence Standard (Achat uniquement)",
+    "standardDesc": "Version standard pour salons en croissance (jusqu'à 5 employés). Cette version nécessite une licence achetée et un code d'activation pour fonctionner.",
+    "standardCta": "Télécharger pour activation",
+    "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
+    "pricingTitle": "Bans de Tarifs & Activation de la licence"
+  },
+  "guidePage": {
+    "title": "Guide de l'utilisateur",
+    "comingSoon": "Guide de l'utilisateur - Bientôt disponible...",
+    "desc": "Nous préparons un manuel d'utilisation complet et détaillé, étape par étape, avec des captures d'écran et des vidéos pour vous guider lors de l'installation et de la configuration de salondztech sur votre PC.",
+    "backHome": "Retour à l'accueil"
+  },
+  "tutorialsPage": {
+    "title": "Série d'apprentissage",
+    "comingSoon": "Série de vidéos tutoriels - Bientôt disponible...",
+    "desc": "Nous publierons bientôt une série de vidéos éducatives expliquant comment utiliser l'écran d'encaissement, gérer les employés, suivre les avances et consulter les rapports financiers.",
+    "backHome": "Retour à l'accueil"
   }
 }
