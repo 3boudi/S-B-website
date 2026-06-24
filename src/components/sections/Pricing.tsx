@@ -179,11 +179,9 @@ export default function Pricing() {
                             ? "bg-red-500/5 border-red-500/10"
                             : "bg-blue-500/5 border-blue-500/10"
                       }`}>
-                        <p className="text-xs font-extrabold uppercase tracking-wider text-brand-green mb-2 font-[var(--font-display)]">
-                          {locale === "ar" ? "الرسالة التسوقية والعرض:" : locale === "fr" ? "Message Marketing & Offre :" : "Marketing Message & Offer:"}
-                        </p>
-                        
-                        <p className="text-[13px] font-semibold leading-relaxed text-[var(--text-primary)] italic mb-3">
+                        <p className={`text-[13px] font-semibold leading-relaxed text-[var(--text-primary)] italic ${
+                          (currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd) ? "mb-3" : "mb-0"
+                        }`}>
                           {plan.description}
                         </p>
 
