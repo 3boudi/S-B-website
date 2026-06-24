@@ -5,7 +5,7 @@
     "pricing": "Tarifs",
     "faq": "FAQ",
     "tryFree": "Essai Gratuit",
-    "buy": "Acheter",
+    "buy": "Rejoindre le top 1%",
     "download": "Télécharger l'app",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "downloadPage": "Télécharger l'app",
@@ -13,13 +13,13 @@
     "tutorials": "Tutoriels"
   },
   "hero": {
-    "badge": "Le système de gestion idéal pour salons de coiffure & beauté",
-    "title": "Gérez votre salon comme un pro",
-    "titleHighlight": "Système local hors ligne",
-    "subtitle": "salondztech est un système de gestion locale pour les salons de coiffure et d'esthétique. Il fonctionne hors ligne pour l'encaissement et la gestion quotidienne, et requiert internet uniquement pour l'activation et les notifications WhatsApp.",
+    "badge": "Système intelligent d'automatisation WhatsApp et de gestion de salon",
+    "title": "Passez au niveau supérieur de gestion de salon",
+    "titleHighlight": "avec un assistant WhatsApp intelligent",
+    "subtitle": "Découvrez une façon révolutionnaire de gérer vos rendez-vous et de développer votre activité. salondztech est un système de bureau hors ligne intelligent qui discute et rappelle automatiquement vos clients directement sur WhatsApp. Rejoignez le top 1% des salons d'élite et passez à une vie professionnelle différente.",
     "tryFree": "Essai Gratuit",
-    "buyNow": "Acheter une licence",
-    "downloadApp": "Télécharger l'app (Essai 7 jours)",
+    "buyNow": "Rejoindre le top 1%",
+    "downloadApp": "Obtenir l'accès maintenant",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "noCredit": "Fonctionne en local sur Windows (Internet requis pour l'activation & WhatsApp).",
     "demoLink": "https://salonsoftware.netlify.app/"
@@ -68,11 +68,17 @@
     "plans": [
       {
         "name": "Licence Standard",
-        "priceDzd": "19 000 DA",
+        "priceDzd": "22 000 DA",
         "priceUsd": "99 $",
+        "originalPriceDzd": "36 000 DA",
+        "originalPriceUsd": "160 $",
+        "discountBadgeDzd": "RÉDUCTION 14 000 DA",
+        "discountBadgeUsd": "RÉDUCTION 61 $",
+        "promoNoticeDzd": "Offre valable pour les 20 premiers salons",
+        "promoNoticeUsd": "20 premiers salons uniquement",
         "periodDzd": "paiement unique",
         "periodUsd": "paiement unique",
-        "description": "Idéal pour les salons en croissance avec jusqu'à 5 employés.",
+        "description": "Idéal pour salons en croissance. Comprend design personnalisé gratuit.",
         "features": [
           "Tableau de bord avec statistiques & bénéfices nets",
           "Système de caisse & paiement client intégré (POS)",
@@ -80,7 +86,7 @@
           "Gestion des stocks & alertes de produits bas",
           "Gestion des employés & calcul des salaires",
           "Jusqu'à 5 employés/coiffeurs max",
-          "Thème d'interface personnalisé à votre marque",
+          "Design de l'interface personnalisé GRATUIT (couleurs & logo)",
           "Base de données locale à vie (hors ligne)",
           "Support d'installation et de configuration gratuit"
         ],
@@ -89,12 +95,19 @@
       },
       {
         "name": "Licence Premium (VIP)",
-        "priceDzd": "35 000 DA",
+        "priceDzd": "39 000 DA",
         "priceUsd": "249 $",
+        "originalPriceDzd": "59 000 DA",
+        "originalPriceUsd": "380 $",
+        "discountBadgeDzd": "RÉDUCTION 20 000 DA",
+        "discountBadgeUsd": "RÉDUCTION 131 $",
+        "promoNoticeDzd": "Offre valable pour les 20 premiers salons",
+        "promoNoticeUsd": "20 premiers salons uniquement",
         "periodDzd": "paiement unique",
         "periodUsd": "paiement unique",
-        "description": "Automatisation complète et fonctionnalités avancées pour les salons d'élite.",
+        "description": "Automatisation complète et fonctions avancées. Comprend design personnalisé & site web vitrine gratuits (Essai gratuit de 7 jours disponible).",
         "features": [
+          "Essai gratuit de 7 jours (Téléchargez & testez toutes les fonctions gratuitement)",
           "Tout ce qui est inclus dans Licence Standard",
           "Nombre de coiffeurs et employés illimité",
           "Notifications et reçus WhatsApp automatiques (clients)",
@@ -104,18 +117,18 @@
           "Calcul avancé des commissions, avances, retraits et salaires",
           "Programme de fidélité, points & historique complet clients",
           "Rapports financiers PDF détaillés (états Pertes & Profits)",
-          "File d'attente LIFO automatisée pour garantir l'envoi des messages",
-          "Site web vitrine professionnel gratuit pour votre salon",
+          "Design de l'interface personnalisé GRATUIT (couleurs & logo)",
+          "Site web vitrine professionnel GRATUIT pour le salon",
           "Support prioritaire d'installation et mises à jour à vie"
         ],
-        "cta": "Acheter Premium VIP",
+        "cta": "Rejoindre le top 1% (VIP)",
         "highlighted": true
       },
       {
         "name": "Abonnement Flexible",
-        "priceDzd": "2 000 DA",
+        "priceDzd": "2 500 DA",
         "priceUsd": "10 $",
-        "periodDzd": "/mois (facturé annuellement 24 000 DA)",
+        "periodDzd": "/mois (facturé annuellement 30 000 DA)",
         "periodUsd": "/mois (facturé annuellement 120 $)",
         "description": "Démarrez avec toutes les fonctions Premium sans investissement initial.",
         "features": [
@@ -143,19 +156,19 @@
     "items": [
       { "q": "Est-ce que salondztech nécessite une connexion internet ?", "a": "L'application fonctionne et stocke vos données localement sur votre PC (sans frais cloud ni lenteurs). Cependant, une connexion internet est nécessaire uniquement pour l'activation initiale de la licence et pour l'envoi des messages WhatsApp automatisés." },
       { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "salondztech fonctionne sous Windows 10 et Windows 11. Il s'installe directement sur votre ordinateur d'accueil ou de bureau." },
-      { "q": "Puis-je essayer le logiciel avant d'acheter ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
-      { "q": "Comment acheter une licence ?", "a": "Cliquez sur 'Acheter' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois payé, nous vous envoyons le code d'activation." },
+      { "q": "Puis-je essayer le logiciel avant de nous rejoindre ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
+      { "q": "Comment rejoindre le top 1% ?", "a": "Cliquez sur 'Rejoindre le top 1%' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois validé, nous vous envoyons votre code d'activation immédiatement." },
       { "q": "Y a-t-il un support arabe et RTL ?", "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche." },
       { "q": "Puis-je l'utiliser pour plusieurs salons ?", "a": "Chaque licence couvre une installation. Contactez-nous pour un tarif multi-salons." },
       { "q": "Que se passe-t-il après l'achat ?", "a": "Nous vous envoyons le code d'activation et nous vous aidons à le configurer. L'installation prend moins de 15 minutes." }
     ]
   },
   "cta": {
-    "title": "Prêt à prendre le contrôle de votre salon ?",
-    "subtitle": "Essayez la démo maintenant — sans inscription, sans carte bancaire. Découvrez pourquoi les propriétaires de salons font confiance à salondztech.",
+    "title": "Prêt à passer à une vie professionnelle différente ?",
+    "subtitle": "Passez au niveau supérieur de gestion de salon. Rejoignez le top 1% des salons d'élite utilisant notre système d'automatisation WhatsApp intelligent aujourd'hui.",
     "tryFree": "Essai Gratuit",
-    "buyNow": "Acheter une licence",
-    "downloadApp": "Télécharger l'app (Essai 7 jours)",
+    "buyNow": "Rejoindre le top 1% maintenant",
+    "downloadApp": "Obtenir l'accès maintenant",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "offlineNote": "Fonctionne en local sur votre PC (Internet pour activation & WhatsApp)"
   },
@@ -187,7 +200,7 @@
     "whatsapp": "Message sur WhatsApp",
     "facebook": "Message sur Facebook",
     "instagram": "Message sur Instagram",
-    "chatDescription": "Discutez avec nous pour commander",
+    "chatDescription": "Discutez avec nous pour rejoindre le top 1%",
     "whatsappUrl": "https://wa.me/213782549228",
     "facebookUrl": "https://www.facebook.com/share/1FuxcTwdHM/",
     "instagramUrl": "https://www.instagram.com/salontech.dz/"

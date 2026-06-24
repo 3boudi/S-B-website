@@ -48,7 +48,7 @@ export default function CTA() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 w-full sm:w-1/2 justify-center"
+              className="border-white bg-brand-green-dark text-white hover:bg-brand-green-dark/80 hover:text-white w-full sm:w-1/2 justify-center"
               asChild
             >
               <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">

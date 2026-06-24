@@ -23,6 +23,12 @@ interface Plan {
   features: string[];
   cta: string;
   highlighted?: boolean;
+  originalPriceDzd?: string;
+  originalPriceUsd?: string;
+  discountBadgeDzd?: string;
+  discountBadgeUsd?: string;
+  promoNoticeDzd?: string;
+  promoNoticeUsd?: string;
 }
 
 export default function Pricing() {
@@ -121,16 +127,36 @@ export default function Pricing() {
                       </h3>
 
                       {/* Price */}
-                      <div className="mt-4 flex items-baseline">
-                        <span className="text-4xl font-extrabold text-brand-green font-[var(--font-display)]">
-                          {currency === "DZD" ? plan.priceDzd : plan.priceUsd}
-                        </span>
-                        <span className="ml-2 text-sm text-[var(--text-muted)]">
-                          {currency === "DZD" ? plan.periodDzd : plan.periodUsd}
-                        </span>
+                      <div className="mt-4 flex flex-col justify-start">
+                        {/* Original Price & Discount Badge */}
+                        {(currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd) && (
+                          <div className="flex items-center gap-2 mb-1.5 justify-start">
+                            <span className="text-sm line-through text-[var(--text-muted)] font-medium">
+                              {currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd}
+                            </span>
+                            <span className="text-[10px] font-extrabold bg-red-500/10 dark:bg-red-500/20 text-red-500 dark:text-red-400 px-2 py-0.5 rounded-md border border-red-500/20">
+                              {currency === "DZD" ? plan.discountBadgeDzd : plan.discountBadgeUsd}
+                            </span>
+                          </div>
+                        )}
+                        <div className="flex items-baseline">
+                          <span className="text-4xl font-extrabold text-brand-green font-[var(--font-display)]">
+                            {currency === "DZD" ? plan.priceDzd : plan.priceUsd}
+                          </span>
+                          <span className="ml-2 text-sm text-[var(--text-muted)]">
+                            {currency === "DZD" ? plan.periodDzd : plan.periodUsd}
+                          </span>
+                        </div>
+                        {/* Promo Notice */}
+                        {(currency === "DZD" ? plan.promoNoticeDzd : plan.promoNoticeUsd) && (
+                          <span className="text-[11px] font-bold text-brand-green mt-2 flex items-center gap-1 justify-start">
+                            <Zap className="h-3.5 w-3.5 fill-current shrink-0 animate-pulse text-amber-500" />
+                            {currency === "DZD" ? plan.promoNoticeDzd : plan.promoNoticeUsd}
+                          </span>
+                        )}
                       </div>
 
-                      <p className="mt-2 text-sm text-[var(--text-secondary)]">
+                      <p className="mt-4 text-sm text-[var(--text-secondary)]">
                         {plan.description}
                       </p>
 
