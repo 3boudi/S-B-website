@@ -67,7 +67,7 @@
     "toggleUsd": "US Dollar (USD)",
     "plans": [
       {
-        "name": "Standard License",
+        "name": "Essential License",
         "priceDzd": "22,000 DA",
         "priceUsd": "$99",
         "originalPriceDzd": "36,000 DA",
@@ -78,7 +78,7 @@
         "promoNoticeUsd": "First 20 salons only",
         "periodDzd": "one-time payment",
         "periodUsd": "one-time payment",
-        "description": "Perfect for growing salons. Includes free custom design.",
+        "description": "A strong start to organize your daily work easily... and full control over your business from the very first use.",
         "features": [
           "Full statistics & net profit dashboard",
           "Integrated POS & client checkout payments",
@@ -90,7 +90,7 @@
           "Lifetime offline database",
           "Free installation and setup support"
         ],
-        "cta": "Buy Standard",
+        "cta": "Buy Essential",
         "highlighted": false
       },
       {
@@ -105,7 +105,7 @@
         "promoNoticeUsd": "First 20 salons only",
         "periodDzd": "one-time payment",
         "periodUsd": "one-time payment",
-        "description": "Complete automation and advanced features. Includes free custom design & showcase website. (7-Day Free Trial available)",
+        "description": "Elevate your salon to a new level of success and distinction. Increase bookings and turn your clients into loyal, lifetime customers. (7-Day Free Trial available)",
         "features": [
           "7-Day Free Trial (Download & try all features free)",
           "Everything in Standard License",
@@ -130,7 +130,7 @@
         "priceUsd": "$10",
         "periodDzd": "/month (billed annually 30,000 DA)",
         "periodUsd": "/month (billed annually $120)",
-        "description": "Start with all premium features, no upfront license cost.",
+        "description": "Get all the power of the VIP version with a monthly subscription. For less than 100 DA per day, start organizing your salon professionally, keeping bookings and clients under easy control.",
         "features": [
           "All Premium VIP advanced features",
           "No large upfront setup fee",
@@ -217,8 +217,8 @@
     "vipDesc": "Complete version to download and try free for 7 days with all advanced features enabled (WhatsApp, inventory, staff). Contact us after the trial to purchase an activation code.",
     "vipCta": "Download Free Trial (7 Days)",
     "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
-    "standardTitle": "Standard License (Purchase Only)",
-    "standardDesc": "Standard version for growing salons (up to 5 workers). This version requires a purchased license and active activation code to operate.",
+    "standardTitle": "Essential License (Purchase Only)",
+    "standardDesc": "Essential version for growing salons (up to 5 workers). This version requires a purchased license and active activation code to operate.",
     "standardCta": "Download for Activation",
     "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
     "pricingTitle": "Pricing Plans & License Offers"

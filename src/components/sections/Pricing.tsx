@@ -130,22 +130,37 @@ export default function Pricing() {
                       <div className="mt-4 flex flex-col justify-start">
                         {/* Original Price & Discount Badge */}
                         {(currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd) && (
-                          <div className="flex items-center gap-2 mb-1.5 justify-start">
-                            <span className="text-sm line-through text-[var(--text-muted)] font-medium">
+                          <div className="flex items-center gap-3 mb-2 justify-start">
+                            <span className="text-sm line-through text-[var(--text-muted)] font-semibold opacity-75">
                               {currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd}
                             </span>
-                            <span className="text-[10px] font-extrabold bg-red-500/10 dark:bg-red-500/20 text-red-500 dark:text-red-400 px-2 py-0.5 rounded-md border border-red-500/20">
+                            <motion.span
+                              animate={{ scale: [1, 1.06, 1] }}
+                              transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+                              className="text-[10px] font-black bg-gradient-to-r from-red-500 to-rose-600 text-white px-2.5 py-1 rounded-full shadow-md shadow-red-500/20 border border-red-400/20 tracking-wider uppercase font-[var(--font-display)]"
+                            >
                               {currency === "DZD" ? plan.discountBadgeDzd : plan.discountBadgeUsd}
-                            </span>
+                            </motion.span>
                           </div>
                         )}
-                        <div className="flex items-baseline">
-                          <span className="text-4xl font-extrabold text-brand-green font-[var(--font-display)]">
+                        <div className="flex items-baseline overflow-hidden h-12">
+                          <motion.span
+                            key={currency}
+                            initial={{ y: 24, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                            className="text-4xl font-extrabold text-brand-green font-[var(--font-display)]"
+                          >
                             {currency === "DZD" ? plan.priceDzd : plan.priceUsd}
-                          </span>
-                          <span className="ml-2 text-sm text-[var(--text-muted)]">
+                          </motion.span>
+                          <motion.span
+                            key={`period-${currency}`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="ml-2 text-sm text-[var(--text-muted)]"
+                          >
                             {currency === "DZD" ? plan.periodDzd : plan.periodUsd}
-                          </span>
+                          </motion.span>
                         </div>
                         {/* Promo Notice */}
                         {(currency === "DZD" ? plan.promoNoticeDzd : plan.promoNoticeUsd) && (

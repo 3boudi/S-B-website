@@ -67,7 +67,7 @@
     "toggleUsd": "Dollar américain (USD)",
     "plans": [
       {
-        "name": "Licence Standard",
+        "name": "Licence Essentielle",
         "priceDzd": "22 000 DA",
         "priceUsd": "99 $",
         "originalPriceDzd": "36 000 DA",
@@ -78,7 +78,7 @@
         "promoNoticeUsd": "20 premiers salons uniquement",
         "periodDzd": "paiement unique",
         "periodUsd": "paiement unique",
-        "description": "Idéal pour salons en croissance. Comprend design personnalisé gratuit.",
+        "description": "Un démarrage solide pour organiser votre travail quotidien en toute simplicité... et un contrôle total sur votre activité dès la première utilisation.",
         "features": [
           "Tableau de bord avec statistiques & bénéfices nets",
           "Système de caisse & paiement client intégré (POS)",
@@ -90,7 +90,7 @@
           "Base de données locale à vie (hors ligne)",
           "Support d'installation et de configuration gratuit"
         ],
-        "cta": "Acheter Standard",
+        "cta": "Acheter Essentielle",
         "highlighted": false
       },
       {
@@ -105,7 +105,7 @@
         "promoNoticeUsd": "20 premiers salons uniquement",
         "periodDzd": "paiement unique",
         "periodUsd": "paiement unique",
-        "description": "Automatisation complète et fonctions avancées. Comprend design personnalisé & site web vitrine gratuits (Essai gratuit de 7 jours disponible).",
+        "description": "Élevez votre salon à un nouveau niveau de succès et de distinction. Boostez vos réservations et transformez vos clients en clients fidèles à vie. (Essai gratuit de 7 jours disponible)",
         "features": [
           "Essai gratuit de 7 jours (Téléchargez & testez toutes les fonctions gratuitement)",
           "Tout ce qui est inclus dans Licence Standard",
@@ -130,7 +130,7 @@
         "priceUsd": "10 $",
         "periodDzd": "/mois (facturé annuellement 30 000 DA)",
         "periodUsd": "/mois (facturé annuellement 120 $)",
-        "description": "Démarrez avec toutes les fonctions Premium sans investissement initial.",
+        "description": "Profitez de toute la puissance de la version VIP avec un abonnement mensuel. Pour moins de 100 DA par jour, commencez à organiser votre salon de manière professionnelle, en gardant vos rendez-vous et vos clients sous contrôle.",
         "features": [
           "Toutes les fonctionnalités avancées de la Licence VIP",
           "Pas de frais de licence initiaux importants",
@@ -217,8 +217,8 @@
     "vipDesc": "Version complète à télécharger et à essayer gratuitement pendant 7 jours avec toutes les fonctionnalités avancées activées (WhatsApp, stocks, employés). Contactez-nous après l'essai pour acheter un code d'activation.",
     "vipCta": "Télécharger l'essai (7 jours gratuit)",
     "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
-    "standardTitle": "Licence Standard (Achat uniquement)",
-    "standardDesc": "Version standard pour salons en croissance (jusqu'à 5 employés). Cette version nécessite une licence achetée et un code d'activation pour fonctionner.",
+    "standardTitle": "Licence Essentielle (Achat uniquement)",
+    "standardDesc": "Version essentielle pour salons en croissance (jusqu'à 5 employés). Cette version nécessite une licence achetée et un code d'activation pour fonctionner.",
     "standardCta": "Télécharger pour activation",
     "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
     "pricingTitle": "Bans de Tarifs & Activation de la licence"
