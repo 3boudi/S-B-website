@@ -171,9 +171,43 @@ export default function Pricing() {
                         )}
                       </div>
 
-                      <p className="mt-4 text-sm text-[var(--text-secondary)]">
-                        {plan.description}
-                      </p>
+                      {/* Marketing Message Box (حيز واضح وكتابة خاصة للرسالة التسوقية مع السعر القديم والتخفيض) */}
+                      <div className={`mt-5 p-4 rounded-xl border text-left rtl:text-right ${
+                        isHighlighted 
+                          ? "bg-brand-green/5 border-brand-green/20" 
+                          : plan.originalPriceDzd
+                            ? "bg-red-500/5 border-red-500/10"
+                            : "bg-blue-500/5 border-blue-500/10"
+                      }`}>
+                        <p className="text-xs font-extrabold uppercase tracking-wider text-brand-green mb-2 font-[var(--font-display)]">
+                          {locale === "ar" ? "الرسالة التسوقية والعرض:" : locale === "fr" ? "Message Marketing & Offre :" : "Marketing Message & Offer:"}
+                        </p>
+                        
+                        <p className="text-[13px] font-semibold leading-relaxed text-[var(--text-primary)] italic mb-3">
+                          {plan.description}
+                        </p>
+
+                        {(currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd) && (
+                          <div className="flex flex-col gap-2 pt-3 border-t border-dashed border-border text-xs">
+                            <div className="flex justify-between">
+                              <span className="text-[var(--text-muted)] font-medium">
+                                {locale === "ar" ? "السعر قبل التخفيض:" : locale === "fr" ? "Prix d'origine :" : "Original Price:"}
+                              </span>
+                              <span className="line-through text-red-500 font-bold">
+                                {currency === "DZD" ? plan.originalPriceDzd : plan.originalPriceUsd}
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span className="text-[var(--text-muted)] font-medium">
+                                {locale === "ar" ? "قيمة التخفيض الموفرة:" : locale === "fr" ? "Économie réalisée :" : "You Save:"}
+                              </span>
+                              <span className="text-emerald-500 dark:text-emerald-400 font-black text-sm animate-pulse">
+                                {currency === "DZD" ? plan.discountBadgeDzd : plan.discountBadgeUsd}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
 
                       <Separator className="my-6" />
 
