@@ -13,10 +13,10 @@
     "tutorials": "Tutorials"
   },
   "hero": {
-    "badge": "Intelligent Conversational WhatsApp & Salon Management System",
+    "badge": "Intelligent WhatsApp Booking Chatbot & Salon Management System",
     "title": "Organize Your Salon at the Next Level",
     "titleHighlight": "Smart WhatsApp system",
-    "subtitle": "Experience a revolutionary way to manage appointments and grow your business. salondztech is an intelligent offline desktop system that automatically chats with and reminds your clients directly via WhatsApp. Join the top 1% of elite salons and step into a different, highly professional business life.",
+    "subtitle": "Experience a revolutionary way to manage appointments and grow your business. salondztech features an intelligent WhatsApp chatbot that chats with your clients and registers their appointments automatically, alongside reminders and checkout receipts. Join the top 1% of elite salons.",
     "tryFree": "Try Free Demo",
     "buyNow": "Join the Top 1%",
     "downloadApp": "Get Access Now",
@@ -43,6 +43,7 @@
       { "key": "loyalty", "title": "Built-in Loyalty Program", "description": "Automatic points for every service. Complete client history — services, frequency, and lifetime spend — always at your fingertips." },
       { "key": "analytics", "title": "Advanced Business Analytics", "description": "Best-seller services, automated net profit calculation after expenses and salaries, and one-click PDF financial reports." },
       { "key": "whatsapp", "title": "Automated WhatsApp Integration", "description": "Send instant booking confirmations, 1-hour appointment reminders, late warnings, and digital checkout receipts automatically to client phones." },
+      { "key": "chatbot", "title": "Smart WhatsApp Booking Chatbot", "description": "An intelligent auto-responder robot that chats with your clients on WhatsApp, proposes open time slots, and automatically saves bookings (Available in VIP & Subscription)." },
       { "key": "multilang", "title": "Arabic, French & English", "description": "Switch the entire interface between three languages instantly. Full RTL layout when Arabic is selected. Dark and light mode included." }
     ]
   },
@@ -110,6 +111,7 @@
           "7-Day Free Trial (Download & try all features free)",
           "Everything in Standard License",
           "Unlimited workers & barbers",
+          "Smart WhatsApp Chatbot for auto-replies & booking (Chatbot) 🤖",
           "Automated client WhatsApp notifications & receipts",
           "Worker WhatsApp messages (appointments & presence)",
           "Weekly client visit-reminders (WhatsApp Broadcast)",
@@ -135,6 +137,7 @@
           "All Premium VIP advanced features",
           "No large upfront setup fee",
           "Unlimited workers & barbers",
+          "Smart WhatsApp Chatbot for auto-replies & booking 🤖",
           "Automated client & worker WhatsApp alerts",
           "Excludes promotional showcase website",
           "Excludes custom branded interface theme",

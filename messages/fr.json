@@ -13,10 +13,10 @@
     "tutorials": "Tutoriels"
   },
   "hero": {
-    "badge": "Système intelligent d'automatisation WhatsApp et de gestion de salon",
+    "badge": "Système intelligent de Chatbot WhatsApp et de gestion de salon",
     "title": "Passez au niveau supérieur de gestion de salon",
     "titleHighlight": "avec un assistant WhatsApp intelligent",
-    "subtitle": "Découvrez une façon révolutionnaire de gérer vos rendez-vous et de développer votre activité. salondztech est un système de bureau hors ligne intelligent qui discute et rappelle automatiquement vos clients directement sur WhatsApp. Rejoignez le top 1% des salons d'élite et passez à une vie professionnelle différente.",
+    "subtitle": "Découvrez une façon révolutionnaire de gérer vos rendez-vous et de développer votre activité. salondztech intègre un chatbot WhatsApp intelligent qui discute avec vos clients et enregistre leurs rendez-vous automatiquement, en plus des rappels et reçus. Rejoignez le top 1% des salons d'élite.",
     "tryFree": "Essai Gratuit",
     "buyNow": "Rejoindre le top 1%",
     "downloadApp": "Obtenir l'accès maintenant",
@@ -43,6 +43,7 @@
       { "key": "loyalty", "title": "Programme de fidélité intégré", "description": "Points automatiques pour chaque service. Historique complet du client — services, fréquence et dépenses — toujours à portée de main." },
       { "key": "analytics", "title": "Analyses avancées", "description": "Services les plus vendus, calcul automatique du bénéfice net après charges et salaires, et rapports financiers PDF en un clic." },
       { "key": "whatsapp", "title": "Relances WhatsApp Auto", "description": "Envoyez des confirmations de réservation, rappels 1h, alertes retard 30m/1h et reçus de paiement directement sur le téléphone des clients." },
+      { "key": "chatbot", "title": "Chatbot de Réservation WhatsApp", "description": "Un robot répondeur intelligent qui discute avec vos clients sur WhatsApp, propose des créneaux libres et enregistre automatiquement les réservations (VIP & Abonnement)." },
       { "key": "multilang", "title": "Arabe, Français & Anglais", "description": "Changez la langue de l'interface instantanément. Mise en page RTL complète en arabe. Mode sombre et clair inclus." }
     ]
   },
@@ -110,6 +111,7 @@
           "Essai gratuit de 7 jours (Téléchargez & testez toutes les fonctions gratuitement)",
           "Tout ce qui est inclus dans Licence Standard",
           "Nombre de coiffeurs et employés illimité",
+          "Chatbot WhatsApp intelligent pour réponses & réservation automatique (Chatbot) 🤖",
           "Notifications et reçus WhatsApp automatiques (clients)",
           "Notifications WhatsApp pour les coiffeurs (rdv & présence)",
           "Rappels de visite hebdomadaires (WhatsApp Broadcast)",
@@ -135,6 +137,7 @@
           "Toutes les fonctionnalités avancées de la Licence VIP",
           "Pas de frais de licence initiaux importants",
           "Nombre de coiffeurs et employés illimité",
+          "Chatbot WhatsApp intelligent pour réponses & réservation automatique 🤖",
           "Alertes WhatsApp automatiques clients et employés",
           "Sans site web vitrine professionnel",
           "Sans design d'interface personnalisé à la marque",

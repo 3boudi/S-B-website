@@ -17,6 +17,7 @@ import {
   BarChart3,
   Globe,
   MessageSquare,
+  Bot,
 } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -28,6 +29,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   loyalty: Star,
   analytics: BarChart3,
   whatsapp: MessageSquare,
+  chatbot: Bot,
   multilang: Globe,
 };
 
