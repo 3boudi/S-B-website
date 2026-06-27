@@ -22,7 +22,10 @@
     "downloadApp": "احصل على صلاحية الدخول الآن",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "noCredit": "يشتغل محلياً على كمبيوترك (الإنترنت مطلوب فقط للتفعيل والواتساب)",
-    "demoLink": "https://salonsoftware.netlify.app/"
+    "demoLink": "https://salonsoftware.netlify.app/",
+    "chatbotBotMessage1": "مرحباً بك! كيف يمكنني مساعدتك في الحجز اليوم؟ 🤖",
+    "chatbotUserMessage": "أريد حجز موعد قص شعر",
+    "chatbotBotMessage2": "لدينا موعد متاح في الساعة 14:00 اليوم. هل تؤكد الحجز؟"
   },
   "dashboard": {
     "title": "كل شيء في مكان واحد",

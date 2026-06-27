@@ -22,7 +22,10 @@
     "downloadApp": "Get Access Now",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "noCredit": "Runs locally on Windows (Internet required for activation & WhatsApp).",
-    "demoLink": "https://salonsoftware.netlify.app/"
+    "demoLink": "https://salonsoftware.netlify.app/",
+    "chatbotBotMessage1": "Welcome! How can I help you book today? 🤖",
+    "chatbotUserMessage": "I want to book a haircut appointment",
+    "chatbotBotMessage2": "We have an opening at 2:00 PM today. Shall I confirm?"
   },
   "dashboard": {
     "title": "Everything in One Place",

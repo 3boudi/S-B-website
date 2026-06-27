@@ -22,7 +22,10 @@
     "downloadApp": "Obtenir l'accès maintenant",
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "noCredit": "Fonctionne en local sur Windows (Internet requis pour l'activation & WhatsApp).",
-    "demoLink": "https://salonsoftware.netlify.app/"
+    "demoLink": "https://salonsoftware.netlify.app/",
+    "chatbotBotMessage1": "Bienvenue ! Comment puis-je vous aider à réserver aujourd'hui ? 🤖",
+    "chatbotUserMessage": "Je veux réserver un créneau pour une coupe",
+    "chatbotBotMessage2": "Nous avons un créneau libre à 14h00 aujourd'hui. Je confirme ?"
   },
   "dashboard": {
     "title": "Tout au même endroit",
