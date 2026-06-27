@@ -227,7 +227,18 @@
     "standardDesc": "Essential version for growing salons (up to 5 workers). This version requires a purchased license and active activation code to operate.",
     "standardCta": "Download for Activation",
     "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
-    "pricingTitle": "Pricing Plans & License Offers"
+    "pricingTitle": "Pricing Plans & License Offers",
+    "androidSectionTitle": "Android OS (Tablets & Phones)",
+    "windowsSectionTitle": "Windows OS (PC / Laptop)",
+    "androidVipTitle": "VIP Premium Android App",
+    "androidVipDesc": "Complete version for Android tablets and phones. Control all advanced features (WhatsApp, staff, inventory) from your mobile device.",
+    "androidVipCta": "Download VIP APK",
+    "androidStandardTitle": "Essential Android App",
+    "androidStandardDesc": "Essential version for Android tablets and phones. Easy checkout, client tracking, and appointment booking on any Android device.",
+    "androidStandardCta": "Download APK",
+    "androidNote": "⚠️ NOTE: For best experience and comfortable daily use, it is highly recommended to run the system on a tablet or computer.",
+    "downloadLinkAndroidVip": "https://salondz.tech/download/salondztech-vip.apk",
+    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk"
   },
   "guidePage": {
     "title": "User Guide",

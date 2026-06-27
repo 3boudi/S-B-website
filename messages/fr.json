@@ -38,25 +38,77 @@
     "title": "Tous les outils pour votre salon",
     "subtitle": "salondztech remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
     "list": [
-      { "key": "dashboard", "title": "Tableau de bord central", "description": "Suivi des revenus en temps réel, classement des meilleurs clients, rendez-vous du jour et transactions — dès l'ouverture de l'application." },
-      { "key": "pos", "title": "Point de vente ultra-rapide", "description": "Ajoutez services et produits en quelques secondes, appliquez les remises fidélité et imprimez des reçus professionnels." },
-      { "key": "appointments", "title": "Réservation intelligente", "description": "Planning visuel par coiffeur avec prévention des conflits. Le système bloque les doubles réservations et marque les absences automatiquement." },
-      { "key": "payroll", "title": "Paie automatisée", "description": "Pointage en un clic. Le système calcule le salaire journalier, suit les avances et gère les retraits sans erreur." },
-      { "key": "inventory", "title": "Gestion d'inventaire intelligente", "description": "Suivez chaque produit — shampoings, lames, gels, serviettes. Les alertes visuelles de stock bas vous indiquent quoi commander." },
-      { "key": "loyalty", "title": "Programme de fidélité intégré", "description": "Points automatiques pour chaque service. Historique complet du client — services, fréquence et dépenses — toujours à portée de main." },
-      { "key": "analytics", "title": "Analyses avancées", "description": "Services les plus vendus, calcul automatique du bénéfice net après charges et salaires, et rapports financiers PDF en un clic." },
-      { "key": "whatsapp", "title": "Relances WhatsApp Auto", "description": "Envoyez des confirmations de réservation, rappels 1h, alertes retard 30m/1h et reçus de paiement directement sur le téléphone des clients." },
-      { "key": "chatbot", "title": "Chatbot de Réservation WhatsApp", "description": "Un robot répondeur intelligent qui discute avec vos clients sur WhatsApp, propose des créneaux libres et enregistre automatiquement les réservations (VIP & Abonnement)." },
-      { "key": "multilang", "title": "Arabe, Français & Anglais", "description": "Changez la langue de l'interface instantanément. Mise en page RTL complète en arabe. Mode sombre et clair inclus." }
+      {
+        "key": "dashboard",
+        "title": "Tableau de bord central",
+        "description": "Suivi des revenus en temps réel, classement des meilleurs clients, rendez-vous du jour et transactions — dès l'ouverture de l'application."
+      },
+      {
+        "key": "pos",
+        "title": "Point de vente ultra-rapide",
+        "description": "Ajoutez services et produits en quelques secondes, appliquez les remises fidélité et imprimez des reçus professionnels."
+      },
+      {
+        "key": "appointments",
+        "title": "Réservation intelligente",
+        "description": "Planning visuel par coiffeur avec prévention des conflits. Le système bloque les doubles réservations et marque les absences automatiquement."
+      },
+      {
+        "key": "payroll",
+        "title": "Paie automatisée",
+        "description": "Pointage en un clic. Le système calcule le salaire journalier, suit les avances et gère les retraits sans erreur."
+      },
+      {
+        "key": "inventory",
+        "title": "Gestion d'inventaire intelligente",
+        "description": "Suivez chaque produit — shampoings, lames, gels, serviettes. Les alertes visuelles de stock bas vous indiquent quoi commander."
+      },
+      {
+        "key": "loyalty",
+        "title": "Programme de fidélité intégré",
+        "description": "Points automatiques pour chaque service. Historique complet du client — services, fréquence et dépenses — toujours à portée de main."
+      },
+      {
+        "key": "analytics",
+        "title": "Analyses avancées",
+        "description": "Services les plus vendus, calcul automatique du bénéfice net après charges et salaires, et rapports financiers PDF en un clic."
+      },
+      {
+        "key": "whatsapp",
+        "title": "Relances WhatsApp Auto",
+        "description": "Envoyez des confirmations de réservation, rappels 1h, alertes retard 30m/1h et reçus de paiement directement sur le téléphone des clients."
+      },
+      {
+        "key": "chatbot",
+        "title": "Chatbot de Réservation WhatsApp",
+        "description": "Un robot répondeur intelligent qui discute avec vos clients sur WhatsApp, propose des créneaux libres et enregistre automatiquement les réservations (VIP & Abonnement)."
+      },
+      {
+        "key": "multilang",
+        "title": "Arabe, Français & Anglais",
+        "description": "Changez la langue de l'interface instantanément. Mise en page RTL complète en arabe. Mode sombre et clair inclus."
+      }
     ]
   },
   "howItWorks": {
     "title": "Opérationnel en quelques minutes",
     "subtitle": "Aucune connaissance technique requise. Pas de configuration cloud. Installez et commencez.",
     "steps": [
-      { "number": "01", "title": "Installez sur votre PC Windows", "description": "Téléchargez et installez salondztech sur votre ordinateur d'accueil. Base locale, pas d'internet requis pour la gestion quotidienne." },
-      { "number": "02", "title": "Configurez vos services et employés", "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste." },
-      { "number": "03", "title": "Lancez votre activité", "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord." }
+      {
+        "number": "01",
+        "title": "Installez sur votre PC Windows",
+        "description": "Téléchargez et installez salondztech sur votre ordinateur d'accueil. Base locale, pas d'internet requis pour la gestion quotidienne."
+      },
+      {
+        "number": "02",
+        "title": "Configurez vos services et employés",
+        "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste."
+      },
+      {
+        "number": "03",
+        "title": "Lancez votre activité",
+        "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord."
+      }
     ]
   },
   "pricing": {
@@ -160,13 +212,34 @@
     "title": "Questions fréquentes",
     "subtitle": "Tout ce que vous devez savoir avant d'acheter.",
     "items": [
-      { "q": "Est-ce que salondztech nécessite une connexion internet ?", "a": "L'application fonctionne et stocke vos données localement sur votre PC (sans frais cloud ni lenteurs). Cependant, une connexion internet est nécessaire uniquement pour l'activation initiale de la licence et pour l'envoi des messages WhatsApp automatisés." },
-      { "q": "Quels systèmes d'exploitation sont supportés ?", "a": "salondztech fonctionne sous Windows 10 et Windows 11. Il s'installe directement sur votre ordinateur d'accueil ou de bureau." },
-      { "q": "Puis-je essayer le logiciel avant de nous rejoindre ?", "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide." },
-      { "q": "Comment rejoindre le top 1% ?", "a": "Cliquez sur 'Rejoindre le top 1%' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois validé, nous vous envoyons votre code d'activation immédiatement." },
-      { "q": "Y a-t-il un support arabe et RTL ?", "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche." },
-      { "q": "Puis-je l'utiliser pour plusieurs salons ?", "a": "Chaque licence couvre une installation. Contactez-nous pour un tarif multi-salons." },
-      { "q": "Que se passe-t-il après l'achat ?", "a": "Nous vous envoyons le code d'activation et nous vous aidons à le configurer. L'installation prend moins de 15 minutes." }
+      {
+        "q": "Est-ce que salondztech nécessite une connexion internet ?",
+        "a": "L'application fonctionne et stocke vos données localement sur votre PC (sans frais cloud ni lenteurs). Cependant, une connexion internet est nécessaire uniquement pour l'activation initiale de la licence et pour l'envoi des messages WhatsApp automatisés."
+      },
+      {
+        "q": "Quels systèmes d'exploitation sont supportés ?",
+        "a": "salondztech fonctionne sous Windows 10 et Windows 11. Il s'installe directement sur votre ordinateur d'accueil ou de bureau."
+      },
+      {
+        "q": "Puis-je essayer le logiciel avant de nous rejoindre ?",
+        "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide."
+      },
+      {
+        "q": "Comment rejoindre le top 1% ?",
+        "a": "Cliquez sur 'Rejoindre le top 1%' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois validé, nous vous envoyons votre code d'activation immédiatement."
+      },
+      {
+        "q": "Y a-t-il un support arabe et RTL ?",
+        "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche."
+      },
+      {
+        "q": "Puis-je l'utiliser pour plusieurs salons ?",
+        "a": "Chaque licence couvre une installation. Contactez-nous pour un tarif multi-salons."
+      },
+      {
+        "q": "Que se passe-t-il après l'achat ?",
+        "a": "Nous vous envoyons le code d'activation et nous vous aidons à le configurer. L'installation prend moins de 15 minutes."
+      }
     ]
   },
   "cta": {
@@ -227,7 +300,18 @@
     "standardDesc": "Version essentielle pour salons en croissance (jusqu'à 5 employés). Cette version nécessite une licence achetée et un code d'activation pour fonctionner.",
     "standardCta": "Télécharger pour activation",
     "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
-    "pricingTitle": "Bans de Tarifs & Activation de la licence"
+    "pricingTitle": "Bans de Tarifs & Activation de la licence",
+    "androidSectionTitle": "Système Android (Tablettes & Téléphones)",
+    "windowsSectionTitle": "Système Windows (PC / Ordinateur)",
+    "androidVipTitle": "Version Android VIP Premium",
+    "androidVipDesc": "Version complète pour tablettes et téléphones Android. Gérez toutes les fonctionnalités avancées (WhatsApp, employés, stocks) depuis votre mobile.",
+    "androidVipCta": "Télécharger l'APK VIP",
+    "androidStandardTitle": "Version Android Essentielle",
+    "androidStandardDesc": "Version essentielle pour tablettes et téléphones Android. Enregistrement des rendez-vous, encaissement rapide et gestion client simplifiée.",
+    "androidStandardCta": "Télécharger l'APK",
+    "androidNote": " NOTE : Pour un confort d'utilisation optimal au quotidien, il est fortement conseillé d'utiliser ce système sur tablette ou ordinateur.",
+    "downloadLinkAndroidVip": "https://salondz.tech/download/salondztech-vip.apk",
+    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk"
   },
   "guidePage": {
     "title": "Guide de l'utilisateur",

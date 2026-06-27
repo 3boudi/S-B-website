@@ -227,7 +227,18 @@
     "standardDesc": "النسخة الأساسية مخصصة للصالونات المتوسطة (حتى 5 عمال). هذه النسخة تحتاج إلى شراء رخصة وكود تفعيل مباشر لكي تعمل.",
     "standardCta": "تحميل للشراء والتفعيل",
     "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
-    "pricingTitle": "باقات الأسعار والترخيص المتاحة"
+    "pricingTitle": "باقات الأسعار والترخيص المتاحة",
+    "androidSectionTitle": "نظام أندرويد (التابلت والهواتف)",
+    "windowsSectionTitle": "نظام ويندوز (كمبيوتر / لابتوب)",
+    "androidVipTitle": "نسخة أندرويد VIP الاحترافية",
+    "androidVipDesc": "النسخة الكاملة لأجهزة التابلت والهواتف العاملة بنظام أندرويد. تسيير كافة الميزات والخصائص والواتساب من جهازك المحمول.",
+    "androidVipCta": "تحميل تطبيق VIP APK",
+    "androidStandardTitle": "نسخة أندرويد الأساسية",
+    "androidStandardDesc": "النسخة الأساسية لأجهزة التابلت والهواتف العاملة بنظام أندرويد. لحجز المواعيد، تسجيل الزبائن، وعملية الكاش والدفع بسهولة.",
+    "androidStandardCta": "تحميل تطبيق APK",
+    "androidNote": "⚠️ ملاحظة: ينصح هذا النظام بتابلات أو حاسوب في الاستعمال لتجربة استخدام مريحة وسهلة يومياً.",
+    "downloadLinkAndroidVip": "https://salondz.tech/download/salondztech-vip.apk",
+    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk"
   },
   "guidePage": {
     "title": "دليل المستخدم",
