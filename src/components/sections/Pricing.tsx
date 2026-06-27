@@ -143,21 +143,23 @@ export default function Pricing() {
                             </motion.span>
                           </div>
                         )}
-                        <div className="flex items-baseline overflow-hidden h-12">
-                          <motion.span
-                            key={currency}
-                            initial={{ y: 24, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 24 }}
-                            className="text-4xl font-extrabold text-brand-green font-[var(--font-display)]"
-                          >
-                            {currency === "DZD" ? plan.priceDzd : plan.priceUsd}
-                          </motion.span>
+                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:flex-wrap gap-1">
+                          <div className="overflow-hidden h-11 flex items-center">
+                            <motion.span
+                              key={currency}
+                              initial={{ y: 24, opacity: 0 }}
+                              animate={{ y: 0, opacity: 1 }}
+                              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                              className="text-3xl sm:text-4xl font-extrabold text-brand-green font-[var(--font-display)] leading-none"
+                            >
+                              {currency === "DZD" ? plan.priceDzd : plan.priceUsd}
+                            </motion.span>
+                          </div>
                           <motion.span
                             key={`period-${currency}`}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            className="ml-2 text-sm text-[var(--text-muted)]"
+                            className="text-xs sm:text-sm text-[var(--text-muted)] font-medium leading-none"
                           >
                             {currency === "DZD" ? plan.periodDzd : plan.periodUsd}
                           </motion.span>

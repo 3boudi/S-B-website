@@ -114,141 +114,144 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative w-full aspect-[4/3] flex items-center justify-center min-h-[350px] sm:min-h-[450px] lg:min-h-[500px]"
+            className="relative w-full flex items-center justify-center py-6 sm:py-10 lg:py-0"
           >
             {/* Glow behind the devices */}
             <div className="absolute inset-0 bg-gradient-to-tr from-brand-green/20 to-transparent blur-3xl opacity-60 rounded-full" />
 
-            {/* 1. Computer Mockup (Desktop Monitor/Laptop Screen) - Base Layer */}
-            <div className="relative w-[90%] md:w-[85%] aspect-[16/10] bg-slate-900 rounded-2xl border-4 border-slate-800 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-300 hover:shadow-[0_30px_70px_-10px_rgba(22,163,74,0.25)] animate-float">
-              {/* Screen Glare/Reflection */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
-              
-              {/* macOS Style Header */}
-              <div className="flex items-center gap-1.5 px-3 py-2 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
-                <div className="h-2 w-2 rounded-full bg-[#FF5F57]" />
-                <div className="h-2 w-2 rounded-full bg-[#FFBD2E]" />
-                <div className="h-2 w-2 rounded-full bg-[#28C840]" />
-                <div className="flex-1 text-center pr-8">
-                  <span className="text-[10px] text-slate-400 font-mono tracking-tight">salondztech.app/dashboard</span>
-                </div>
-              </div>
-              
-              {/* Main Dashboard Screenshot */}
-              <div className="relative w-full h-[calc(100%-28px)] bg-[#fafafa] dark:bg-[#0A0F0D]">
-                <Image
-                  src="/dashboard.png"
-                  alt="salondztech Desktop Dashboard"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* 2. Tablet Mockup (iPad/Android Tablet) - Middle Layer, overlapping Left */}
-            <div className="absolute left-[2%] bottom-[5%] w-[38%] aspect-[3/4] bg-slate-950 rounded-[20px] p-2 border-[5px] border-slate-900 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)] z-20 overflow-hidden transform -rotate-1 hover:rotate-0 transition-all duration-300">
-              <div className="relative w-full h-full rounded-[12px] bg-gradient-to-b from-white to-slate-50 border border-slate-200 flex flex-col justify-between p-3 overflow-hidden">
-                {/* Glare */}
+            {/* Proportional Devices Wrapper */}
+            <div className="relative w-[88%] sm:w-[85%] aspect-[16/10] mx-auto my-6">
+              {/* 1. Computer Mockup (Desktop Monitor/Laptop Screen) - Base Layer */}
+              <div className="relative w-full h-full bg-slate-900 rounded-2xl border-2 sm:border-4 border-slate-800 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-300 hover:shadow-[0_30px_70px_-10px_rgba(22,163,74,0.25)] animate-float">
+                {/* Screen Glare/Reflection */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
                 
-                {/* Top Camera Dot */}
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-900 absolute top-2 left-1/2 -translate-x-1/2" />
+                {/* macOS Style Header */}
+                <div className="flex items-center gap-1.5 px-3 py-1.5 sm:py-2 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#FF5F57]" />
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#FFBD2E]" />
+                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#28C840]" />
+                  <div className="flex-1 text-center pr-8">
+                    <span className="text-[8px] sm:text-[10px] text-slate-400 font-mono tracking-tight">salondztech.app/dashboard</span>
+                  </div>
+                </div>
                 
-                {/* Tablet UI Mockup */}
-                <div className="w-full flex justify-between items-center border-b border-slate-200/80 pb-1.5">
-                  <div className="flex items-center gap-1">
-                    <div className="relative w-3.5 h-3.5 rounded bg-brand-green/10 p-0.5">
+                {/* Main Dashboard Screenshot */}
+                <div className="relative w-full h-[calc(100%-24px)] sm:h-[calc(100%-28px)] bg-[#fafafa] dark:bg-[#0A0F0D]">
+                  <Image
+                    src="/dashboard.png"
+                    alt="salondztech Desktop Dashboard"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* 2. Tablet Mockup (iPad/Android Tablet) - Middle Layer, overlapping Left */}
+              <div className="absolute -left-[5%] -bottom-[8%] w-[38%] aspect-[3/4] bg-slate-950 rounded-[12px] sm:rounded-[20px] p-1 sm:p-2 border-[3px] sm:border-[5px] border-slate-900 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.6)] z-20 overflow-hidden transform -rotate-1 hover:rotate-0 transition-all duration-300">
+                <div className="relative w-full h-full rounded-[8px] sm:rounded-[12px] bg-gradient-to-b from-white to-slate-50 border border-slate-200 flex flex-col justify-between p-1.5 sm:p-3 overflow-hidden">
+                  {/* Glare */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
+                  
+                  {/* Top Camera Dot */}
+                  <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-900 absolute top-1 sm:top-2 left-1/2 -translate-x-1/2" />
+                  
+                  {/* Tablet UI Mockup */}
+                  <div className="w-full flex justify-between items-center border-b border-slate-200/80 pb-1.5">
+                    <div className="flex items-center gap-0.5 sm:gap-1">
+                      <div className="relative w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded bg-brand-green/10 p-0.5">
+                        <Image
+                          src="/logo2.png"
+                          alt="Logo"
+                          width={14}
+                          height={14}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <span className="text-[5px] sm:text-[7px] font-bold text-slate-800">salondztech VIP</span>
+                    </div>
+                    <div className="w-6 h-1 sm:w-8 sm:h-1.5 rounded bg-slate-100" />
+                  </div>
+                  
+                  <div className="flex-1 flex flex-col items-center justify-center gap-1 sm:gap-2 py-1.5 sm:py-3 w-full">
+                    <div className="relative w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-slate-50 border border-slate-100 p-1 sm:p-2 flex items-center justify-center shadow-sm">
                       <Image
                         src="/logo2.png"
                         alt="Logo"
-                        width={14}
-                        height={14}
+                        width={48}
+                        height={48}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <span className="text-[7px] font-bold text-slate-800">salondztech VIP</span>
+                    <div className="text-center space-y-0.5">
+                      <p className="text-[5px] sm:text-[8px] font-bold text-slate-800 tracking-wide">VIP LICENSE</p>
+                      <p className="text-[4px] sm:text-[5px] text-brand-green font-semibold font-mono">Premium Edition</p>
+                    </div>
                   </div>
-                  <div className="w-8 h-1.5 rounded bg-slate-100" />
+                  
+                  {/* Tablet Bottom Indicator */}
+                  <div className="w-8 h-0.5 rounded-full bg-slate-300 mx-auto" />
                 </div>
-                
-                <div className="flex-1 flex flex-col items-center justify-center gap-2 py-3 w-full">
-                  <div className="relative w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 p-2 flex items-center justify-center shadow-sm">
-                    <Image
-                      src="/logo2.png"
-                      alt="Logo"
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="text-center space-y-0.5">
-                    <p className="text-[8px] font-bold text-slate-800 tracking-wide">VIP LICENSE</p>
-                    <p className="text-[5px] text-brand-green font-semibold font-mono">Premium Edition</p>
-                  </div>
-                </div>
-                
-                {/* Tablet Bottom Indicator */}
-                <div className="w-12 h-0.5 rounded-full bg-slate-300 mx-auto" />
               </div>
-            </div>
 
-            {/* 3. Android Smartphone Mockup - Top Layer, overlapping Right */}
-            <div className="absolute right-[5%] bottom-[8%] w-[24%] aspect-[9/19.5] bg-slate-950 rounded-[28px] p-1.5 border-[4px] border-slate-900 shadow-[0_25px_50px_-10px_rgba(0,0,0,0.7)] z-30 overflow-hidden transform rotate-2 hover:rotate-0 transition-all duration-300">
-              <div className="relative w-full h-full rounded-[22px] bg-[#efeae2] border border-slate-200/80 flex flex-col justify-between overflow-hidden">
-                {/* Phone Screen Glare */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
+              {/* 3. Android Smartphone Mockup - Top Layer, overlapping Right */}
+              <div className="absolute -right-[5%] -bottom-[4%] w-[24%] aspect-[9/19.5] bg-slate-950 rounded-[16px] sm:rounded-[28px] p-1 sm:p-1.5 border-[2px] sm:border-[4px] border-slate-900 shadow-[0_20px_40px_-8px_rgba(0,0,0,0.7)] z-30 overflow-hidden transform rotate-2 hover:rotate-0 transition-all duration-300">
+                <div className="relative w-full h-full rounded-[12px] sm:rounded-[22px] bg-[#efeae2] border border-slate-200/80 flex flex-col justify-between overflow-hidden">
+                  {/* Phone Screen Glare */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
 
-                {/* Android Punch Hole Camera */}
-                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-black border border-slate-800 z-20" />
+                  {/* Android Punch Hole Camera */}
+                  <div className="absolute top-1 sm:top-1.5 left-1/2 -translate-x-1/2 w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-black border border-slate-800 z-20" />
 
-                {/* Top Status Bar Mockup */}
-                <div className="flex justify-between items-center text-[5px] text-slate-600 font-semibold font-mono px-2.5 pt-1 z-10">
-                  <span>09:41</span>
-                  <div className="flex items-center gap-0.5">
-                    <span>5G</span>
-                    <div className="w-2.5 h-1.5 border border-slate-500 rounded-sm" />
+                  {/* Top Status Bar Mockup */}
+                  <div className="flex justify-between items-center text-[4px] sm:text-[5px] text-slate-600 font-semibold font-mono px-1.5 sm:px-2.5 pt-0.5 sm:pt-1 z-10">
+                    <span>09:41</span>
+                    <div className="flex items-center gap-0.5">
+                      <span>5G</span>
+                      <div className="w-2 sm:w-2.5 h-1 sm:h-1.5 border border-slate-500 rounded-xs" />
+                    </div>
                   </div>
+
+                  {/* Phone UI Content - WhatsApp Chatbot preview */}
+                  <div className="flex-1 flex flex-col justify-start w-full">
+                    {/* WhatsApp style header */}
+                    <div className="flex items-center gap-1 sm:gap-1.5 bg-[#008069] px-1.5 sm:px-2.5 py-1 sm:py-1.5 shadow-sm text-white">
+                      <div className="relative w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white p-0.5 shadow-xs">
+                        <Image
+                          src="/logo2.png"
+                          alt="Logo"
+                          width={16}
+                          height={16}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[4px] sm:text-[6px] font-bold text-white leading-none">WhatsApp Bot</span>
+                        <span className="text-[3px] sm:text-[4px] text-emerald-100 leading-none">online</span>
+                      </div>
+                    </div>
+
+                    {/* Chat Bubbles */}
+                    <div className="space-y-1 sm:space-y-1.5 flex-1 flex flex-col justify-center px-1.5 py-1">
+                      {/* Bot Message (Left) */}
+                      <div className="bg-white text-slate-800 border border-slate-200/30 shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-md sm:rounded-lg rounded-tl-none p-0.5 sm:p-1 text-[3.5px] sm:text-[5px] leading-normal text-left self-start max-w-[85%]">
+                        {t("chatbotBotMessage1")}
+                      </div>
+                      {/* User Message (Right) */}
+                      <div className="bg-[#e2f9e9] text-slate-800 border border-[#bce8b7] shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-md sm:rounded-lg rounded-tr-none p-0.5 sm:p-1 text-[3.5px] sm:text-[5px] leading-normal text-right self-end max-w-[85%]">
+                        {t("chatbotUserMessage")}
+                      </div>
+                      {/* Bot Message (Left) */}
+                      <div className="bg-white text-slate-800 border border-slate-200/30 shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-md sm:rounded-lg rounded-tl-none p-0.5 sm:p-1 text-[3.5px] sm:text-[5px] leading-normal text-left self-start max-w-[85%]">
+                        {t("chatbotBotMessage2")}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Navigation Pill */}
+                  <div className="w-6 sm:w-10 h-0.5 rounded-full bg-slate-400 mx-auto mb-1 z-10" />
                 </div>
-
-                {/* Phone UI Content - WhatsApp Chatbot preview */}
-                <div className="flex-1 flex flex-col justify-start w-full">
-                  {/* WhatsApp style header */}
-                  <div className="flex items-center gap-1.5 bg-[#008069] px-2.5 py-1.5 shadow-sm text-white">
-                    <div className="relative w-4 h-4 rounded-full bg-white p-0.5 shadow-sm">
-                      <Image
-                        src="/logo2.png"
-                        alt="Logo"
-                        width={16}
-                        height={16}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[6px] font-bold text-white leading-none">WhatsApp Bot</span>
-                      <span className="text-[4px] text-emerald-100 leading-none">online</span>
-                    </div>
-                  </div>
-
-                  {/* Chat Bubbles */}
-                  <div className="space-y-1.5 flex-1 flex flex-col justify-center px-2 py-1.5">
-                    {/* Bot Message (Left) */}
-                    <div className="bg-white text-slate-800 border border-slate-200/30 shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-lg rounded-tl-none p-1 text-[5px] leading-normal text-left self-start max-w-[85%]">
-                      {t("chatbotBotMessage1")}
-                    </div>
-                    {/* User Message (Right) */}
-                    <div className="bg-[#e2f9e9] text-slate-800 border border-[#bce8b7] shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-lg rounded-tr-none p-1 text-[5px] leading-normal text-right self-end max-w-[85%]">
-                      {t("chatbotUserMessage")}
-                    </div>
-                    {/* Bot Message (Left) */}
-                    <div className="bg-white text-slate-800 border border-slate-200/30 shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-lg rounded-tl-none p-1 text-[5px] leading-normal text-left self-start max-w-[85%]">
-                      {t("chatbotBotMessage2")}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Navigation Pill */}
-                <div className="w-10 h-0.5 rounded-full bg-slate-400 mx-auto mb-1 z-10" />
               </div>
             </div>
           </motion.div>
