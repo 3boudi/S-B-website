@@ -4,7 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Pricing from "@/components/sections/Pricing";
 import { Button } from "@/components/ui/button";
-import { Download, Sparkles, ShieldCheck, Monitor, Smartphone, AlertCircle } from "lucide-react";
+import { Download, Sparkles, ShieldCheck, AlertCircle } from "lucide-react";
+import Image from "next/image";
 
 export default async function DownloadPage({
   params,
@@ -42,22 +43,28 @@ function DownloadContent() {
       </div>
 
       {/* Recommendation Notice */}
-      <div className="max-w-3xl mx-auto mb-16 p-4 rounded-xl border border-amber-500/20 bg-amber-500/5 text-amber-700 dark:text-amber-300 text-sm font-semibold flex items-center justify-center gap-2.5 text-center">
+      <div className="max-w-3xl mx-auto mb-16 p-4 rounded-xl border border-amber-500/20 bg-amber-500/5 text-amber-700 dark:text-amber-300 text-sm font-semibold flex items-center justify-center gap-2.5 text-center shadow-2xs">
         <AlertCircle className="h-5 w-5 text-amber-500 shrink-0" />
         <p>{t("androidNote")}</p>
       </div>
 
       {/* OS Section: Windows (PC) */}
       <div className="mb-20">
-        <div className="flex items-center gap-3 mb-8 border-b border-border pb-4 justify-start">
-          <div className="p-2 rounded-xl bg-brand-green/10 text-brand-green">
-            <Monitor className="h-6 w-6" />
+        <div className="flex items-center gap-3 mb-8 p-3 rounded-2xl bg-brand-green/5 dark:bg-brand-green/10 border border-brand-green/20 shadow-2xs max-w-fit pr-6 pl-3 rtl:pl-6 rtl:pr-3">
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white dark:bg-slate-950 p-1.5 flex items-center justify-center shadow-xs shrink-0">
+            <Image
+              src="/icons8-windows-11-480.png"
+              alt="Windows 11"
+              width={40}
+              height={40}
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
-            <h2 className="text-2xl font-bold font-[var(--font-display)] text-[var(--text-primary)] leading-tight">
+            <h2 className="text-sm xs:text-base sm:text-lg md:text-xl font-black font-[var(--font-display)] text-slate-800 dark:text-slate-100 leading-none whitespace-nowrap">
               {t("windowsSectionTitle")}
             </h2>
-            <p className="text-xs text-[var(--text-secondary)] mt-0.5">Windows 10 / 11</p>
+            <p className="text-[10px] sm:text-xs text-brand-green font-semibold mt-1">Windows 10 / 11</p>
           </div>
         </div>
 
@@ -107,15 +114,21 @@ function DownloadContent() {
 
       {/* OS Section: Android (Tablets & Phones) */}
       <div className="mb-20">
-        <div className="flex items-center gap-3 mb-8 border-b border-border pb-4 justify-start">
-          <div className="p-2 rounded-xl bg-brand-green/10 text-brand-green">
-            <Smartphone className="h-6 w-6" />
+        <div className="flex items-center gap-3 mb-8 p-3 rounded-2xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 shadow-2xs max-w-fit pr-6 pl-3 rtl:pl-6 rtl:pr-3">
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white dark:bg-slate-950 p-1 flex items-center justify-center shadow-xs shrink-0">
+            <Image
+              src="/Google_Play-Icon-Logo.wine.png"
+              alt="Android Google Play"
+              width={40}
+              height={40}
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
-            <h2 className="text-2xl font-bold font-[var(--font-display)] text-[var(--text-primary)] leading-tight">
+            <h2 className="text-sm xs:text-base sm:text-lg md:text-xl font-black font-[var(--font-display)] text-slate-800 dark:text-slate-100 leading-none whitespace-nowrap">
               {t("androidSectionTitle")}
             </h2>
-            <p className="text-xs text-[var(--text-secondary)] mt-0.5">Android OS (APK)</p>
+            <p className="text-[10px] sm:text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-1">Android OS (APK)</p>
           </div>
         </div>
 
