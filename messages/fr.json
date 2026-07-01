@@ -311,7 +311,11 @@
     "androidStandardCta": "Télécharger l'APK",
     "androidNote": " NOTE : Pour un confort d'utilisation optimal au quotidien, il est fortement conseillé d'utiliser ce système sur tablette ou ordinateur.",
     "downloadLinkAndroidVip": "https://salondz.tech/download/salondztech-vip.apk",
-    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk"
+    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk",
+    "comingSoonBadge": "Bientôt Disponible",
+    "androidComingSoonTitle": "L'application Android arrive bientôt",
+    "androidComingSoonDesc": "Notre application Android native est actuellement en cours de développement. Nous l'optimisons pour offrir une expérience fluide sur tablettes et smartphones, vous permettant de gérer vos rendez-vous, de suivre vos clients et d'encaisser facilement lors de vos déplacements.",
+    "androidComingSoonNote": "Une fois publiée, vous pourrez la télécharger directement sur le Google Play Store ou sous forme de fichier APK autonome."
   },
   "guidePage": {
     "title": "Guide de l'utilisateur",

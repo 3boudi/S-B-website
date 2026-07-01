@@ -238,7 +238,11 @@
     "androidStandardCta": "Download APK",
     "androidNote": "⚠️ NOTE: For best experience and comfortable daily use, it is highly recommended to run the system on a tablet or computer.",
     "downloadLinkAndroidVip": "https://salondz.tech/download/salondztech-vip.apk",
-    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk"
+    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk",
+    "comingSoonBadge": "Coming Soon",
+    "androidComingSoonTitle": "Android App is Coming Soon",
+    "androidComingSoonDesc": "Our native Android application is currently under active development. We are optimizing it to deliver a seamless experience on tablets and smartphones, allowing you to manage appointments, track clients, and checkout easily on the go.",
+    "androidComingSoonNote": "Once released, you will be able to download it directly from the Google Play Store or as a standalone APK file."
   },
   "guidePage": {
     "title": "User Guide",

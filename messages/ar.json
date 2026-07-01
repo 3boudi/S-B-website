@@ -238,7 +238,11 @@
     "androidStandardCta": "تحميل تطبيق APK",
     "androidNote": "⚠️ ملاحظة: ينصح هذا النظام بتابلات أو حاسوب في الاستعمال لتجربة استخدام مريحة وسهلة يومياً.",
     "downloadLinkAndroidVip": "https://salondz.tech/download/salondztech-vip.apk",
-    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk"
+    "downloadLinkAndroidStandard": "https://salondz.tech/download/salondztech-standard.apk",
+    "comingSoonBadge": "قريباً جداً",
+    "androidComingSoonTitle": "تطبيق الأندرويد قادم قريباً",
+    "androidComingSoonDesc": "تطبيقنا المخصص لنظام أندرويد قيد التطوير النشط حالياً. نحن نعمل على تحسينه لتقديم تجربة سلسة ومثالية على الهواتف والأجهزة اللوحية، مما يتيح لك إدارة المواعيد، تتبع الزبائن، وإتمام عمليات الدفع بسهولة تامة أثناء التنقل.",
+    "androidComingSoonNote": "بمجرد إطلاقه، ستتمكن من تحميله مباشرة من متجر Google Play أو كملف APK مستقل."
   },
   "guidePage": {
     "title": "دليل المستخدم",
