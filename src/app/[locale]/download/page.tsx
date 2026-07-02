@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Download, Sparkles, ShieldCheck, AlertCircle } from "lucide-react";
 import Image from "next/image";
 
+// Placeholder variable for Microsoft Store URL.
+// Set this to the link of your app in the Microsoft Store to show the 'Get it from Microsoft Store' button.
+const MICROSOFT_STORE_URL = "";
+
 export default async function DownloadPage({
   params,
 }: {
@@ -84,12 +88,7 @@ function DownloadContent() {
               {t("vipDesc")}
             </p>
 
-            <Button size="lg" className="w-full bg-brand-green hover:bg-brand-green/90 text-white font-bold h-12" asChild>
-              <a href={t("downloadLinkVip")}>
-                <Download className="h-5 w-5" />
-                {t("vipCta")}
-              </a>
-            </Button>
+            <WindowsDownloadSection exeUrl={t("downloadLinkVip")} ctaText={t("vipCta")} variant="default" />
           </div>
 
           {/* Standard Card */}
@@ -102,12 +101,7 @@ function DownloadContent() {
               {t("standardDesc")}
             </p>
 
-            <Button size="lg" variant="outline" className="w-full h-12 border-border font-bold text-[var(--text-primary)]" asChild>
-              <a href={t("downloadLinkStandard")}>
-                <Download className="h-5 w-5" />
-                {t("standardCta")}
-              </a>
-            </Button>
+            <WindowsDownloadSection exeUrl={t("downloadLinkStandard")} ctaText={t("standardCta")} variant="outline" />
           </div>
         </div>
       </div>
@@ -183,6 +177,80 @@ function DownloadContent() {
       {/* Pricing component */}
       <div className="rounded-2xl overflow-hidden bg-transparent">
         <Pricing />
+      </div>
+    </div>
+  );
+}
+
+// Custom component to dynamically toggle between a single download button and double (EXE + Store) download options
+function WindowsDownloadSection({ 
+  exeUrl, 
+  ctaText, 
+  variant = "default" 
+}: { 
+  exeUrl: string; 
+  ctaText: string; 
+  variant?: "default" | "outline";
+}) {
+  if (!MICROSOFT_STORE_URL) {
+    return (
+      <Button 
+        size="lg" 
+        className={variant === "default" ? "w-full bg-brand-green hover:bg-brand-green/90 text-white font-bold h-12 flex items-center justify-center gap-2" : "w-full h-12 border-border font-bold text-[var(--text-primary)] flex items-center justify-center gap-2"} 
+        variant={variant === "outline" ? "outline" : "default"} 
+        asChild
+      >
+        <a href={exeUrl}>
+          <Download className="h-5 w-5" />
+          {ctaText}
+        </a>
+      </Button>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-4 mt-6">
+      {/* Option 1: Direct Executable Installer */}
+      <div className="flex flex-col gap-2">
+        <Button 
+          size="lg" 
+          className={variant === "default" ? "w-full bg-brand-green hover:bg-brand-green/90 text-white font-bold h-12 flex items-center justify-center gap-2" : "w-full h-12 border-border font-bold text-[var(--text-primary)] flex items-center justify-center gap-2"} 
+          variant={variant === "outline" ? "outline" : "default"} 
+          asChild
+        >
+          <a href={exeUrl}>
+            <Download className="h-5 w-5" />
+            <span>Download Installer (.exe)</span>
+          </a>
+        </Button>
+        <span className="text-[11px] text-[var(--text-secondary)] text-center font-medium leading-normal">
+          Recommended if you prefer installing directly from our website.
+        </span>
+      </div>
+
+      {/* Decorative Separator */}
+      <div className="relative flex py-1 items-center justify-center">
+        <div className="flex-grow border-t border-border/40"></div>
+        <span className="flex-shrink mx-3 text-[10px] font-bold tracking-wider text-[var(--text-muted)] uppercase">OR</span>
+        <div className="flex-grow border-t border-border/40"></div>
+      </div>
+
+      {/* Option 2: Microsoft Store Installation */}
+      <div className="flex flex-col gap-2">
+        <a
+          href={MICROSOFT_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-3 w-full h-12 px-6 rounded-lg bg-black hover:bg-slate-900 text-white font-bold border border-slate-800 transition-all shadow-xs hover:shadow-md cursor-pointer"
+        >
+          <svg className="w-4.5 h-4.5 fill-current shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/>
+          </svg>
+          <span className="text-sm font-semibold tracking-wide">Get it from Microsoft Store</span>
+        </a>
+        <span className="text-[11px] text-[var(--text-secondary)] text-center font-medium leading-normal">
+          Install securely through Microsoft Store with trusted Windows installation.
+        </span>
       </div>
     </div>
   );
