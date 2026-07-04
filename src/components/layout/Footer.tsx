@@ -44,12 +44,7 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t("tagline")}
             </p>
-            <Button variant="outline" size="sm" asChild>
-              <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <MonitorPlay className="h-4 w-4" />
-                {t("tryFree")}
-              </a>
-            </Button>
+
           </div>
 
           {/* Navigation Column */}
@@ -138,14 +133,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 sm:flex-row md:px-6">
           <p className="text-xs text-muted-foreground">{t("copyright")}</p>
-          <a
-            href="https://salonsoftware.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
-          >
-            {t("tryFree")}
-          </a>
+
         </div>
       </div>
     </footer>

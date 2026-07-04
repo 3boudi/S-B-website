@@ -94,12 +94,7 @@ export default function Navbar() {
                 {t("download")}
               </Link>
             </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <MonitorPlay className="h-4 w-4" />
-                {t("tryFree")}
-              </a>
-            </Button>
+
             <Button size="sm" onClick={() => openModal()}>
               <ShoppingCart className="h-4 w-4" />
               {t("buy")}
@@ -166,12 +161,7 @@ export default function Navbar() {
                   {t("download")}
                 </Link>
               </Button>
-              <Button variant="outline" className="w-full" asChild>
-                <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  <MonitorPlay className="h-4 w-4" />
-                  {t("tryFree")}
-                </a>
-              </Button>
+
               <Button className="w-full" onClick={() => { setMobileOpen(false); openModal(); }}>
                 <ShoppingCart className="h-4 w-4" />
                 {t("buy")}

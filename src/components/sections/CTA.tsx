@@ -44,22 +44,11 @@ export default function CTA() {
               {t("downloadApp")}
             </Link>
           </Button>
-          <div className="flex flex-col sm:flex-row gap-3 w-full">
+          <div className="flex flex-col gap-3 w-full">
             <Button
               size="lg"
               variant="outline"
-              className="border-white bg-brand-green-dark text-white hover:bg-brand-green-dark/80 hover:text-white w-full sm:w-1/2 justify-center"
-              asChild
-            >
-              <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <MonitorPlay className="h-5 w-5" />
-                {t("tryFree")}
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white bg-white text-black hover:bg-gray-100 w-full sm:w-1/2 justify-center"
+              className="border-white bg-white text-black hover:bg-gray-100 w-full justify-center"
               onClick={() => openModal()}
             >
               <ShoppingCart className="h-5 w-5" />

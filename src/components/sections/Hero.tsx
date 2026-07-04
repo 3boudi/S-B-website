@@ -85,14 +85,8 @@ export default function Hero() {
                   {t("downloadApp")}
                 </Link>
               </Button>
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
-                <Button size="lg" variant="outline" className="w-full sm:w-1/2 justify-center" asChild>
-                  <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-                    <MonitorPlay className="h-5 w-5" />
-                    {t("tryFree")}
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-1/2 justify-center" onClick={() => openModal()}>
+              <div className="flex flex-col gap-3 w-full">
+                <Button size="lg" variant="outline" className="w-full justify-center" onClick={() => openModal()}>
                   <ShoppingCart className="h-5 w-5" />
                   {t("buyNow")}
                 </Button>
