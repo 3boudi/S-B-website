@@ -222,7 +222,7 @@
     "vipTitle": "VIP Premium License (7-Day Trial)",
     "vipDesc": "Complete version to download and try free for 7 days with all advanced features enabled (WhatsApp, inventory, staff). Contact us after the trial to purchase an activation code.",
     "vipCta": "Download Free Trial (7 Days)",
-    "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
+    "downloadLinkVip": "/download/salondztech-vip-setup.exe",
     "standardTitle": "Essential License (Purchase Only)",
     "standardDesc": "Essential version for growing salons (up to 5 workers). This version requires a purchased license and active activation code to operate.",
     "standardCta": "Download for Activation",

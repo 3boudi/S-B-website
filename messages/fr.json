@@ -295,7 +295,7 @@
     "vipTitle": "Licence Premium VIP (Essai 7 jours)",
     "vipDesc": "Version complète à télécharger et à essayer gratuitement pendant 7 jours avec toutes les fonctionnalités avancées activées (WhatsApp, stocks, employés). Contactez-nous après l'essai pour acheter un code d'activation.",
     "vipCta": "Télécharger l'essai (7 jours gratuit)",
-    "downloadLinkVip": "https://salondz.tech/download/salondztech-vip-setup.exe",
+    "downloadLinkVip": "/download/salondztech-vip-setup.exe",
     "standardTitle": "Licence Essentielle (Achat uniquement)",
     "standardDesc": "Version essentielle pour salons en croissance (jusqu'à 5 employés). Cette version nécessite une licence achetée et un code d'activation pour fonctionner.",
     "standardCta": "Télécharger pour activation",
