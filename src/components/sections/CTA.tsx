@@ -44,16 +44,8 @@ export default function CTA() {
               {t("downloadApp")}
             </Link>
           </Button>
-          <div className="flex flex-col gap-3 w-full">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white bg-white text-black hover:bg-gray-100 w-full justify-center"
-              onClick={() => openModal()}
-            >
-              <ShoppingCart className="h-5 w-5" />
-              {t("buyNow")}
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-3 w-full">
+
           </div>
         </div>
 
