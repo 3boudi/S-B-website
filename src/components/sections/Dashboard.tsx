@@ -5,9 +5,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { MonitorPlay } from "lucide-react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
   const t = useTranslations("dashboard");
@@ -40,12 +38,6 @@ export default function Dashboard() {
 
       <div className="flex flex-col items-center gap-3 pb-16 -mt-16 sm:-mt-32 relative z-10 px-4 w-full">
         <p className="text-sm text-[var(--text-muted)] text-center">{t("caption")}</p>
-        <Button className="w-full sm:w-auto" asChild>
-          <a href="https://salonsoftware.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <MonitorPlay className="h-4 w-4" />
-            {t("tryFree")}
-          </a>
-        </Button>
       </div>
     </section>
   );
