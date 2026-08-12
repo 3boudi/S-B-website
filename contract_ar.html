@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عقد اتفاق وإنجاز برمجيات رسمية — SALON DZ TECH x SHEYMSS NAILS STORE</title>
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Vector Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- html2pdf.js for 1-Click PDF Save -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --brand-green: #09B300;
+      --brand-green-deep: #078A00;
+      --brand-green-light: #E6F7E6;
+      --brand-ink: #0E1F0E;
+      --brand-white: #FFFFFF;
+      --brand-white-soft: #F7FCF7;
+      --brand-border: #D8EAD8;
+      --brand-muted: #5A6E5A;
+      --brand-shadow-sm: 0 2px 10px rgba(9, 179, 0, 0.05);
+      --brand-shadow-md: 0 12px 28px -6px rgba(9, 179, 0, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+      background-color: #F4F7F4;
+      color: var(--brand-ink);
+      line-height: 1.7;
+      padding: 30px 0 80px 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Print Paper Card */
+    .paper-contract {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-border);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: var(--brand-shadow-md);
+      position: relative;
+    }
+
+    /* Top Dual Logos Header */
+    .header-dual-logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 28px;
+      border-bottom: 2px dashed var(--brand-border);
+      margin-bottom: 36px;
+    }
+
+    .logo-img {
+      height: 110px;
+      max-width: 260px;
+      object-fit: contain;
+    }
+
+    .header-contract-title {
+      text-align: center;
+    }
+
+    .main-contract-badge {
+      background: var(--brand-ink);
+      color: var(--brand-white);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .contract-doc-title {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--brand-green-deep);
+      line-height: 1.3;
+    }
+
+    .contract-doc-subtitle {
+      font-size: 0.92rem;
+      color: var(--brand-muted);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* Contract Metadata Grid */
+    .meta-box {
+      background: var(--brand-white-soft);
+      border: 1px solid var(--brand-border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .meta-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-lbl {
+      font-size: 0.8rem;
+      color: var(--brand-muted);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-val {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--brand-ink);
+      margin-top: 4px;
+    }
+
+    /* Sections Hierarchy */
+    .contract-section {
+      margin-bottom: 36px;
+    }
+
+    .section-heading {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--brand-green-deep);
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--brand-border);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: #1F331F;
+      line-height: 1.8;
+    }
+
+    .parties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .party-card {
+      background: var(--brand-white-soft);
+      border: 1px solid var(--brand-border);
+      border-right: 4px solid var(--brand-green);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .party-role {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--brand-green-deep);
+      text-transform: uppercase;
+    }
+
+    .party-name {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--brand-ink);
+      margin-top: 4px;
+    }
+
+    /* Requirement Bullets */
+    .req-list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .req-list li {
+      margin-bottom: 10px;
+      padding-right: 24px;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .req-list li::before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: var(--brand-green);
+      font-weight: 900;
+    }
+
+    /* Deposit Alert Box */
+    .deposit-alert-box {
+      background: #FFF9E6;
+      border: 2px solid #FFC107;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 16px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .deposit-alert-title {
+      font-weight: 900;
+      color: #996500;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .deposit-alert-desc {
+      font-size: 0.9rem;
+      color: #4A3500;
+      line-height: 1.6;
+    }
+
+    /* Instalments Schedule Table — Compact 1-Page Layout */
+    .table-instalments {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--brand-border);
+    }
+
+    .table-instalments th {
+      background: var(--brand-green-deep);
+      color: var(--brand-white);
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .table-instalments td {
+      padding: 5px 10px;
+      border-bottom: 1px solid var(--brand-border);
+      font-size: 0.8rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .table-instalments tr:nth-child(even) {
+      background: var(--brand-white-soft);
+    }
+
+    /* Clause Callout Box */
+    .clause-box {
+      background: #F0FDF0;
+      border: 1px solid var(--brand-border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+
+    .clause-box-title {
+      font-weight: 900;
+      color: var(--brand-green-deep);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Signature Section */
+    .signature-container {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 2px dashed var(--brand-border);
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .sig-card {
+      border: 2px dashed var(--brand-border);
+      border-radius: 16px;
+      padding: 24px;
+      background: var(--brand-white-soft);
+      text-align: center;
+    }
+
+    .sig-card-title {
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--brand-ink);
+    }
+
+    .sig-card-sub {
+      font-size: 0.85rem;
+      color: var(--brand-muted);
+      margin-bottom: 14px;
+    }
+
+    .canvas-wrap {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-border);
+      border-radius: 12px;
+      height: 140px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+    }
+
+    .btn-action-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .btn {
+      border: none;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-green {
+      background: var(--brand-green);
+      color: var(--brand-white);
+      box-shadow: 0 4px 14px rgba(9, 179, 0, 0.3);
+    }
+
+    .btn-green:hover {
+      background: var(--brand-green-deep);
+      transform: translateY(-2px);
+    }
+
+    /* 100% Mobile Responsive Layout */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px 6px;
+      }
+      .container {
+        padding: 0 4px;
+      }
+      .paper-contract {
+        padding: 20px 14px;
+        border-radius: 14px;
+      }
+      .header-dual-logos {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        text-align: center;
+      }
+      .logo-img {
+        height: 65px;
+        max-width: 180px;
+      }
+      .contract-doc-title {
+        font-size: 1.3rem;
+      }
+      .contract-doc-subtitle {
+        font-size: 0.85rem;
+      }
+      .meta-box {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 12px;
+      }
+      .parties-grid, .signature-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .table-instalments {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 0.76rem;
+      }
+      .table-instalments th, .table-instalments td {
+        padding: 6px 8px;
+      }
+      .btn-action-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Custom Modal Popup Dialog */
+    .custom-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .custom-modal-overlay.active {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    .custom-modal-card {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-border);
+      border-radius: 24px;
+      padding: 32px 28px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      transform: scale(0.9);
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .custom-modal-overlay.active .custom-modal-card {
+      transform: scale(1);
+    }
+
+    .custom-modal-icon-badge {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #FEF3C7;
+      color: #D97706;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px auto;
+    }
+
+    .custom-modal-icon-badge svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .custom-modal-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--brand-ink);
+      margin-bottom: 8px;
+    }
+
+    .custom-modal-msg {
+      font-size: 0.92rem;
+      color: var(--brand-muted);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .custom-modal-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 12px 24px;
+      font-size: 0.98rem;
+    }
+
+    /* Print Layout — Completely Hides All Browser Headers & Footers (URL, Date, Title) */
+    @page {
+      margin: 0 !important;
+      size: A4 portrait;
+    }
+
+    .print-page-footer {
+      display: none !important;
+    }
+
+    @media print {
+      html, body {
+        background: white !important;
+        padding: 10mm 14mm !important;
+        margin: 0 !important;
+      }
+      .paper-contract {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .btn-action-row, .btn-clear-sig {
+        display: none !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        padding-top: 10mm !important;
+      }
+      .signature-container {
+        page-break-before: always !important;
+        break-before: page !important;
+        padding-top: 10mm !important;
+      }
+      .print-page-footer {
+        display: none !important;
+      }
+      input[type="text"], input[type="tel"] {
+        display: none !important;
+      }
+      .print-only-val {
+        display: inline-block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="paper-contract">
+
+      <!-- Top Dual Logos & Header -->
+      <header class="header-dual-logos">
+        <!-- Right Logo: Client -->
+        <img src="client.png" alt="SHEYMSS NAILS STORE" class="logo-img">
+
+        <!-- Center Header -->
+        <div class="header-contract-title">
+          <span class="main-contract-badge">
+            <i data-lucide="file-check"></i> وثيقة عقد عمل اتفاقي رسمية
+          </span>
+          <h1 class="contract-doc-title">عقد اتفاق وإنجاز برمجيات وموقع إلكتروني</h1>
+          <p class="contract-doc-subtitle">تطوير وتثبيت نظام إدارة SHEYMSS لصالح SHEYMSS NAILS STORE بواسطة SALON DZ TECH</p>
+        </div>
+
+        <!-- Left Logo: Salon DZ Tech -->
+        <img src="solondztechcompany.png" alt="SALON DZ TECH" class="logo-img">
+      </header>
+
+      <!-- Metadata Box -->
+      <div class="meta-box">
+        <div class="meta-field">
+          <span class="meta-lbl"><i data-lucide="hash" style="width: 14px;"></i> مرجع العقد:</span>
+          <span class="meta-val">DZ-SHEYMSS-2026-08</span>
+        </div>
+        <div class="meta-field">
+          <span class="meta-lbl"><i data-lucide="calendar" style="width: 14px;"></i> تاريخ إبرام العقد:</span>
+          <span class="meta-val">12 أوت 2026</span>
+        </div>
+        <div class="meta-field">
+          <span class="meta-lbl"><i data-lucide="clock" style="width: 14px;"></i> مدة التنفيذ والتسليم:</span>
+          <span class="meta-val" style="color: var(--brand-green-deep);">10 أيام للبرنامج (+10 أيام عند إضافة الموقع)</span>
+        </div>
+        <div class="meta-field">
+          <span class="meta-lbl"><i data-lucide="shield-check" style="width: 14px;"></i> نوع الترخيص:</span>
+          <span class="meta-val">ترخيص نهائي مدى الحياة (.exe)</span>
+        </div>
+      </div>
+
+      <!-- Section 1: أطراف العقد -->
+      <section class="contract-section">
+        <h2 class="section-heading">
+          <i data-lucide="users"></i> البند الأول: أطراف العقد
+        </h2>
+        <div class="section-body">
+          <p style="margin-bottom: 14px;">تم الاتفاق والتراضي بين الطرفين الموضحين أدناه على إبرام هذا العقد البرمجي الرسمي وفق الشروط والأحكام التالية:</p>
+          <div class="parties-grid">
+            <!-- Party 1: Developer Representative -->
+            <div class="party-card">
+              <span class="party-role">الطرف الأول (المطور والمنجز)</span>
+              <div class="party-name">مؤسسة SALON DZ TECH</div>
+              <p style="font-size: 0.85rem; color: var(--brand-muted); margin-top: 4px;">المتخصصة في تطوير البرمجيات وحلول إدارة الأعمال والمتاجر الإلكترونية في الجزائر.</p>
+              <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--brand-border); font-size: 0.85rem; color: var(--brand-green-deep); font-weight: 700; line-height: 1.6;">
+                <i data-lucide="user-check" style="width: 14px; vertical-align: middle;"></i> ممثل المؤسسة المصرح به: <strong>اية هيدوك (AYA HIDOUK)</strong><br>
+                <i data-lucide="phone" style="width: 14px; vertical-align: middle;"></i> هاتف التواصل المباشر: <strong>+213 655098701</strong>
+              </div>
+            </div>
+
+            <!-- Party 2: Client Representative with Required Fields -->
+            <div class="party-card">
+              <span class="party-role">الطرف الثاني (الزبون الشريك)</span>
+              <div class="party-name">SHEYMSS NAILS STORE</div>
+              <p style="font-size: 0.85rem; color: var(--brand-muted); margin-top: 4px;">المتجر المتخصص في تجارة وصناعة مستلزمات الأظافر ومستحضرات التجميل بالجملة.</p>
+              <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--brand-border); font-size: 0.85rem;">
+                <div class="input-field-group">
+                  <label style="font-weight: 700; color: var(--brand-ink);">اسم ممثل الزبون <span style="color:red;">*</span>:</label>
+                  <input type="text" id="clientNameInput" placeholder="أدخل الاسم واللقب الكامل" style="width: 100%; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--brand-border); font-family: inherit; font-size: 0.85rem; margin-top: 3px;" oninput="syncClientData()">
+                  <span id="clientNamePrint" class="print-only-val" style="display:none; font-weight: 800; color: var(--brand-green-deep);"></span>
+                </div>
+                <div class="input-field-group" style="margin-top: 8px;">
+                  <label style="font-weight: 700; color: var(--brand-ink);">رقم الهاتف الجزائري <span style="color:red;">*</span>:</label>
+                  <input type="tel" id="clientPhoneInput" placeholder="مثال: 0655000000 أو 0540000000" style="width: 100%; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--brand-border); font-family: inherit; font-size: 0.85rem; margin-top: 3px;" oninput="syncClientData()">
+                  <span id="clientPhonePrint" class="print-only-val" style="display:none; font-weight: 800; color: var(--brand-green-deep);"></span>
+                  <div id="phoneErrorMsg" style="color: #D32F2F; font-size: 0.75rem; font-weight: 700; margin-top: 2px; display: none;">يرجى إدخال رقم هاتف جزائري صحيح (10 أرقام تبدأ بـ 05، 06، أو 07)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="print-page-footer">صفحة 1 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+        </div>
+      </section>
+
+      <!-- Section 2: موضوع العقد ونطاق العمل البرمجي -->
+      <section class="contract-section page-break-section">
+        <h2 class="section-heading">
+          <i data-lucide="layers"></i> البند الثاني: موضوع العقد ونطاق العمل البرمجي
+        </h2>
+        <div class="section-body">
+          <p>يتعهد الطرف الأول (SALON DZ TECH) بتطوير، ضبط، وتثبيت نظام إدارة المبيعات والمخزون المحلي <strong>SHEYMSS</strong> المصمم خصيصاً على مقاس متطلبات الطرف الثاني، ويتضمن نطاق العمل الميزات التالية:</p>
+          
+          <ul class="req-list">
+            <li><strong>كتالوج المنتجات المخصص:</strong> دعم فئات المنتجات الأساسية المحددة (Press-on Nails Main، Press-on Nails Pied، Kits Main et Pied) مع تحديد أسعار الجملة وصور المنتجات.</li>
+            <li><strong>بطاقة الزبائن لكل محل كوسميتيك (Fiche Client):</strong> متابعة ديناميكية شاملة لكل محل زبون (اسم المحل، الهاتف، الولاية، المنتجات المشتراة، إجمالي المشتريات، الديون والمستحقات المتبقية، وتاريخ آخر طلبية).</li>
+            <li><strong>المخزون اليدوي وطلاء الأظافر بالأرقام:</strong> سجل حركات مخزون مفتوح يتيح إضافة الخامات والمستهلكات (كابسول، غراء، مبرد، لفة، إلخ)، مع تتبع فردي لطلاء الأظافر (Vernis) برقم كل قارورة وحالتها الخاصة.</li>
+            <li><strong>الموردون وسجل أسعار الشراء:</strong> إدخال بيانات الموردين (الاسم، الهاتف، الصفحة، الولاية) مع سجل محمي وغير قابل للتعديل لتتبع تطور أسعار الشراء وتاريخ تغيرها.</li>
+            <li><strong>خيار الموقع الإلكتروني المربوط (Kiosque / E-Commerce):</strong> ربط وتزامن تلقائي بين برنامج الكمبيوتر والموقع الإلكتروني لعرض الكتالوج وتلقي الطلبيات لحظياً (Appwrite Cloud & ImageKit.io).</li>
+          </ul>
+          <div class="print-page-footer">صفحة 2 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+        </div>
+      </section>
+
+      <!-- Section 3: الاتفاق المالي وصيغة الدفع (تحديث العربون والأقساط) -->
+      <section class="contract-section page-break-section">
+        <h2 class="section-heading">
+          <i data-lucide="credit-card"></i> البند الثالث: الاتفاق المالي وصيغة الدفع والأقساط
+        </h2>
+        <div class="section-body">
+          <p>تم الاتفاق على القيمة المالية الإجمالية للاستثمار المالي (البرنامج + الموقع الإلكتروني) وفق الترتيب التالي:</p>
+
+          <!-- 0 DA Trust Guarantee Banner (Compact 1-Page Layout) -->
+          <div class="deposit-alert-box" style="background: #E6F7E6; border: 1.5px solid var(--brand-green); padding: 10px 14px; margin: 8px 0 12px 0;">
+            <i data-lucide="shield-check" style="width: 22px; height: 22px; color: var(--brand-green-deep); flex-shrink: 0; margin-top: 1px;"></i>
+            <div>
+              <div class="deposit-alert-title" style="color: var(--brand-green-deep); font-size: 0.95rem; margin-bottom: 2px;">ضمان الثقة والشفافية التامة (0 دج عربون قبل البداية)</div>
+              <div class="deposit-alert-desc" style="color: var(--brand-ink); font-size: 0.84rem; line-height: 1.45;">
+                لكسب ثقتكم الكاملة، <strong>لا نطلب أي عربون مالي (0 دج) قبل البداية!</strong> يتم أولاً إنجاز المشروع وتثبيته وتجربته معكم على جهازكم، ويبدأ سداد المستحقات فقط في اليوم 10 بعد التسليم والتشغيل التام.
+              </div>
+            </div>
+          </div>
+
+          <!-- Instalment Plan Schedule Table (6 Months) -->
+          <p style="margin-top: 10px; margin-bottom: 6px; font-weight: 800; font-size: 0.88rem; color: var(--brand-green-deep);">جدول سداد الأقساط الشهرية الستة (6-Month Instalment Schedule):</p>
+
+          <table class="table-instalments">
+            <thead>
+              <tr>
+                <th>القسط</th>
+                <th>التاريخ المستحق</th>
+                <th>قيمة القسط الأصلي</th>
+                <th>رسوم التسهيلات</th>
+                <th>إجمالي الشهر</th>
+                <th>البيان والملاحظات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>البداية والتجهيز</strong></td>
+                <td>الأيام 1 إلى 9 (قبل التسليم)</td>
+                <td>0 دج عربون مالي</td>
+                <td>0 دج</td>
+                <td><strong>0 دج عربون</strong></td>
+                <td>تطوير وتثبيت وتجربة النظام على الجهاز</td>
+              </tr>
+              <tr>
+                <td><strong>القسط 1</strong></td>
+                <td>اليوم 10 بعد التسليم</td>
+                <td>المبلغ المتبقي ÷ 6</td>
+                <td>1,000 دج</td>
+                <td><strong>مبلغ القسط 1</strong></td>
+                <td>التسليم النهائي وتفعيل الترخيص الأولي</td>
+              </tr>
+              <tr>
+                <td><strong>القسط 2</strong></td>
+                <td>بعد 30 يوماً من التسليم</td>
+                <td>المبلغ المتبقي ÷ 6</td>
+                <td>1,000 دج</td>
+                <td><strong>مبلغ القسط 2</strong></td>
+                <td>متابعة تشغيلية ودعم فني دوري</td>
+              </tr>
+              <tr>
+                <td><strong>القسط 3</strong></td>
+                <td>بعد 60 يوماً من التسليم</td>
+                <td>المبلغ المتبقي ÷ 6</td>
+                <td>1,000 دج</td>
+                <td><strong>مبلغ القسط 3</strong></td>
+                <td>متابعة تشغيلية ودعم فني دوري</td>
+              </tr>
+              <tr>
+                <td><strong>القسط 4</strong></td>
+                <td>بعد 90 يوماً من التسليم</td>
+                <td>المبلغ المتبقي ÷ 6</td>
+                <td>1,000 دج</td>
+                <td><strong>مبلغ القسط 4</strong></td>
+                <td>متابعة تشغيلية ودعم فني دوري</td>
+              </tr>
+              <tr>
+                <td><strong>القسط 5</strong></td>
+                <td>بعد 120 يوماً من التسليم</td>
+                <td>المبلغ المتبقي ÷ 6</td>
+                <td>1,000 دج</td>
+                <td><strong>مبلغ القسط 5</strong></td>
+                <td>متابعة تشغيلية ودعم فني دوري</td>
+              </tr>
+              <tr>
+                <td><strong>القسط 6 والأخير</strong></td>
+                <td>بعد 150 يوماً من التسليم</td>
+                <td>المبلغ المتبقي ÷ 6</td>
+                <td>1,000 دج</td>
+                <td><strong>مبلغ القسط 6</strong></td>
+                <td>تسليم مفتاح الترخيص النهائي مدى الحياة 🎓</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="print-page-footer">صفحة 3 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+        </div>
+      </section>
+
+      <!-- Section 4: الدعم الفني والضمان البرمجي -->
+      <section class="contract-section page-break-section">
+        <h2 class="section-heading">
+          <i data-lucide="shield-check"></i> البند الرابع: الدعم الفني والضمان البرمجي
+        </h2>
+        <div class="section-body">
+          <p>يلتزم الطرف الأول بتوفير ضمان ودعم فني يشمل ما يلي:</p>
+          <ul class="req-list">
+            <li>إصلاح الأخطاء الثغرات البرمجية والخلل التقني (Bugs) مجاناً طيلة فترة الترخيص.</li>
+            <li>ضمان سلامة قاعدة البيانات المحلية واستقرار النسخ الاحتياطي التلقائي (SQLite WAL Backup).</li>
+            <li>تقديم تدريب كامل للطرف الثاني وفريقه على استخدام كافة وظائف النظام والطابعة الحرارية.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 5: ملكية النظام والتسليم النهائي (بند جديد) -->
+      <section class="contract-section">
+        <h2 class="section-heading">
+          <i data-lucide="lock"></i> البند الخامس: ملكية النظام والتسليم النهائي
+        </h2>
+        <div class="section-body">
+          
+          <div class="clause-box">
+            <div class="clause-box-title"><i data-lucide="key" style="width: 18px;"></i> 1. احتفاظ بالملكية البرمجية والحقوق</div>
+            <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
+              تبقى الملكية الفكرية، الشفرة المصدرية (Source Code) والملف التنفيذي ملكاً حصرياً للطرف الأول (SALON DZ TECH) ولا تنتقل الملكية النهائية للترخيص والبرنامج للطرف الثاني (SHEYMSS NAILS STORE) إلا بعد سداد كامل المبلغ المتفق عليه ومستحقات العقد بالكامل.
+            </p>
+          </div>
+
+          <div class="clause-box">
+            <div class="clause-box-title"><i data-lucide="edit-3" style="width: 18px;"></i> 2. عدد المراجعات والتعديلات المجانية (Limited Revisions)</div>
+            <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
+              يحق للطرف الثاني الحصول على <strong>مراجعتين مجانيتين كحد أقصى (2 Free Revisions)</strong> بعد التسليم الأولي لتعديل وتصويب الملاحظات طفيفة النطاق. أي تعديل إضافي أو مراجعة برمجية بعد المراجعتين تُحسب كخدمة برمجية جديدة ومستقلة وتُسعر بشكل منفصل.
+            </p>
+          </div>
+
+          <div class="print-page-footer">صفحة 4 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+        </div>
+      </section>
+
+      <!-- Section 6: المواعيد وجدول التسليم (بند جديد) -->
+      <section class="contract-section page-break-section">
+        <h2 class="section-heading">
+          <i data-lucide="calendar"></i> البند السادس: المواعيد وجدول التسليم
+        </h2>
+        <div class="section-body">
+          
+          <div class="clause-box">
+            <div class="clause-box-title"><i data-lucide="hourglass" style="width: 18px;"></i> 1. الآجل الزمني لتسليم المشروع وإضافات الموقع الإلكتروني</div>
+            <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
+              يُحدد الآجل الزمني التقديري لإنجاز وتسليم <strong>برنامج الكمبيوتر فقط</strong> بـ <strong>10 أيام عمل</strong> ابتداءً من تاريخ إبرام العقد وبدء الإعداد (مع ضمان 0 دج عربون قبل التسليم).<br>
+              • <strong>في حال اختيار وتحديد أي خيار من خيارات الموقع الإلكتروني:</strong> تُضاف <strong>+10 أيام عمل إضافية</strong> لتصبح مهلة التسليم الإجمالية للمشروع كاملاً <strong>20 يوم عمل</strong>.
+            </p>
+          </div>
+
+          <div class="clause-box">
+            <div class="clause-box-title"><i data-lucide="alert-triangle" style="width: 18px;"></i> 2. شرط تمديد المهلة في حال تأخر البيانات</div>
+            <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
+              أي تأخير من طرف الزبون (الطرف الثاني) في تقديم المعلومات أو الصور أو المحتوى والبيانات المطلوبة لإكمال العمل يترتب عليه تمديد مهلة التسليم تلقائياً بنفس مدة التأخير المتسبب فيها.
+            </p>
+          </div>
+
+          <div class="clause-box">
+            <div class="clause-box-title"><i data-lucide="shield-alert" style="width: 18px;"></i> 3. حق التمديد الاستثنائي لمؤسسة SALON DZ TECH (+5 أيام عمل)</div>
+            <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
+              يحق للطرف الأول (مؤسسة SALON DZ TECH) الاستفادة تلقائياً من <strong>مهلة إضافية تقديرية تصل إلى +5 أيام عمل إضافية</strong> فوق الآجل المحدد في حال استدعت الحاجة الفنية إكمال الاختبارات البرمجية أو معالجة التحسينات غير المتوقعة قبل التسليم النهائي، دون أن يُعد ذلك تأخيراً مخلّاً ببنود العقد.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Signatures Section -->
+      <section class="signature-container">
+        <h2 class="section-heading" style="border-bottom: none; justify-content: center; text-align: center;">
+          <i data-lucide="file-signature"></i> التوقيع الإلكتروني والموافقة الرسمية
+        </h2>
+
+        <div class="signature-grid">
+          
+          <!-- Developer Signature Box (SALON DZ TECH) -->
+          <div class="sig-card">
+            <div class="sig-card-title">الطرف الأول: SALON DZ TECH</div>
+            <div class="sig-card-sub" style="font-weight: 800; color: var(--brand-green-deep);">ممثل المؤسسة: اية هيدوك (AYA HIDOUK)</div>
+            <div style="font-size: 0.82rem; color: var(--brand-muted); margin-bottom: 6px;">الهاتف: +213 655098701</div>
+            <div class="canvas-wrap" style="display: flex; align-items: center; justify-content: center; background: #F7FCF7;">
+              <img src="solondztechcompany.png" alt="Stamp" style="max-height: 90px; opacity: 0.85;">
+            </div>
+            <div style="font-size: 0.85rem; font-weight: 800; color: var(--brand-green-deep); margin-top: 6px;">توقيع وختم المؤسسة المنجزة ✓</div>
+          </div>
+
+          <!-- Client Signature Box with Interactive Canvas -->
+          <div class="sig-card">
+            <div class="sig-card-title">الطرف الثاني: SHEYMSS NAILS STORE</div>
+            <div class="sig-card-sub">
+              الاسم: <span id="clientNameSigDisplay" style="font-weight: 800; color: var(--brand-green-deep);">[يُدخل أعلاه]</span> |
+              الهاتف: <span id="clientPhoneSigDisplay" style="font-weight: 800; color: var(--brand-green-deep);">[يُدخل أعلاه]</span>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="arSigCanvas"></canvas>
+            </div>
+            <button class="btn btn-outline btn-clear-sig" style="padding: 4px 14px; font-size: 0.8rem; margin-top: 6px;" onclick="clearArCanvas()">
+              <i data-lucide="rotate-ccw" style="width: 14px;"></i> مسح التوقيع
+            </button>
+          </div>
+
+          <div class="print-page-footer">صفحة 5 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+        </div>
+      </section>
+
+      <!-- Action Buttons -->
+      <div class="btn-action-row" style="gap: 16px; justify-content: center; margin-top: 36px; display: flex; flex-wrap: wrap;">
+        <button class="btn btn-green" onclick="downloadContractPDF()">
+          <i data-lucide="download"></i> تنزيل وحفظ العقد كملف PDF
+        </button>
+        <button class="btn btn-outline" style="border: 2px solid var(--brand-green); color: var(--brand-green-deep);" onclick="handlePrintWithValidation()">
+          <i data-lucide="printer"></i> طباعة كـ PDF (معاينة المتصفح)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    let isSignedByClient = false;
+
+    function syncClientData() {
+      const name = document.getElementById('clientNameInput').value.trim();
+      const phone = document.getElementById('clientPhoneInput').value.trim();
+      
+      document.getElementById('clientNamePrint').textContent = name || '[غير محدد]';
+      document.getElementById('clientPhonePrint').textContent = phone || '[غير محدد]';
+      document.getElementById('clientNameSigDisplay').textContent = name || '[يُدخل أعلاه]';
+      document.getElementById('clientPhoneSigDisplay').textContent = phone || '[يُدخل أعلاه]';
+
+      const phoneClean = phone.replace(/\s+|-/g, '');
+      const dzPhoneRegex = /^(?:(?:\+|00)213|0)[567][0-9]{8}$/;
+      const phoneErr = document.getElementById('phoneErrorMsg');
+      if (phoneClean.length > 0 && !dzPhoneRegex.test(phoneClean)) {
+        phoneErr.style.display = 'block';
+      } else {
+        phoneErr.style.display = 'none';
+      }
+    }
+
+    function showCustomModal(title, msg, iconType = 'warning', callback = null) {
+      const overlay = document.getElementById('customModal');
+      const titleEl = document.getElementById('modalTitle');
+      const msgEl = document.getElementById('modalMsg');
+      const iconWrap = document.getElementById('modalIconWrap');
+
+      titleEl.textContent = title;
+      msgEl.textContent = msg;
+
+      let iconName = 'alert-triangle';
+      if (iconType === 'error') {
+        iconWrap.style.background = '#FEE2E2';
+        iconWrap.style.color = '#DC2626';
+        iconName = 'alert-circle';
+      } else if (iconType === 'success') {
+        iconWrap.style.background = '#DCFCE7';
+        iconWrap.style.color = '#166534';
+        iconName = 'check-circle';
+      } else {
+        iconWrap.style.background = '#FEF3C7';
+        iconWrap.style.color = '#D97706';
+        iconName = 'alert-triangle';
+      }
+
+      iconWrap.innerHTML = `<i data-lucide="${iconName}"></i>`;
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      overlay.classList.add('active');
+      window.modalCallback = callback;
+    }
+
+    function closeCustomModal() {
+      const overlay = document.getElementById('customModal');
+      overlay.classList.remove('active');
+      if (window.modalCallback) {
+        window.modalCallback();
+        window.modalCallback = null;
+      }
+    }
+
+    function handlePrintWithValidation() {
+      const name = document.getElementById('clientNameInput').value.trim();
+      const phone = document.getElementById('clientPhoneInput').value.trim().replace(/\s+|-/g, '');
+      const dzPhoneRegex = /^(?:(?:\+|00)213|0)[567][0-9]{8}$/;
+      const phoneErr = document.getElementById('phoneErrorMsg');
+
+      if (!name) {
+        showCustomModal('تنبيه: حقل مطلوب', 'يرجى إدخال اسم ممثل الزبون (SHEYMSS NAILS STORE) أولاً.', 'warning', () => {
+          document.getElementById('clientNameInput').focus();
+        });
+        return;
+      }
+
+      if (!dzPhoneRegex.test(phone)) {
+        phoneErr.style.display = 'block';
+        showCustomModal('تنبيه: رقم هاتف غير صحيح', 'يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام (يبدأ بـ 05، 06، 07 أو +213).', 'error', () => {
+          document.getElementById('clientPhoneInput').focus();
+        });
+        return;
+      }
+
+      if (!isSignedByClient) {
+        showCustomModal('تنبيه: التوقيع مطلوب', 'يرجى إكمال التوقيع الإلكتروني في المربع المخصص للزبون أسفل العقد قبل الطباعة.', 'warning');
+        return;
+      }
+
+      window.print();
+    }
+
+    function downloadContractPDF() {
+      const name = document.getElementById('clientNameInput').value.trim();
+      const phone = document.getElementById('clientPhoneInput').value.trim().replace(/\s+|-/g, '');
+      const dzPhoneRegex = /^(?:(?:\+|00)213|0)[567][0-9]{8}$/;
+      const phoneErr = document.getElementById('phoneErrorMsg');
+
+      if (!name) {
+        showCustomModal('تنبيه: حقل مطلوب', 'يرجى إدخال اسم ممثل الزبون (SHEYMSS NAILS STORE) أولاً.', 'warning', () => {
+          document.getElementById('clientNameInput').focus();
+        });
+        return;
+      }
+
+      if (!dzPhoneRegex.test(phone)) {
+        phoneErr.style.display = 'block';
+        showCustomModal('تنبيه: رقم هاتف غير صحيح', 'يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام (يبدأ بـ 05، 06، 07 أو +213).', 'error', () => {
+          document.getElementById('clientPhoneInput').focus();
+        });
+        return;
+      }
+
+      if (!isSignedByClient) {
+        showCustomModal('تنبيه: التوقيع مطلوب', 'يرجى إكمال التوقيع الإلكتروني في المربع المخصص للزبون أسفل العقد قبل التنزيل.', 'warning');
+        return;
+      }
+
+      // Sync print display spans
+      document.getElementById('clientNamePrint').textContent = name;
+      document.getElementById('clientPhonePrint').textContent = phone;
+
+      // Show loader popup
+      showCustomModal('جاري تنزيل الملف', 'جاري إنشاء وتنزيل عقد PDF رسمي الآن...', 'success');
+
+      const element = document.querySelector('.paper-contract');
+      const opt = {
+        margin:       [6, 6, 6, 6],
+        filename:     'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true, logging: false },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        setTimeout(() => {
+          closeCustomModal();
+        }, 800);
+      });
+    }
+
+    // Setup Client Signature Canvas
+    function setupArCanvas() {
+      const canvas = document.getElementById('arSigCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let drawing = false;
+
+      function resize() {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#09B300';
+      }
+
+      resize();
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top
+        };
+      }
+
+      function startDraw(e) {
+        drawing = true;
+        isSignedByClient = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      }
+
+      function draw(e) {
+        if (!drawing) return;
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+
+      function stopDraw() {
+        drawing = false;
+      }
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDraw);
+      canvas.addEventListener('touchstart', startDraw);
+      canvas.addEventListener('touchmove', draw);
+      canvas.addEventListener('touchend', stopDraw);
+    }
+
+    function clearArCanvas() {
+      const canvas = document.getElementById('arSigCanvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isSignedByClient = false;
+      }
+    }
+
+    window.onload = function() {
+      setupArCanvas();
+    };
+  </script>
+
+  <!-- Custom Modal Popup Dialog (NO EMOJIS - USES LUCIDE ICONS) -->
+  <div id="customModal" class="custom-modal-overlay">
+    <div class="custom-modal-card">
+      <div class="custom-modal-icon-badge" id="modalIconWrap">
+        <i id="modalIcon" data-lucide="alert-triangle"></i>
+      </div>
+      <h3 class="custom-modal-title" id="modalTitle">تنبيه هام</h3>
+      <p class="custom-modal-msg" id="modalMsg">يرجى إدخال البيانات المطلوبة.</p>
+      <button class="btn btn-green custom-modal-btn" onclick="closeCustomModal()">
+        <i data-lucide="check" style="width: 18px; vertical-align: middle;"></i> <span>حسناً، فهمت</span>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>

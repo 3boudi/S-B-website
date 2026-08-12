@@ -1,0 +1,2394 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrat Commercial & Spécifications — SALON DZ TECH x SHEYMSS</title>
+
+  <!-- Google Fonts: Cairo, Tajawal, Noto Kufi Arabic, Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&family=Noto+Kufi+Arabic:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Vector Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --brand-green: #09B300;
+      --brand-green-deep: #078A00;
+      --brand-green-light: #E6F7E6;
+      --brand-ink: #0E1F0E;
+      --brand-white: #FFFFFF;
+      --brand-white-soft: #F7FCF7;
+      --brand-border: #D8EAD8;
+      --brand-muted: #5A6E5A;
+      --brand-card-bg: #FFFFFF;
+      --brand-shadow-sm: 0 2px 10px rgba(9, 179, 0, 0.05);
+      --brand-shadow-md: 0 12px 28px -6px rgba(9, 179, 0, 0.10);
+      --brand-shadow-lg: 0 24px 50px -12px rgba(14, 31, 14, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--brand-white-soft);
+      color: var(--brand-ink);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    [dir="rtl"],
+    [dir="rtl"] *,
+    body[dir="rtl"],
+    body[dir="rtl"] * {
+      font-family: 'Cairo', 'Tajawal', 'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif !important;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Header & 2X Bigger Logos */
+    .top-header {
+      background: var(--brand-white);
+      border-bottom: 1px solid var(--brand-border);
+      padding: 32px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-logo-img {
+      height: 135px;
+      max-width: 320px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .brand-logo-img:hover {
+      transform: scale(1.03);
+    }
+
+    .header-center-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contract-badge {
+      background: var(--brand-ink);
+      color: var(--brand-white);
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Advanced Pop-Side Language Switcher */
+    .lang-switcher-adv {
+      position: relative;
+      display: inline-flex;
+      background: #EAF5EA;
+      border: 1px solid var(--brand-border);
+      border-radius: 999px;
+      padding: 4px;
+      box-shadow: inset 0 2px 4px rgba(9, 179, 0, 0.08);
+    }
+
+    .lang-slider-pill {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: calc(50% - 4px);
+      height: calc(100% - 8px);
+      background: var(--brand-green);
+      border-radius: 999px;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 12px rgba(9, 179, 0, 0.3);
+    }
+
+    [dir="rtl"] .lang-slider-pill {
+      left: auto;
+      right: 4px;
+    }
+
+    .lang-switcher-adv.ar-active .lang-slider-pill {
+      transform: translateX(100%);
+    }
+
+    [dir="rtl"] .lang-switcher-adv.ar-active .lang-slider-pill {
+      transform: translateX(-100%);
+    }
+
+    .lang-btn-adv {
+      position: relative;
+      z-index: 2;
+      border: none;
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--brand-muted);
+      transition: color 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-btn-adv.active {
+      color: var(--brand-white);
+    }
+
+    /* Main Paper Container */
+    .contract-paper {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-border);
+      border-radius: 24px;
+      padding: 48px;
+      margin-top: 36px;
+      box-shadow: var(--brand-shadow-md);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--brand-ink);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .hero-sub {
+      color: var(--brand-muted);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    /* Client Trust Guarantee Banner */
+    .trust-banner {
+      background: linear-gradient(135deg, #E6F7E6 0%, #D4F4D4 100%);
+      border: 2px solid var(--brand-green);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .trust-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--brand-green);
+      color: var(--brand-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .trust-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-green-deep);
+      margin-bottom: 4px;
+    }
+
+    .trust-desc {
+      font-size: 0.9rem;
+      color: var(--brand-ink);
+      line-height: 1.5;
+    }
+
+    /* Client Exact Quotes Box */
+    .client-quotes-box {
+      background: #F0FDF0;
+      border: 1px solid var(--brand-border);
+      border-left: 5px solid var(--brand-green);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+
+    body[dir="rtl"] .client-quotes-box {
+      border-left: 1px solid var(--brand-border);
+      border-right: 5px solid var(--brand-green);
+    }
+
+    .quotes-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--brand-green-deep);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quote-item {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .quote-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote-header {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--brand-ink);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quote-text {
+      font-size: 0.88rem;
+      color: var(--brand-muted);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* Metadata Bar */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      background: var(--brand-white-soft);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--brand-border);
+      margin-bottom: 40px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--brand-muted);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--brand-ink);
+      margin-top: 6px;
+    }
+
+    /* Section Headings */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 44px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--brand-border);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand-ink);
+    }
+
+    /* Feature Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--brand-white-soft);
+      border: 1px solid var(--brand-border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--brand-green);
+      transform: translateY(-2px);
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--brand-green);
+      color: var(--brand-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .feature-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--brand-muted);
+      line-height: 1.5;
+    }
+
+    .feature-list {
+      margin-top: 14px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      font-size: 0.85rem;
+      color: var(--brand-ink);
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .feature-list-icon {
+      color: var(--brand-green);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Price Valuation Table */
+    .valuation-table-wrap {
+      overflow-x: auto;
+      margin-top: 24px;
+      margin-bottom: 40px;
+      border: 1px solid var(--brand-border);
+      border-radius: 16px;
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .valuation-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--brand-white);
+      text-align: left;
+    }
+
+    body[dir="rtl"] .valuation-table {
+      text-align: right;
+    }
+
+    .valuation-table th {
+      background: var(--brand-ink);
+      color: var(--brand-white);
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    .valuation-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--brand-border);
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    .valuation-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .valuation-table tr:hover td {
+      background: var(--brand-white-soft);
+    }
+
+    .val-price-tag {
+      font-weight: 800;
+      color: var(--brand-green-deep);
+      white-space: nowrap;
+      direction: ltr !important;
+      display: inline-block;
+      unicode-bidi: isolate;
+    }
+
+    .price-strike-tag {
+      text-decoration: line-through;
+      color: #7A9E7A;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-right: 8px;
+      direction: ltr !important;
+      display: inline-block;
+      unicode-bidi: isolate;
+    }
+
+    body[dir="rtl"] .price-strike-tag {
+      margin-right: 0;
+      margin-left: 8px;
+    }
+
+    .badge-promo-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .badge-sheymss {
+      background: #E6F7E6;
+      color: var(--brand-green-deep);
+      border: 1px solid var(--brand-green);
+    }
+
+    .badge-collab {
+      background: #FFF8E1;
+      color: #B78103;
+      border: 1px solid #FFC107;
+    }
+
+    /* Calculator Box — WHITE MODERN LIGHT THEME */
+    .calculator-box-white {
+      background: var(--brand-white);
+      border: 2px solid var(--brand-border);
+      border-radius: 24px;
+      padding: 40px;
+      margin-top: 44px;
+      box-shadow: 0 12px 32px rgba(9, 179, 0, 0.08);
+    }
+
+    .calc-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--brand-ink);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .calc-subtitle {
+      color: var(--brand-muted);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+
+    .options-group {
+      margin-bottom: 36px;
+    }
+
+    .options-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brand-green-deep);
+      margin-bottom: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* 1X1 STACKED VERTICAL LIST LAYOUT */
+    .radio-cards-1x1 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card-1x1 {
+      background: var(--brand-white-soft);
+      border: 2px solid var(--brand-border);
+      border-radius: 20px;
+      padding: 28px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .card-1x1:hover {
+      border-color: var(--brand-green);
+      transform: translateY(-2px);
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .card-1x1.selected {
+      border-color: var(--brand-green);
+      background: #F0FDF0;
+      box-shadow: 0 8px 24px rgba(9, 179, 0, 0.12);
+    }
+
+    .card-1x1-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--brand-border);
+    }
+
+    .card-1x1-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--brand-ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-1x1-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .card-1x1-final-price {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--brand-green-deep);
+    }
+
+    /* Bulleted Rules List in 1x1 Cards */
+    .rules-list-1x1 {
+      list-style: none;
+      margin: 14px 0 20px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+    }
+
+    .rules-list-1x1 li {
+      font-size: 0.88rem;
+      color: var(--brand-ink);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+
+    .rule-icon-check {
+      color: var(--brand-green);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Modern Custom Selection Button */
+    .select-custom-btn {
+      width: 100%;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 2px solid var(--brand-border);
+      background: var(--brand-white);
+      color: var(--brand-ink);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .card-1x1:hover .select-custom-btn {
+      border-color: var(--brand-green);
+      color: var(--brand-green-deep);
+    }
+
+    .card-1x1.selected .select-custom-btn {
+      background: var(--brand-green);
+      border-color: var(--brand-green);
+      color: var(--brand-white);
+      box-shadow: 0 4px 12px rgba(9, 179, 0, 0.25);
+    }
+
+    /* BIG WEBSITE SELECTION BOX */
+    .big-website-box {
+      background: linear-gradient(135deg, #F7FCF7 0%, #EBF8EB 100%);
+      border: 3px dashed var(--brand-green);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 36px;
+      transition: all 0.3s ease;
+    }
+
+    .big-website-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .big-website-title-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .big-website-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: var(--brand-green);
+      color: var(--brand-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .big-website-main-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--brand-ink);
+    }
+
+    .big-website-sub-title {
+      font-size: 0.95rem;
+      color: var(--brand-muted);
+      margin-top: 4px;
+    }
+
+    .toggle-web-btn-big {
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+      border: 2px solid var(--brand-green);
+      background: var(--brand-white);
+      color: var(--brand-green-deep);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .toggle-web-btn-big.active {
+      background: var(--brand-green);
+      color: var(--brand-white);
+      box-shadow: 0 8px 24px rgba(9, 179, 0, 0.3);
+    }
+
+    /* Sub Design & Offers Panel */
+    .web-config-panel {
+      display: none;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 2px dashed var(--brand-border);
+    }
+
+    .web-config-panel.show {
+      display: block;
+    }
+
+    .design-selector-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-design-tier {
+      flex: 1;
+      min-width: 220px;
+      padding: 16px 20px;
+      border-radius: 16px;
+      border: 2px solid var(--brand-border);
+      background: var(--brand-white);
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--brand-ink);
+    }
+
+    .btn-design-tier.selected {
+      border-color: var(--brand-green);
+      background: #E6F7E6;
+      color: var(--brand-green-deep);
+      box-shadow: 0 4px 14px rgba(9, 179, 0, 0.15);
+    }
+
+    /* Summary Display Box */
+    .summary-card-white {
+      background: linear-gradient(135deg, #F0FDF0 0%, #E6F7E6 100%);
+      border: 2px solid var(--brand-green);
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .total-amount-display-white {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--brand-green-deep);
+      direction: ltr !important;
+      display: inline-block;
+      unicode-bidi: isolate;
+    }
+
+    .schedule-pill-white {
+      background: var(--brand-white);
+      color: var(--brand-green-deep);
+      border: 2px solid var(--brand-green);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    /* Timeline & Steps */
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .timeline-step {
+      background: var(--brand-white-soft);
+      border: 1px solid var(--brand-border);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .step-number {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--brand-green-deep);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 8px 0 6px 0;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--brand-muted);
+    }
+
+    /* Single Client Signature Box */
+    .single-signature-wrap {
+      max-width: 600px;
+      margin: 32px auto 0 auto;
+    }
+
+    .sig-box {
+      border: 2px dashed var(--brand-border);
+      border-radius: 20px;
+      padding: 28px;
+      background: var(--brand-white-soft);
+      text-align: center;
+      box-shadow: var(--brand-shadow-sm);
+    }
+
+    .sig-title {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--brand-ink);
+      margin-bottom: 4px;
+    }
+
+    .sig-party {
+      font-size: 0.9rem;
+      color: var(--brand-muted);
+      margin-bottom: 18px;
+    }
+
+    .canvas-wrap {
+      background: var(--brand-white);
+      border: 1px solid var(--brand-border);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      height: 150px;
+      position: relative;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+    }
+
+    .sig-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .btn {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-green {
+      background: var(--brand-green);
+      color: var(--brand-white);
+    }
+
+    .btn-green:hover {
+      background: var(--brand-green-deep);
+      color: var(--brand-white);
+      transform: translateY(-2px);
+      box-shadow: var(--brand-shadow-md);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--brand-border);
+      color: var(--brand-ink);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--brand-green);
+      color: var(--brand-green-deep);
+    }
+
+    /* 100% Mobile Responsive Styles (Optimized for Samsung Galaxy S22 & Mobile Devices) */
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 40px;
+      }
+
+      .container {
+        padding: 0 12px;
+      }
+
+      /* Header Adjustments */
+      .top-header {
+        padding: 16px 0;
+      }
+
+      .header-flex {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .brand-logo-img {
+        max-height: 55px;
+        width: auto;
+      }
+
+      .header-title-wrap h1 {
+        font-size: 1.3rem;
+      }
+
+      .header-title-wrap p {
+        font-size: 0.85rem;
+      }
+
+      .lang-switcher-adv {
+        margin-top: 6px;
+      }
+
+      /* Contract Paper Card */
+      .contract-paper {
+        padding: 20px 14px;
+        border-radius: 16px;
+        margin-top: 20px;
+      }
+
+      .paper-title {
+        font-size: 1.35rem;
+      }
+
+      .paper-subtitle {
+        font-size: 0.88rem;
+      }
+
+      /* Metadata Grid */
+      .meta-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px;
+      }
+
+      /* Website Option Toggle Box */
+      .toggle-web-box {
+        padding: 16px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .toggle-web-btn-big {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+      }
+
+      /* Grids (Offers, Web Levels) */
+      .offers-grid, .web-levels-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+      }
+
+      .offer-card {
+        padding: 20px 16px;
+      }
+
+      .offer-title {
+        font-size: 1.2rem;
+      }
+
+      .offer-price-val {
+        font-size: 1.5rem;
+      }
+
+      .select-custom-btn {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+      }
+
+      /* Calculator Card */
+      .calculator-card {
+        padding: 20px 14px;
+        border-radius: 16px;
+      }
+
+      .calc-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .plan-pills-wrap {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .plan-pill-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+      }
+
+      .price-display-box {
+        padding: 18px 14px;
+      }
+
+      .price-number {
+        font-size: 1.65rem;
+      }
+
+      .price-subtext {
+        font-size: 0.88rem;
+      }
+
+      /* Timeline Steps */
+      .timeline-steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      /* Signature Canvas Box */
+      .single-signature-wrap {
+        max-width: 100%;
+      }
+
+      .sig-box {
+        padding: 16px 14px;
+      }
+
+      .canvas-wrap {
+        height: 140px;
+      }
+
+      /* Buttons & Actions */
+      .sig-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Print Setup — Completely Hides Browser URL Footer & Title Header */
+    @page {
+      margin: 0 !important;
+      size: A4 portrait;
+    }
+
+    @media print {
+      .top-header, .sig-actions, .lang-switcher-adv, .select-custom-btn, .toggle-web-btn-big {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        padding: 10mm 14mm !important;
+        margin: 0 !important;
+      }
+      .contract-paper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header with 2X Bigger Logos -->
+  <header class="top-header">
+    <div class="container header-flex">
+      
+      <!-- Left Logo: Salon DZ Tech (2x Bigger) -->
+      <img src="solondztechcompany.png" alt="SALON DZ TECH" class="brand-logo-img">
+
+      <!-- Center Contract Badge -->
+      <div class="header-center-badge">
+        <span class="contract-badge" id="badgeText">
+          <i data-lucide="file-badge"></i> CONTRAT COMMERCIAL OFFICIEL
+        </span>
+      </div>
+
+      <!-- Right Logo: Sheymss Nails Store (2x Bigger) -->
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <!-- Advanced Pop-side Language Switcher -->
+        <div class="lang-switcher-adv" id="langSwitcherAdv">
+          <div class="lang-slider-pill"></div>
+          <button class="lang-btn-adv active" id="btnFr" onclick="setLanguage('fr')">
+            <i data-lucide="languages" style="width: 14px; height: 14px;"></i> Français
+          </button>
+          <button class="lang-btn-adv" id="btnAr" onclick="setLanguage('ar')">
+            <i data-lucide="languages" style="width: 14px; height: 14px;"></i> العربية
+          </button>
+        </div>
+
+        <img src="client.png" alt="SHEYMSS NAILS STORE" class="brand-logo-img">
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="contract-paper">
+      
+      <!-- Title & Header -->
+      <h1 class="hero-title" id="mainTitle">Contrat Commercial & Spécifications Techniques</h1>
+      <p class="hero-sub" id="mainSub">Développement & Déploiement de la Solution de Gestion SHEYMSS pour SHEYMSS NAILS STORE par SALON DZ TECH</p>
+
+      <!-- Client Trust & Guarantee Banner (No Upfront Deposit Required!) -->
+      <div class="trust-banner">
+        <div class="trust-icon-box">
+          <i data-lucide="shield-check" style="width: 32px; height: 32px;"></i>
+        </div>
+        <div>
+          <div class="trust-title" id="trustTitle">Garantie de Confiance & Souplesse Absolue (0 DA d'Acompte au Démarrage)</div>
+          <div class="trust-desc" id="trustDesc">Pour établir une relation de confiance totale, aucun acompte de 50% n'est exigé avant le lancement. Le logiciel est d'abord entièrement configuré, installé et testé sur votre poste. Le paiement ne débute qu'après la livraison réussie et la démonstration complète !</div>
+        </div>
+      </div>
+
+      <!-- Metadata Box -->
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label" id="lblPrestataire"><i data-lucide="building-2" style="width: 14px;"></i> Prestataire</span>
+          <span class="meta-value">SALON DZ TECH</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label" id="lblClient"><i data-lucide="store" style="width: 14px;"></i> Client Partenaire</span>
+          <span class="meta-value">SHEYMSS NAILS STORE</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label" id="lblDate"><i data-lucide="calendar" style="width: 14px;"></i> Date du Contrat</span>
+          <span class="meta-value">12 Août 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label" id="lblDelai"><i data-lucide="clock" style="width: 14px;"></i> Délai de Livraison</span>
+          <span class="meta-value" style="color: var(--brand-green);" id="delaiValue">10 Jours</span>
+        </div>
+      </div>
+
+      <!-- Section: Client Verified Requirements & Direct Quotes -->
+      <div class="client-quotes-box">
+        <div class="quotes-title" id="quotesTitle">
+          <i data-lucide="message-square-quote" style="color: var(--brand-green-deep);"></i> <span id="quotesTitleText">Exigences et Demandes Explicites de la Cliente (Cahier des Charges Direct)</span>
+        </div>
+
+        <div class="quote-item">
+          <div class="quote-header" id="q1Header"><i data-lucide="package" style="width: 16px; color: var(--brand-green);"></i> 1. Catégories de Produits Exigées</div>
+          <div class="quote-text" id="f1_quote">• Press-on Nails Main &nbsp;|&nbsp; • Press-on Nails Pied &nbsp;|&nbsp; • Kits Main et Pied</div>
+        </div>
+
+        <div class="quote-item">
+          <div class="quote-header" id="q2Header"><i data-lucide="users" style="width: 16px; color: var(--brand-green);"></i> 2. Fiche Client Dynamique par Boutique</div>
+          <div class="quote-text" id="f2_quote">Chaque magasin de cosmétiques aura sa propre fiche : Boutique X | Téléphone | Wilaya | Produits achetés | Total achats | Dette / reste à payer | Dernière commande</div>
+        </div>
+
+        <div class="quote-item">
+          <div class="quote-header" id="q3Header"><i data-lucide="boxes" style="width: 16px; color: var(--brand-green);"></i> 3. Stock Manuel Ledger & Vernis par Numéro (Mots de la Cliente)</div>
+          <div class="quote-text" id="f3_quote">"Je saisis mes articles achetés et en stock (capsules, vernis, colle, lime, scotch). Vous ajoutez un bouton 'Ajouter produit' et je saisis tout ce que j'ai. Quand j'en consomme, le logiciel calcule automatiquement le reste — je saisis simplement ce que j'ai consommé... Le stock est ouvert, et les vernis sont suivis individuellement par leur numéro."</div>
+        </div>
+
+        <div class="quote-item">
+          <div class="quote-header" id="q4Header"><i data-lucide="truck" style="width: 16px; color: var(--brand-green);"></i> 4. Fournisseurs & Suivi des Prix d'Achat (Mots de la Cliente)</div>
+          <div class="quote-text" id="f4_quote">"Je saisis d'où j'achète mes produits : nom du fournisseur, numéro de téléphone, page sociale, et le prix d'achat de chaque produit avec conservation de l'historique d'évolution des prix."</div>
+        </div>
+      </div>
+
+      <!-- Software Specifications Section -->
+      <div class="section-header">
+        <i data-lucide="layers" style="color: var(--brand-green);"></i>
+        <h2 class="section-title" id="secScopeTitle">Spécifications Techniques & Fonctionnalités du Logiciel</h2>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="package"></i></div>
+          <div class="feature-name" id="f1Title">Catalogue Produits</div>
+          <div class="feature-desc" id="f1Desc">Gestion complète des produits vendus aux boutiques et grossistes.</div>
+          <ul class="feature-list" id="f1List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f1_1">Catégories par défaut (Press-on Main, Pied, Kits)</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f1_2">Prix de gros sur mesure & Références SKU</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f1_3">Photos produits & Statut Actif/Inactif</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="boxes"></i></div>
+          <div class="feature-name" id="f2Title">Stock Manuel & Vernis Numérotés</div>
+          <div class="feature-desc" id="f2Desc">Ledger de mouvements 100% manuel avec suivi individuel des unités.</div>
+          <ul class="feature-list" id="f2List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f2_1">Unités personnalisées (pcs, ml, flacon, rouleau, lime)</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f2_2">Boutons d'action rapide (Ajouter, Utiliser, Ajuster)</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f2_3">Suivi des Vernis par Numéro & Statut individuel</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f2_4">Historique immuable & Alerte de stock bas</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="truck"></i></div>
+          <div class="feature-name" id="f3Title">Fournisseurs & Historique des Prix</div>
+          <div class="feature-desc" id="f3Desc">Traçabilité complète des approvisionnements et variations de prix.</div>
+          <ul class="feature-list" id="f3List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f3_1">Fiche fournisseur complète (Téléphone, Page, Wilaya)</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f3_2">Historique immuable de l'évolution des prix d'achat</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f3_3">Traçabilité des achats par fournisseur</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="users"></i></div>
+          <div class="feature-name" id="f4Title">Clients Boutiques & Suivi Dettes</div>
+          <div class="feature-desc" id="f4Desc">Calcul dynamique instantané du chiffre d'affaires et des dettes.</div>
+          <ul class="feature-list" id="f4List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f4_1">Calcul auto: Total achats, Total payé, Reste à payer</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f4_2">Historique complet des commandes & versements</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f4_3">Vue directe sur les échéances à venir et retards</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="shopping-bag"></i></div>
+          <div class="feature-name" id="f5Title">Workflow Commandes (5 Étapes)</div>
+          <div class="feature-desc" id="f5Desc">State machine précise de gestion des commandes de vente.</div>
+          <ul class="feature-list" id="f5List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f5_1">5 Étapes : Brouillon ➔ Confirmée ➔ En Prep ➔ Prête ➔ Livrée</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f5_2">Gel et snapshot immuable des prix à la Confirmation</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f5_3">Journal d'amendements tracé pour modifications</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="credit-card"></i></div>
+          <div class="feature-name" id="f6Title">Module Paiements Dual</div>
+          <div class="feature-desc" id="f6Desc">Gestion complète des ventes par facilité ou solde courant.</div>
+          <ul class="feature-list" id="f6List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f6_1">Mode A (Installments): Échéancier auto avec alertes</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f6_2">Mode B (Credit): Solde ouvert avec versements libres</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f6_3">Reçus de paiement & annulation par entrée corrective</span></li>
+          </ul>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="printer"></i></div>
+          <div class="feature-name" id="f7Title">Impression Thermique & Sécurité</div>
+          <div class="feature-desc" id="f7Desc">Impression native ESC/POS, licence matérielle et sauvegarde auto.</div>
+          <ul class="feature-list" id="f7List">
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_1">Impression native sur imprimantes thermiques ESC/POS</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_2">Protection par Licence HWID (Clé Matérielle)</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_3">Sauvegarde automatique quotidienne SQLite WAL</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Itemized Real Price Valuation Section -->
+      <div class="section-header">
+        <i data-lucide="dollar-sign" style="color: var(--brand-green);"></i>
+        <h2 class="section-title" id="secValuationTitle">Détail des Fonctionnalités & Valeur Réelle sur le Marché</h2>
+      </div>
+
+      <div class="valuation-table-wrap">
+        <table class="valuation-table">
+          <thead>
+            <tr>
+              <th id="thModule">Module & Fonctionnalité</th>
+              <th id="thSpec">Spécification Technique</th>
+              <th id="thVal">Valeur Réelle (DZD)</th>
+              <th id="thCent">Valeur en Centimes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong id="val1_title">1. Catalogue Produits</strong></td>
+              <td id="val1_spec">Press-on Main, Pied, Kits, Prix de Gros, SKUs, Photos</td>
+              <td><span class="val-price-tag" id="val1_val">10 000 DA</span></td>
+              <td id="val1_cent">1 Million Centimes</td>
+            </tr>
+            <tr>
+              <td><strong id="val2_title">2. Fiche Clients & Dettes</strong></td>
+              <td id="val2_spec">Total Achats, Total Payé, Reste à payer (Crédit), Historique</td>
+              <td><span class="val-price-tag" id="val2_val">10 000 DA</span></td>
+              <td id="val2_cent">1 Million Centimes</td>
+            </tr>
+            <tr>
+              <td><strong id="val3_title">3. Workflow Commandes</strong></td>
+              <td id="val3_spec">State Machine 5 Étapes, Snapshot immuable des prix</td>
+              <td><span class="val-price-tag" id="val3_val">15 000 DA</span></td>
+              <td id="val3_cent">1.5 Million Centimes</td>
+            </tr>
+            <tr>
+              <td><strong id="val4_title">4. Stock Manuel & Vernis par #</strong></td>
+              <td id="val4_spec">Capsules, Colle, Lime, Vernis par #, Unités (pcs, ml, roll, bottle)</td>
+              <td><span class="val-price-tag" id="val4_val">20 000 DA</span></td>
+              <td id="val4_cent">2 Millions Centimes</td>
+            </tr>
+            <tr>
+              <td><strong id="val5_title">5. Fournisseurs & Historique</strong></td>
+              <td id="val5_spec">Nom, Téléphone, Page, Wilaya, Historique immuable des prix d'achat</td>
+              <td><span class="val-price-tag" id="val5_val">10 000 DA</span></td>
+              <td id="val5_cent">1 Million Centimes</td>
+            </tr>
+            <tr>
+              <td><strong id="val6_title">6. Paiements Dual (Facilité / Crédit)</strong></td>
+              <td id="val6_spec">Générateur d'échéancier avec alertes + Crédit solde courant</td>
+              <td><span class="val-price-tag" id="val6_val">15 000 DA</span></td>
+              <td id="val6_cent">1.5 Million Centimes</td>
+            </tr>
+            <tr>
+              <td><strong id="val7_title">7. Impression & Sécurité</strong></td>
+              <td id="val7_spec">Driver impression thermique ESC/POS + Licence HWID + Backup WAL</td>
+              <td><span class="val-price-tag" id="val7_val">10 000 DA</span></td>
+              <td id="val7_cent">1 Million Centimes</td>
+            </tr>
+            <tr style="background: var(--brand-green-light); font-weight: 800;">
+              <td><strong id="tblTotalValLabel">VALEUR RÉELLE DU MARCHÉ</strong></td>
+              <td id="tblTotalValDesc">Total cumulé de la valeur des modules développés sur mesure</td>
+              <td><span class="val-price-tag" style="font-size: 1.1rem; color: var(--brand-green-deep);" id="tblTotalValVal">90 000 DA</span></td>
+              <td style="font-weight: 800; color: var(--brand-green-deep);" id="tblTotalValCent">9 Millions Centimes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- WHITE MODERN CALCULATOR & PRICING SECTION -->
+      <div class="calculator-box-white">
+        <h3 class="calc-title" id="calcTitle">
+          <i data-lucide="calculator" style="color: var(--brand-green);"></i> <span id="calcTitleText">Calculateur Tarifaire & Options d'Acquisition</span>
+        </h3>
+        <p class="calc-subtitle" id="calcSub">Sélectionnez la formule d'acquisition et l'option de promotion souhaitée.</p>
+
+        <!-- Promotion Choice (1x1 Vertical List Layout) -->
+        <div class="options-group">
+          <div class="options-label" id="optPromoLabel">
+            <i data-lucide="tag" style="width: 16px;"></i> <span id="optPromoText">1. CHOIX DE LA PROMOTION EXCLUSIVE</span>
+          </div>
+          <div class="radio-cards-1x1">
+            
+            <!-- 1x1 Card 1: Sheymss Launch Offer (-10%) -->
+            <div class="card-1x1 selected" id="cardPromo10" onclick="selectPromo('10')">
+              <div class="card-1x1-header">
+                <div>
+                  <span class="badge-promo-tag badge-sheymss" id="bSheymss"><i data-lucide="sparkles" style="width: 13px;"></i> Offre Exclusive SHEYMSS STORE</span>
+                  <div class="card-1x1-title" id="p10Title"><i data-lucide="percent" style="color: var(--brand-green);"></i> Offre Lancement (-10% Remise Directe)</div>
+                </div>
+                <div class="card-1x1-pricing">
+                  <span class="price-strike-tag" id="p10Strike">90 000 DA</span>
+                  <span class="card-1x1-final-price" id="p10Val">72 000 DA</span>
+                  <span style="font-size: 0.9rem; font-weight: 600; color: var(--brand-muted);" id="p10SubVal">(7.2 ملايين سنتيم)</span>
+                </div>
+              </div>
+
+              <!-- 1x1 Rules List -->
+              <ul class="rules-list-1x1">
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="p10Rule1">Remise immédiate de 18 000 DA (1.8 مليون) sur la valeur réelle du marché (90 000 DA).</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="p10Rule2">Offre de lancement accordée exclusivement à SHEYMSS NAILS STORE.</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="p10Rule3">Sans aucun engagement marketing ni obligation de publication sur les réseaux sociaux.</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="p10Rule4">Garantie 0 DA d'acompte au démarrage — Début du paiement uniquement après livraison réussie.</span></li>
+              </ul>
+
+              <button type="button" class="select-custom-btn" id="btnSelectP10">
+                <i data-lucide="check" style="width: 18px;"></i> <span id="btnSelectP10Text">Offre Sélectionnée (-10%)</span>
+              </button>
+            </div>
+
+            <!-- 1x1 Card 2: Social Media Marketing Collaboration Offer (-25%) -->
+            <div class="card-1x1" id="cardPromo25" onclick="selectPromo('25')">
+              <div class="card-1x1-header">
+                <div>
+                  <span class="badge-promo-tag badge-collab" id="bCollab"><i data-lucide="share-2" style="width: 13px;"></i> Partenariat Pub Instagram / TikTok / Facebook</span>
+                  <div class="card-1x1-title" id="p25Title"><i data-lucide="video" style="color: #B78103;"></i> Offre Partenariat & Pub Réseaux (-25% Remise Maximale)</div>
+                </div>
+                <div class="card-1x1-pricing">
+                  <span class="price-strike-tag" id="p25Strike">90 000 DA</span>
+                  <span class="card-1x1-final-price" style="color: #B78103;" id="p25Val">60 000 DA</span>
+                  <span style="font-size: 0.9rem; font-weight: 600; color: var(--brand-muted);" id="p25SubVal">(6 ملايين سنتيم)</span>
+                </div>
+              </div>
+
+              <!-- 1x1 Rules List for Collaboration & Social Media Ads -->
+              <ul class="rules-list-1x1">
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px; color: #B78103;"></i><span id="p25Rule1">Remise maximale de 30 000 DA (3 ملايين سنتيم) sur la valeur réelle du marché (90 000 DA).</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px; color: #B78103;"></i><span id="p25Rule2">Règle 1 : Partage de 2 Stories ou Reels montrant l'utilisation du logiciel dans votre boutique SHEYMSS.</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px; color: #B78103;"></i><span id="p25Rule3">Règle 3 : Publication d'un post/story d'avis client avec tag de la page SALON DZ TECH sur vos réseaux.</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px; color: #B78103;"></i><span id="p25Rule4">Règle 4 : Libre choix des réseaux (Instagram, TikTok, ou Facebook) au moment de la livraison.</span></li>
+              </ul>
+
+              <button type="button" class="select-custom-btn" id="btnSelectP25">
+                <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectP25Text">Choisir l'Offre Partenariat (-25%)</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Payment Plan Choice (1x1 Vertical Layout) -->
+        <div class="options-group">
+          <div class="options-label" id="optPlanLabel">
+            <i data-lucide="wallet" style="width: 16px;"></i> <span id="optPlanText">2. MODALITÉ DE PAIEMENT</span>
+          </div>
+          <div class="radio-cards-1x1">
+            
+            <!-- Plan 1: Location-Vente (1x1 Stack) -->
+            <div class="card-1x1 selected" id="cardPlanRent" onclick="selectPlan('rent')">
+              <div class="card-1x1-header">
+                <div class="card-1x1-title" id="planRentTitle"><i data-lucide="calendar-check" style="color: var(--brand-green);"></i> Location-Vente en 6 Mensualités (+1 000 DA / mois de frais)</div>
+                <div class="card-1x1-final-price" id="planRentPrice">11 000 DA / mois</div>
+              </div>
+              <ul class="rules-list-1x1">
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="rentRule1">Paiement en 6 parts faciles (Prix ÷ 6) + 1 000 DA de frais par part (ex: 60 000 DA ÷ 6 = 10 000 DA + 1 000 DA = 11 000 DA / mois).</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="rentRule2">Garantie 0 DA d'acompte avant le démarrage des travaux (1ère part au Jour 10 après livraison).</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="rentRule3">Obtention de la Licence Définitive à Vie acquise au 6ème et dernier règlement !</span></li>
+              </ul>
+              <button type="button" class="select-custom-btn" id="btnSelectRent">
+                <i data-lucide="check" style="width: 18px;"></i> <span id="btnSelectRentText">Paiement par Facilités Sélectionné</span>
+              </button>
+            </div>
+
+            <!-- Plan 2: Direct Cash Payment (1x1 Stack) -->
+            <div class="card-1x1" id="cardPlanCash" onclick="selectPlan('cash')">
+              <div class="card-1x1-header">
+                <div class="card-1x1-title" id="planCashTitle"><i data-lucide="check-circle-2" style="color: var(--brand-green);"></i> Paiement Direct après Livraison (100%)</div>
+                <div class="card-1x1-final-price" id="planCashPrice">Paiement au Jour 10</div>
+              </div>
+              <ul class="rules-list-1x1">
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="cashRule1">Règlement 100% effectué uniquement le Jour 10 après livraison finale du logiciel.</span></li>
+                <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="cashRule2">Démonstration complète & formation effectuées sur votre ordinateur avant tout paiement.</span></li>
+              </ul>
+              <button type="button" class="select-custom-btn" id="btnSelectCash">
+                <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectCashText">Choisir le Paiement Direct</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BIG WEBSITE OPTION BOX -->
+        <div class="big-website-box" id="bigWebsiteBox">
+          <div class="big-website-header">
+            <div class="big-website-title-box">
+              <div class="big-website-icon-wrap">
+                <i data-lucide="globe" style="width: 32px; height: 32px;"></i>
+              </div>
+              <div>
+                <div class="big-website-main-title" id="webBoxMainTitle">Souhaitez-vous ajouter un Site Web E-Commerce pour SHEYMSS STORE ?</div>
+                <div class="big-website-sub-title" id="webBoxSubTitle">Plateforme Web & Kiosque connecté en direct avec votre logiciel Desktop (Optionnel).</div>
+              </div>
+            </div>
+
+            <button type="button" class="toggle-web-btn-big" id="btnToggleWeb" onclick="toggleWebOption()">
+              <i data-lucide="plus-circle" id="iconToggleWeb"></i> <span id="btnToggleWebText">Ajouter une Option Site Web</span>
+            </button>
+          </div>
+
+          <!-- SUB-PANEL FOR DESIGN & WEBSITE TIER SELECTION -->
+          <div class="web-config-panel" id="webConfigPanel">
+            
+            <!-- STEP A: DESIGN QUALITY TIER -->
+            <div style="font-size: 0.88rem; font-weight: 800; text-transform: uppercase; color: var(--brand-green-deep); margin-bottom: 12px;" id="lblDesignTierTitle">
+              A. CHOIX DE LA QUALITÉ DU DESIGN & UI/UX
+            </div>
+            
+            <div class="design-selector-row">
+              <button type="button" class="btn-design-tier" id="btnDesignMid" onclick="selectDesignTier('mid')">
+                <i data-lucide="layout" style="width: 18px;"></i> <span id="btnDesignMidText">Design Standard (Mid-Level)</span>
+              </button>
+              <button type="button" class="btn-design-tier selected" id="btnDesignWow" onclick="selectDesignTier('wow')">
+                <i data-lucide="sparkles" style="width: 18px; color: var(--brand-green);"></i> <span id="btnDesignWowText">Design Luxueux (High-Level WOW) ⭐</span>
+              </button>
+            </div>
+
+            <!-- STEP B: THE 3 WEBSITE FUNCTIONALITY LEVELS (1X1 STACK) -->
+            <div style="font-size: 0.88rem; font-weight: 800; text-transform: uppercase; color: var(--brand-green-deep); margin-bottom: 14px;" id="lblWebLevelTitle">
+              B. CHOIX DES FONCTIONNALITÉS DU SITE WEB
+            </div>
+
+            <div class="radio-cards-1x1">
+              
+              <!-- Web Level 1 Card -->
+              <div class="card-1x1" id="cardWebL1" onclick="selectWebLevel(1)">
+                <div class="card-1x1-header">
+                  <div class="card-1x1-title" id="webL1Title"><i data-lucide="store" style="color: var(--brand-green);"></i> Niveau 1 : Site Vitrine & Showroom Digital</div>
+                  <div class="card-1x1-final-price" id="webL1Price">28 000 DA</div>
+                </div>
+                <ul class="rules-list-1x1">
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL1Rule1">Présentation officielle du magasin SHEYMSS NAILS STORE & Histoire de la marque.</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL1Rule2">Liens directs vers vos réseaux sociaux (Instagram, TikTok, Facebook).</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL1Rule3">Localisation exacte sur carte Google Maps interactive & Bouton WhatsApp.</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL1Rule4">Générateur de QR Code sur-mesure à imprimer sur emballages et cartes de visite.</span></li>
+                </ul>
+                <button type="button" class="select-custom-btn" id="btnSelectWebL1">
+                  <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectWebL1Text">Choisir le Site Vitrine (Niveau 1)</span>
+                </button>
+              </div>
+
+              <!-- Web Level 2 Card -->
+              <div class="card-1x1" id="cardWebL2" onclick="selectWebLevel(2)">
+                <div class="card-1x1-header">
+                  <div class="card-1x1-title" id="webL2Title"><i data-lucide="refresh-cw" style="color: var(--brand-green);"></i> Niveau 2 : Catalogue Tél. + Sync Logiciel + WhatsApp/Insta</div>
+                  <div class="card-1x1-final-price" id="webL2Price">35 000 DA</div>
+                </div>
+                <ul class="rules-list-1x1">
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule1">Toutes les fonctionnalités du Niveau 1 incluses.</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule2">Synchronisation avec le logiciel PC : Ajoutez/Modifiez/Supprimez des produits depuis le PC ➔ Le site se met à jour automatiquement !</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule3">Redirection automatique des commandes vers WhatsApp ou Instagram Direct avec message pré-rempli.</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule4">Hébergement images gratuit sur CDN ImageKit.io (0 DA de frais serveur mensuels).</span></li>
+                </ul>
+                <button type="button" class="select-custom-btn" id="btnSelectWebL2">
+                  <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectWebL2Text">Choisir le Catalogue Sync (Niveau 2)</span>
+                </button>
+              </div>
+
+              <!-- Web Level 3 Card -->
+              <div class="card-1x1" id="cardWebL3" onclick="selectWebLevel(3)">
+                <div class="card-1x1-header">
+                  <div class="card-1x1-title" id="webL3Title"><i data-lucide="shopping-cart" style="color: var(--brand-green);"></i> Niveau 3 : E-Commerce Temps Réel Appwrite + Sync PC + Sécurité</div>
+                  <div class="card-1x1-final-price" id="webL3Price">60 000 DA</div>
+                </div>
+                <ul class="rules-list-1x1">
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule1">Toutes les fonctionnalités des Niveaux 1 & 2 incluses.</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule2">Veritable المتجر الإلكتروني : Panier d'achat + Formulaire de commande (Nom, Téléphone, Wilaya, Adresse).</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule3">Notification WebSockets Temps Réel Appwrite Cloud en direct sur le logiciel Desktop dès qu'une commande est passée !</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule4">Haute Sécurité : Certificat SSL HTTPS, Anti-bot CAPTCHA, Protection SQL Injection et 0 DA/mois d'infrastructure.</span></li>
+                </ul>
+                <button type="button" class="select-custom-btn" id="btnSelectWebL3">
+                  <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectWebL3Text">Choisir le Site E-Commerce Complet (Niveau 3)</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Pricing Summary Result (White Modern Card) -->
+        <div class="summary-card-white">
+          <div>
+            <div style="font-size: 0.85rem; text-transform: uppercase; color: var(--brand-muted); font-weight: 800;" id="sumLabel">Investissement Total Clôturé (Logiciel + Site Web)</div>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-top: 4px;">
+              <span class="price-strike-tag" style="font-size: 1.3rem;" id="displayStrikeTotal">90 000 DA</span>
+              <span class="total-amount-display-white" id="displayTotalAmount">72 000 DA</span>
+            </div>
+            <div style="font-size: 0.95rem; font-weight: 800; color: var(--brand-green-deep); margin-top: 4px;" id="displaySubText">Économie réalisée : -18 000 DA (1.8 مليون)</div>
+          </div>
+          <div>
+            <span class="schedule-pill-white" id="displayScheduleText">
+              <i data-lucide="sparkles" style="width: 18px; color: var(--brand-green);"></i> 6 Mensualités de 13 000 DA / mois (Début au Jour 10)
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Deployment Timeline Section -->
+      <div class="section-header">
+        <i data-lucide="calendar" style="color: var(--brand-green);"></i>
+        <h2 class="section-title" id="secTimelineTitle">Planning de Déploiement en 10 Jours</h2>
+      </div>
+
+      <div class="timeline-steps">
+        <div class="timeline-step">
+          <div class="step-number" id="st1Num"><i data-lucide="clock" style="width: 14px;"></i> Étape 1 • Jours 1-4</div>
+          <div class="step-title" id="st1Title">Configuration Initiales</div>
+          <div class="step-desc" id="st1Desc">Paramétrage du catalogue produits, catégories et fiches fournisseurs (Sans aucun acompte).</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-number" id="st2Num"><i data-lucide="clock" style="width: 14px;"></i> Étape 2 • Jours 5-7</div>
+          <div class="step-title" id="st2Title">Installation Bêta</div>
+          <div class="step-desc" id="st2Desc">Déploiement local sur le poste client & tests des modules (Stock, Commandes, Échéanciers).</div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="step-number" id="st3Num"><i data-lucide="clock" style="width: 14px;"></i> Étape 3 • Jours 8-10</div>
+          <div class="step-title" id="st3Title">Livraison & Activation</div>
+          <div class="step-desc" id="st3Desc">Test imprimante thermique, formation de l'équipe, remise de la licence `.exe` et début du paiement.</div>
+        </div>
+      </div>
+
+      <!-- Signatures Section (CLIENT ONLY) -->
+      <div class="section-header">
+        <i data-lucide="file-check" style="color: var(--brand-green);"></i>
+        <h2 class="section-title" id="secSigTitle">Validation & Signature Électronique du Client</h2>
+      </div>
+
+      <!-- Single Client Signature Box -->
+      <div class="single-signature-wrap">
+        <div class="sig-box">
+          <div class="sig-title">SHEYMSS NAILS STORE</div>
+          <div class="sig-party" id="sigClient">Signature & Acceptation du Client Partenaire</div>
+          <div class="canvas-wrap">
+            <canvas id="sigCanvasClient"></canvas>
+          </div>
+          <button class="btn btn-outline" style="font-size: 0.8rem; padding: 6px 16px;" onclick="clearCanvas()">
+            <i data-lucide="rotate-ccw" style="width: 14px;"></i> <span id="btnClear">Effacer la signature</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="sig-actions" style="margin-top: 36px; display: flex; justify-content: center;">
+        <a href="contract_ar.html" target="_blank" class="btn btn-green" style="text-decoration: none; padding: 16px 36px; font-size: 1.1rem;">
+          <i data-lucide="file-text"></i> <span id="btnArDoc">فتح العقد الرسمي العربي للطباعة والتوقيع (PDF)</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Web Audio API Click Sound (No Audio File Required)
+    function playClick() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1100, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(500, ctx.currentTime + 0.04);
+        gain.gain.setValueAtTime(0.08, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.05);
+        setTimeout(() => ctx.close().catch(() => {}), 100);
+      } catch (e) {}
+    }
+
+    // State Variables
+    let currentPromo = '10'; // '10' or '25'
+    let currentPlan = 'rent'; // 'rent' or 'cash'
+    let currentLang = 'fr';
+    let webOptionActive = false;
+    let selectedDesignTier = 'wow'; // 'mid' or 'wow'
+    let selectedWebLevel = 0; // 0 (None), 1, 2, or 3
+
+    // Appwrite & ImageKit pricing matrix
+    const webPrices = {
+      mid: { 1: 18000, 2: 25000, 3: 45000 },
+      wow: { 1: 28000, 2: 35000, 3: 60000 }
+    };
+
+    function toggleWebOption() {
+      playClick();
+      webOptionActive = !webOptionActive;
+      const btn = document.getElementById('btnToggleWeb');
+      const panel = document.getElementById('webConfigPanel');
+      const icon = document.getElementById('iconToggleWeb');
+      const text = document.getElementById('btnToggleWebText');
+
+      if (webOptionActive) {
+        btn.classList.add('active');
+        panel.classList.add('show');
+        icon.setAttribute('data-lucide', 'check-circle-2');
+        text.textContent = (currentLang === 'fr') ? "Option Site Web Activée" : "تمت إضافة خيار الموقع";
+        if (selectedWebLevel === 0) selectWebLevel(2); // default Level 2
+      } else {
+        btn.classList.remove('active');
+        panel.classList.remove('show');
+        icon.setAttribute('data-lucide', 'plus-circle');
+        text.textContent = (currentLang === 'fr') ? "Ajouter une Option Site Web" : "إضافة خيار موقع إلكتروني";
+        selectedWebLevel = 0;
+      }
+      lucide.createIcons();
+      updateCalculator();
+    }
+
+    function selectDesignTier(tier) {
+      playClick();
+      selectedDesignTier = tier;
+      document.getElementById('btnDesignMid').classList.toggle('selected', tier === 'mid');
+      document.getElementById('btnDesignWow').classList.toggle('selected', tier === 'wow');
+      updateWebCardsPriceDisplay();
+      updateCalculator();
+    }
+
+    function selectWebLevel(lvl) {
+      playClick();
+      if (!webOptionActive) {
+        webOptionActive = true;
+        document.getElementById('btnToggleWeb').classList.add('active');
+        document.getElementById('webConfigPanel').classList.add('show');
+      }
+      selectedWebLevel = lvl;
+      document.getElementById('cardWebL1').classList.toggle('selected', lvl === 1);
+      document.getElementById('cardWebL2').classList.toggle('selected', lvl === 2);
+      document.getElementById('cardWebL3').classList.toggle('selected', lvl === 3);
+      updateCalculator();
+    }
+
+    function updateWebCardsPriceDisplay() {
+      const p1 = webPrices[selectedDesignTier][1];
+      const p2 = webPrices[selectedDesignTier][2];
+      const p3 = webPrices[selectedDesignTier][3];
+
+      const l1El = document.getElementById('webL1Price');
+      const l2El = document.getElementById('webL2Price');
+      const l3El = document.getElementById('webL3Price');
+
+      if (currentLang === 'fr') {
+        if (l1El) l1El.textContent = `${p1.toLocaleString('fr-FR')} DA`;
+        if (l2El) l2El.textContent = `${p2.toLocaleString('fr-FR')} DA`;
+        if (l3El) l3El.textContent = `${p3.toLocaleString('fr-FR')} DA`;
+      } else {
+        if (l1El) l1El.textContent = `${p1.toLocaleString('ar-DZ')} دج`;
+        if (l2El) l2El.textContent = `${p2.toLocaleString('ar-DZ')} دج`;
+        if (l3El) l3El.textContent = `${p3.toLocaleString('ar-DZ')} دج`;
+      }
+    }
+
+    function selectPromo(promo) {
+      playClick();
+      currentPromo = promo;
+      document.getElementById('cardPromo10').classList.toggle('selected', promo === '10');
+      document.getElementById('cardPromo25').classList.toggle('selected', promo === '25');
+      
+      const btn10 = document.getElementById('btnSelectP10');
+      const btn25 = document.getElementById('btnSelectP25');
+      
+      if (promo === '10') {
+        btn10.innerHTML = `<i data-lucide="check" style="width: 18px;"></i> <span id="btnSelectP10Text">${dict[currentLang].btnSelP10Active}</span>`;
+        btn25.innerHTML = `<i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectP25Text">${dict[currentLang].btnSelP25Inactive}</span>`;
+      } else {
+        btn10.innerHTML = `<i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectP10Text">${dict[currentLang].btnSelP10Inactive}</span>`;
+        btn25.innerHTML = `<i data-lucide="check" style="width: 18px;"></i> <span id="btnSelectP25Text">${dict[currentLang].btnSelP25Active}</span>`;
+      }
+
+      updateCalculator();
+    }
+
+    function selectPlan(plan) {
+      playClick();
+      currentPlan = plan;
+      document.getElementById('cardPlanRent').classList.toggle('selected', plan === 'rent');
+      document.getElementById('cardPlanCash').classList.toggle('selected', plan === 'cash');
+
+      const btnRent = document.getElementById('btnSelectRent');
+      const btnCash = document.getElementById('btnSelectCash');
+
+      if (plan === 'rent') {
+        btnRent.innerHTML = `<i data-lucide="check" style="width: 18px;"></i> <span id="btnSelectRentText">${dict[currentLang].btnRentActive}</span>`;
+        btnCash.innerHTML = `<i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectCashText">${dict[currentLang].btnCashInactive}</span>`;
+      } else {
+        btnRent.innerHTML = `<i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectRentText">${dict[currentLang].btnRentInactive}</span>`;
+        btnCash.innerHTML = `<i data-lucide="check" style="width: 18px;"></i> <span id="btnSelectCashText">${dict[currentLang].btnCashActive}</span>`;
+      }
+
+      updateCalculator();
+    }
+
+    function updateCalculator() {
+      const realMarketPrice = 90000;
+      let basePromoPrice = (currentPromo === '25') ? 60000 : 72000;
+      
+      let webPrice = (webOptionActive && selectedWebLevel > 0) 
+        ? webPrices[selectedDesignTier][selectedWebLevel] 
+        : 0;
+
+      let combinedBase = basePromoPrice + webPrice;
+      let feePerPart = (currentPlan === 'rent') ? 1000 : 0;
+      let totalFee = feePerPart * 6;
+
+      let finalPrice = combinedBase + totalFee;
+      let discount = realMarketPrice - basePromoPrice;
+
+      const displayStrike = document.getElementById('displayStrikeTotal');
+      const displayTotal = document.getElementById('displayTotalAmount');
+      const displaySub = document.getElementById('displaySubText');
+      const displaySchedule = document.getElementById('displayScheduleText');
+
+      const planRentPriceEl = document.getElementById('planRentPrice');
+      let basePart = Math.round(combinedBase / 6); // base monthly
+      let totalPart = basePart + feePerPart;
+
+      if (planRentPriceEl) {
+        planRentPriceEl.textContent = (currentLang === 'fr') 
+          ? `${totalPart.toLocaleString('fr-FR')} DA / mois` 
+          : `${totalPart.toLocaleString('ar-DZ')} دج / شهرياً`;
+      }
+
+      displayStrike.textContent = (currentLang === 'fr') ? `${(realMarketPrice + webPrice).toLocaleString('fr-FR')} DA` : `${(realMarketPrice + webPrice).toLocaleString('ar-DZ')} دج`;
+      displayTotal.textContent = (currentLang === 'fr') ? `${finalPrice.toLocaleString('fr-FR')} DA` : `${finalPrice.toLocaleString('ar-DZ')} دج`;
+
+      if (currentLang === 'fr') {
+        let discountCent = (discount / 10000).toFixed(1) + ' Million(s) Centimes';
+        let webAddonText = webPrice > 0 ? ` (dont Site Web: +${webPrice.toLocaleString('fr-FR')} DA)` : '';
+        displaySub.textContent = `Économie nette réalisée : -${discount.toLocaleString('fr-FR')} DA sur le Logiciel${webAddonText}`;
+        if (currentPlan === 'rent') {
+          displaySchedule.innerHTML = `<i data-lucide="sparkles" style="width:18px; color: var(--brand-green);"></i> 6 Mensualités de ${totalPart.toLocaleString('fr-FR')} DA / mois (${basePart.toLocaleString('fr-FR')} base + ${feePerPart.toLocaleString('fr-FR')} DA frais/mois, début au Jour 10)`;
+        } else {
+          displaySchedule.innerHTML = `<i data-lucide="sparkles" style="width:18px; color: var(--brand-green);"></i> 100% (${finalPrice.toLocaleString('fr-FR')} DA) au Jour 10 après Livraison (0 DA de frais)`;
+        }
+      } else {
+        let discountCent = (discount / 10000).toFixed(1) + ' مليون سنتيم';
+        let webAddonText = webPrice > 0 ? ` (يتضمن خيار الموقع: +${webPrice.toLocaleString('ar-DZ')} دج)` : '';
+        displaySub.textContent = `إجمالي التوفير المحقق: -${discount.toLocaleString('ar-DZ')} دج على البرنامج${webAddonText}`;
+        if (currentPlan === 'rent') {
+          displaySchedule.innerHTML = `<i data-lucide="sparkles" style="width:18px; color: var(--brand-green);"></i> 6 أقساط شهرية بقيمة ${totalPart.toLocaleString('ar-DZ')} دج/شهر (${basePart.toLocaleString('ar-DZ')} دج أصلي + ${feePerPart.toLocaleString('ar-DZ')} دج رسوم/قسط، بداية الدفع عند اليوم 10)`;
+        } else {
+          displaySchedule.innerHTML = `<i data-lucide="sparkles" style="width:18px; color: var(--brand-green);"></i> دفع 100% (${finalPrice.toLocaleString('ar-DZ')} دج) عند التسليم في اليوم 10 (بدون رسوم)`;
+        }
+      }
+      // Dynamic Delivery Days Calculation (10 days for software + 10 days for website option)
+      let deliveryDays = 10;
+      let webExtraDays = (webOptionActive && selectedWebLevel > 0) ? 10 : 0;
+      let totalDeliveryDays = deliveryDays + webExtraDays;
+
+      const delaiEl = document.getElementById('delaiValue');
+      if (delaiEl) {
+        if (webExtraDays > 0) {
+          delaiEl.textContent = (currentLang === 'fr')
+            ? `${totalDeliveryDays} Jours (10 J. Logiciel + 10 J. Site Web)`
+            : `${totalDeliveryDays} يوم عمل (10 أيام للبرنامج + 10 أيام للموقع)`;
+        } else {
+          delaiEl.textContent = (currentLang === 'fr') ? "10 Jours" : "10 أيام عمل";
+        }
+      }
+
+      lucide.createIcons();
+    }
+
+    // 100% PURE DICTIONARIES (NO MIXED LANGUAGES AT ALL)
+    const dict = {
+      fr: {
+        badgeText: "CONTRAT COMMERCIAL OFFICIEL",
+        mainTitle: "Contrat Commercial & Spécifications Techniques",
+        mainSub: "Développement & Déploiement de la Solution de Gestion SHEYMSS pour SHEYMSS NAILS STORE par SALON DZ TECH",
+        trustTitle: "Garantie de Confiance & Souplesse Absolue (0 DA d'Acompte au Démarrage)",
+        trustDesc: "Pour établir une relation de confiance totale, aucun acompte de 50% n'est exigé avant le lancement. Le logiciel est d'abord entièrement configuré, installé et testé sur votre poste. Le paiement ne débute qu'après la livraison réussie et la démonstration complète !",
+        quotesTitleText: "Exigences et Demandes Explicites de la Cliente (Cahier des Charges Direct)",
+        q1Header: "1. Catégories de Produits Exigées",
+        f1_quote: "• Press-on Nails Main  |  • Press-on Nails Pied  |  • Kits Main et Pied",
+        q2Header: "2. Fiche Client Dynamique par Boutique",
+        f2_quote: "Chaque magasin de cosmétiques aura sa propre fiche : Boutique X | Téléphone | Wilaya | Produits achetés | Total achats | Dette / reste à payer | Dernière commande",
+        q3Header: "3. Stock Manuel Ledger & Vernis par Numéro (Mots de la Cliente)",
+        f3_quote: "Je saisis mes articles achetés et en stock (capsules, vernis, colle, lime, scotch). Vous ajoutez un bouton 'Ajouter produit' et je saisis tout ce que j'ai. Quand j'en consomme, le logiciel calcule automatiquement le reste — je saisis simplement ce que j'ai consommé... Le stock est ouvert, et les vernis sont suivis individuellement par leur numéro.",
+        q4Header: "4. Fournisseurs & Suivi des Prix d'Achat (Mots de la Cliente)",
+        f4_quote: "Je saisis d'où j'achète mes produits : nom du fournisseur, numéro de téléphone, page sociale, et le prix d'achat de chaque produit avec conservation de l'historique d'évolution des prix.",
+
+        secValuationTitle: "Détail des Fonctionnalités & Valeur Réelle sur le Marché",
+        thModule: "Module & Fonctionnalité",
+        thSpec: "Spécification Technique",
+        thVal: "Valeur Réelle (DZD)",
+        thCent: "Valeur en Centimes",
+
+        val1_title: "1. Catalogue Produits",
+        val1_spec: "Press-on Main, Pied, Kits, Prix de Gros, SKUs, Photos",
+        val1_val: "10 000 DA",
+        val1_cent: "1 Million Centimes",
+
+        val2_title: "2. Fiche Clients & Dettes",
+        val2_spec: "Total Achats, Total Payé, Reste à payer (Crédit), Historique",
+        val2_val: "10 000 DA",
+        val2_cent: "1 Million Centimes",
+
+        val3_title: "3. Workflow Commandes",
+        val3_spec: "State Machine 5 Étapes, Snapshot immuable des prix",
+        val3_val: "15 000 DA",
+        val3_cent: "1.5 Million Centimes",
+
+        val4_title: "4. Stock Manuel & Vernis par #",
+        val4_spec: "Capsules, Colle, Lime, Vernis par #, Unités (pcs, ml, flacon, rouleau)",
+        val4_val: "20 000 DA",
+        val4_cent: "2 Millions Centimes",
+
+        val5_title: "5. Fournisseurs & Historique",
+        val5_spec: "Nom, Téléphone, Page, Wilaya, Historique immuable des prix d'achat",
+        val5_val: "10 000 DA",
+        val5_cent: "1 Million Centimes",
+
+        val6_title: "6. Paiements Dual (Facilité / Crédit)",
+        val6_spec: "Générateur d'échéancier avec alertes + Crédit solde courant",
+        val6_val: "15 000 DA",
+        val6_cent: "1.5 Million Centimes",
+
+        val7_title: "7. Impression & Sécurité",
+        val7_spec: "Driver impression thermique ESC/POS + Licence HWID + Backup WAL",
+        val7_val: "10 000 DA",
+        val7_cent: "1 Million Centimes",
+
+        tblTotalValLabel: "VALEUR RÉELLE DU MARCHÉ",
+        tblTotalValDesc: "Total cumulé de la valeur des modules développés sur mesure",
+        tblTotalValVal: "90 000 DA",
+        tblTotalValCent: "9 Millions Centimes",
+
+        lblPrestataire: "Prestataire",
+        lblClient: "Client Partenaire",
+        lblDate: "Date du Contrat",
+        lblDelai: "Délai de Livraison",
+        delaiValue: "10 Jours",
+        secScopeTitle: "Spécifications Techniques & Fonctionnalités du Logiciel",
+        f1Title: "Catalogue Produits",
+        f1Desc: "Gestion complète des produits vendus aux boutiques et grossistes.",
+        f1_1: "Catégories par défaut (Press-on Main, Pied, Kits)",
+        f1_2: "Prix de gros sur mesure & Références SKU",
+        f1_3: "Photos produits & Statut Actif/Inactif",
+
+        f2Title: "Stock Manuel & Vernis Numérotés",
+        f2Desc: "Ledger de mouvements 100% manuel avec suivi individuel des unités.",
+        f2_1: "Unités personnalisées (pcs, ml, flacon, rouleau, lime)",
+        f2_2: "Boutons d'action rapide (Ajouter, Utiliser, Ajuster)",
+        f2_3: "Suivi des Vernis par Numéro & Statut individuel",
+        f2_4: "Historique immuable & Alerte de stock bas",
+
+        f3Title: "Fournisseurs & Historique des Prix",
+        f3Desc: "Traçabilité complète des approvisionnements et variations de prix.",
+        f3_1: "Fiche fournisseur complète (Téléphone, Page, Wilaya)",
+        f3_2: "Historique immuable de l'évolution des prix d'achat",
+        f3_3: "Traçabilité des achats par fournisseur",
+
+        f4Title: "Clients Boutiques & Suivi Dettes",
+        f4Desc: "Calcul dynamique instantané du chiffre d'affaires et des dettes.",
+        f4_1: "Calcul auto: Total achats, Total payé, Reste à payer",
+        f4_2: "Historique complet des commandes & versements",
+        f4_3: "Vue directe sur les échéances à venir et retards",
+
+        f5Title: "Workflow Commandes (5 Étapes)",
+        f5Desc: "State machine précise de gestion des commandes de vente.",
+        f5_1: "5 Étapes : Brouillon ➔ Confirmée ➔ En Prep ➔ Prête ➔ Livrée",
+        f5_2: "Gel et snapshot immuable des prix à la Confirmation",
+        f5_3: "Journal d'amendements tracé pour modifications",
+
+        f6Title: "Module Paiements Dual",
+        f6Desc: "Gestion complète des ventes par facilité ou solde courant.",
+        f6_1: "Mode A (Installments): Échéancier auto avec alertes",
+        f6_2: "Mode B (Credit): Solde ouvert avec versements libres",
+        f6_3: "Reçus de paiement & annulation par entrée corrective",
+
+        f7Title: "Impression Thermique & Sécurité",
+        f7Desc: "Impression native ESC/POS, licence matérielle et sauvegarde auto.",
+        f7_1: "Impression native sur imprimantes thermiques ESC/POS",
+        f7_2: "Protection par Licence HWID (Clé Matérielle)",
+        f7_3: "Sauvegarde automatique quotidienne SQLite WAL",
+
+        calcTitleText: "Calculateur Tarifaire & Options d'Acquisition",
+        calcSub: "Sélectionnez la formule d'acquisition et l'option de promotion souhaitée.",
+        optPromoText: "1. CHOIX DE LA PROMOTION EXCLUSIVE",
+        bSheymss: "Offre Exclusive SHEYMSS STORE",
+        p10Title: "Offre Lancement (-10% Remise Directe)",
+        p10Strike: "90 000 DA",
+        p10Val: "72 000 DA",
+        p10SubVal: "(7.2 Millions Centimes)",
+        p10Rule1: "Remise immédiate de 18 000 DA (1.8 مليون) sur la valeur réelle du marché (90 000 DA).",
+        p10Rule2: "Offre de lancement accordée exclusivement à SHEYMSS NAILS STORE.",
+        p10Rule3: "Sans aucun engagement marketing ni obligation de publication sur les réseaux sociaux.",
+        p10Rule4: "Garantie 0 DA d'acompte au démarrage — Début du paiement uniquement après livraison réussie.",
+        btnSelP10Active: "Offre Sélectionnée (-10%)",
+        btnSelP10Inactive: "Choisir cette Offre (-10%)",
+
+        bCollab: "Partenariat Pub Instagram / TikTok / Facebook",
+        p25Title: "Offre Partenariat & Pub Réseaux (-25% Remise Maximale)",
+        p25Strike: "90 000 DA",
+        p25Val: "60 000 DA",
+        p25SubVal: "(6 Millions Centimes)",
+        p25Rule1: "Remise maximale de 30 000 DA (3 ملايين سنتيم) sur la valeur réelle du marché (90 000 DA).",
+        p25Rule2: "Règle 1 : Partage de 2 Stories ou Reels montrant l'utilisation du logiciel dans votre boutique SHEYMSS.",
+        p25Rule3: "Règle 2 : Publication d'un post/story d'avis client avec tag de la page SALON DZ TECH sur vos réseaux.",
+        p25Rule4: "Règle 3 : Libre choix des réseaux (Instagram, TikTok, ou Facebook) au moment de la livraison.",
+        btnSelP25Active: "Offre Partenariat Sélectionnée (-25%)",
+        btnSelP25Inactive: "Choisir l'Offre Partenariat (-25%)",
+
+        optPlanText: "2. MODALITÉ DE PAIEMENT",
+        planRentTitle: "Location-Vente en 6 Mensualités (+1 000 DA / mois de frais)",
+        planRentPrice: "11 000 DA / mois",
+        rentRule1: "Paiement en 6 parts faciles (Prix ÷ 6) + 1 000 DA de frais par part (ex: 60 000 DA ÷ 6 = 10 000 DA + 1 000 DA = 11 000 DA / mois).",
+        rentRule2: "Garantie 0 DA d'acompte avant le démarrage des travaux (1ère part au Jour 10 après livraison).",
+        rentRule3: "Obtention de la Licence Définitive à Vie acquise au 6ème et dernier règlement !",
+        btnRentActive: "Paiement par Facilités Sélectionné",
+        btnRentInactive: "Choisir le Paiement par Facilités",
+
+        planCashTitle: "Paiement Direct après Livraison (100%)",
+        planCashPrice: "Paiement au Jour 10",
+        cashRule1: "Règlement 100% effectué uniquement le Jour 10 après livraison finale du logiciel.",
+        cashRule2: "Démonstration complète & formation effectuées sur votre ordinateur avant tout paiement.",
+        btnCashActive: "Paiement Direct Sélectionné",
+        btnCashInactive: "Choisir le Paiement Direct",
+
+        webBoxMainTitle: "Souhaitez-vous ajouter un Site Web E-Commerce pour SHEYMSS STORE ?",
+        webBoxSubTitle: "Plateforme Web & Kiosque connecté en direct avec votre logiciel Desktop (Optionnel).",
+        btnToggleWebText: "Ajouter une Option Site Web",
+        lblDesignTierTitle: "A. CHOIX DE LA QUALITÉ DU DESIGN & UI/UX",
+        btnDesignMidText: "Design Standard (Mid-Level)",
+        btnDesignWowText: "Design Luxueux (High-Level WOW) ⭐",
+        lblWebLevelTitle: "B. CHOIX DES FONCTIONNALITÉS DU SITE WEB",
+
+        webL1Title: "Niveau 1 : Site Vitrine & Showroom Digital",
+        webL1Rule1: "Présentation officielle du magasin SHEYMSS NAILS STORE & Histoire de la marque.",
+        webL1Rule2: "Liens directs vers vos réseaux sociaux (Instagram, TikTok, Facebook).",
+        webL1Rule3: "Localisation exacte sur carte Google Maps interactive & Bouton WhatsApp.",
+        webL1Rule4: "Générateur de QR Code sur-mesure à imprimer sur emballages et cartes de visite.",
+        btnSelWebL1Active: "Site Vitrine Sélectionné (Niveau 1)",
+        btnSelWebL1Inactive: "Choisir le Site Vitrine (Niveau 1)",
+
+        webL2Title: "Niveau 2 : Catalogue Tél. + Sync Logiciel + WhatsApp/Insta",
+        webL2Rule1: "Toutes les fonctionnalités du Niveau 1 incluses.",
+        webL2Rule2: "Synchronisation avec le logiciel PC : Ajoutez/Modifiez/Supprimez des produits depuis le PC ➔ Le site se met à jour automatiquement !",
+        webL2Rule3: "Redirection automatique des commandes vers WhatsApp ou Instagram Direct avec message pré-rempli.",
+        webL2Rule4: "Hébergement images gratuit sur CDN ImageKit.io (0 DA de frais serveur mensuels).",
+        btnSelWebL2Active: "Catalogue Sync Sélectionné (Niveau 2)",
+        btnSelWebL2Inactive: "Choisir le Catalogue Sync (Niveau 2)",
+
+        webL3Title: "Niveau 3 : E-Commerce Temps Réel Appwrite + Sync PC + Sécurité",
+        webL3Rule1: "Toutes les fonctionnalités des Niveaux 1 & 2 incluses.",
+        webL3Rule2: "Veritable المتجر الإلكتروني : Panier d'achat + Formulaire de commande (Nom, Téléphone, Wilaya, Adresse).",
+        webL3Rule3: "Notification WebSockets Temps Réel Appwrite Cloud en direct sur le logiciel Desktop dès qu'une commande est passée !",
+        webL3Rule4: "Haute Sécurité : Certificat SSL HTTPS, Anti-bot CAPTCHA, Protection SQL Injection et 0 DA/mois d'infrastructure.",
+        btnSelWebL3Active: "E-Commerce Temps Réel Sélectionné (Niveau 3)",
+        btnSelWebL3Inactive: "Choisir le Site E-Commerce Complet (Niveau 3)",
+
+        sumLabel: "Investissement Total Clôturé (Logiciel + Site Web)",
+        secTimelineTitle: "Planning de Déploiement en 10 Jours",
+        st1Num: "Étape 1 • Jours 1-4",
+        st1Title: "Configuration Initiales",
+        st1Desc: "Paramétrage du catalogue produits, catégories et fiches fournisseurs (Sans aucun acompte).",
+        st2Num: "Étape 2 • Jours 5-7",
+        st2Title: "Installation Bêta",
+        st2Desc: "Déploiement local sur le poste client & tests des modules (Stock, Commandes, Échéanciers).",
+        st3Num: "Étape 3 • Jours 8-10",
+        st3Title: "Livraison & Activation",
+        st3Desc: "Test imprimante thermique, formation de l'équipe, remise de la licence `.exe` et début du paiement.",
+        secSigTitle: "Validation & Signature Électronique du Client",
+        sigClient: "Signature & Acceptation du Client Partenaire",
+        btnClear: "Effacer la signature",
+        btnPrint: "Imprimer / Exporter le Contrat PDF"
+      },
+      ar: {
+        badgeText: "عقد تجاري رسمي",
+        mainTitle: "عقد خدمات وتطوير برمجيات",
+        mainSub: "تطوير وتثبيت نظام إدارة SHEYMSS لصالح SHEYMSS NAILS STORE بواسطة SALON DZ TECH",
+        trustTitle: "ضمان الثقة والشفافية التامة (0 دج عربون قبل البداية)",
+        trustDesc: "لكسب ثقتكم الكاملة وتأكيد جودة عملنا، لا نطلب أي عربون مالي (0 دج) قبل البداية! يتم أولاً إنجاز البرنامج كاملاً، تثبيته وتجربته معكم على جهازكم، ويبدأ الدفع فقط بعد التسليم النهائي والتأكد التام من نجاح التجربة!",
+        quotesTitleText: "متطلبات وطلبات الزبونة المباشرة (كراسة الشروط المؤكدة)",
+        q1Header: "1. فئات المنتجات المطلوبة",
+        f1_quote: "• Press-on Nails Main  |  • Press-on Nails Pied  |  • Kits Main et Pied",
+        q2Header: "2. بطاقة الزبائن لكل محل كوسميتيك (Fiche Client)",
+        f2_quote: "كل محل كوسميتيك يكون عندو Fiche وحدو: Client: Boutique X | Téléphone | Wilaya | Produits achetés | Total achats | Dette / reste à payer (الكريدي) | Dernière commande",
+        q3Header: "3. الستوك اليدوي وتتبع طلاء الأظافر بالأرقام (كلمات الزبونة بالحرف)",
+        f3_quote: "نكتب فيه السلعة لي عندي و لي شريتها مثال ليكابسول و ليفارني و اللسقة لاليم سكوتش كاين بزاااف منتوجات يعني نتي ديريلي اضافة منتوج و انا نكتب كامل واش عندي و كي نرفد منهم وحدو وحدو يحسبلي شحال بقى انا نكتب برك بلي نقصت... سطوك نخليهولك اوفار تكتبي كيما حابة، ليفارني عندك بالأرقام يسما يكون فيها وين تحددي كل فارني بالرقم تاعو",
+        q4Header: "4. الموردون وتتبع أسعار الشراء (كلمات الزبونة بالحرف)",
+        f4_quote: "نكتب فيه منين راني نشري سلعتي، اسماء الفورنيسور، رقم الهاتف، الصفحة تاعو، و شحال باعلي كل منتج (مع حفظ تاريخ تغير أسعار الشراء)",
+
+        secValuationTitle: "تفصيل ميزات النظام والقيمة المالية الحقيقية في السوق",
+        thModule: "وحدة النظام والميزة",
+        thSpec: "المواصفات التقنية المطلوبة",
+        thVal: "القيمة الحقيقية (دج)",
+        thCent: "القيمة بالسنتيم",
+
+        val1_title: "1. كتالوج المنتجات",
+        val1_spec: "Press-on Main, Pied, Kits، أسعار الجملة، SKUs، الصور",
+        val1_val: "10,000 دج",
+        val1_cent: "1 مليون سنتيم",
+
+        val2_title: "2. بطاقة الزبائن والديون",
+        val2_spec: "إجمالي المشتريات، المدفوعات، المتبقي (الكريدي)، السجل الكامل",
+        val2_val: "10,000 دج",
+        val2_cent: "1 مليون سنتيم",
+
+        val3_title: "3. مسار إدارة الطلبيات",
+        val3_spec: "مسار الطلبيات 5 مراحل، وتجميد وتثبيت الأسعار عند التأكيد",
+        val3_val: "15,000 دج",
+        val3_cent: "1.5 مليون سنتيم",
+
+        val4_title: "4. المخزون اليدوي وطلاء الأظافر",
+        val4_spec: "كابسول، غراء، مبرد، طلاء بالأرقام، وحدات قياس مخصصة",
+        val4_val: "20,000 دج",
+        val4_cent: "2 ملايين سنتيم",
+
+        val5_title: "5. الموردون وتاريخ أسعار الشراء",
+        val5_spec: "اسم، هاتف، صفحة، ولاية، سجل محمي لتغير أسعار الشراء",
+        val5_val: "10,000 دج",
+        val5_cent: "1 مليون سنتيم",
+
+        val6_title: "6. نظام الدفع المزدوَج (تقسيط / كريدي)",
+        val6_spec: "مولد الأقساط مع التنبيهات الملونة + الكريدي المفتوح",
+        val6_val: "15,000 دج",
+        val6_cent: "1.5 مليون سنتيم",
+
+        val7_title: "7. الطباعة الحرارية والأمان",
+        val7_spec: "طباعة الوصولات الحرارية + حماية الترخيص HWID + نسخ احتياطي",
+        val7_val: "10,000 دج",
+        val7_cent: "1 مليون سنتيم",
+
+        tblTotalValLabel: "إجمالي القيمة الحقيقية للنظام في السوق",
+        tblTotalValDesc: "المجموع الكلي لقيمة الوحدات المنجزة خصيصاً للنظام",
+        tblTotalValVal: "90,000 دج",
+        tblTotalValCent: "9 ملايين سنتيم",
+
+        lblPrestataire: "المطور والمنجز",
+        lblClient: "الزبون الشريك",
+        lblDate: "تاريخ العقد",
+        lblDelai: "مدة التسليم النهائي",
+        delaiValue: "10 أيام عمل",
+        secScopeTitle: "المواصفات التقنية والمميزات الكاملة للنظام",
+        f1Title: "كتالوج المنتجات",
+        f1Desc: "إدارة شاملة للمنتجات المباعة للمحلات وتجار الجملة.",
+        f1_1: "الفئات الافتراضية (أظافر رئيسية، أظافر القدم، المجموعات الكاملة)",
+        f1_2: "أسعار الجملة المخصصة والرموز المرجعية للمنتجات",
+        f1_3: "صور المنتجات وحالة التفعيل",
+
+        f2Title: "المخزون اليدوي وطلاء الأظافر بالأرقام",
+        f2Desc: "سجل حركة مخزون يدوي مع تتبع فردي للوحدات.",
+        f2_1: "وحدات قياس مخصصة (قطعة، مليلتر، قارورة، لفة، مبرد)",
+        f2_2: "أزرار الحركة السريعة (إضافة، استخدام، تعديل)",
+        f2_3: "تتبع طلاء الأظافر بالأرقام والحالة الفردية لكل قارورة",
+        f2_4: "سجل حركات دائم وتنبيهات انخفاض المخزون",
+
+        f3Title: "الموردون وتاريخ أسعار الشراء",
+        f3Desc: "تتبع كامل للتوريدات وتغيرات أسعار الشراء.",
+        f3_1: "بطاقة مورد كاملة (الهاتف، الصفحة الرسمية، الولاية)",
+        f3_2: "سجل محمي وغير قابل للتعديل لتطور أسعار الشراء",
+        f3_3: "تتبع وتوثيق المشتريات حسب كل مورد",
+
+        f4Title: "زبائن المحلات وتتبع الديون",
+        f4Desc: "حساب ديناميكي فوري لإجمالي المبيعات والديون والمستحقات.",
+        f4_1: "حساب تلقائي: إجمالي المشتريات، المبالغ المدفوعة، والمتبقي",
+        f4_2: "سجل كامل للطلبيات والمدفوعات لكل زبون",
+        f4_3: "عرض مباشر للأقساط المستحقة والدفعات المتأخرة",
+
+        f5Title: "مسار الطلبيات (5 مراحل دقيقة)",
+        f5Desc: "نظام محكم لإدارة حالات الطلبيات وتثبيت الأسعار.",
+        f5_1: "5 مراحل: مسودة ➔ مؤكدة ➔ قيد التحضير ➔ جاهزة ➔ تم التسليم",
+        f5_2: "تثبيت وتجميد الأسعار بشكل نهائي عند مرحلة التجميع",
+        f5_3: "سجل التعديلات الموثق لأي تغييرات بعد التأكيد",
+
+        f6Title: "نظام الدفع المزدوَج (تقسيط / كريدي)",
+        f6Desc: "إدارة كاملة للمبيعات بالأقساط أو الحساب المفتوح.",
+        f6_1: "نظام التقسيط: جدول دفع تلقائي مع التنبيهات الملونة",
+        f6_2: "نظام الكريدي: حساب مفتوح مع تسجيل الدفعات المتتالية",
+        f6_3: "وصلات الدفع وإمكانية الإلغاء المعاكس التصحيحي",
+
+        f7Title: "الطباعة الحرارية والأمان",
+        f7Desc: "طباعة مباشرة على طابعات الوصولات، حماية برمجية ونسخ احتياطي.",
+        f7_1: "طباعة مباشرة على طابعات الوصولات الحرارية",
+        f7_2: "حماية البرنامج بمفتاح الترخيص الخاص بالجهاز",
+        f7_3: "نسخ احتياطي تلقائي يومي لقاعدة البيانات المحلية",
+
+        calcTitleText: "حاسبة الأسعار وخيارات التملك",
+        calcSub: "حددي صيغة التملك وعرض التخفيض المناسب لكِ.",
+        optPromoText: "1. اختيار العرض والتخفيض المتاح",
+        bSheymss: "عرض حصري خاص بمحل SHEYMSS STORE",
+        p10Title: "عرض الإطلاق القياسي (-10% تخفيض)",
+        p10Strike: "90,000 دج",
+        p10Val: "72,000 دج",
+        p10SubVal: "(7.2 ملايين سنتيم)",
+        p10Rule1: "تخفيض مباشر بقيمة 18,000 دج (1.8 مليون) من القيمة الحقيقية للنظام (90,000 دج).",
+        p10Rule2: "عرض إطلاق قياسي مخصص حصرياً لمحل SHEYMSS NAILS STORE.",
+        p10Rule3: "بدون أي التزام تسويقي أو شرط للنشر على صفحات التواصل الاجتماعي.",
+        p10Rule4: "ضمان 0 دج عربون قبل البداية — بداية الدفع تبدأ فقط بعد التسليم والتجربة الناجحة.",
+        btnSelP10Active: "تم اختيار العرض (-10%)",
+        btnSelP10Inactive: "اختيار هذا العرض (-10%)",
+
+        bCollab: "شراكة وإعلانات إنستغرام / تيكتوك / فيسبوك",
+        p25Title: "عرض الشراكة والإعلانات (-25% تخفيض أقصى)",
+        p25Strike: "90,000 دج",
+        p25Val: "60,000 دج",
+        p25SubVal: "(6 ملايين سنتيم)",
+        p25Rule1: "تخفيض أقصى بقيمة 30,000 دج (3 ملايين سنتيم) من القيمة الحقيقية للنظام (90,000 دج).",
+        p25Rule2: "الشرط 1: مشاركة ستوريتين (Stories) أو فيديو قصير (Reel) يوضح استخدام النظام في محل SHEYMSS.",
+        p25Rule3: "الشرط 2: نشر منشور/ستوري لرأي الزبون مع منشن لصفحة SALON DZ TECH الرسمية.",
+        p25Rule4: "الشرط 3: حرية اختيار المنصة (إنستغرام، تيكتوك، أو فيسبوك) عند وقت التسليم.",
+        btnSelP25Active: "تم اختيار عرض الشراكة (-25%)",
+        btnSelP25Inactive: "اختيار عرض الشراكة (-25%)",
+
+        optPlanText: "2. طريقة وصيغة الدفع",
+        planRentTitle: "الإيجار المفضي للتملك على 6 أقساط (+1,000 دج رسوم مع كل قسط)",
+        planRentPrice: "11,000 دج / شهرياً",
+        rentRule1: "تقسيم المبلغ على 6 أقساط شهرياً (المبلغ ÷ 6) + إضافة 1,000 دج رسوم تسهيلات مع كل قسط (مثال: 60,000 دج ÷ 6 = 10,000 دج + 1,000 دج = 11,000 دج / شهرياً).",
+        rentRule2: "ضمان 0 دج عربون قبل البداية (بداية القسط الأول تكون في اليوم 10 بعد التسليم والتركيب).",
+        rentRule3: "الحصول على الترخيص النهائي مدى الحياة عند القسط السادس والأخير!",
+        btnRentActive: "تم اختيار الدفع بالمقادير (بالتسهيلات)",
+        btnRentInactive: "اختيار الدفع بالتسهيلات",
+
+        planCashTitle: "الدفع المباشر 100% بعد التسليم",
+        planCashPrice: "الدفع في اليوم 10",
+        cashRule1: "دفع 100% يتم فقط في اليوم 10 بعد التسليم النهائي وتجربة البرنامج.",
+        cashRule2: "إجراء التجربة الكاملة وتدريب الفريق على جهازكم قبل أي دفع مالي.",
+        btnCashActive: "تم اختيار الدفع المباشر",
+        btnCashInactive: "اختيار الدفع المباشر",
+
+        webBoxMainTitle: "هل ترغبين في إضافة موقع إلكتروني لمحل SHEYMSS STORE؟",
+        webBoxSubTitle: "موقع ويب وكيوكس تفاعلي مربوط مباشرة مع برنامج الحسابات على جهازكم (اختياري).",
+        btnToggleWebText: "إضافة خيار موقع إلكتروني",
+        lblDesignTierTitle: "أ. اختيار مستوى جودة التصميم والواجهة",
+        btnDesignMidText: "تصميم قياسي (Mid-Level)",
+        btnDesignWowText: "تصميم فاخر (High-Level WOW) ⭐",
+        lblWebLevelTitle: "ب. اختيار ميزات ووظائف الموقع الإلكتروني",
+
+        webL1Title: "المستوى 1: موقع تعريفي وواجهة عرض (Site Vitrine)",
+        webL1Rule1: "عرض تعريفي رسمي بمحل SHEYMSS NAILS STORE وقصة العلامة التجارية.",
+        webL1Rule2: "روابط مباشرة لصفحاتكم على التواصل الاجتماعي (إنستغرام، تيكتوك، فيسبوك).",
+        webL1Rule3: "تحديد الموقع الجغرافي على خريطة Google Maps التفاعلية + زر الواتساب.",
+        webL1Rule4: "مولد رمز QR Code مخصص لطباعته على علب الأظافر وبطاقات الزوار.",
+        btnSelWebL1Active: "تم اختيار الموقع التعريفي (المستوى 1)",
+        btnSelWebL1Inactive: "اختيار الموقع التعريفي (المستوى 1)",
+
+        webL2Title: "المستوى 2: كتالوج تفاعلي + ربط بالبرنامج + تحويل للواتساب/إنستغرام",
+        webL2Rule1: "يتضمن جميع ميزات المستوى 1 كاملة.",
+        webL2Rule2: "ربط وتزامن مع برنامج الكمبيوتر: تضيفين/تعدلين/تحذفين الصور والمنتجات من الكمبيوتر ➔ يتحدث الموقع تلقائياً!",
+        webL2Rule3: "تحويل الطلبيات تلقائياً إلى الواتساب أو إنستغرام مع رسالة جاهزة تتضمن اسم المنتج والكمية.",
+        webL2Rule4: "استضافة الصور مجانية على خادم ImageKit.io (0 دج مصاريف سيرفر شهرية).",
+        btnSelWebL2Active: "تم اختيار الكتالوج المربوط (المستوى 2)",
+        btnSelWebL2Inactive: "اختيار الكتالوج المربوط (المستوى 2)",
+
+        webL3Title: "المستوى 3: متجر إلكتروني متكامل + استلام الطلبيات في البرنامج لحظياً + حماية عالية",
+        webL3Rule1: "يتضمن جميع ميزات المستويين 1 و 2 كاملة.",
+        webL3Rule2: "متجر إلكتروني كامل: سلة تسوق + نموذج طلب مباشر (الاسم، الهاتف، الولاية، العنوان).",
+        webL3Rule3: "إشعار استلام الطلبيات لحظياً (Appwrite WebSockets) مباشرة داخل برنامج الكمبيوتر فور قيام الزبون بالطلب!",
+        webL3Rule4: "حماية عالية: شهادة أمان SSL HTTPS، حماية ضد البوتات والحقن، و 0 دج/شهر تكاليف استضافة.",
+        btnSelWebL3Active: "تم اختيار المتجر الكامل (المستوى 3)",
+        btnSelWebL3Inactive: "اختيار المتجر الكامل (المستوى 3)",
+
+        sumLabel: "إجمالي الاستثمار النهائي المغلق (البرنامج + الموقع)",
+        secTimelineTitle: "مراحل الإنجاز والتسليم خلال 10 أيام",
+        st1Num: "المرحلة 1 • الأيام 1-4",
+        st1Title: "الإعداد الأولي",
+        st1Desc: "ضبط كتالوج المنتجات، الفئات، وبطاقات الموردين (بدون أي دفعة مسبقة).",
+        st2Num: "المرحلة 2 • الأيام 5-7",
+        st2Title: "التثبيت التجريبي",
+        st2Desc: "التثبيت المحلي واختبار وحدات المخزون، الطلبيات والأقساط.",
+        st3Num: "المرحلة 3 • الأيام 8-10",
+        st3Title: "التسليم والتدريب",
+        st3Desc: "اختبار الطابعة الحرارية، تدريب الفريق، تسليم مفتاح الترخيص وبداية الدفع.",
+        secSigTitle: "الموافقة والتوقيع الإلكتروني للزبون",
+        sigClient: "توقيع وموافقة الزبون الشريك",
+        btnClear: "مسح التوقيع",
+        btnPrint: "طباعة وتصدير العقد PDF"
+      }
+    };
+
+    function setLanguage(lang) {
+      playClick();
+      currentLang = lang;
+      
+      const switcher = document.getElementById('langSwitcherAdv');
+      if (lang === 'ar') {
+        switcher.classList.add('ar-active');
+        document.documentElement.dir = 'rtl';
+        document.body.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+      } else {
+        switcher.classList.remove('ar-active');
+        document.documentElement.dir = 'ltr';
+        document.body.dir = 'ltr';
+        document.documentElement.lang = 'fr';
+      }
+
+      document.getElementById('btnFr').classList.toggle('active', lang === 'fr');
+      document.getElementById('btnAr').classList.toggle('active', lang === 'ar');
+
+      const data = dict[lang];
+      for (const [key, val] of Object.entries(data)) {
+        const el = document.getElementById(key);
+        if (el) el.textContent = val;
+      }
+
+      updateWebCardsPriceDisplay();
+      selectPromo(currentPromo);
+      selectPlan(currentPlan);
+    }
+
+    // Client Signature Canvas Logic
+    function setupCanvas() {
+      const canvas = document.getElementById('sigCanvasClient');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let drawing = false;
+
+      function resize() {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#09B300';
+      }
+
+      resize();
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - rect.left,
+          y: clientY - rect.top
+        };
+      }
+
+      function startDraw(e) {
+        drawing = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      }
+
+      function draw(e) {
+        if (!drawing) return;
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+
+      function stopDraw() {
+        drawing = false;
+      }
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDraw);
+      canvas.addEventListener('touchstart', startDraw);
+      canvas.addEventListener('touchmove', draw);
+      canvas.addEventListener('touchend', stopDraw);
+    }
+
+    function clearCanvas() {
+      playClick();
+      const canvas = document.getElementById('sigCanvasClient');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    window.onload = function() {
+      setupCanvas();
+      updateCalculator();
+    };
+  </script>
+</body>
+</html>
