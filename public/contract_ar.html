@@ -370,62 +370,232 @@
       transform: translateY(-2px);
     }
 
-    /* 100% Mobile Responsive Layout */
+    /* ============================================
+       100% MOBILE RESPONSIVE — ALL DEVICES
+       Samsung Galaxy S22, iPhone 14, iPad Mini
+       ============================================ */
     @media (max-width: 768px) {
+
+      /* --- Base --- */
       body {
         padding: 10px 6px;
       }
+
       .container {
         padding: 0 4px;
       }
+
+      /* --- Paper Contract --- */
       .paper-contract {
         padding: 20px 14px;
         border-radius: 14px;
       }
+
+      /* --- Header Logos --- */
       .header-dual-logos {
         flex-direction: column;
         align-items: center;
         gap: 14px;
         text-align: center;
       }
+
       .logo-img {
-        height: 65px;
-        max-width: 180px;
+        height: 60px;
+        max-width: 170px;
       }
+
+      /* --- Contract Title --- */
       .contract-doc-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        line-height: 1.3;
       }
+
       .contract-doc-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
       }
+
+      /* --- Metadata Box --- */
       .meta-box {
         grid-template-columns: 1fr;
         gap: 8px;
         padding: 12px;
       }
+
+      /* --- Parties Grid --- */
       .parties-grid, .signature-grid {
         grid-template-columns: 1fr;
         gap: 14px;
       }
+
+      /* --- Section Headings --- */
+      .section-heading {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-bottom: 10px;
+      }
+
+      /* --- Clause Boxes --- */
+      .clause-box {
+        padding: 14px 12px;
+        border-radius: 12px;
+      }
+
+      .clause-box-title {
+        font-size: 0.88rem;
+        line-height: 1.4;
+        flex-wrap: wrap;
+      }
+
+      .clause-box p {
+        font-size: 0.82rem;
+      }
+
+      /* --- Instalments Table --- */
       .table-instalments {
         display: block;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         white-space: nowrap;
-        font-size: 0.76rem;
+        font-size: 0.74rem;
       }
+
       .table-instalments th, .table-instalments td {
         padding: 6px 8px;
       }
+
+      /* --- Signature Cards --- */
+      .sig-card {
+        padding: 16px 12px;
+      }
+
+      .sig-card-title {
+        font-size: 0.92rem;
+      }
+
+      .sig-card-sub {
+        font-size: 0.8rem;
+      }
+
+      /* --- Canvas Wrap --- */
+      .canvas-wrap {
+        height: 120px;
+      }
+
+      #arSigCanvas {
+        width: 100%;
+      }
+
+      /* --- Client Input Fields (16px prevents iOS zoom) --- */
+      input[type="text"], input[type="tel"] {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 12px;
+      }
+
+      /* --- Action Buttons Row --- */
       .btn-action-row {
         flex-direction: column;
         width: 100%;
         gap: 10px;
       }
+
       .btn {
         width: 100%;
         justify-content: center;
         padding: 14px 20px;
         font-size: 0.95rem;
+      }
+
+      /* --- Print Page Footer --- */
+      .print-page-footer {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      /* --- Custom Modal Dialog --- */
+      .custom-modal-card {
+        padding: 24px 18px;
+        width: 95%;
+        max-width: 380px;
+        border-radius: 20px;
+      }
+
+      .custom-modal-title {
+        font-size: 1.1rem;
+      }
+
+      .custom-modal-msg {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      .custom-modal-icon-badge {
+        width: 52px;
+        height: 52px;
+      }
+
+      /* --- WCAG 44×44px Minimum Touch Targets --- */
+      .btn,
+      .btn-clear-sig,
+      .custom-modal-btn,
+      .custom-modal-overlay .btn {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* ============================================
+       EXTRA-SMALL DEVICES (Galaxy S22 360px, iPhone SE 375px)
+       ============================================ */
+    @media (max-width: 400px) {
+      .paper-contract {
+        padding: 16px 10px;
+      }
+
+      .contract-doc-title {
+        font-size: 1.1rem;
+      }
+
+      .section-heading {
+        font-size: 1rem;
+      }
+
+      .clause-box {
+        padding: 12px 10px;
+      }
+
+      .clause-box-title {
+        font-size: 0.82rem;
+      }
+
+      .clause-box p {
+        font-size: 0.78rem;
+      }
+
+      .sig-card {
+        padding: 12px 10px;
+      }
+
+      .custom-modal-card {
+        padding: 20px 14px;
+        width: 96%;
+      }
+
+      .custom-modal-title {
+        font-size: 1rem;
+      }
+
+      .custom-modal-msg {
+        font-size: 0.8rem;
+      }
+
+      .logo-img {
+        height: 50px;
+        max-width: 140px;
       }
     }
 

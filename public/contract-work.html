@@ -925,8 +925,13 @@
       color: var(--brand-green-deep);
     }
 
-    /* 100% Mobile Responsive Styles (Optimized for Samsung Galaxy S22 & Mobile Devices) */
+    /* ============================================
+       100% MOBILE RESPONSIVE — ALL DEVICES
+       Samsung Galaxy S22, iPhone 14, iPad Mini
+       ============================================ */
     @media (max-width: 768px) {
+
+      /* --- Base --- */
       body {
         padding-bottom: 40px;
       }
@@ -935,63 +940,280 @@
         padding: 0 12px;
       }
 
-      /* Header Adjustments */
+      /* --- Header & Logos --- */
       .top-header {
-        padding: 16px 0;
+        padding: 14px 0;
+        position: relative;
       }
 
       .header-flex {
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
         text-align: center;
       }
 
       .brand-logo-img {
-        max-height: 55px;
-        width: auto;
+        height: 60px;
+        max-width: 160px;
       }
 
-      .header-title-wrap h1 {
-        font-size: 1.3rem;
+      .header-center-badge {
+        gap: 6px;
       }
 
-      .header-title-wrap p {
-        font-size: 0.85rem;
+      .contract-badge {
+        font-size: 0.72rem;
+        padding: 7px 14px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.4;
       }
 
+      /* --- Language Switcher --- */
       .lang-switcher-adv {
         margin-top: 6px;
       }
 
-      /* Contract Paper Card */
+      .lang-btn-adv {
+        padding: 8px 14px;
+        font-size: 0.78rem;
+      }
+
+      /* --- Main Paper Card --- */
       .contract-paper {
         padding: 20px 14px;
         border-radius: 16px;
-        margin-top: 20px;
+        margin-top: 18px;
       }
 
-      .paper-title {
-        font-size: 1.35rem;
+      /* --- Hero Section --- */
+      .hero-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
       }
 
-      .paper-subtitle {
+      .hero-sub {
         font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
       }
 
-      /* Metadata Grid */
+      /* --- Trust Banner --- */
+      .trust-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px 14px;
+        gap: 14px;
+      }
+
+      .trust-icon-box {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto;
+      }
+
+      .trust-title {
+        font-size: 1.05rem;
+      }
+
+      .trust-desc {
+        font-size: 0.85rem;
+      }
+
+      /* --- Client Quotes Box --- */
+      .client-quotes-box {
+        padding: 16px 12px;
+        margin-bottom: 28px;
+      }
+
+      .quotes-title {
+        font-size: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .quote-item {
+        padding: 12px;
+      }
+
+      .quote-header {
+        font-size: 0.88rem;
+        flex-wrap: wrap;
+      }
+
+      .quote-text {
+        font-size: 0.82rem;
+      }
+
+      /* --- Metadata Grid --- */
       .meta-grid {
         grid-template-columns: 1fr;
         gap: 12px;
         padding: 14px;
       }
 
-      /* Website Option Toggle Box */
-      .toggle-web-box {
-        padding: 16px 14px;
+      .meta-label {
+        font-size: 0.7rem;
+      }
+
+      .meta-value {
+        font-size: 0.95rem;
+      }
+
+      /* --- Section Headers --- */
+      .section-header {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 32px;
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+
+      /* --- Features Grid --- */
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .feature-card {
+        padding: 20px 16px;
+      }
+
+      .feature-name {
+        font-size: 1rem;
+      }
+
+      .feature-desc {
+        font-size: 0.85rem;
+      }
+
+      .feature-list li {
+        font-size: 0.82rem;
+      }
+
+      /* --- Valuation Table --- */
+      .valuation-table-wrap {
+        border-radius: 12px;
+      }
+
+      .valuation-table th {
+        padding: 10px 10px;
+        font-size: 0.72rem;
+      }
+
+      .valuation-table td {
+        padding: 10px 10px;
+        font-size: 0.78rem;
+      }
+
+      /* --- Calculator Box --- */
+      .calculator-box-white {
+        padding: 20px 14px;
+        border-radius: 16px;
+        margin-top: 32px;
+      }
+
+      .calc-title {
+        font-size: 1.25rem;
         flex-direction: column;
-        align-items: stretch;
-        gap: 14px;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .calc-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 24px;
+      }
+
+      .options-label {
+        font-size: 0.78rem;
+      }
+
+      /* --- 1x1 Radio Cards --- */
+      .card-1x1 {
+        padding: 20px 16px;
+        border-radius: 16px;
+      }
+
+      .card-1x1-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .card-1x1-title {
+        font-size: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .card-1x1-pricing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .card-1x1-final-price {
+        font-size: 1.35rem;
+      }
+
+      .price-strike-tag {
+        font-size: 0.88rem;
+      }
+
+      .badge-promo-tag {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+      }
+
+      .rules-list-1x1 {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .rules-list-1x1 li {
+        font-size: 0.82rem;
+      }
+
+      .select-custom-btn {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 0.88rem;
+      }
+
+      /* --- Big Website Box --- */
+      .big-website-box {
+        padding: 22px 16px;
+        border-radius: 18px;
+      }
+
+      .big-website-header {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 16px;
+      }
+
+      .big-website-title-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .big-website-icon-wrap {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+      }
+
+      .big-website-main-title {
+        font-size: 1.15rem;
+      }
+
+      .big-website-sub-title {
+        font-size: 0.85rem;
       }
 
       .toggle-web-btn-big {
@@ -1001,89 +1223,83 @@
         font-size: 0.95rem;
       }
 
-      /* Grids (Offers, Web Levels) */
-      .offers-grid, .web-levels-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-      }
-
-      .offer-card {
-        padding: 20px 16px;
-      }
-
-      .offer-title {
-        font-size: 1.2rem;
-      }
-
-      .offer-price-val {
-        font-size: 1.5rem;
-      }
-
-      .select-custom-btn {
-        width: 100%;
-        padding: 12px 16px;
-        font-size: 0.9rem;
-      }
-
-      /* Calculator Card */
-      .calculator-card {
-        padding: 20px 14px;
-        border-radius: 16px;
-      }
-
-      .calc-title {
-        font-size: 1.3rem;
+      /* --- Design Tier Buttons --- */
+      .design-selector-row {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+        gap: 12px;
       }
 
-      .plan-pills-wrap {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .plan-pill-btn {
+      .btn-design-tier {
         width: 100%;
-        justify-content: center;
-        padding: 12px 16px;
-      }
-
-      .price-display-box {
-        padding: 18px 14px;
-      }
-
-      .price-number {
-        font-size: 1.65rem;
-      }
-
-      .price-subtext {
+        min-width: unset;
+        padding: 14px 16px;
         font-size: 0.88rem;
       }
 
-      /* Timeline Steps */
+      /* --- Summary Card --- */
+      .summary-card-white {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 22px 16px;
+        gap: 14px;
+      }
+
+      .total-amount-display-white {
+        font-size: 1.8rem;
+      }
+
+      .schedule-pill-white {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.88rem;
+        padding: 10px 18px;
+      }
+
+      /* --- Timeline Steps --- */
       .timeline-steps {
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      /* Signature Canvas Box */
+      .timeline-step {
+        padding: 18px 16px;
+      }
+
+      .step-title {
+        font-size: 0.95rem;
+      }
+
+      .step-desc {
+        font-size: 0.8rem;
+      }
+
+      /* --- Signature Canvas Box --- */
       .single-signature-wrap {
         max-width: 100%;
       }
 
       .sig-box {
-        padding: 16px 14px;
+        padding: 18px 14px;
+      }
+
+      .sig-title {
+        font-size: 1.05rem;
+      }
+
+      .sig-party {
+        font-size: 0.82rem;
       }
 
       .canvas-wrap {
         height: 140px;
       }
 
-      /* Buttons & Actions */
+      /* --- Buttons & Actions --- */
       .sig-actions {
         flex-direction: column;
         width: 100%;
+        gap: 10px;
       }
 
       .btn {
@@ -1091,6 +1307,112 @@
         justify-content: center;
         padding: 14px 20px;
         font-size: 0.95rem;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid var(--brand-border);
+        color: var(--brand-ink);
+      }
+
+      /* --- Inline flex containers override (e.g. line 1138) --- */
+      .header-flex > div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* --- WCAG 44×44px Minimum Touch Targets --- */
+      .btn,
+      .lang-btn-adv,
+      .btn-design-tier,
+      .toggle-web-btn-big,
+      .card-1x1,
+      .select-custom-btn,
+      .btn-clear-sig,
+      .custom-modal-btn,
+      .custom-modal-overlay .btn {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* ============================================
+       EXTRA-SMALL DEVICES (Galaxy S22 360px, iPhone SE 375px)
+       ============================================ */
+    @media (max-width: 400px) {
+      .hero-title {
+        font-size: 1.25rem;
+      }
+
+      .hero-sub {
+        font-size: 0.82rem;
+      }
+
+      .contract-paper {
+        padding: 16px 10px;
+      }
+
+      .trust-banner {
+        padding: 14px 10px;
+      }
+
+      .trust-title {
+        font-size: 0.95rem;
+      }
+
+      .trust-desc {
+        font-size: 0.8rem;
+      }
+
+      .feature-card {
+        padding: 16px 12px;
+      }
+
+      .calculator-box-white {
+        padding: 16px 10px;
+      }
+
+      .card-1x1 {
+        padding: 16px 12px;
+      }
+
+      .card-1x1-final-price {
+        font-size: 1.2rem;
+      }
+
+      .total-amount-display-white {
+        font-size: 1.5rem;
+      }
+
+      .big-website-box {
+        padding: 16px 12px;
+      }
+
+      .summary-card-white {
+        padding: 16px 12px;
+      }
+
+      .sig-box {
+        padding: 14px 10px;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      .meta-grid {
+        padding: 10px;
+      }
+
+      .valuation-table th {
+        padding: 8px 6px;
+        font-size: 0.68rem;
+      }
+
+      .valuation-table td {
+        padding: 8px 6px;
+        font-size: 0.72rem;
       }
     }
 
