@@ -1404,7 +1404,40 @@
     }
 
     function handlePrintWithValidation() {
-      downloadContractPDF();
+      const name = document.getElementById('clientNameInput').value.trim();
+      const phone = document.getElementById('clientPhoneInput').value.trim().replace(/\s+|-/g, '');
+      const dzPhoneRegex = /^(?:(?:\+|00)213|0)[567][0-9]{8}$/;
+      const phoneErr = document.getElementById('phoneErrorMsg');
+
+      if (!name) {
+        showCustomModal('تنبيه: حقل مطلوب', 'يرجى إدخال اسم ممثل الزبون (SHEYMSS NAILS STORE) أولاً.', 'warning', () => {
+          document.getElementById('clientNameInput').focus();
+        });
+        return;
+      }
+
+      if (!dzPhoneRegex.test(phone)) {
+        phoneErr.style.display = 'block';
+        showCustomModal('تنبيه: رقم هاتف غير صحيح', 'يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام (يبدأ بـ 05، 06، 07 أو +213).', 'error', () => {
+          document.getElementById('clientPhoneInput').focus();
+        });
+        return;
+      }
+
+      if (!isSignedByClient) {
+        showCustomModal('تنبيه: التوقيع مطلوب', 'يرجى إكمال التوقيع الإلكتروني في المربع المخصص للزبون أسفل العقد قبل الطباعة.', 'warning');
+        return;
+      }
+
+      document.getElementById('clientNamePrint').textContent = name;
+      document.getElementById('clientPhonePrint').textContent = phone;
+
+      const originalTitle = document.title;
+      document.title = 'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH';
+      window.print();
+      setTimeout(() => {
+        document.title = originalTitle;
+      }, 1000);
     }
 
     function downloadContractPDF() {
@@ -1437,16 +1470,53 @@
       document.getElementById('clientNamePrint').textContent = name;
       document.getElementById('clientPhonePrint').textContent = phone;
 
-      // Set document title so browser suggests clean filename on Save as PDF
-      const originalTitle = document.title;
-      document.title = 'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH';
+      // Show loader popup modal
+      showCustomModal('جاري تنزيل الملف', 'جاري إنشاء وتنزيل عقد PDF رسمي الآن مباشرة...', 'success');
 
-      // Trigger high-precision native browser print engine (Vector PDF output)
-      window.print();
+      // Scroll to top to ensure clean rendering starting at y=0
+      window.scrollTo(0, 0);
 
-      setTimeout(() => {
-        document.title = originalTitle;
-      }, 1000);
+      const element = document.querySelector('.paper-contract');
+      const actionRow = document.querySelector('.btn-action-row');
+      const clearBtn = document.querySelector('.btn-clear-sig');
+      
+      if (actionRow) actionRow.style.display = 'none';
+      if (clearBtn) clearBtn.style.display = 'none';
+
+      // Hide input boxes and show clean text spans
+      document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(i => i.style.display = 'none');
+      document.querySelectorAll('.print-only-val').forEach(s => s.style.display = 'inline-block');
+
+      const opt = {
+        margin:       [6, 6, 6, 6],
+        filename:     'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  {
+          scale: 2,
+          useCORS: true,
+          logging: false,
+          scrollY: 0,
+          scrollX: 0,
+          windowWidth: 1200
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['css', 'legacy'], avoid: ['.party-card', '.clause-box', '.sig-card', '.summary-selection-card', '.deposit-alert-box', '.table-instalments', '.contract-section'] }
+      };
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        if (actionRow) actionRow.style.display = 'flex';
+        if (clearBtn) clearBtn.style.display = 'inline-flex';
+        document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(i => i.style.display = 'block');
+        setTimeout(() => {
+          closeCustomModal();
+        }, 800);
+      }).catch((err) => {
+        if (actionRow) actionRow.style.display = 'flex';
+        if (clearBtn) clearBtn.style.display = 'inline-flex';
+        document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(i => i.style.display = 'block');
+        closeCustomModal();
+        showCustomModal('خطأ في التنزيل', 'حدث خطأ أثناء تنزيل الملف، يرجى استعراض خيار طباعة كـ PDF.', 'error');
+      });
     }
 
     // Setup Client Signature Canvas
