@@ -1097,11 +1097,20 @@
       /* --- Valuation Table --- */
       .valuation-table-wrap {
         border-radius: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        display: block;
+      }
+
+      .valuation-table {
+        min-width: 620px;
       }
 
       .valuation-table th {
         padding: 10px 10px;
         font-size: 0.72rem;
+        white-space: nowrap;
       }
 
       .valuation-table td {
@@ -1642,7 +1651,7 @@
       </div>
 
       <!-- Valuation Table -->
-      <div class="table-responsive">
+      <div class="valuation-table-wrap">
         <table class="valuation-table">
           <thead>
             <tr>
