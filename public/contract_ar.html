@@ -864,6 +864,9 @@
             <li><strong>خيار 2 (تخفيض العقد + الشراكة الإعلانية -20%):</strong> يتضمن تخفيضاً تراكمياً بقيمة 7,000 دج عند موافقة الزبون على نشر ستوريات/منشورات ورأي الزبون مع منشن لصفحة <strong>SALON DZ TECH</strong> ليصبح المبلغ الصافي <strong>28,000 دج</strong> (2.8 ملايين سنتيم). [القسط الشهري: <strong>10,333 دج/شهر</strong>].</li>
           </ul>
 
+          <!-- Dynamic Client Selections Summary Box (PDF & Print Rendered) -->
+          <div id="clientSelectionsSummaryBox" style="margin: 12px 0 16px 0;"></div>
+
           <!-- 0 DA Trust Guarantee Banner (Compact 1-Page Layout) -->
           <div class="deposit-alert-box" style="background: #E6F7E6; border: 1.5px solid var(--brand-green); padding: 10px 14px; margin: 8px 0 12px 0;">
             <i data-lucide="shield-check" style="width: 22px; height: 22px; color: var(--brand-green-deep); flex-shrink: 0; margin-top: 1px;"></i>
@@ -1052,8 +1055,253 @@
   </div>
 
   <script>
-    // Initialize Lucide Icons
+    // SINGLE SOURCE OF TRUTH FOR CONTRACT LABELS AND PRICES (FR & AR)
+    const CONTRACT_CONFIG = {
+      realMarketPrice: 35000,
+      promos: {
+        '10': {
+          basePrice: 31500,
+          discount: 3500,
+          label: {
+            fr: "Offre Contrat Officiel (-10% Remise Directe)",
+            ar: "عرض إبرام العقد القياسي (-10% تخفيض مباشر)"
+          }
+        },
+        '25': {
+          basePrice: 28000,
+          discount: 7000,
+          label: {
+            fr: "Offre Contrat + Partenariat Pub (-20% Remise Cumulée)",
+            ar: "عرض العقد + الشراكة الإعلانية (-20% تخفيض تراكمي)"
+          }
+        }
+      },
+      plans: {
+        'rent': {
+          months: 3,
+          feePerMonth: 1000,
+          label: {
+            fr: "Location-Vente en 3 Mensualités (+1 000 DA / mois de frais)",
+            ar: "الإيجار المفضي للتملك على 3 أقساط شهرياً (+1,000 دج رسوم/قسط)"
+          }
+        },
+        'cash': {
+          months: 1,
+          feePerMonth: 0,
+          label: {
+            fr: "Paiement Direct 100% au Jour 10 après livraison (0 DA de frais)",
+            ar: "الدفع المباشر 100% في اليوم 10 بعد التسليم (بدون رسوم)"
+          }
+        }
+      },
+      designTiers: {
+        'mid': {
+          label: {
+            fr: "Design Standard (Mid-Level)",
+            ar: "تصميم قياسي (Standard Mid-Level)"
+          }
+        },
+        'wow': {
+          label: {
+            fr: "Design Luxueux (High-Level WOW ⭐)",
+            ar: "تصميم فاخر (High-Level WOW ⭐)"
+          }
+        }
+      },
+      webLevels: {
+        0: {
+          prices: { mid: 0, wow: 0 },
+          label: {
+            fr: "Option Site Web: Non sélectionnée (0 DA)",
+            ar: "لم يتم اختيار موقع إلكتروني (0 دج - تم الاكتفاء ببرنامج الكمبيوتر)"
+          },
+          terms: {
+            fr: "-",
+            ar: "-"
+          }
+        },
+        1: {
+          prices: { mid: 22000, wow: 28000 },
+          label: {
+            fr: "Niveau 1 : Site Vitrine & Showroom Digital",
+            ar: "المستوى 1: موقع تعريفي وواجهة عرض (Site Vitrine)"
+          },
+          terms: {
+            fr: "Licence à Vie (0 DA/an)",
+            ar: "ترخيص مدى الحياة (0 دج/سنوياً)"
+          }
+        },
+        2: {
+          prices: { mid: 28000, wow: 35000 },
+          label: {
+            fr: "Niveau 2 : Catalogue Tél. + Sync Logiciel + WhatsApp/Insta",
+            ar: "المستوى 2: كتالوج تفاعلي + ربط بالبرنامج + تحويل للواتساب/إنستغرام"
+          },
+          terms: {
+            fr: "1ère Année Cloud Inclus (renouvellement annuel optionnel)",
+            ar: "اشتراك السنة الأولى متضمن (تجديد سنوي اختياري)"
+          }
+        },
+        3: {
+          prices: { mid: 45000, wow: 60000 },
+          label: {
+            fr: "Niveau 3 : E-Commerce Temps Réel Cloud + Sync PC + Sécurité",
+            ar: "المستوى 3: متجر إلكتروني متكامل + استلام الطلبيات في البرنامج لحظياً"
+          },
+          terms: {
+            fr: "1ère Année Cloud Inclus (renouvellement annuel optionnel)",
+            ar: "اشتراك السنة الأولى متضمن (تجديد سنوي اختياري)"
+          }
+        }
+      }
+    };
+
+    function renderContractSummaryFromUrl() {
+      const summaryBox = document.getElementById('clientSelectionsSummaryBox');
+      if (!summaryBox) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const promoParam = urlParams.get('promo');
+      const planParam = urlParams.get('plan');
+      const webParam = urlParams.get('web');
+      const tierParam = urlParams.get('tier');
+
+      const isValidPromo = promoParam && CONTRACT_CONFIG.promos[promoParam];
+      const isValidPlan = planParam && CONTRACT_CONFIG.plans[planParam];
+      const isValidWeb = webParam !== null && webParam !== undefined && CONTRACT_CONFIG.webLevels[webParam];
+      const isValidTier = tierParam && CONTRACT_CONFIG.designTiers[tierParam];
+
+      const hasValidParams = isValidPromo && isValidPlan && isValidWeb && isValidTier;
+
+      if (!hasValidParams) {
+        summaryBox.innerHTML = `
+          <div style="background: #FFFBEB; border: 1.5px solid #F59E0B; border-radius: 10px; padding: 12px 16px; color: #B45309; font-weight: 700; font-size: 0.88rem; text-align: center; margin-bottom: 14px;">
+            <i data-lucide="alert-triangle" style="vertical-align: middle; margin-left: 6px; width: 18px; height: 18px;"></i>
+            لم يتم تحديد الخيارات - يرجى فتح العقد عبر واجهة اختيار العروض
+          </div>
+        `;
+        if (window.lucide) lucide.createIcons();
+        return;
+      }
+
+      const promoObj = CONTRACT_CONFIG.promos[promoParam];
+      const planObj = CONTRACT_CONFIG.plans[planParam];
+      const webLevelObj = CONTRACT_CONFIG.webLevels[webParam];
+      const designTierObj = CONTRACT_CONFIG.designTiers[tierParam];
+
+      const baseSoftwarePrice = promoObj.basePrice;
+      const webPrice = (parseInt(webParam) > 0) ? webLevelObj.prices[tierParam] : 0;
+      const combinedBase = baseSoftwarePrice + webPrice;
+      const feePerMonth = (planParam === 'rent') ? 1000 : 0;
+      const totalFee = feePerMonth * 3;
+      const finalNetPrice = combinedBase + totalFee;
+      const monthlyInstalment = Math.round(combinedBase / 3) + feePerMonth;
+
+      let webStatusText = "";
+      if (parseInt(webParam) === 0) {
+        webStatusText = `<span style="color: #6B7280; font-weight: 700;">${webLevelObj.label.ar}</span>`;
+      } else {
+        webStatusText = `<span style="color: var(--brand-green-deep); font-weight: 800;">${webLevelObj.label.ar} (${webPrice.toLocaleString('ar-DZ')} دج)</span>`;
+      }
+
+      let webDetailsText = "";
+      if (parseInt(webParam) > 0) {
+        webDetailsText = `• مستوى التصميم: <strong>${designTierObj.label.ar}</strong><br>• نظام الاشتراك: <strong>${webLevelObj.terms.ar}</strong>`;
+      } else {
+        webDetailsText = `<span style="color: #9CA3AF;">لا يوجد موقع إلكتروني مضاف مع العقد (تم الاكتفاء بالبرنامج)</span>`;
+      }
+
+      let paymentPlanText = "";
+      if (planParam === 'rent') {
+        paymentPlanText = `${planObj.label.ar} — [<strong>${monthlyInstalment.toLocaleString('ar-DZ')} دج / شهرياً</strong> x 3 أشهر]`;
+      } else {
+        paymentPlanText = `${planObj.label.ar} — [المبلغ الصافي الكامل عند التسليم]`;
+      }
+
+      summaryBox.innerHTML = `
+        <div class="summary-selection-card" style="border: 2px solid var(--brand-green); border-radius: 12px; background: #F0FDF4; padding: 14px 16px; margin-bottom: 14px; box-shadow: var(--brand-shadow-sm);">
+          <div style="font-size: 0.95rem; font-weight: 800; color: var(--brand-green-deep); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #DCFCE7; padding-bottom: 8px;">
+            <i data-lucide="check-square" style="width: 20px; height: 20px; color: var(--brand-green);"></i>
+            <span>جدول الخيارات المعتمدة في هذا العقد (Client Selection Summary)</span>
+          </div>
+          
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 1.6;">
+            <tbody>
+              <tr style="border-bottom: 1px solid #DCFCE7;">
+                <td style="padding: 6px 0; color: var(--brand-muted); font-weight: 700; width: 34%;">1. العرض والتخفيض المختار:</td>
+                <td style="padding: 6px 0; color: var(--brand-ink); font-weight: 800;">${promoObj.label.ar} (${baseSoftwarePrice.toLocaleString('ar-DZ')} دج)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #DCFCE7;">
+                <td style="padding: 6px 0; color: var(--brand-muted); font-weight: 700;">2. طريقة وصيغة الدفع:</td>
+                <td style="padding: 6px 0; color: var(--brand-ink); font-weight: 800;">${paymentPlanText}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #DCFCE7;">
+                <td style="padding: 6px 0; color: var(--brand-muted); font-weight: 700;">3. حالة خيار الموقع الإلكتروني:</td>
+                <td style="padding: 6px 0;">${webStatusText}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #DCFCE7;">
+                <td style="padding: 6px 0; color: var(--brand-muted); font-weight: 700;">4. مواصفات ونظام ترخيص الموقع:</td>
+                <td style="padding: 6px 0; color: var(--brand-ink);">${webDetailsText}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0 2px 0; color: var(--brand-green-deep); font-weight: 800; font-size: 0.92rem;">المبلغ الاستثماري الإجمالي النهائي:</td>
+                <td style="padding: 8px 0 2px 0; color: var(--brand-green-deep); font-weight: 900; font-size: 1.15rem;">${finalNetPrice.toLocaleString('ar-DZ')} دج <span style="font-size: 0.85rem; font-weight: 600; color: var(--brand-muted);">(${ (finalNetPrice / 10).toLocaleString('ar-DZ') } سنتيم)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      // Dynamically update instalment schedule table if rent plan is selected
+      if (planParam === 'rent') {
+        const basePart = Math.round(combinedBase / 3);
+        const totalPart = basePart + feePerMonth;
+
+        const tableBody = document.querySelector('.table-instalments tbody');
+        if (tableBody) {
+          tableBody.innerHTML = `
+            <tr>
+              <td><strong>البداية والتجهيز</strong></td>
+              <td>الأيام 1 إلى 9 (قبل التسليم)</td>
+              <td>0 دج عربون مالي</td>
+              <td>0 دج</td>
+              <td><strong>0 دج عربون</strong></td>
+              <td>تطوير وتثبيت وتجربة النظام على الجهاز</td>
+            </tr>
+            <tr>
+              <td><strong>القسط 1</strong></td>
+              <td>اليوم 10 بعد التسليم</td>
+              <td>${basePart.toLocaleString('ar-DZ')} دج</td>
+              <td>1,000 دج</td>
+              <td><strong>${totalPart.toLocaleString('ar-DZ')} دج</strong></td>
+              <td>التسليم النهائي وتفعيل الترخيص الأولي</td>
+            </tr>
+            <tr>
+              <td><strong>القسط 2</strong></td>
+              <td>بعد 30 يوماً من التسليم</td>
+              <td>${basePart.toLocaleString('ar-DZ')} دج</td>
+              <td>1,000 دج</td>
+              <td><strong>${totalPart.toLocaleString('ar-DZ')} دج</strong></td>
+              <td>متابعة تشغيلية ودعم فني دوري</td>
+            </tr>
+            <tr>
+              <td><strong>القسط 3 والأخير</strong></td>
+              <td>بعد 60 يوماً من التسليم</td>
+              <td>${basePart.toLocaleString('ar-DZ')} دج</td>
+              <td>1,000 دج</td>
+              <td><strong>${totalPart.toLocaleString('ar-DZ')} دج</strong></td>
+              <td>تسليم مفتاح الترخيص النهائي مدى الحياة 🎓</td>
+            </tr>
+          `;
+        }
+      }
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Initialize Lucide Icons & Render Summary
     lucide.createIcons();
+    renderContractSummaryFromUrl();
 
     let isSignedByClient = false;
 
