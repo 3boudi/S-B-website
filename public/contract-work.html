@@ -1625,11 +1625,11 @@
         <div class="feature-card">
           <div class="feature-icon"><i data-lucide="printer"></i></div>
           <div class="feature-name" id="f7Title">Impression Thermique & Sécurité</div>
-          <div class="feature-desc" id="f7Desc">Impression native ESC/POS, licence matérielle et sauvegarde auto.</div>
+          <div class="feature-desc" id="f7Desc">Impression thermiques, licence d'activation et sauvegarde auto des données.</div>
           <ul class="feature-list" id="f7List">
-            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_1">Impression native sur imprimantes thermiques ESC/POS</span></li>
-            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_2">Protection par Licence HWID (Clé Matérielle)</span></li>
-            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_3">Sauvegarde automatique quotidienne SQLite WAL</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_1">Impression native sur imprimantes thermiques de reçus</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_2">Protection par Licence d'activation sécurisée</span></li>
+            <li><i data-lucide="check" class="feature-list-icon" style="width: 14px;"></i><span id="f7_3">Sauvegarde automatique quotidienne de la base de données</span></li>
           </ul>
         </div>
 
@@ -1641,7 +1641,8 @@
         <h2 class="section-title" id="secValuationTitle">Détail des Fonctionnalités & Valeur Réelle sur le Marché</h2>
       </div>
 
-      <div class="valuation-table-wrap">
+      <!-- Valuation Table -->
+      <div class="table-responsive">
         <table class="valuation-table">
           <thead>
             <tr>
@@ -1690,7 +1691,7 @@
             </tr>
             <tr>
               <td><strong id="val7_title">7. Impression & Sécurité</strong></td>
-              <td id="val7_spec">Driver impression thermique ESC/POS + Licence HWID + Backup WAL</td>
+              <td id="val7_spec">Driver impression thermique + Licence d'activation + Sauvegarde Auto</td>
               <td><span class="val-price-tag" id="val7_val">5 000 DA</span></td>
               <td id="val7_cent">500 000 Centimes</td>
             </tr>
@@ -1819,30 +1820,24 @@
         <!-- BIG WEBSITE OPTION BOX -->
         <div class="big-website-box" id="bigWebsiteBox">
           <div class="big-website-header">
-            <div class="big-website-title-box">
-              <div class="big-website-icon-wrap">
-                <i data-lucide="globe" style="width: 32px; height: 32px;"></i>
-              </div>
-              <div>
-                <div class="big-website-main-title" id="webBoxMainTitle">Souhaitez-vous ajouter un Site Web E-Commerce pour SHEYMSS STORE ?</div>
-                <div class="big-website-sub-title" id="webBoxSubTitle">Plateforme Web & Kiosque connecté en direct avec votre logiciel Desktop (Optionnel).</div>
-              </div>
+            <div>
+              <div class="big-website-title" id="webBoxMainTitle">Souhaitez-vous ajouter un Site Web E-Commerce pour SHEYMSS STORE ?</div>
+              <div class="big-website-sub" id="webBoxSubTitle">Plateforme Web & Kiosque connecté en direct avec votre logiciel Desktop (Optionnel).</div>
             </div>
-
             <button type="button" class="toggle-web-btn-big" id="btnToggleWeb" onclick="toggleWebOption()">
               <i data-lucide="plus-circle" id="iconToggleWeb"></i> <span id="btnToggleWebText">Ajouter une Option Site Web</span>
             </button>
           </div>
 
-          <!-- SUB-PANEL FOR DESIGN & WEBSITE TIER SELECTION -->
+          <!-- WEBSITE CONFIGURATION PANEL -->
           <div class="web-config-panel" id="webConfigPanel">
             
-            <!-- STEP A: DESIGN QUALITY TIER -->
-            <div style="font-size: 0.88rem; font-weight: 800; text-transform: uppercase; color: var(--brand-green-deep); margin-bottom: 12px;" id="lblDesignTierTitle">
+            <!-- STEP A: THE 2 DESIGN TIERS -->
+            <div style="font-size: 0.88rem; font-weight: 800; text-transform: uppercase; color: var(--brand-green-deep); margin-bottom: 10px;" id="lblDesignTierTitle">
               A. CHOIX DE LA QUALITÉ DU DESIGN & UI/UX
             </div>
-            
-            <div class="design-selector-row">
+
+            <div class="btn-design-tier-group">
               <button type="button" class="btn-design-tier" id="btnDesignMid" onclick="selectDesignTier('mid')">
                 <i data-lucide="layout" style="width: 18px;"></i> <span id="btnDesignMidText">Design Standard (Mid-Level)</span>
               </button>
@@ -1885,7 +1880,7 @@
                   <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule1">Toutes les fonctionnalités du Niveau 1 incluses.</span></li>
                   <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule2">Synchronisation avec le logiciel PC : Ajoutez/Modifiez/Supprimez des produits depuis le PC ➔ Le site se met à jour automatiquement !</span></li>
                   <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule3">Redirection automatique des commandes vers WhatsApp ou Instagram Direct avec message pré-rempli.</span></li>
-                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule4">Hébergement images gratuit sur CDN ImageKit.io (0 DA de frais serveur mensuels).</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL2Rule4">Hébergement images gratuit sur serveur Cloud (0 DA de frais serveur mensuels).</span></li>
                 </ul>
                 <button type="button" class="select-custom-btn" id="btnSelectWebL2">
                   <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectWebL2Text">Choisir le Catalogue Sync (Niveau 2)</span>
@@ -1895,14 +1890,14 @@
               <!-- Web Level 3 Card -->
               <div class="card-1x1" id="cardWebL3" onclick="selectWebLevel(3)">
                 <div class="card-1x1-header">
-                  <div class="card-1x1-title" id="webL3Title"><i data-lucide="shopping-cart" style="color: var(--brand-green);"></i> Niveau 3 : E-Commerce Temps Réel Appwrite + Sync PC + Sécurité</div>
+                  <div class="card-1x1-title" id="webL3Title"><i data-lucide="shopping-cart" style="color: var(--brand-green);"></i> Niveau 3 : E-Commerce Temps Réel Cloud + Sync PC + Sécurité</div>
                   <div class="card-1x1-final-price" id="webL3Price">60 000 DA</div>
                 </div>
                 <ul class="rules-list-1x1">
                   <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule1">Toutes les fonctionnalités des Niveaux 1 & 2 incluses.</span></li>
                   <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule2">Veritable المتجر الإلكتروني : Panier d'achat + Formulaire de commande (Nom, Téléphone, Wilaya, Adresse).</span></li>
-                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule3">Notification WebSockets Temps Réel Appwrite Cloud en direct sur le logiciel Desktop dès qu'une commande est passée !</span></li>
-                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule4">Haute Sécurité : Certificat SSL HTTPS, Anti-bot CAPTCHA, Protection SQL Injection et 0 DA/mois d'infrastructure.</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule3">Notification Temps Réel Cloud en direct sur le logiciel Desktop dès qu'une commande est passée !</span></li>
+                  <li><i data-lucide="check-circle-2" class="rule-icon-check" style="width: 16px;"></i><span id="webL3Rule4">Haute Sécurité : Certificat SSL HTTPS, Anti-bot CAPTCHA, Protection des données et 0 DA/mois d'infrastructure.</span></li>
                 </ul>
                 <button type="button" class="select-custom-btn" id="btnSelectWebL3">
                   <i data-lucide="circle" style="width: 18px;"></i> <span id="btnSelectWebL3Text">Choisir le Site E-Commerce Complet (Niveau 3)</span>
@@ -2260,7 +2255,7 @@
         val6_cent: "400 000 Centimes",
 
         val7_title: "7. Impression & Sécurité",
-        val7_spec: "Driver impression thermique ESC/POS + Licence HWID + Backup WAL",
+        val7_spec: "Driver impression thermique + Licence d'activation + Sauvegarde Auto",
         val7_val: "4 000 DA",
         val7_cent: "400 000 Centimes",
 
@@ -2313,10 +2308,10 @@
         f6_3: "Reçus de paiement & annulation par entrée corrective",
 
         f7Title: "Impression Thermique & Sécurité",
-        f7Desc: "Impression native ESC/POS, licence matérielle et sauvegarde auto.",
-        f7_1: "Impression native sur imprimantes thermiques ESC/POS",
-        f7_2: "Protection par Licence HWID (Clé Matérielle)",
-        f7_3: "Sauvegarde automatique quotidienne SQLite WAL",
+        f7Desc: "Impression thermiques, licence d'activation et sauvegarde auto des données.",
+        f7_1: "Impression native sur imprimantes thermiques de reçus",
+        f7_2: "Protection par Licence d'activation sécurisée",
+        f7_3: "Sauvegarde automatique quotidienne de la base de données",
 
         calcTitleText: "Calculateur Tarifaire & Options d'Acquisition",
         calcSub: "Sélectionnez la formule d'acquisition et l'option de promotion souhaitée.",
@@ -2381,15 +2376,15 @@
         webL2Rule1: "Toutes les fonctionnalités du Niveau 1 incluses.",
         webL2Rule2: "Synchronisation avec le logiciel PC : Ajoutez/Modifiez/Supprimez des produits depuis le PC ➔ Le site se met à jour automatiquement !",
         webL2Rule3: "Redirection automatique des commandes vers WhatsApp ou Instagram Direct avec message pré-rempli.",
-        webL2Rule4: "Hébergement images gratuit sur CDN ImageKit.io (0 DA de frais serveur mensuels).",
+        webL2Rule4: "Hébergement images gratuit sur serveur Cloud (0 DA de frais serveur mensuels).",
         btnSelWebL2Active: "Catalogue Sync Sélectionné (Niveau 2)",
         btnSelWebL2Inactive: "Choisir le Catalogue Sync (Niveau 2)",
 
-        webL3Title: "Niveau 3 : E-Commerce Temps Réel Appwrite + Sync PC + Sécurité",
+        webL3Title: "Niveau 3 : E-Commerce Temps Réel Cloud + Sync PC + Sécurité",
         webL3Rule1: "Toutes les fonctionnalités des Niveaux 1 & 2 incluses.",
         webL3Rule2: "Veritable المتجر الإلكتروني : Panier d'achat + Formulaire de commande (Nom, Téléphone, Wilaya, Adresse).",
-        webL3Rule3: "Notification WebSockets Temps Réel Appwrite Cloud en direct sur le logiciel Desktop dès qu'une commande est passée !",
-        webL3Rule4: "Haute Sécurité : Certificat SSL HTTPS, Anti-bot CAPTCHA, Protection SQL Injection et 0 DA/mois d'infrastructure.",
+        webL3Rule3: "Notification Temps Réel Cloud en direct sur le logiciel Desktop dès qu'une commande est passée !",
+        webL3Rule4: "Haute Sécurité : Certificat SSL HTTPS, Anti-bot CAPTCHA, Protection des données et 0 DA/mois d'infrastructure.",
         btnSelWebL3Active: "E-Commerce Temps Réel Sélectionné (Niveau 3)",
         btnSelWebL3Inactive: "Choisir le Site E-Commerce Complet (Niveau 3)",
 
@@ -2462,7 +2457,7 @@
         val6_cent: "1.5 مليون سنتيم",
 
         val7_title: "7. الطباعة الحرارية والأمان",
-        val7_spec: "طباعة الوصولات الحرارية + حماية الترخيص HWID + نسخ احتياطي",
+        val7_spec: "طباعة الوصولات الحرارية + مفتاح ترخيص الأمان + النسخ الاحتياطي",
         val7_val: "10,000 دج",
         val7_cent: "1 مليون سنتيم",
 
@@ -2583,15 +2578,15 @@
         webL2Rule1: "يتضمن جميع ميزات المستوى 1 كاملة.",
         webL2Rule2: "ربط وتزامن مع برنامج الكمبيوتر: تضيفين/تعدلين/تحذفين الصور والمنتجات من الكمبيوتر ➔ يتحدث الموقع تلقائياً!",
         webL2Rule3: "تحويل الطلبيات تلقائياً إلى الواتساب أو إنستغرام مع رسالة جاهزة تتضمن اسم المنتج والكمية.",
-        webL2Rule4: "استضافة الصور مجانية على خادم ImageKit.io (0 دج مصاريف سيرفر شهرية).",
+        webL2Rule4: "استضافة الصور مجانية على خادم سحابي آمن (0 دج مصاريف سيرفر شهرية).",
         btnSelWebL2Active: "تم اختيار الكتالوج المربوط (المستوى 2)",
         btnSelWebL2Inactive: "اختيار الكتالوج المربوط (المستوى 2)",
 
         webL3Title: "المستوى 3: متجر إلكتروني متكامل + استلام الطلبيات في البرنامج لحظياً + حماية عالية",
         webL3Rule1: "يتضمن جميع ميزات المستويين 1 و 2 كاملة.",
         webL3Rule2: "متجر إلكتروني كامل: سلة تسوق + نموذج طلب مباشر (الاسم، الهاتف، الولاية، العنوان).",
-        webL3Rule3: "إشعار استلام الطلبيات لحظياً (Appwrite WebSockets) مباشرة داخل برنامج الكمبيوتر فور قيام الزبون بالطلب!",
-        webL3Rule4: "حماية عالية: شهادة أمان SSL HTTPS، حماية ضد البوتات والحقن، و 0 دج/شهر تكاليف استضافة.",
+        webL3Rule3: "إشعار استلام الطلبيات لحظياً عبر الخادم السحابي مباشرة داخل برنامج الكمبيوتر فور قيام الزبون بالطلب!",
+        webL3Rule4: "حماية عالية: شهادة أمان SSL HTTPS، حماية ضد البوتات وتأمين البيانات، و 0 دج/شهر تكاليف استضافة.",
         btnSelWebL3Active: "تم اختيار المتجر الكامل (المستوى 3)",
         btnSelWebL3Inactive: "اختيار المتجر الكامل (المستوى 3)",
 
