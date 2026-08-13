@@ -13,9 +13,6 @@
   <!-- Lucide Vector Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- html2pdf.js for 1-Click PDF Save -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
   <style>
     :root {
       --brand-green: #09B300;
@@ -691,7 +688,7 @@
     @media print {
       @page {
         size: A4 portrait;
-        margin: 8mm 10mm 8mm 10mm;
+        margin: 10mm 14mm;
       }
 
       html, body {
@@ -702,12 +699,19 @@
         print-color-adjust: exact !important;
       }
 
+      .container {
+        padding: 0 !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+      }
+
       .paper-contract {
         border: none !important;
         box-shadow: none !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
         width: 100% !important;
+        max-width: 100% !important;
       }
 
       .header-dual-logos {
@@ -800,7 +804,7 @@
             <i data-lucide="file-check"></i> وثيقة عقد عمل اتفاقي رسمية
           </span>
           <h1 class="contract-doc-title">عقد اتفاق وإنجاز برمجيات وموقع إلكتروني</h1>
-          <p class="contract-doc-subtitle">تطوير وتثبيت نظام إدارة SHEYMSS لصالح SHEYMSS NAILS STORE بواسطة SALON DZ TECH</p>
+          <p class="contract-doc-subtitle">تطوير وتثبيت نظام إدارة <bdi>SHEYMSS</bdi> لصالح <bdi>SHEYMSS NAILS STORE</bdi> بواسطة <bdi>SALON DZ TECH</bdi></p>
         </div>
 
         <!-- Left Logo: Salon DZ Tech -->
@@ -811,7 +815,7 @@
       <div class="meta-box">
         <div class="meta-field">
           <span class="meta-lbl"><i data-lucide="hash" style="width: 14px;"></i> مرجع العقد:</span>
-          <span class="meta-val">DZ-SHEYMSS-2026-08</span>
+          <span class="meta-val"><bdi>DZ-SHEYMSS-2026-08</bdi></span>
         </div>
         <div class="meta-field">
           <span class="meta-lbl"><i data-lucide="calendar" style="width: 14px;"></i> تاريخ إبرام العقد:</span>
@@ -823,7 +827,7 @@
         </div>
         <div class="meta-field">
           <span class="meta-lbl"><i data-lucide="shield-check" style="width: 14px;"></i> نوع الترخيص:</span>
-          <span class="meta-val">ترخيص نهائي مدى الحياة (.exe)</span>
+          <span class="meta-val">ترخيص نهائي مدى الحياة (<bdi>.exe</bdi>)</span>
         </div>
       </div>
 
@@ -838,18 +842,18 @@
             <!-- Party 1: Developer Representative -->
             <div class="party-card">
               <span class="party-role">الطرف الأول (المطور والمنجز)</span>
-              <div class="party-name">مؤسسة SALON DZ TECH</div>
+              <div class="party-name">مؤسسة <bdi>SALON DZ TECH</bdi></div>
               <p style="font-size: 0.85rem; color: var(--brand-muted); margin-top: 4px;">المتخصصة في تطوير البرمجيات وحلول إدارة الأعمال والمتاجر الإلكترونية في الجزائر.</p>
               <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--brand-border); font-size: 0.85rem; color: var(--brand-green-deep); font-weight: 700; line-height: 1.6;">
-                <i data-lucide="user-check" style="width: 14px; vertical-align: middle;"></i> ممثل المؤسسة المصرح به: <strong>اية هيدوك (AYA HIDOUK)</strong><br>
-                <i data-lucide="phone" style="width: 14px; vertical-align: middle;"></i> هاتف التواصل المباشر: <strong>+213 655098701</strong>
+                <i data-lucide="user-check" style="width: 14px; vertical-align: middle;"></i> ممثل المؤسسة المصرح به: <strong>اية هيدوك (<bdi>AYA HIDOUK</bdi>)</strong><br>
+                <i data-lucide="phone" style="width: 14px; vertical-align: middle;"></i> هاتف التواصل المباشر: <strong><bdi dir="ltr" style="unicode-bidi: isolate; direction: ltr;">+213 655098701</bdi></strong>
               </div>
             </div>
 
             <!-- Party 2: Client Representative with Required Fields -->
             <div class="party-card">
               <span class="party-role">الطرف الثاني (الزبون الشريك)</span>
-              <div class="party-name">SHEYMSS NAILS STORE</div>
+              <div class="party-name"><bdi>SHEYMSS NAILS STORE</bdi></div>
               <p style="font-size: 0.85rem; color: var(--brand-muted); margin-top: 4px;">المتجر المتخصص في تجارة وصناعة مستلزمات الأظافر ومستحضرات التجميل بالجملة.</p>
               <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--brand-border); font-size: 0.85rem;">
                 <div class="input-field-group">
@@ -866,7 +870,7 @@
               </div>
             </div>
           </div>
-          <div class="print-page-footer">صفحة 1 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+          <div class="print-page-footer">صفحة 1 من 5 — عقد اتفاق برمجيات | <bdi>SALON DZ TECH</bdi> x <bdi>SHEYMSS NAILS STORE</bdi></div>
         </div>
       </section>
 
@@ -876,16 +880,16 @@
           <i data-lucide="layers"></i> البند الثاني: موضوع العقد ونطاق العمل البرمجي
         </h2>
         <div class="section-body">
-          <p>يتعهد الطرف الأول (SALON DZ TECH) بتطوير، ضبط، وتثبيت نظام إدارة المبيعات والمخزون المحلي <strong>SHEYMSS</strong> المصمم خصيصاً على مقاس متطلبات الطرف الثاني، ويتضمن نطاق العمل الميزات التالية:</p>
+          <p>يتعهد الطرف الأول (<bdi>SALON DZ TECH</bdi>) بتطوير، ضبط، وتثبيت نظام إدارة المبيعات والمخزون المحلي <strong><bdi>SHEYMSS</bdi></strong> المصمم خصيصاً على مقاس متطلبات الطرف الثاني، ويتضمن نطاق العمل الميزات التالية:</p>
           
           <ul class="req-list">
-            <li><strong>كتالوج المنتجات المخصص:</strong> دعم فئات المنتجات الأساسية المحددة (Press-on Nails Main، Press-on Nails Pied، Kits Main et Pied) مع تحديد أسعار الجملة وصور المنتجات.</li>
-            <li><strong>بطاقة الزبائن لكل محل كوسميتيك (Fiche Client):</strong> متابعة ديناميكية شاملة لكل محل زبون (اسم المحل، الهاتف، الولاية، المنتجات المشتراة، إجمالي المشتريات، الديون والمستحقات المتبقية، وتاريخ آخر طلبية).</li>
-            <li><strong>المخزون اليدوي وطلاء الأظافر بالأرقام:</strong> سجل حركات مخزون مفتوح يتيح إضافة الخامات والمستهلكات (كابسول، غراء، مبرد، لفة، إلخ)، مع تتبع فردي لطلاء الأظافر (Vernis) برقم كل قارورة وحالتها الخاصة.</li>
+            <li><strong>كتالوج المنتجات المخصص:</strong> دعم فئات المنتجات الأساسية المحددة (<bdi>Press-on Nails Main</bdi>، <bdi>Press-on Nails Pied</bdi>، <bdi>Kits Main et Pied</bdi>) مع تحديد أسعار الجملة وصور المنتجات.</li>
+            <li><strong>بطاقة الزبائن لكل محل كوسميتيك (<bdi>Fiche Client</bdi>):</strong> متابعة ديناميكية شاملة لكل محل زبون (اسم المحل، الهاتف، الولاية، المنتجات المشتراة، إجمالي المشتريات، الديون والمستحقات المتبقية، وتاريخ آخر طلبية).</li>
+            <li><strong>المخزون اليدوي وطلاء الأظافر بالأرقام:</strong> سجل حركات مخزون مفتوح يتيح إضافة الخامات والمستهلكات (كابسول، غراء، مبرد، لفة، إلخ)، مع تتبع فردي لطلاء الأظافر (<bdi>Vernis</bdi>) برقم كل قارورة وحالتها الخاصة.</li>
             <li><strong>الموردون وسجل أسعار الشراء:</strong> إدخال بيانات الموردين (الاسم، الهاتف، الصفحة، الولاية) مع سجل محمي وغير قابل للتعديل لتتبع تطور أسعار الشراء وتاريخ تغيرها.</li>
-            <li><strong>خيار الموقع الإلكتروني المربوط (Kiosque / E-Commerce):</strong> يتضمن التطوير والربط التلقائي بين برنامج الكمبيوتر والموقع الإلكتروني؛ بالنسبة للموقع التعريفي (المستوى 1) يشمل السعر الإنجاز والترخيص مدى الحياة (For Life / 0 دج رسوم سنوية)، أما بالنسبة للكتالوج المربوط والمتجر الإلكتروني (المستويان 2 و 3) فيشمل السعر الإنجاز + <strong>اشتراك السنة الأولى متضمن مجاناً (1st Year Included)</strong> مع إمكانية التجديد السنوي الاختياري للاستضافة والمزامنة السحابية بدءاً من السنة الثانية.</li>
+            <li><strong>خيار الموقع الإلكتروني المربوط (<bdi>Kiosque / E-Commerce</bdi>):</strong> يتضمن التطوير والربط التلقائي بين برنامج الكمبيوتر والموقع الإلكتروني؛ بالنسبة للموقع التعريفي (المستوى 1) يشمل السعر الإنجاز والترخيص مدى الحياة (<bdi>For Life</bdi> / 0 دج رسوم سنوية)، أما بالنسبة للكتالوج المربوط والمتجر الإلكتروني (المستويان 2 و 3) فيشمل السعر الإنجاز + <strong>اشتراك السنة الأولى متضمن مجاناً (<bdi>1st Year Included</bdi>)</strong> مع إمكانية التجديد السنوي الاختياري للاستضافة والمزامنة السحابية بدءاً من السنة الثانية.</li>
           </ul>
-          <div class="print-page-footer">صفحة 2 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+          <div class="print-page-footer">صفحة 2 من 5 — عقد اتفاق برمجيات | <bdi>SALON DZ TECH</bdi> x <bdi>SHEYMSS NAILS STORE</bdi></div>
         </div>
       </section>
 
@@ -898,7 +902,7 @@
           <p>تم الاتفاق على القيمة المالية الإجمالية للاستثمار المالي (القيمة الأساسية للنظام: <strong>35,000 دج</strong>) مع تطبيق عروض التخفيض وفق الترتيب التالي:</p>
           <ul style="font-size: 0.88rem; color: var(--brand-ink); margin: 6px 0 10px 18px; line-height: 1.6;">
             <li><strong>خيار 1 (تخفيض إبرام العقد -10%):</strong> يتضمن تخفيضاً مباشراً بقيمة 3,500 دج بمجرد توقيع العقد الرسمي (بدون التزامات تسويقية) ليصبح المبلغ الصافي <strong>31,500 دج</strong> (3.15 ملايين سنتيم). [القسط الشهري: <strong>11,500 دج/شهر</strong>].</li>
-            <li><strong>خيار 2 (تخفيض العقد + الشراكة الإعلانية -20%):</strong> يتضمن تخفيضاً تراكمياً بقيمة 7,000 دج عند موافقة الزبون على نشر ستوريات/منشورات ورأي الزبون مع منشن لصفحة <strong>SALON DZ TECH</strong> ليصبح المبلغ الصافي <strong>28,000 دج</strong> (2.8 ملايين سنتيم). [القسط الشهري: <strong>10,333 دج/شهر</strong>].</li>
+            <li><strong>خيار 2 (تخفيض العقد + الشراكة الإعلانية -20%):</strong> يتضمن تخفيضاً تراكمياً بقيمة 7,000 دج عند موافقة الزبون على نشر ستوريات/منشورات ورأي الزبون مع منشن لصفحة <strong><bdi>SALON DZ TECH</bdi></strong> ليصبح المبلغ الصافي <strong>28,000 دج</strong> (2.8 ملايين سنتيم). [القسط الشهري: <strong>10,333 دج/شهر</strong>].</li>
           </ul>
 
           <!-- Dynamic Client Selections Summary Box (PDF & Print Rendered) -->
@@ -964,7 +968,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="print-page-footer">صفحة 3 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+          <div class="print-page-footer">صفحة 3 من 5 — عقد اتفاق برمجيات | <bdi>SALON DZ TECH</bdi> x <bdi>SHEYMSS NAILS STORE</bdi></div>
         </div>
       </section>
 
@@ -976,8 +980,8 @@
         <div class="section-body">
           <p>يلتزم الطرف الأول بتوفير ضمان ودعم فني يشمل ما يلي:</p>
           <ul class="req-list">
-            <li>إصلاح الأخطاء الثغرات البرمجية والخلل التقني (Bugs) مجاناً طيلة فترة الترخيص.</li>
-            <li>ضمان سلامة قاعدة البيانات المحلية واستقرار النسخ الاحتياطي التلقائي (Database Auto-Backup).</li>
+            <li>إصلاح الأخطاء الثغرات البرمجية والخلل التقني (<bdi>Bugs</bdi>) مجاناً طيلة فترة الترخيص.</li>
+            <li>ضمان سلامة قاعدة البيانات المحلية واستقرار النسخ الاحتياطي التلقائي (<bdi>Database Auto-Backup</bdi>).</li>
             <li>تقديم تدريب كامل للطرف الثاني وفريقه على استخدام كافة وظائف النظام والطابعة الحرارية.</li>
           </ul>
         </div>
@@ -991,20 +995,20 @@
         <div class="section-body">
           
           <div class="clause-box">
-            <div class="clause-box-title"><i data-lucide="key" style="width: 18px;"></i> 1. احتفاظ بالملكية الفكرية للشفرة المصدرية (100% SALON DZ TECH)</div>
+            <div class="clause-box-title"><i data-lucide="key" style="width: 18px;"></i> 1. احتفاظ بالملكية الفكرية للشفرة المصدرية (100% <bdi>SALON DZ TECH</bdi>)</div>
             <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
-              تبقى الملكية الفكرية، وحقوق الشفرة المصدرية (Source Code) <strong>مملوكة بنسبة 100% وحصرياً للطرف الأول (مؤسسة SALON DZ TECH)</strong>. يتحصل الطرف الثاني (SHEYMSS NAILS STORE) على ترخيص تشغيل نهائي مدى الحياة للبرنامج الملف التنفيذي (.exe)، دون أي حق في المطالبة أو نقل الشفرة المصدرية.
+              تبقى الملكية الفكرية، وحقوق الشفرة المصدرية (<bdi>Source Code</bdi>) <strong>مملوكة بنسبة 100% وحصرياً للطرف الأول (مؤسسة <bdi>SALON DZ TECH</bdi>)</strong>. يتحصل الطرف الثاني (<bdi>SHEYMSS NAILS STORE</bdi>) على ترخيص تشغيل نهائي مدى الحياة للبرنامج الملف التنفيذي (<bdi>.exe</bdi>)، دون أي حق في المطالبة أو نقل الشفرة المصدرية.
             </p>
           </div>
 
           <div class="clause-box">
-            <div class="clause-box-title"><i data-lucide="edit-3" style="width: 18px;"></i> 2. عدد المراجعات والتعديلات المجانية (Limited Revisions)</div>
+            <div class="clause-box-title"><i data-lucide="edit-3" style="width: 18px;"></i> 2. عدد المراجعات والتعديلات المجانية (<bdi>Limited Revisions</bdi>)</div>
             <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
-              يحق للطرف الثاني الحصول على <strong>مراجعتين مجانيتين كحد أقصى (2 Free Revisions)</strong> بعد التسليم الأولي لتعديل وتصويب الملاحظات طفيفة النطاق. أي تعديل إضافي أو مراجعة برمجية بعد المراجعتين تُحسب كخدمة برمجية جديدة ومستقلة وتُسعر بشكل منفصل.
+              يحق للطرف الثاني الحصول على <strong>مراجعتين مجانيتين كحد أقصى (<bdi>2 Free Revisions</bdi>)</strong> بعد التسليم الأولي لتعديل وتصويب الملاحظات طفيفة النطاق. أي تعديل إضافي أو مراجعة برمجية بعد المراجعتين تُحسب كخدمة برمجية جديدة ومستقلة وتُسعر بشكل منفصل.
             </p>
           </div>
 
-          <div class="print-page-footer">صفحة 4 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+          <div class="print-page-footer">صفحة 4 من 5 — عقد اتفاق برمجيات | <bdi>SALON DZ TECH</bdi> x <bdi>SHEYMSS NAILS STORE</bdi></div>
         </div>
       </section>
 
@@ -1031,9 +1035,9 @@
           </div>
 
           <div class="clause-box">
-            <div class="clause-box-title"><i data-lucide="shield-alert" style="width: 18px;"></i> 3. حق التمديد الاستثنائي لمؤسسة SALON DZ TECH (+5 أيام عمل)</div>
+            <div class="clause-box-title"><i data-lucide="shield-alert" style="width: 18px;"></i> 3. حق التمديد الاستثنائي لمؤسسة <bdi>SALON DZ TECH</bdi> (+5 أيام عمل)</div>
             <p style="font-size: 0.9rem; color: #2A472A; line-height: 1.7;">
-              يحق للطرف الأول (مؤسسة SALON DZ TECH) الاستفادة تلقائياً من <strong>مهلة إضافية تقديرية تصل إلى +5 أيام عمل إضافية</strong> فوق الآجل المحدد في حال استدعت الحاجة الفنية إكمال الاختبارات البرمجية أو معالجة التحسينات غير المتوقعة قبل التسليم النهائي، دون أن يُعد ذلك تأخيراً مخلّاً ببنود العقد.
+              يحق للطرف الأول (مؤسسة <bdi>SALON DZ TECH</bdi>) الاستفادة تلقائياً من <strong>مهلة إضافية تقديرية تصل إلى +5 أيام عمل إضافية</strong> فوق الآجل المحدد في حال استدعت الحاجة الفنية إكمال الاختبارات البرمجية أو معالجة التحسينات غير المتوقعة قبل التسليم النهائي، دون أن يُعد ذلك تأخيراً مخلّاً ببنود العقد.
             </p>
           </div>
 
@@ -1050,9 +1054,9 @@
           
           <!-- Developer Signature Box (SALON DZ TECH) -->
           <div class="sig-card">
-            <div class="sig-card-title">الطرف الأول: SALON DZ TECH</div>
-            <div class="sig-card-sub" style="font-weight: 800; color: var(--brand-green-deep);">ممثل المؤسسة: اية هيدوك (AYA HIDOUK)</div>
-            <div style="font-size: 0.82rem; color: var(--brand-muted); margin-bottom: 6px;">الهاتف: +213 655098701</div>
+            <div class="sig-card-title">الطرف الأول: <bdi>SALON DZ TECH</bdi></div>
+            <div class="sig-card-sub" style="font-weight: 800; color: var(--brand-green-deep);">ممثل المؤسسة: اية هيدوك (<bdi>AYA HIDOUK</bdi>)</div>
+            <div style="font-size: 0.82rem; color: var(--brand-muted); margin-bottom: 6px;">الهاتف: <bdi dir="ltr" style="unicode-bidi: isolate; direction: ltr;">+213 655098701</bdi></div>
             <div class="canvas-wrap" style="display: flex; align-items: center; justify-content: center; background: #F7FCF7;">
               <img src="solondztechcompany.png" alt="Stamp" style="max-height: 90px; opacity: 0.85;">
             </div>
@@ -1061,7 +1065,7 @@
 
           <!-- Client Signature Box with Interactive Canvas -->
           <div class="sig-card">
-            <div class="sig-card-title">الطرف الثاني: SHEYMSS NAILS STORE</div>
+            <div class="sig-card-title">الطرف الثاني: <bdi>SHEYMSS NAILS STORE</bdi></div>
             <div class="sig-card-sub">
               الاسم: <span id="clientNameSigDisplay" style="font-weight: 800; color: var(--brand-green-deep);">[يُدخل أعلاه]</span> |
               الهاتف: <span id="clientPhoneSigDisplay" style="font-weight: 800; color: var(--brand-green-deep);">[يُدخل أعلاه]</span>
@@ -1074,7 +1078,7 @@
             </button>
           </div>
 
-          <div class="print-page-footer">صفحة 5 من 5 — عقد اتفاق برمجيات | SALON DZ TECH x SHEYMSS NAILS STORE</div>
+          <div class="print-page-footer">صفحة 5 من 5 — عقد اتفاق برمجيات | <bdi>SALON DZ TECH</bdi> x <bdi>SHEYMSS NAILS STORE</bdi></div>
         </div>
       </section>
 
@@ -1135,13 +1139,13 @@
         'mid': {
           label: {
             fr: "Design Standard (Mid-Level)",
-            ar: "تصميم قياسي (Standard Mid-Level)"
+            ar: "تصميم قياسي (<bdi>Standard Mid-Level</bdi>)"
           }
         },
         'wow': {
           label: {
             fr: "Design Luxueux (High-Level WOW ⭐)",
-            ar: "تصميم فاخر (High-Level WOW ⭐)"
+            ar: "تصميم فاخر (<bdi>High-Level WOW ⭐</bdi>)"
           }
         }
       },
@@ -1161,7 +1165,7 @@
           prices: { mid: 22000, wow: 28000 },
           label: {
             fr: "Niveau 1 : Site Vitrine & Showroom Digital",
-            ar: "المستوى 1: موقع تعريفي وواجهة عرض (Site Vitrine)"
+            ar: "المستوى 1: موقع تعريفي وواجهة عرض (<bdi>Site Vitrine</bdi>)"
           },
           terms: {
             fr: "Licence à Vie (0 DA/an)",
@@ -1447,7 +1451,7 @@
       const phoneErr = document.getElementById('phoneErrorMsg');
 
       if (!name) {
-        showCustomModal('تنبيه: حقل مطلوب', 'يرجى إدخال اسم ممثل الزبون (SHEYMSS NAILS STORE) أولاً.', 'warning', () => {
+        showCustomModal('تنبيه: حقل مطلوب', 'يرجى إدخال اسم ممثل الزبون (<bdi>SHEYMSS NAILS STORE</bdi>) أولاً.', 'warning', () => {
           document.getElementById('clientNameInput').focus();
         });
         return;
@@ -1470,53 +1474,16 @@
       document.getElementById('clientNamePrint').textContent = name;
       document.getElementById('clientPhonePrint').textContent = phone;
 
-      // Show loader popup modal
-      showCustomModal('جاري تنزيل الملف', 'جاري إنشاء وتنزيل عقد PDF رسمي الآن مباشرة...', 'success');
+      // Set document title so browser suggests clean filename on Save as PDF
+      const originalTitle = document.title;
+      document.title = 'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH';
 
-      // Scroll to top to ensure clean rendering starting at y=0
-      window.scrollTo(0, 0);
+      // Trigger high-precision native browser print engine (Vector PDF output)
+      window.print();
 
-      const element = document.querySelector('.paper-contract');
-      const actionRow = document.querySelector('.btn-action-row');
-      const clearBtn = document.querySelector('.btn-clear-sig');
-      
-      if (actionRow) actionRow.style.display = 'none';
-      if (clearBtn) clearBtn.style.display = 'none';
-
-      // Hide input boxes and show clean text spans
-      document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(i => i.style.display = 'none');
-      document.querySelectorAll('.print-only-val').forEach(s => s.style.display = 'inline-block');
-
-      const opt = {
-        margin:       [6, 6, 6, 6],
-        filename:     'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  {
-          scale: 2,
-          useCORS: true,
-          logging: false,
-          scrollY: 0,
-          scrollX: 0,
-          windowWidth: 1200
-        },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak:    { mode: ['css', 'legacy'], avoid: ['.party-card', '.clause-box', '.sig-card', '.summary-selection-card', '.deposit-alert-box', '.table-instalments', '.contract-section'] }
-      };
-
-      html2pdf().set(opt).from(element).save().then(() => {
-        if (actionRow) actionRow.style.display = 'flex';
-        if (clearBtn) clearBtn.style.display = 'inline-flex';
-        document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(i => i.style.display = 'block');
-        setTimeout(() => {
-          closeCustomModal();
-        }, 800);
-      }).catch((err) => {
-        if (actionRow) actionRow.style.display = 'flex';
-        if (clearBtn) clearBtn.style.display = 'inline-flex';
-        document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(i => i.style.display = 'block');
-        closeCustomModal();
-        showCustomModal('خطأ في التنزيل', 'حدث خطأ أثناء تنزيل الملف، يرجى استعراض خيار طباعة كـ PDF.', 'error');
-      });
+      setTimeout(() => {
+        document.title = originalTitle;
+      }, 1000);
     }
 
     // Setup Client Signature Canvas
