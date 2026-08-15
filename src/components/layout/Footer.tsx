@@ -133,7 +133,12 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 sm:flex-row md:px-6">
           <p className="text-xs text-muted-foreground">{t("copyright")}</p>
-
+          <Link
+            href="/privacy"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+          >
+            Privacy Policy & Terms
+          </Link>
         </div>
       </div>
     </footer>
