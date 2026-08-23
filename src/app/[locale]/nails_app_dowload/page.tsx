@@ -51,8 +51,8 @@ export default async function NailsAppDownloadPage({
             
             <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
               {isAr
-                ? "تطبيق ويندوز احترافي وسريع، يعمل محلياً بدون إنترنت، مصمم خصيصاً لإدارة منتجات Press-on Nails، طباعة بوالص الشحن الحرارية ZR Express لـ 58 ولاية، وتتبع المخزون والأقساط."
-                : "Application Windows ultra-rapide et sécurisée, fonctionnant 100% hors-ligne. Spécialement conçue pour la gestion des Press-on Nails, étiquettes thermiques ZR Express 58 Wilayas et échéanciers."}
+                ? "تطبيق ويندوز احترافي وسريع، يعمل محلياً بدون إنترنت، مصمم خصيصاً لإدارة منتجات Press-on Nails، طباعة بوالص الشحن الحرارية لـ 58 ولاية لكافة مكاتب وشركات التوصيل، وتتبع المخزون والأقساط."
+                : "Application Windows ultra-rapide et sécurisée, fonctionnant 100% hors-ligne. Spécialement conçue pour la gestion des Press-on Nails, étiquettes thermiques multi-transporteurs 58 Wilayas et échéanciers."}
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default async function NailsAppDownloadPage({
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-pink-600 dark:text-pink-400 shrink-0" />
-                    <span>{isAr ? "توليد ملصقات الشحن الحرارية 10x15 سم (ZR Express) لـ 58 ولاية" : "Étiquettes thermiques ZR Express 10x15cm pour 58 Wilayas"}</span>
+                    <span>{isAr ? "توليد ملصقات الشحن الحرارية 10x15 سم لكافة مكاتب التوصيل لـ 58 ولاية" : "Étiquettes thermiques multi-transporteurs 10x15cm pour 58 Wilayas"}</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-pink-600 dark:text-pink-400 shrink-0" />

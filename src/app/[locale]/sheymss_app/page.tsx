@@ -70,8 +70,8 @@ export default async function SheymssAppDealPage({
 
             <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
               {isAr
-                ? "برنامج سطح مكتب متكامل وسريع، مصمم خصيصاً لتجارة وتوزيع Press-on Nails بالجملة، طباعة بوالص الشحن الحرارية ZR Express لـ 58 ولاية، إدارة مخزون الكبسولات والفرني، وتتبع الأقساط والمدفوعات."
-                : "Suite logicielle Windows ultra-rapide conçue sur mesure pour la vente en gros de Press-on Nails, étiquettes thermiques ZR Express 58 Wilayas, stocks matières & vernis UV, et gestion des échéanciers."}
+                ? "برنامج سطح مكتب متكامل وسريع، مصمم خصيصاً لتجارة وتوزيع Press-on Nails بالجملة، طباعة بوالص الشحن وتوصيل الطرود لـ 58 ولاية لكافة مكاتب وشركات التوصيل، إدارة مخزون الكبسولات والفرني، وتتبع الأقساط والمدفوعات."
+                : "Suite logicielle Windows ultra-rapide conçue sur mesure pour la vente en gros de Press-on Nails, étiquettes thermiques pour toutes les sociétés de livraison 58 Wilayas, stocks matières & vernis UV, et gestion des échéanciers."}
             </p>
 
             {/* Quick Action Buttons */}
@@ -424,18 +424,18 @@ export default async function SheymssAppDealPage({
                 </p>
               </div>
 
-              {/* 6. ZR Express Thermal Shipping Labels */}
+              {/* 6. Universal Multi-Carrier Thermal Shipping Labels */}
               <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
                   <Printer className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                  {isAr ? "6. ملصقات الشحن الحرارية ZR Express (10x15 سم لـ 58 ولاية)" : "6. Étiquettes Thermiques ZR Express (10x15 cm - 58 Wilayas)"}
+                  {isAr ? "6. ملصقات الشحن وتوصيل الطرود لجميع مكاتب التوصيل (10x15 سم لـ 58 ولاية)" : "6. Étiquettes Thermiques Multi-Transporteurs (10x15 cm - 58 Wilayas)"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
                   {isAr
-                    ? "توليد فوري لبوالص وتذاكر الشحن الحرارية المطابقة لمعايير ZR Express: باركود 128 ديناميكي، رمز الاستجابة السريعة QR، توجيه تلقائي لـ 58 ولاية، ونوع التوصيل (منزل/مكتب)."
-                    : "Générateur conforme aux standards ZR Express (10x15cm) : Code 128, QR code dynamique, routage 58 Wilayas et distinction Domicile / Stopdesk."}
+                    ? "توليد فوري لبوالص وملصقات الشحن وتوصيل الطرود المتوافقة مع كافة مكاتب وشركات التوصيل (ZR Express, Yalidine, Maystro, Kazitour, Procolis): باركود 128 ديناميكي، رمز الاستجابة السريعة QR، توجيه تلقائي لـ 58 ولاية، ونوع التوصيل (منزل/مكتب)."
+                    : "Générateur universel conforme aux standards de livraison (ZR Express, Yalidine, Maystro, etc.) : Code 128, QR code dynamique, routage 58 Wilayas et distinction Domicile / Stopdesk."}
                 </p>
               </div>
 
@@ -454,18 +454,18 @@ export default async function SheymssAppDealPage({
                 </p>
               </div>
 
-              {/* 8. WhatsApp Invoices */}
+              {/* 8. Suppliers & Purchasing History */}
               <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <PhoneCall className="w-6 h-6" />
+                  <Truck className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                  {isAr ? "8. إرسال الفواتير الفوري عبر الواتساب (WhatsApp Invoicing)" : "8. Facturation & Envoi WhatsApp Direct"}
+                  {isAr ? "8. دليل الموردين وتتبع أسعار الشراء السابقة (Fournisseurs & Historique)" : "8. Répertoire Fournisseurs & Historique des Prix d'Achat"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
                   {isAr
-                    ? "إرسال تفاصيل الطلبية، المنتجات، المبالغ المسددة والمتبقية مباشرة إلى رقم هاتف الزبونة على الواتساب بنقرة واحدة بتنسيق نصي احترافي."
-                    : "Envoi en 1 clic des récapitulatifs de commandes, échéances et soldes restants directement sur le WhatsApp du client avec mise en forme soignée."}
+                    ? "سجل متكامل لموردي ومستوردي المواد الأولية والأظافر في مختلف الولايات، مع تتبع التغيرات التاريخية لأسعار الشراء وسجل التوريدات لضمان أعلى هوامش ربح."
+                    : "Répertoire complet des fournisseurs et importateurs de matières premières, avec historique d'évolution des prix d'achat et suivi des approvisionnements."}
                 </p>
               </div>
 
