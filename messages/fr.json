@@ -315,7 +315,11 @@
     "comingSoonBadge": "Bientôt Disponible",
     "androidComingSoonTitle": "L'application Android arrive bientôt",
     "androidComingSoonDesc": "Notre application Android native est actuellement en cours de développement. Nous l'optimisons pour offrir une expérience fluide sur tablettes et smartphones, vous permettant de gérer vos rendez-vous, de suivre vos clients et d'encaisser facilement lors de vos déplacements.",
-    "androidComingSoonNote": "Une fois publiée, vous pourrez la télécharger directement sur le Google Play Store ou sous forme de fichier APK autonome."
+    "androidComingSoonNote": "Une fois publiée, vous pourrez la télécharger directement sur le Google Play Store ou sous forme de fichier APK autonome.",
+    "nailsBadge": "Édition Spéciale Grossiste Press-on Nails",
+    "nailsTitle": "Application SHEYMSS — Gestion Press-on Nails & Beauté",
+    "nailsDesc": "Logiciel Windows complet pour la gestion des commandes, stock capsules & vernis UV, et étiquettes colis ZR Express 58 Wilayas.",
+    "nailsCta": "Télécharger SHEYMSS (Windows)"
   },
   "guidePage": {
     "badge": "Manuel Officiel 2026",

@@ -1083,12 +1083,9 @@
       </section>
 
       <!-- Action Buttons -->
-      <div class="btn-action-row" style="gap: 16px; justify-content: center; margin-top: 36px; display: flex; flex-wrap: wrap;">
-        <button class="btn btn-green" onclick="downloadContractPDF()">
+      <div class="btn-action-row" style="justify-content: center; margin-top: 36px; display: flex;">
+        <button class="btn btn-green" style="padding: 16px 42px; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(9, 179, 0, 0.35);" onclick="downloadContractPDF()">
           <i data-lucide="download"></i> تنزيل وحفظ العقد كملف PDF
-        </button>
-        <button class="btn btn-outline" style="border: 2px solid var(--brand-green); color: var(--brand-green-deep);" onclick="handlePrintWithValidation()">
-          <i data-lucide="printer"></i> طباعة كـ PDF (معاينة المتصفح)
         </button>
       </div>
 
@@ -1407,7 +1404,7 @@
       }
     }
 
-    function handlePrintWithValidation() {
+    function downloadContractPDF() {
       const name = document.getElementById('clientNameInput').value.trim();
       const phone = document.getElementById('clientPhoneInput').value.trim().replace(/\s+|-/g, '');
       const dzPhoneRegex = /^(?:(?:\+|00)213|0)[567][0-9]{8}$/;
@@ -1429,44 +1426,7 @@
       }
 
       if (!isSignedByClient) {
-        showCustomModal('تنبيه: التوقيع مطلوب', 'يرجى إكمال التوقيع الإلكتروني في المربع المخصص للزبون أسفل العقد قبل الطباعة.', 'warning');
-        return;
-      }
-
-      document.getElementById('clientNamePrint').textContent = name;
-      document.getElementById('clientPhonePrint').textContent = phone;
-
-      const originalTitle = document.title;
-      document.title = 'عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH';
-      window.print();
-      setTimeout(() => {
-        document.title = originalTitle;
-      }, 1000);
-    }
-
-    function downloadContractPDF() {
-      const name = document.getElementById('clientNameInput').value.trim();
-      const phone = document.getElementById('clientPhoneInput').value.trim().replace(/\s+|-/g, '');
-      const dzPhoneRegex = /^(?:(?:\+|00)213|0)[567][0-9]{8}$/;
-      const phoneErr = document.getElementById('phoneErrorMsg');
-
-      if (!name) {
-        showCustomModal('تنبيه: حقل مطلوب', 'يرجى إدخال اسم ممثل الزبون (<bdi>SHEYMSS NAILS STORE</bdi>) أولاً.', 'warning', () => {
-          document.getElementById('clientNameInput').focus();
-        });
-        return;
-      }
-
-      if (!dzPhoneRegex.test(phone)) {
-        phoneErr.style.display = 'block';
-        showCustomModal('تنبيه: رقم هاتف غير صحيح', 'يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام (يبدأ بـ 05، 06، 07 أو +213).', 'error', () => {
-          document.getElementById('clientPhoneInput').focus();
-        });
-        return;
-      }
-
-      if (!isSignedByClient) {
-        showCustomModal('تنبيه: التوقيع مطلوب', 'يرجى إكمال التوقيع الإلكتروني في المربع المخصص للزبون أسفل العقد قبل التنزيل.', 'warning');
+        showCustomModal('تنبيه: التوقيع مطلوب', 'يرجى إكمال التوقيع الإلكتروني في المربع المخصص للزبون أسفل العقد قبل تنزيل ملف PDF.', 'warning');
         return;
       }
 

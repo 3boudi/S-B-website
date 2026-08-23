@@ -6,6 +6,7 @@ import Pricing from "@/components/sections/Pricing";
 import { Button } from "@/components/ui/button";
 import { Download, Sparkles, ShieldCheck, AlertCircle } from "lucide-react";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
 
 // Placeholder variable for Microsoft Store URL.
 // Set this to the link of your app in the Microsoft Store to show the 'Get it from Microsoft Store' button.
@@ -103,6 +104,32 @@ function DownloadContent() {
 
             <WindowsDownloadSection exeUrl={t("downloadLinkStandard")} ctaText={t("standardCta")} variant="outline" />
           </div>
+        </div>
+
+        {/* SHEYMSS Press-on Nails Special App Card */}
+        <div className="mt-8 max-w-4xl mx-auto overflow-hidden rounded-3xl border border-pink-500/30 bg-gradient-to-r from-pink-500/5 via-pink-500/10 to-pink-500/5 dark:from-pink-950/20 dark:via-pink-900/20 dark:to-pink-950/20 p-6 sm:p-8 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4 text-center sm:text-start rtl:sm:text-right">
+            <div className="w-14 h-14 rounded-2xl bg-pink-500/15 border border-pink-500/30 p-2.5 flex items-center justify-center shrink-0 shadow-xs">
+              <Sparkles className="w-7 h-7 text-pink-600 dark:text-pink-400" />
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/15 text-pink-600 dark:text-pink-400 text-[10px] font-extrabold uppercase tracking-wider mb-1.5">
+                <span>{t("nailsBadge") || "Édition Spéciale Grossiste"}</span>
+              </div>
+              <h4 className="text-lg sm:text-xl font-bold font-[var(--font-display)] text-[var(--text-primary)]">
+                {t("nailsTitle") || "Application SHEYMSS — Gestion Press-on Nails & Beauté"}
+              </h4>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1 max-w-xl">
+                {t("nailsDesc") || "Logiciel Windows complet pour la gestion des commandes, stock capsules & vernis UV, et étiquettes colis ZR Express 58 Wilayas."}
+              </p>
+            </div>
+          </div>
+          <Button asChild className="shrink-0 bg-pink-600 hover:bg-pink-700 text-white font-bold px-6 py-5 rounded-2xl shadow-md shadow-pink-500/25">
+            <Link href="/nails_app_dowload" className="flex items-center gap-2">
+              <Download className="w-4 h-4" />
+              <span>{t("nailsCta") || "Télécharger SHEYMSS (Windows)"}</span>
+            </Link>
+          </Button>
         </div>
       </div>
 
