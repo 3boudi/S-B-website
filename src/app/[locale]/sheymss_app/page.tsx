@@ -6,7 +6,6 @@ import {
   ShieldCheck,
   Package,
   Layers,
-  FileText,
   Printer,
   Calendar,
   CreditCard,
@@ -15,21 +14,17 @@ import {
   PhoneCall,
   Download,
   Percent,
-  Video,
-  Share2,
   Clock,
   ArrowRight,
   Database,
   Truck,
   Award,
   BadgePercent,
-  FileCheck,
   Flame,
-  MessageSquare,
   Building2,
   Box,
   Palette,
-  ExternalLink,
+  Laptop,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -50,13 +45,13 @@ export default async function SheymssAppDealPage({
         className="min-h-screen pt-24 pb-20 bg-[var(--bg-primary)] dark:bg-[#070C0E] text-[var(--text-primary)] selection:bg-pink-500 selection:text-white"
         dir={isAr ? "rtl" : "ltr"}
       >
-        {/* Top Confidential Ribbon */}
+        {/* Top Feature Ribbon */}
         <div className="bg-gradient-to-r from-pink-600 via-rose-600 to-pink-700 text-white text-xs font-black py-2.5 px-4 text-center tracking-wider shadow-sm flex items-center justify-center gap-2">
-          <Award className="w-4 h-4 shrink-0" />
+          <Sparkles className="w-4 h-4 shrink-0" />
           <span>
             {isAr
-              ? "وثيقة العرض التجاري الرسمي واتفاقية الشراكة البرمجية الحصرية — صالون ديزاد تك x متجر SHEYMSS"
-              : "Offre Commerciale Officielle & Partenariat Logiciel Exclusif — Salon DZ Tech x SHEYMSS"}
+              ? "النسخة الرسمية لتطبيق ويندوز — متجر SHEYMSS لتجارة وإدارة Press-on Nails ومستحضرات التجميل"
+              : "Édition Officielle Windows — Logiciel SHEYMSS Press-on Nails & Beauté Wholesale"}
           </span>
         </div>
 
@@ -65,8 +60,8 @@ export default async function SheymssAppDealPage({
           {/* Header Section */}
           <div className="text-center mb-16 space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 text-xs font-extrabold uppercase tracking-wider shadow-2xs">
-              <Sparkles className="w-4 h-4 fill-current" />
-              <span>{isAr ? "نظام إدارة تجارة الأظافر ومستحضرات التجميل بالجملة" : "Système de Gestion Grossiste Press-on Nails & Beauté"}</span>
+              <Laptop className="w-4 h-4" />
+              <span>{isAr ? "برنامج سطح المكتب لويندوز (100% محلي بدون إنترنت)" : "Logiciel Bureau Windows 100% Hors-Ligne"}</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight font-[var(--font-display)] text-slate-900 dark:text-white leading-tight">
@@ -75,58 +70,55 @@ export default async function SheymssAppDealPage({
 
             <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
               {isAr
-                ? "برنامج سطح مكتب متكامل لويندوز، يعمل محلياً 100% بدون إنترنت، مخصص لتجارة منتجات Press-on Nails، طباعة بوالص الشحن الحرارية ZR Express لـ 58 ولاية، إدارة المخزون والمواد الأولية، وتتبع الأقساط والمدفوعات."
-                : "Suite logicielle Windows 100% hors-ligne pour la gestion complète de la vente en gros de Press-on Nails, étiquettes thermiques ZR Express 58 Wilayas, stocks matières & vernis UV, et gestion des échéanciers."}
+                ? "برنامج سطح مكتب متكامل وسريع، مصمم خصيصاً لتجارة وتوزيع Press-on Nails بالجملة، طباعة بوالص الشحن الحرارية ZR Express لـ 58 ولاية، إدارة مخزون الكبسولات والفرني، وتتبع الأقساط والمدفوعات."
+                : "Suite logicielle Windows ultra-rapide conçue sur mesure pour la vente en gros de Press-on Nails, étiquettes thermiques ZR Express 58 Wilayas, stocks matières & vernis UV, et gestion des échéanciers."}
             </p>
 
             {/* Quick Action Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
               <a
-                href="#contract-deal"
-                className="px-6 py-3 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-sm shadow-md shadow-pink-500/20 flex items-center gap-2 transition-all"
+                href="/downloads/sheymss-vip-setup.exe"
+                download="sheymss-vip-setup.exe"
+                className="px-7 py-3.5 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-black text-sm shadow-md shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
+              >
+                <Download className="w-4 h-4 animate-bounce" />
+                <span>{isAr ? "تحميل التطبيق للكمبيوتر (99 MB)" : "Télécharger pour Windows (99 MB)"}</span>
+              </a>
+
+              <a
+                href="#pricing-deal"
+                className="px-6 py-3.5 rounded-2xl border border-pink-500/30 bg-pink-500/5 hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 font-bold text-sm flex items-center gap-2 transition-all"
               >
                 <Percent className="w-4 h-4" />
-                <span>{isAr ? "عقد الاتفاق وجدول الأسعار والتخفيضات" : "Offre Commerciale & Modalités"}</span>
+                <span>{isAr ? "باقات الأسعار والتخفيضات" : "Tarifs & Facilités de Paiement"}</span>
               </a>
 
               <a
-                href="/contract_ar.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-2xl border border-pink-500/30 bg-pink-500/5 hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 font-bold text-sm flex items-center gap-2 transition-all"
+                href="#features-list"
+                className="px-6 py-3.5 rounded-2xl border border-border bg-[var(--bg-card)] hover:bg-slate-100 dark:hover:bg-slate-800 text-[var(--text-primary)] font-bold text-sm flex items-center gap-2 transition-all"
               >
-                <FileText className="w-4 h-4" />
-                <span>{isAr ? "قراءة العقد الرسمي التفاعلي" : "Lire le Contrat Officiel"}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="/عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf"
-                download="عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf"
-                className="px-6 py-3 rounded-2xl border border-border bg-[var(--bg-card)] hover:bg-slate-100 dark:hover:bg-slate-800 text-[var(--text-primary)] font-bold text-sm flex items-center gap-2 transition-all"
-              >
-                <Download className="w-4 h-4" />
-                <span>{isAr ? "تحميل العقد PDF" : "Télécharger Contrat PDF"}</span>
+                <Layers className="w-4 h-4" />
+                <span>{isAr ? "استعراض كافة ميزات البرنامج" : "Découvrir les Fonctionnalités"}</span>
               </a>
             </div>
           </div>
 
           {/* ========================================================================= */}
-          {/* SECTION 1: THE CONTRACT DEAL & PRICING BREAKDOWN */}
+          {/* SECTION 1: PRICING & DISCOUNTS BREAKDOWN */}
           {/* ========================================================================= */}
-          <div id="contract-deal" className="mb-20 scroll-mt-24">
+          <div id="pricing-deal" className="mb-20 scroll-mt-24">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-xs font-bold uppercase tracking-wider mb-2">
                 <BadgePercent className="w-4 h-4" />
-                <span>{isAr ? "العرض المالي الحصري وتسهيلات الدفع" : "Conditions Tarifaires & Facilités de Paiement"}</span>
+                <span>{isAr ? "عروض الأسعار الحصرية وتسهيلات الدفع" : "Conditions Tarifaires & Facilités"}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold font-[var(--font-display)] text-slate-900 dark:text-white">
-                {isAr ? "تفاصيل الاتفاق المالي وجدول الأقساط" : "Détail de l'Offre & Échéancier de Paiement"}
+                {isAr ? "باقات الأسعار وجدول الأقساط الميسرة" : "Détail des Tarifs & Échéancier de Paiement"}
               </h2>
               <p className="text-sm text-[var(--text-secondary)] mt-2">
                 {isAr
-                  ? "القيمة السوقية الأصلية للبرنامج 35,000 دج مع تخفيضات خاصة بالشراكة والإعلان"
-                  : "Valeur réelle du logiciel : 35 000 DA avec remises exclusives contrat et collaboration publicitaire"}
+                  ? "القيمة السوقية القياسية للبرنامج 35,000 دج مع تخفيضات استثنائية خاصة بالشراكة والترويج"
+                  : "Valeur standard du logiciel : 35 000 DA avec remises exclusives partenariat et collaboration"}
               </p>
             </div>
 
@@ -134,47 +126,50 @@ export default async function SheymssAppDealPage({
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {/* Market Value Card */}
               <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-sm relative overflow-hidden">
-                <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">
-                  {isAr ? "القيمة السوقية الأصلية" : "Valeur Réelle du Marché"}
+                <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2">
+                  {isAr ? "القيمة السوقية الأصلية" : "Valeur Standard du Marché"}
                 </div>
-                <div className="text-3xl font-black text-slate-900 dark:text-white font-[var(--font-display)]">
-                  35 000 <span className="text-base font-semibold text-[var(--text-muted)]">DA</span>
+                <div dir="ltr" className="inline-flex items-baseline gap-1.5 text-slate-900 dark:text-white">
+                  <span className="text-3xl font-black font-mono">35,000</span>
+                  <span className="text-sm font-bold text-slate-500">{isAr ? "دج" : "DA"}</span>
                 </div>
                 <p className="text-xs text-[var(--text-secondary)] mt-2">
-                  {isAr ? "السعر القياسي للبرنامج وتطوير الواجهات والتقارير" : "Tarif standard pour le développement complet et modules"}
+                  {isAr ? "السعر القياسي لتطوير النظام المخصص وتكامل وحدات الفوترة" : "Tarif de base pour le développement complet et modules"}
                 </p>
               </div>
 
               {/* Discount 1: Salon DZ Tech Bonus */}
               <div className="p-6 rounded-3xl border border-pink-500/30 bg-pink-500/5 dark:bg-pink-950/20 shadow-sm relative overflow-hidden">
-                <div className="flex items-center justify-between">
-                  <div className="text-xs font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-wider mb-1">
-                    {isAr ? "تخفيض إبرام العقد" : "Remise Partenariat Contrat"}
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-wider">
+                    {isAr ? "تخفيض الشراكة الخاصة" : "Remise Partenariat"}
                   </div>
-                  <span className="px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 text-xs font-black">
+                  <span dir="ltr" className="px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 text-xs font-black font-mono">
                     -10%
                   </span>
                 </div>
-                <div className="text-3xl font-black text-pink-600 dark:text-pink-400 font-[var(--font-display)]">
-                  -3 500 <span className="text-base font-semibold">DA</span>
+                <div dir="ltr" className="inline-flex items-baseline gap-1.5 text-pink-600 dark:text-pink-400 font-mono">
+                  <span className="text-3xl font-black">-3,500</span>
+                  <span className="text-sm font-bold">{isAr ? "دج" : "DA"}</span>
                 </div>
                 <p className="text-xs text-[var(--text-secondary)] mt-2">
-                  {isAr ? "خصم مباشر ومكافأة خاصة بتوقيع العقد الرسمي مع صالون ديزاد تك" : "Remise directe accordée lors de la signature du contrat officiel"}
+                  {isAr ? "خصم مباشر ومكافأة خاصة لمتجر SHEYMSS من صالون ديزاد تك" : "Remise directe accordée dans le cadre du partenariat avec Salon DZ Tech"}
                 </p>
               </div>
 
               {/* Discount 2: Marketing Ad Collaboration */}
               <div className="p-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/20 shadow-sm relative overflow-hidden">
-                <div className="flex items-center justify-between">
-                  <div className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-1">
-                    {isAr ? "تخفيض الشراكة الإعلانية" : "Remise Collaboration Pub"}
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                    {isAr ? "تخفيض التعاون الإعلاني" : "Remise Collaboration Pub"}
                   </div>
-                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-black">
+                  <span dir="ltr" className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-black font-mono">
                     -10%
                   </span>
                 </div>
-                <div className="text-3xl font-black text-emerald-600 dark:text-emerald-400 font-[var(--font-display)]">
-                  -3 500 <span className="text-base font-semibold">DA</span>
+                <div dir="ltr" className="inline-flex items-baseline gap-1.5 text-emerald-600 dark:text-emerald-400 font-mono">
+                  <span className="text-3xl font-black">-3,500</span>
+                  <span className="text-sm font-bold">{isAr ? "دج" : "DA"}</span>
                 </div>
                 <p className="text-xs text-[var(--text-secondary)] mt-2">
                   {isAr ? "مقابل نشر منشور + فيديو ريل + ستوري يبرز برنامج صالون ديزاد تك" : "En échange de : 1 Post + 1 Reel Vidéo + 1 Story taguant @salondz.tech"}
@@ -198,16 +193,16 @@ export default async function SheymssAppDealPage({
                   </div>
 
                   <h3 className="text-2xl font-black text-slate-900 dark:text-white">
-                    {isAr ? "الدفع الفوري بعد التسليم" : "Paiement à la Livraison"}
+                    {isAr ? "الدفع الفوري بعد التسليم والتجربة" : "Paiement à la Livraison"}
                   </h3>
 
                   <div className="py-2">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl sm:text-5xl font-black font-[var(--font-display)] text-emerald-600 dark:text-emerald-400">
-                        28 000
+                    <div dir="ltr" className="inline-flex items-baseline gap-2">
+                      <span className="text-4xl sm:text-5xl font-black font-mono text-emerald-600 dark:text-emerald-400">
+                        28,000
                       </span>
-                      <span className="text-xl font-bold text-[var(--text-muted)]">DA</span>
-                      <span className="text-xs line-through text-slate-400 ms-2">35 000 DA</span>
+                      <span className="text-xl font-bold text-slate-700 dark:text-slate-200">{isAr ? "دج" : "DA"}</span>
+                      <span className="text-xs line-through text-slate-400 font-mono ms-2">35,000 {isAr ? "دج" : "DA"}</span>
                     </div>
                     <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-1">
                       {isAr ? "(2.8 ملايين سنتيم — توفير 7,000 دج كاملة)" : "(2,8 Millions de Centimes — 7 000 DA d'économie)"}
@@ -217,7 +212,7 @@ export default async function SheymssAppDealPage({
                   <ul className="space-y-2.5 text-sm text-[var(--text-secondary)] pt-2 border-t border-border">
                     <li className="flex items-center gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>{isAr ? "تخفيض إجمالي 20% (عقد + إعلان)" : "Remise cumulée de 20% (Contrat + Pub)"}</span>
+                      <span>{isAr ? "تخفيض إجمالي 20% كامل (شراكة + تعاون إعلاني)" : "Remise cumulée de 20% (Partenariat + Pub)"}</span>
                     </li>
                     <li className="flex items-center gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -229,9 +224,20 @@ export default async function SheymssAppDealPage({
                     </li>
                     <li className="flex items-center gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>{isAr ? "الدفع بعد معاينة وتثبيت البرنامج وتجربته" : "Paiement après installation et vérification"}</span>
+                      <span>{isAr ? "الدفع بعد معاينة وتثبيت البرنامج والتأكد من عمله" : "Paiement après installation et vérification"}</span>
                     </li>
                   </ul>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-border">
+                  <a
+                    href="/downloads/sheymss-vip-setup.exe"
+                    download="sheymss-vip-setup.exe"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all cursor-pointer"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>{isAr ? "تحميل وتثبيت البرنامج فوراً" : "Télécharger & Installer l'Application"}</span>
+                  </a>
                 </div>
               </div>
 
@@ -252,11 +258,11 @@ export default async function SheymssAppDealPage({
                   </h3>
 
                   <div className="py-2">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl sm:text-5xl font-black font-[var(--font-display)] text-pink-600 dark:text-pink-400">
-                        31 000
+                    <div dir="ltr" className="inline-flex items-baseline gap-2">
+                      <span className="text-4xl sm:text-5xl font-black font-mono text-pink-600 dark:text-pink-400">
+                        31,000
                       </span>
-                      <span className="text-xl font-bold text-[var(--text-muted)]">DA</span>
+                      <span className="text-xl font-bold text-slate-700 dark:text-slate-200">{isAr ? "دج" : "DA"}</span>
                       <span className="text-xs text-[var(--text-muted)] ms-2">{isAr ? "الإجمالي النهائي" : "Total Final"}</span>
                     </div>
                     <p className="text-xs font-semibold text-pink-600 dark:text-pink-400 mt-1">
@@ -268,23 +274,29 @@ export default async function SheymssAppDealPage({
                   <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0D151A] border border-slate-200 dark:border-slate-800 space-y-3">
                     <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-200 dark:border-slate-800">
                       <span className="font-bold text-slate-800 dark:text-slate-200">
-                        {isAr ? "📌 الدفعة 1 (عند التوقيع والتسليم):" : "📌 Part 1 (À la signature & remise) :"}
+                        {isAr ? "📌 الدفعة 1 (عند التثبيت والاستلام):" : "📌 Part 1 (À l'installation & remise) :"}
                       </span>
-                      <span className="font-black font-mono text-pink-600 dark:text-pink-400 text-sm">11 000 DA</span>
+                      <span dir="ltr" className="font-black font-mono text-pink-600 dark:text-pink-400 text-sm">
+                        11,000 {isAr ? "دج" : "DA"}
+                      </span>
                     </div>
 
                     <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-200 dark:border-slate-800">
                       <span className="font-bold text-slate-800 dark:text-slate-200">
-                        {isAr ? "📌 الدفعة 2 (بعد مرور شهر واحد):" : "📌 Part 2 (Après 1 mois) :"}
+                        {isAr ? "📌 الدفعة 2 (بعد مرور 1 شهر):" : "📌 Part 2 (Après 1 mois) :"}
                       </span>
-                      <span className="font-black font-mono text-slate-900 dark:text-white text-sm">10 000 DA</span>
+                      <span dir="ltr" className="font-black font-mono text-slate-900 dark:text-white text-sm">
+                        10,000 {isAr ? "دج" : "DA"}
+                      </span>
                     </div>
 
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-bold text-slate-800 dark:text-slate-200">
-                        {isAr ? "📌 الدفعة 3 (بعد مرور شهرين):" : "📌 Part 3 (Après 2 mois) :"}
+                        {isAr ? "📌 الدفعة 3 (بعد مرور 2 شهرين):" : "📌 Part 3 (Après 2 mois) :"}
                       </span>
-                      <span className="font-black font-mono text-slate-900 dark:text-white text-sm">10 000 DA</span>
+                      <span dir="ltr" className="font-black font-mono text-slate-900 dark:text-white text-sm">
+                        10,000 {isAr ? "دج" : "DA"}
+                      </span>
                     </div>
                   </div>
 
@@ -299,15 +311,26 @@ export default async function SheymssAppDealPage({
                     </li>
                   </ul>
                 </div>
+
+                <div className="pt-6 mt-6 border-t border-border">
+                  <a
+                    href="/downloads/sheymss-vip-setup.exe"
+                    download="sheymss-vip-setup.exe"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-sm shadow-md shadow-pink-500/20 transition-all cursor-pointer"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>{isAr ? "تحميل وبدء التجربة المجانية" : "Télécharger & Essayer Gratuitement"}</span>
+                  </a>
+                </div>
               </div>
 
             </div>
           </div>
 
           {/* ========================================================================= */}
-          {/* SECTION 2: COMPLETE APP FEATURES & PAGES BREAKDOWN */}
+          {/* SECTION 2: COMPLETE APP FEATURES & SCREENS BREAKDOWN */}
           {/* ========================================================================= */}
-          <div className="mb-20">
+          <div id="features-list" className="mb-20 scroll-mt-24">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 text-xs font-bold uppercase tracking-wider mb-2">
                 <Layers className="w-4 h-4" />
@@ -434,7 +457,7 @@ export default async function SheymssAppDealPage({
               {/* 8. WhatsApp Invoices */}
               <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <MessageSquare className="w-6 h-6" />
+                  <PhoneCall className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "8. إرسال الفواتير الفوري عبر الواتساب (WhatsApp Invoicing)" : "8. Facturation & Envoi WhatsApp Direct"}
@@ -480,54 +503,51 @@ export default async function SheymssAppDealPage({
           </div>
 
           {/* ========================================================================= */}
-          {/* SECTION 3: CONTRACT SIGNING & DOWNLOAD ACTIONS */}
+          {/* SECTION 3: DOWNLOAD APP & QUICK INSTALL */}
           {/* ========================================================================= */}
           <div className="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl border-2 border-pink-500/30 bg-gradient-to-b from-pink-500/10 via-[var(--bg-card)] to-[var(--bg-card)] dark:from-pink-950/20 dark:via-[#111B21] dark:to-[#111B21] shadow-xl text-center space-y-6">
             <div className="w-16 h-16 rounded-2xl bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center mx-auto shadow-xs">
-              <FileCheck className="w-8 h-8" />
+              <Download className="w-8 h-8 animate-bounce" />
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-black font-[var(--font-display)] text-slate-900 dark:text-white">
-              {isAr ? "جاهز لإبرام الاتفاق وبدء العمل على البرنامج؟" : "Prêt à officialiser l'accord et déployer SHEYMSS ?"}
+              {isAr ? "جاهز لبدء تنظيم وتطوير مبيعاتك اليوم؟" : "Prêt à booster et organiser votre activité ?"}
             </h2>
 
-            <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
               {isAr
-                ? "يمكنك تحميل العقد بصيغة PDF، قراءة بنود الاتفاقية التفاعلية، أو التواصل مباشرة مع فريق صالون ديزاد تك لإتمام التثبيت والتسليم."
-                : "Téléchargez le contrat au format PDF, consultez les clauses en ligne ou contactez directement l'équipe Salon DZ Tech pour planifier l'installation."}
+                ? "حمّل النسخة الكاملة لويندوز الآن واستفد من 7 أيام تجربة مجانية لكافة الميزات المتقدمة وطباعة بوالص الشحن بدون أي التزام."
+                : "Téléchargez la version complète pour Windows dès maintenant et profitez de 7 jours d'essai gratuit avec toutes les fonctionnalités débloquées."}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <a
-                href="/عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf"
-                download="عقد_اتفاق_رسمي_SHEYMSS_SALON_DZ_TECH.pdf"
-                className="px-8 py-4 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-black text-sm shadow-lg shadow-pink-500/25 flex items-center gap-2.5 transition-all"
+                href="/downloads/sheymss-vip-setup.exe"
+                download="sheymss-vip-setup.exe"
+                className="px-8 py-4 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-black text-sm shadow-lg shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
               >
                 <Download className="w-5 h-5" />
-                <span>{isAr ? "تحميل نسخة العقد الرسمية (PDF)" : "Télécharger le Contrat Officiel (PDF)"}</span>
+                <span>{isAr ? "تحميل التطبيق للكمبيوتر (99 MB)" : "Télécharger SHEYMSS pour Windows (99 MB)"}</span>
               </a>
 
-              <a
-                href="/contract_ar.html"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/nails_app_dowload"
                 className="px-8 py-4 rounded-2xl border border-pink-500/30 bg-[var(--bg-card)] hover:bg-pink-500/5 text-pink-600 dark:text-pink-400 font-bold text-sm flex items-center gap-2.5 transition-all"
               >
-                <FileText className="w-5 h-5" />
-                <span>{isAr ? "فتح وثيقة العقد التفاعلية" : "Consulter le Contrat Interactif"}</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
+                <Sparkles className="w-4 h-4" />
+                <span>{isAr ? "صفحة التحميل ودليل التثبيت" : "Guide d'Installation & Détails"}</span>
+              </Link>
             </div>
 
             <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-[var(--text-muted)] font-medium">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                <span>{isAr ? "حقوق الملكية الفكرية محفوظة لشركة SALON DZ TECH" : "Propriété intellectuelle exclusive Salon DZ Tech"}</span>
+                <span>{isAr ? "تثبيت آمن وسريع • Windows 10 / 11 (64-bit)" : "Installation sécurisée • Windows 10 / 11"}</span>
               </span>
               <span>•</span>
               <span className="flex items-center gap-1.5">
                 <PhoneCall className="w-4 h-4 text-pink-500" />
-                <span>WhatsApp: +213 661 21 76 01 / +213 782 54 92 28</span>
+                <span>{isAr ? "الدعم الفني: صالون ديزاد تك" : "Support technique : Salon DZ Tech"}</span>
               </span>
             </div>
           </div>
