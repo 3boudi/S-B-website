@@ -484,18 +484,33 @@ export default async function SheymssAppDealPage({
                 </p>
               </div>
 
-              {/* 10. Security & 100% Offline SQLite */}
+              {/* 10. Security & 100% Offline */}
               <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
                   <Database className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                  {isAr ? "10. أمان فائق وتشغيل محلي بدون إنترنت (Offline SQLite)" : "10. Sécurité Maximale & 100% Hors-Ligne (SQLite)"}
+                  {isAr ? "10. أمان فائق وتشغيل محلي بدون إنترنت (100% Offline)" : "10. Sécurité Maximale & 100% Hors-Ligne"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
                   {isAr
-                    ? "قاعدة بيانات SQLite محلية مشفرة وسريعة للغاية، تعمل باستقلالية تامة بدون إنترنت، مع حماية أمنية مشددة ضد التلاعب بالتاريخ والوقت وقفل رقمي للأجهزة."
-                    : "Base de données SQLite locale ultra-rapide, zéro dépendance internet, protection anti-recul d'horloge et liaison cryptographique HWID."}
+                    ? "قاعدة بيانات محلية مشفرة وسريعة للغاية، تعمل باستقلالية تامة بدون إنترنت، مع حماية أمنية مشددة ضد التلاعب بالتاريخ والوقت وقفل رقمي للأجهزة."
+                    : "Base de données locale ultra-rapide, zéro dépendance internet, protection anti-recul d'horloge et liaison cryptographique HWID."}
+                </p>
+              </div>
+
+              {/* 11. Custom Theme & Logo on Demand */}
+              <div className="p-6 rounded-3xl border-2 border-pink-500/30 bg-gradient-to-br from-pink-500/10 via-[var(--bg-card)] to-[var(--bg-card)] dark:from-pink-950/25 dark:via-[#111B21] dark:to-[#111B21] shadow-xs space-y-3 md:col-span-2 lg:col-span-1">
+                <div className="w-12 h-12 rounded-2xl bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                  <Palette className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                  {isAr ? "11. تخصيص الثيم والشعار مجاناً عند الشراء" : "11. Thème & Logo Personnalisés à l'Achat"}
+                </h3>
+                <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                  {isAr
+                    ? "عند شراء نسخة خاصة بك انت يا عزيزي الزبون نغير لك theme لون التطبيق و لوغو لى حسب الطلب لتناسب علامتك التجارية تماماً."
+                    : "À l'achat de votre version, nous adaptons le thème (couleurs) et le logo selon votre demande pour correspondre parfaitement à votre identité de marque."}
                 </p>
               </div>
 

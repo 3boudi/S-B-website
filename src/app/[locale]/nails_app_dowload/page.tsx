@@ -19,6 +19,7 @@ import {
   ArrowRight,
   HardDrive,
   Monitor,
+  Palette,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -93,7 +94,7 @@ export default async function NailsAppDownloadPage({
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-pink-600 dark:text-pink-400 shrink-0" />
-                    <span>{isAr ? "قاعدة بيانات SQLite محلية آمنة 100% ولا تتطلب إنترنت" : "Base SQLite locale 100% hors-ligne et ultra-rapide"}</span>
+                    <span>{isAr ? "قاعدة بيانات محلية آمنة 100% ولا تتطلب إنترنت" : "Base de données locale 100% hors-ligne et ultra-rapide"}</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-pink-600 dark:text-pink-400 shrink-0" />
@@ -102,6 +103,14 @@ export default async function NailsAppDownloadPage({
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-pink-600 dark:text-pink-400 shrink-0" />
                     <span>{isAr ? "تتبع الكبسولات والمخزون ووحدات Vernis UV برقم ولون" : "Suivi capsules, matières premières et matrice Vernis UV"}</span>
+                  </li>
+                  <li className="flex items-start gap-2.5 p-3 rounded-2xl bg-gradient-to-r from-pink-500/15 via-rose-500/10 to-pink-500/5 border border-pink-500/30 text-pink-900 dark:text-pink-200 font-bold text-xs sm:text-sm shadow-2xs">
+                    <Palette className="w-4 h-4 text-pink-600 dark:text-pink-400 shrink-0 mt-0.5" />
+                    <span>
+                      {isAr
+                        ? "عند شراء نسخة خاصة بك انت يا عزيزي الزبون نغير لك theme لون التطبيق و لوغو لى حسب الطلب"
+                        : "Personnalisation sur mesure : À l'achat de votre version, nous adaptons le thème (couleurs) et le logo selon votre demande"}
+                    </span>
                   </li>
                 </ul>
 
