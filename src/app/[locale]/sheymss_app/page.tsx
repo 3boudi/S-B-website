@@ -25,6 +25,7 @@ import {
   Box,
   Palette,
   Laptop,
+  Bell,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,13 +60,19 @@ export default async function SheymssAppDealPage({
           
           {/* Header Section */}
           <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 text-xs font-extrabold uppercase tracking-wider shadow-2xs">
-              <Laptop className="w-4 h-4" />
-              <span>{isAr ? "برنامج سطح المكتب لويندوز (100% محلي بدون إنترنت)" : "Logiciel Bureau Windows 100% Hors-Ligne"}</span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 text-xs font-extrabold uppercase tracking-wider shadow-2xs">
+                <Laptop className="w-4 h-4" />
+                <span>{isAr ? "برنامج سطح المكتب لويندوز (100% محلي بدون إنترنت)" : "Logiciel Bureau Windows 100% Hors-Ligne"}</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-pink-600 text-white text-xs font-extrabold uppercase tracking-wider shadow-sm animate-pulse">
+                <Bell className="w-3.5 h-3.5" />
+                <span>{isAr ? "تحديث جديد متوفر: v2.1.0" : "Nouveau : Version v2.1.0"}</span>
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight font-[var(--font-display)] text-slate-900 dark:text-white leading-tight">
-              SHEYMSS <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">Management Suite v2.0</span>
+              SHEYMSS <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">Management Suite v2.1.0</span>
             </h1>
 
             <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
@@ -82,7 +89,7 @@ export default async function SheymssAppDealPage({
                 className="px-7 py-3.5 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-black text-sm shadow-md shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 animate-bounce" />
-                <span>{isAr ? "تحميل التطبيق للكمبيوتر (99 MB)" : "Télécharger pour Windows (99 MB)"}</span>
+                <span>{isAr ? "تحميل التحديث للكمبيوتر (v2.1.0)" : "Télécharger SHEYMSS (v2.1.0)"}</span>
               </a>
 
               <a

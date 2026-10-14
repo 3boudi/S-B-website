@@ -20,6 +20,8 @@ import {
   HardDrive,
   Monitor,
   Palette,
+  Bell,
+  Zap,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,11 +59,112 @@ export default async function NailsAppDownloadPage({
             </p>
           </div>
 
+          {/* New Update Notification Banner */}
+          <div className="max-w-4xl mx-auto mb-10">
+            <div className="relative overflow-hidden rounded-3xl border-2 border-pink-500/40 bg-gradient-to-br from-pink-500/10 via-rose-500/10 to-purple-500/10 dark:from-pink-950/40 dark:via-rose-950/30 dark:to-purple-950/30 p-6 sm:p-8 shadow-xl">
+              <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10 space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-600 text-white text-xs font-black uppercase tracking-wider shadow-sm animate-pulse">
+                    <Bell className="w-3.5 h-3.5" />
+                    <span>{isAr ? "تحديث جديد متوفر الآن — الإصدار v2.1.0" : "Nouvelle Mise à Jour Disponible — Version v2.1.0"}</span>
+                  </div>
+                  <span className="text-xs font-bold text-pink-600 dark:text-pink-400 bg-pink-500/10 border border-pink-500/20 px-3 py-1 rounded-full">
+                    {isAr ? "أكتوبر 2026 • ترقية تلقائية 100%" : "Octobre 2026 • Mise à niveau 100% sans perte"}
+                  </span>
+                </div>
+
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                    {isAr ? "ما الجديد في هذا التحديث الجديد لتطبيق SHEYMSS؟" : "Quoi de neuf dans la mise à jour majeure v2.1.0 ?"}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1.5 leading-relaxed">
+                    {isAr
+                      ? "تم تزويد المنظومة بميزات مالية ومحاسبية متقدمة مع ضبط تلقائي (Auto-Fit) يضمن سلامة واستمرار كافة بياناتك وحساباتك السابقة دون أي فقدان:"
+                      : "La suite logicielle intègre de puissantes fonctionnalités comptables et financières tout en préservant l'intégralité de votre historique existant :"}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <div className="flex items-start gap-2.5 text-xs font-medium text-slate-800 dark:text-slate-200 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xs p-3 rounded-2xl border border-pink-500/20 shadow-2xs">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-slate-900 dark:text-white mb-0.5">
+                        {isAr ? "خيار الدفع نقداً أو بالدين للمخزن" : "Paiement Stock : Comptant ou Dette Fournisseur"}
+                      </strong>
+                      <span className="text-[var(--text-secondary)]">
+                        {isAr
+                          ? "إمكانية الدفع الفوري كاش وإدراجه تلقائياً ضمن مصاريف الصندوق في لوحة القيادة، أو تسجيله كدين للمورد."
+                          : "Comptabilisation directe en dépense caisse lors du paiement comptant, ou inscription en dette fournisseur."}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 text-xs font-medium text-slate-800 dark:text-slate-200 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xs p-3 rounded-2xl border border-pink-500/20 shadow-2xs">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-slate-900 dark:text-white mb-0.5">
+                        {isAr ? "تسديد ديون الموردين بدفعات دقيقة" : "Règlement Fournisseurs par Versement"}
+                      </strong>
+                      <span className="text-[var(--text-secondary)]">
+                        {isAr
+                          ? "تحديد قيمة المبلغ المدفوع في كل دفعة مع عرض المبلغ الإجمالي والمتبقي بوضوح تام ومباشر."
+                          : "Saisie libre du versement avec calcul en temps réel du total et du reste impayé sur chaque bon."}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 text-xs font-medium text-slate-800 dark:text-slate-200 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xs p-3 rounded-2xl border border-pink-500/20 shadow-2xs">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-slate-900 dark:text-white mb-0.5">
+                        {isAr ? "زر تبديل إحصائيات الشهر أو كل الوقت" : "Bouton Bascule : Mois en cours ou Global"}
+                      </strong>
+                      <span className="text-[var(--text-secondary)]">
+                        {isAr
+                          ? "زر أنيق للتبديل الفوري بين إحصائيات الشهر الحالي أو إجمالي العمل بالكامل (المداخيل، المصاريف، الطلبات)."
+                          : "Filtrage instantané des revenus, dépenses et commandes entre le mois en cours et tout l'historique."}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 text-xs font-medium text-slate-800 dark:text-slate-200 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xs p-3 rounded-2xl border border-pink-500/20 shadow-2xs">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-slate-900 dark:text-white mb-0.5">
+                        {isAr ? "حفظ البيانات 100% بدون فقدان (Auto-Fit)" : "Migration Transparente Zéro Perte"}
+                      </strong>
+                      <span className="text-[var(--text-secondary)]">
+                        {isAr
+                          ? "تحديث سلس لقاعدة البيانات المحلية تلقائياً عند التثبيت للحفاظ على كافة السجلات والطلبات القديمة."
+                          : "Mise à niveau automatique de votre base de données locale sans aucune manipulation nécessaire."}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-pink-500/20">
+                  <span className="text-xs font-medium text-[var(--text-secondary)]">
+                    {isAr ? "التحديث متوفر مجاناً الآن لزبائن SHEYMSS" : "Mise à jour gratuite et recommandée pour tous les postes"}
+                  </span>
+                  <a
+                    href="/downloads/sheymss-vip-setup.exe"
+                    download="sheymss-vip-setup.exe"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-black text-xs shadow-md shadow-pink-500/30 transition-all cursor-pointer"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>{isAr ? "تحميل التحديث v2.1.0 مباشرة" : "Télécharger le Setup v2.1.0"}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Main Download Card */}
           <div className="max-w-4xl mx-auto mb-16 overflow-hidden rounded-3xl border border-pink-500/30 bg-[var(--bg-card)] dark:bg-[#111B21] p-6 sm:p-10 shadow-xl relative">
             <div className="absolute top-0 right-0 bg-pink-600 text-white text-xs font-black uppercase px-6 py-2 rounded-bl-2xl tracking-wider shadow-sm flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 fill-current" />
-              <span>{isAr ? "نسخة رسمية كاملة" : "Version Complète"}</span>
+              <span>{isAr ? "أحدث إصدار v2.1.0" : "Dernière Version v2.1.0"}</span>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -79,10 +182,10 @@ export default async function NailsAppDownloadPage({
                   </div>
                   <div>
                     <h2 className="text-2xl font-black text-slate-900 dark:text-white">
-                      SHEYMSS v2.0 Setup
+                      SHEYMSS v2.1.0 Setup
                     </h2>
                     <p className="text-xs font-semibold text-pink-600 dark:text-pink-400 mt-0.5">
-                      Windows 10 / 11 (64-bit) • ~99 MB
+                      Windows 10 / 11 (64-bit) • ~125 MB • {isAr ? "تحديث جديد 2026" : "Nouvelle Mise à Jour 2026"}
                     </p>
                   </div>
                 </div>

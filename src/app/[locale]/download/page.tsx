@@ -113,8 +113,13 @@ function DownloadContent() {
               <Sparkles className="w-7 h-7 text-pink-600 dark:text-pink-400" />
             </div>
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/15 text-pink-600 dark:text-pink-400 text-[10px] font-extrabold uppercase tracking-wider mb-1.5">
-                <span>{t("nailsBadge") || "Édition Spéciale Grossiste"}</span>
+              <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-pink-500/15 text-pink-600 dark:text-pink-400 text-[10px] font-extrabold uppercase tracking-wider">
+                  {t("nailsBadge") || "Édition Spéciale Grossiste"}
+                </span>
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-pink-600 text-white text-[10px] font-black uppercase tracking-wider shadow-2xs animate-pulse">
+                  v2.1.0 Update
+                </span>
               </div>
               <h4 className="text-lg sm:text-xl font-bold font-[var(--font-display)] text-[var(--text-primary)]">
                 {t("nailsTitle") || "Application SHEYMSS — Gestion Press-on Nails & Beauté"}
