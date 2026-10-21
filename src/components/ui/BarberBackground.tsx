@@ -8,25 +8,25 @@ import React, { useEffect, useRef } from "react";
  * Adjust these values to tweak appearance, physics, and interaction feel.
  */
 export const BARBER_CONFIG = {
-  // Density & Counts
-  iconCountDesktop: 52,        // Total scattered icons on desktop screens (40-70 recommended)
-  iconCountMobile: 24,         // Reduced count on mobile (<768px) for 60fps performance
+  // Density & Counts (Enhanced for richer presence across the entire canvas)
+  iconCountDesktop: 88,        // Total scattered icons on desktop screens
+  iconCountMobile: 42,         // Total scattered icons on mobile (<768px)
 
   // Icon Size Range (px)
-  sizeMin: 26,                 // Smallest icon size (back layer)
-  sizeMax: 68,                 // Largest icon size (front layer)
+  sizeMin: 24,                 // Smallest icon size (back layer)
+  sizeMax: 66,                 // Largest icon size (front layer)
 
-  // Opacity Range (keeps all site text 100% readable)
-  opacityMin: 0.08,            // Base opacity for back layer icons
-  opacityMax: 0.35,            // Base opacity for front layer icons
-  proximityGlowBoost: 0.22,    // Extra opacity boost when cursor is hovering near
+  // Opacity Range (keeps all site text 100% readable while beautifully visible)
+  opacityMin: 0.11,            // Base opacity for back layer icons
+  opacityMax: 0.38,            // Base opacity for front layer icons
+  proximityGlowBoost: 0.25,    // Extra opacity boost when cursor is hovering near
 
   // Colors: Dark Theme (near-black green base + glowing mint & vivid emerald)
   dark: {
     bgTop: "#05160e",          // Dark emerald base at top
     bgBottom: "#020705",       // Deep obsidian base at bottom
     vignette: "rgba(16, 185, 129, 0.06)",
-    backLayerColor: "#047857", // Forest green
+    backLayerColor: "#059669", // Medium emerald for back layer
     midLayerColor: "#10b981",  // Vivid green
     frontLayerColor: "#6ee7b7",// Mint green
     highlightColor: "#d1fae5", // Soft light green sheen
@@ -38,7 +38,7 @@ export const BARBER_CONFIG = {
     bgTop: "#f9fcf9",          // Creamy mint base
     bgBottom: "#f2f8f4",       // Soft pale wash
     vignette: "rgba(16, 185, 129, 0.04)",
-    backLayerColor: "#6ee7b7", // Mint
+    backLayerColor: "#34d399", // Mint for back layer
     midLayerColor: "#047857",  // Forest green
     frontLayerColor: "#064e3b",// Deep emerald
     highlightColor: "#10b981", // Vivid green
@@ -97,7 +97,7 @@ interface ScatteredIcon {
 }
 
 /**
- * Creates 15 distinct barber and hair-salon tool SVG Path2D vector objects
+ * Creates 25 distinct barber and hair-salon tool SVG Path2D vector objects
  * All icons are centered at (0, 0) with balanced coordinates in [-18, 18].
  */
 function createBarberToolPaths(): ToolIconDefinition[] {
@@ -293,6 +293,134 @@ function createBarberToolPaths(): ToolIconDefinition[] {
         "M 0,9 Q 0,-2 -11,-2 Q 0,-2 0,9 " +
         "M -11,-2 Q 0,-2 0,-13 Q 0,-2 -11,-2 " +
         "M 8,8 Q 8,5 11,5 Q 8,5 8,8 Q 8,11 8,8 Q 5,8 8,8"
+      ),
+    },
+
+    // 16. Double-Edge Safety Razor Blade
+    {
+      name: "safety_razor_blade",
+      hasFill: true,
+      path: new Path2D(
+        "M -15,-9 L -13,-9 L -13,-7 C -11,-7 -11,-9 -9,-9 L 9,-9 C 9,-7 11,-7 13,-7 L 13,-9 L 15,-9 " +
+        "C 16.5,-9 17,-8 17,-6.5 L 17,-2 C 16,-2 15,-1 15,0 C 15,1 16,2 17,2 L 17,6.5 " +
+        "C 17,8 16.5,9 15,9 L 13,9 L 13,7 C 11,7 11,9 9,9 L -9,9 C -9,7 -11,7 -13,7 L -13,9 L -15,9 " +
+        "C -16.5,9 -17,8 -17,6.5 L -17,2 C -16,2 -15,1 -15,0 C -15,-1 -16,-2 -17,-2 L -17,-6.5 " +
+        "C -17,-8 -16.5,-9 -15,-9 Z " +
+        "M 0,0 m -2.5,0 a 2.5,2.5 0 1,0 5,0 a 2.5,2.5 0 1,0 -5,0 " +
+        "M -10,-1 L -3,-1 L -3,1 L -10,1 Z " +
+        "M 3,-1 L 10,-1 L 10,1 L 3,1 Z"
+      ),
+    },
+
+    // 17. Afro Pick / Long-Tooth Beard Styling Comb
+    {
+      name: "afro_pick",
+      hasFill: true,
+      path: new Path2D(
+        "M -6,4 L -6,15 C -6,17.5 6,17.5 6,15 L 6,4 L 11,4 C 12,4 12,2 11,2 L -11,2 C -12,2 -12,4 -11,4 Z " +
+        "M -8,2 L -8,-15 C -8,-16.5 -6.5,-16.5 -6.5,-15 L -6.5,2 " +
+        "M -4,2 L -4,-15 C -4,-16.5 -2.5,-16.5 -2.5,-15 L -2.5,2 " +
+        "M 0,2 L 0,-15 C 0,-16.5 1.5,-16.5 1.5,-15 L 1.5,2 " +
+        "M 4,2 L 4,-15 C 4,-16.5 5.5,-16.5 5.5,-15 L 5.5,2 " +
+        "M 8,2 L 8,-15 C 8,-16.5 9.5,-16.5 9.5,-15 L 9.5,2 " +
+        "M 0,10 m -1.5,0 a 1.5,1.5 0 1,0 3,0 a 1.5,1.5 0 1,0 -3,0"
+      ),
+    },
+
+    // 18. Aerosol Hair Spray Can
+    {
+      name: "aerosol_hairspray",
+      hasFill: true,
+      path: new Path2D(
+        "M -6,-6 C -6,-8 6,-8 6,-6 L 6,14 C 6,16 4,17 0,17 C -4,17 -6,16 -6,14 Z " +
+        "M -4,-8 L 4,-8 L 4,-12 L -4,-12 Z " +
+        "M -2,-12 L 2,-12 L 2,-15 L -2,-15 Z " +
+        "M 4,-14 L 8,-17 M 5,-13 L 11,-14 M 5,-12 L 9,-9 " +
+        "M -6,3 L 6,3"
+      ),
+    },
+
+    // 19. Hair Pomade / Styling Wax Tin
+    {
+      name: "pomade_tin",
+      hasFill: true,
+      path: new Path2D(
+        "M -14,2 L -14,8 C -14,13 14,13 14,8 L 14,2 Z " +
+        "M 0,-3 m -14,0 a 14,5 0 1,0 28,0 a 14,5 0 1,0 -28,0 " +
+        "M 0,-3 m -8,0 a 8,2.8 0 1,0 16,0 a 8,2.8 0 1,0 -16,0"
+      ),
+    },
+
+    // 20. Flat Iron Hair Straightener
+    {
+      name: "flat_iron",
+      path: new Path2D(
+        "M -14,-7 L 7,-3 C 9,-2.5 11,-2 13,-2 C 15,-2 16,-3 15,-4 L -11,-10 C -13,-11 -15,-9 -14,-7 Z " +
+        "M 0,-4 L 11,-2 " +
+        "M -14,-5 L 7,2 C 9,2.5 11,3 13,3 C 15,3 16,4 15,5 L -11,9 C -13,10 -15,8 -14,6 Z " +
+        "M 0,3 L 11,3 " +
+        "M -14,-6 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0 " +
+        "M -16,-6 C -18,-6 -19,-3 -18,1 C -17,4 -19,6 -17,9"
+      ),
+    },
+
+    // 21. Barber Neck Duster Powder Brush
+    {
+      name: "neck_duster",
+      hasFill: true,
+      path: new Path2D(
+        "M -12,-8 C -15,-15 15,-15 12,-8 C 9,-4 6,-2 4,-1 L -4,-1 C -6,-2 -9,-4 -12,-8 Z " +
+        "M -8,-10 L -4,-3 M 0,-12 L 0,-2 M 8,-10 L 4,-3 " +
+        "M -4,-1 L 4,-1 L 3,3 L -3,3 Z " +
+        "M -3,3 C -2,7 -5,11 -5,14 C -5,16.5 5,16.5 5,14 C 5,11 2,7 3,3 Z"
+      ),
+    },
+
+    // 22. Classic Handlebar Mustache
+    {
+      name: "mustache",
+      hasFill: true,
+      path: new Path2D(
+        "M 0,0 C -3,-5 -10,-7 -15,-4 C -18,-2 -17,3 -14,2 C -10,1 -6,2 -3,6 C -1,8 0,8 0,6 " +
+        "C 0,8 1,8 3,6 C 6,2 10,1 14,2 C 17,3 18,-2 15,-4 C 10,-7 3,-5 0,0 Z"
+      ),
+    },
+
+    // 23. Salon Hydraulic Styling Chair
+    {
+      name: "barber_chair",
+      path: new Path2D(
+        "M -4,-16 L 4,-16 C 5,-16 5,-14 4,-14 L -4,-14 C -5,-14 -5,-16 -4,-16 Z " +
+        "M 0,-14 L 0,-11 " +
+        "M -7,-11 L 7,-11 C 8.5,-11 8.5,-3 7,-3 L -7,-3 C -8.5,-3 -8.5,-11 -7,-11 Z " +
+        "M -9,-4 L -9,2 L 9,2 L 9,-4 " +
+        "M -8,2 L 8,2 C 9,2 9,6 8,6 L -8,6 C -9,6 -9,2 -8,2 Z " +
+        "M 0,6 L 0,14 " +
+        "M 5,5 L 11,8 L 11,11 L 6,9 " +
+        "M -9,14 L 9,14 C 10,14 10,16 9,16 L -9,16 C -10,16 -10,14 -9,14 Z"
+      ),
+    },
+
+    // 24. Shaving / Aftershave Cream Squeeze Tube
+    {
+      name: "cream_tube",
+      hasFill: true,
+      path: new Path2D(
+        "M -7,-15 L 7,-15 L 7,-13 L -7,-13 Z " +
+        "M -7,-13 L -6,2 C -6,5 -3,7 -3,9 L 3,9 C 3,7 6,5 6,2 L 7,-13 " +
+        "M -2.5,9 L 2.5,9 L 2.5,14 L -2.5,14 Z " +
+        "M 0,16 C 1,17 1,18 0,19 C -1,18 -1,17 0,16"
+      ),
+    },
+
+    // 25. Pair of Hairpins / Bobby Pins
+    {
+      name: "bobby_pin_pair",
+      path: new Path2D(
+        "M -14,-7 C -16,-7 -17,-5 -16,-4 C -15,-3 -14,-3 -13,-4 " +
+        "L -7,-4 C -6,-2 -4,-6 -2,-4 C 0,-2 2,-6 4,-4 C 6,-2 8,-6 10,-4 L 14,-4 C 15.5,-4 15.5,-2 14,-2 " +
+        "M -16,-5.5 L 14,-1.5 C 15.5,-1.5 15.5,0.5 14,0.5 " +
+        "M -12,4 L 12,8 C 13.5,8.2 13.5,10.2 12,10 L -12,6 C -14,5.8 -14,3.8 -12,4"
       ),
     },
   ];
