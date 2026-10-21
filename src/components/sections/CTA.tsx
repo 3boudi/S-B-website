@@ -50,10 +50,10 @@ export default function CTA() {
             </Button>
 
             <button
-              className="apple-card apple-press hover:border-brand-green/50 text-white font-bold h-12 px-7 rounded-2xl w-full sm:w-auto flex items-center justify-center gap-2 cursor-pointer text-sm bg-black/40 backdrop-blur-md whitespace-nowrap shrink-0"
+              className="apple-card apple-press hover:border-brand-green/50 text-emerald-600 dark:text-brand-green font-bold h-12 px-7 rounded-2xl w-full sm:w-auto flex items-center justify-center gap-2 cursor-pointer text-sm whitespace-nowrap shrink-0"
               onClick={() => openModal()}
             >
-              <ShoppingCart className="h-4 w-4 text-brand-green shrink-0" />
+              <ShoppingCart className="h-4 w-4 text-emerald-600 dark:text-brand-green shrink-0" />
               <span className="whitespace-nowrap">{t("buyNow")}</span>
             </button>
           </div>
