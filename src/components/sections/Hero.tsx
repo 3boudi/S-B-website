@@ -7,7 +7,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MonitorPlay, ShoppingCart, ShieldCheck, Download } from "lucide-react";
+import { MonitorPlay, ShoppingCart, ShieldCheck, Download, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBuyModal } from "@/components/ui/BuyModal";
 import { Link } from "@/i18n/routing";
@@ -24,114 +24,145 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden pt-12 md:pt-0"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-white dark:bg-[#0A0F0D]" />
+      {/* Hairline Grid Background */}
+      <div className="absolute inset-0 hairline-grid opacity-35 pointer-events-none" />
       <div
-        className="absolute inset-0 dark:block hidden"
+        className="absolute inset-0 dark:block hidden pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 80% 0%, rgba(22,163,74,0.15) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 75% 20%, rgba(37,211,102,0.18) 0%, transparent 65%)",
         }}
       />
       <div
-        className="absolute inset-0 dark:hidden block"
+        className="absolute inset-0 dark:hidden block pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(22,163,74,0.08) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
+          background:
+            "radial-gradient(ellipse at 75% 20%, rgba(37,211,102,0.1) 0%, transparent 60%)",
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 md:px-6 lg:py-32">
+      {/* Decorative Hairline Guide Lines */}
+      <div className="absolute top-0 left-1/4 bottom-0 w-[1px] bg-black/[0.04] dark:bg-white/[0.04] pointer-events-none hidden lg:block" />
+      <div className="absolute top-0 right-1/4 bottom-0 w-[1px] bg-black/[0.04] dark:bg-white/[0.04] pointer-events-none hidden lg:block" />
+
+      <div className="relative mx-auto max-w-7xl px-4 py-20 md:px-6 lg:py-28 z-10 w-full">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Text Column */}
           <div className="space-y-6">
             <motion.div
               {...fadeUp}
               transition={{ duration: 0.5, delay: 0 }}
+              className="inline-flex items-center gap-2"
             >
-              <span className="inline-flex items-center rounded-full bg-brand-green/10 px-4 py-1.5 text-sm font-medium text-brand-green ring-1 ring-brand-green/20">
-                {t("badge")}
-              </span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full apple-glass border-black/[0.06] dark:border-white/[0.1] text-xs font-semibold text-foreground tracking-tight shadow-xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
+                </span>
+                <span>{t("badge")}</span>
+              </div>
             </motion.div>
 
             <motion.h1
               {...fadeUp}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-display)] text-[var(--text-primary)]"
+              className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl font-[var(--font-display)] text-[var(--text-primary)] leading-[1.12]"
             >
               {t("title")}{" "}
-              <span className="text-brand-green">{t("titleHighlight")}</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green via-emerald-400 to-teal-300">
+                {t("titleHighlight")}
+              </span>
             </motion.h1>
 
             <motion.p
               {...fadeUp}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="max-w-lg text-lg text-[var(--text-secondary)] leading-relaxed"
+              className="max-w-xl text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed"
             >
               {t("subtitle")}
             </motion.p>
 
+            {/* CTA Buttons */}
             <motion.div
               {...fadeUp}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col gap-3 w-full"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2"
             >
-              <Button size="lg" className="w-full bg-brand-green hover:bg-brand-green/90 text-white font-semibold justify-center" asChild>
-                <Link href="/download">
-                  <Download className="h-5 w-5" />
-                  {t("downloadApp")}
+              <Button
+                size="lg"
+                className="apple-btn-primary apple-press font-bold px-8 h-12 rounded-2xl text-sm flex items-center justify-center gap-2.5 cursor-pointer whitespace-nowrap shrink-0"
+                asChild
+              >
+                <Link href="/download" className="flex items-center justify-center gap-2.5 whitespace-nowrap">
+                  <Download className="h-4 w-4 shrink-0" />
+                  <span className="whitespace-nowrap">{t("downloadApp")}</span>
                 </Link>
               </Button>
-              <div className="flex flex-col gap-3 w-full">
-                <Button size="lg" variant="outline" className="w-full justify-center" onClick={() => openModal()}>
-                  <ShoppingCart className="h-5 w-5" />
-                  {t("buyNow")}
-                </Button>
-              </div>
+              <button
+                className="apple-card apple-press hover:border-brand-green/50 font-bold px-7 h-12 rounded-2xl text-sm flex items-center justify-center gap-2 text-foreground cursor-pointer whitespace-nowrap shrink-0"
+                onClick={() => openModal()}
+              >
+                <ShoppingCart className="h-4 w-4 text-brand-green shrink-0" />
+                <span className="whitespace-nowrap">{t("buyNow")}</span>
+              </button>
             </motion.div>
 
-            <motion.p
+            {/* Trust Micro-Metrics with Apple Pill Badges */}
+            <motion.div
               {...fadeUp}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex items-center gap-2 text-sm text-[var(--text-muted)]"
+              className="flex flex-wrap items-center gap-2.5 pt-2 text-xs text-muted-foreground font-medium"
             >
-              <ShieldCheck className="h-4 w-4 text-brand-green" />
-              {t("noCredit")}
-            </motion.p>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass border-black/[0.05] dark:border-white/[0.07] text-[11px]">
+                <ShieldCheck className="h-3.5 w-3.5 text-brand-green" />
+                <span>100% Offline SQLite</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass border-black/[0.05] dark:border-white/[0.07] text-[11px]">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span>WhatsApp Bot AI</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass border-black/[0.05] dark:border-white/[0.07] text-[11px]">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+                <span>Windows 10 / 11 Native</span>
+              </span>
+            </motion.div>
           </div>
 
-          {/* Visual Column */}
+          {/* Visual Column: Native Workstation Chrome */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative w-full flex items-center justify-center py-6 sm:py-10 lg:py-0"
           >
-            {/* Glow behind the devices */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-brand-green/20 to-transparent blur-3xl opacity-60 rounded-full" />
+            {/* Ambient emerald illumination */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-brand-green/20 via-transparent to-brand-green/5 blur-3xl opacity-40 rounded-full pointer-events-none" />
 
             {/* Proportional Devices Wrapper */}
-            <div className="relative w-[88%] sm:w-[85%] aspect-[16/10] mx-auto my-6">
-              {/* 1. Computer Mockup (Desktop Monitor/Laptop Screen) - Base Layer */}
-              <div className="relative w-full h-full bg-slate-900 rounded-2xl border-2 sm:border-4 border-slate-800 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-300 hover:shadow-[0_30px_70px_-10px_rgba(22,163,74,0.25)] animate-float">
-                {/* Screen Glare/Reflection */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
-                
-                {/* macOS Style Header */}
-                <div className="flex items-center gap-1.5 px-3 py-1.5 sm:py-2 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#FF5F57]" />
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#FFBD2E]" />
-                  <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#28C840]" />
-                  <div className="flex-1 text-center pr-8">
-                    <span className="text-[8px] sm:text-[10px] text-slate-400 font-mono tracking-tight">salondztech.app/dashboard</span>
+            <div className="relative w-full max-w-[560px] aspect-[16/11] mx-auto my-4">
+              
+              {/* 1. Main Dashboard Desktop Display with macOS / Apple Window Chrome */}
+              <div className="relative w-full h-full apple-card rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-brand-green/40">
+                {/* Window Titlebar */}
+                <div className="flex items-center justify-between px-4 py-2.5 border-b border-black/[0.06] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.03] backdrop-blur-md">
+                  <div className="flex items-center gap-2">
+                    <div className="h-3 w-3 rounded-full bg-[#FF5F57] opacity-80" />
+                    <div className="h-3 w-3 rounded-full bg-[#FFBD2E] opacity-80" />
+                    <div className="h-3 w-3 rounded-full bg-[#28C840] opacity-80" />
                   </div>
+                  <div className="text-[11px] text-muted-foreground font-medium flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse" />
+                    <span>salondztech-desktop</span>
+                  </div>
+                  <span className="text-[10px] font-semibold text-brand-green px-2 py-0.5 rounded-full bg-brand-green/10 border border-brand-green/20">
+                    Pro Live
+                  </span>
                 </div>
-                
-                {/* Main Dashboard Screenshot */}
-                <div className="relative w-full h-[calc(100%-24px)] sm:h-[calc(100%-28px)] bg-[#fafafa] dark:bg-[#0A0F0D]">
+
+                {/* Dashboard Image Preview */}
+                <div className="relative w-full h-[calc(100%-38px)] bg-black/5 dark:bg-black/30">
                   <Image
                     src="/dashboard.png"
                     alt="salondztech Desktop Dashboard"
@@ -139,114 +170,50 @@ export default function Hero() {
                     className="object-cover object-top"
                     priority
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
 
-              {/* 2. Tablet Mockup (iPad/Android Tablet) - Middle Layer, overlapping Left */}
-              <div className="absolute -left-[5%] -bottom-[8%] w-[38%] aspect-[3/4] bg-slate-950 rounded-[12px] sm:rounded-[20px] p-1 sm:p-2 border-[3px] sm:border-[5px] border-slate-900 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.6)] z-20 overflow-hidden transform -rotate-1 hover:rotate-0 transition-all duration-300">
-                <div className="relative w-full h-full rounded-[8px] sm:rounded-[12px] bg-gradient-to-b from-white to-slate-50 border border-slate-200 flex flex-col justify-between p-1.5 sm:p-3 overflow-hidden">
-                  {/* Glare */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
-                  
-                  {/* Top Camera Dot */}
-                  <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-900 absolute top-1 sm:top-2 left-1/2 -translate-x-1/2" />
-                  
-                  {/* Tablet UI Mockup */}
-                  <div className="w-full flex justify-between items-center border-b border-slate-200/80 pb-1.5">
-                    <div className="flex items-center gap-0.5 sm:gap-1">
-                      <div className="relative w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded bg-brand-green/10 p-0.5">
-                        <Image
-                          src="/logo2.png"
-                          alt="Logo"
-                          width={14}
-                          height={14}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <span className="text-[5px] sm:text-[7px] font-bold text-slate-800">salondztech VIP</span>
-                    </div>
-                    <div className="w-6 h-1 sm:w-8 sm:h-1.5 rounded bg-slate-100" />
+              {/* 2. Floating Interactive Phone with WhatsApp Live Chat (Liquid Glass) */}
+              <div className="absolute -right-[4%] -bottom-[8%] sm:-right-[6%] sm:-bottom-[10%] w-[44%] sm:w-[40%] rounded-2xl p-3 apple-glass-prominent shadow-2xl z-30 transition-all duration-300 hover:scale-[1.02]">
+                <div className="flex items-center justify-between mb-2 pb-1.5 border-b border-black/[0.06] dark:border-white/[0.08]">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-brand-green animate-ping-slow" />
+                    <span className="text-[11px] font-bold text-foreground">
+                      AI WhatsApp
+                    </span>
                   </div>
-                  
-                  <div className="flex-1 flex flex-col items-center justify-center gap-1 sm:gap-2 py-1.5 sm:py-3 w-full">
-                    <div className="relative w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-slate-50 border border-slate-100 p-1 sm:p-2 flex items-center justify-center shadow-sm">
-                      <Image
-                        src="/logo2.png"
-                        alt="Logo"
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="text-center space-y-0.5">
-                      <p className="text-[5px] sm:text-[8px] font-bold text-slate-800 tracking-wide">VIP LICENSE</p>
-                      <p className="text-[4px] sm:text-[5px] text-brand-green font-semibold font-mono">Premium Edition</p>
-                    </div>
+                  <span className="text-[9px] font-bold text-brand-green px-1.5 py-0.5 rounded-full bg-brand-green/10">
+                    Auto 24/7
+                  </span>
+                </div>
+
+                {/* WhatsApp Chat Bubbles */}
+                <div className="space-y-1.5 text-[9px] sm:text-[10px] font-sans">
+                  <div className="bg-black/[0.04] dark:bg-white/[0.06] text-foreground p-2 rounded-xl rounded-tl-none border border-black/[0.04] dark:border-white/[0.06] shadow-2xs leading-tight">
+                    {t("chatbotBotMessage1")}
                   </div>
-                  
-                  {/* Tablet Bottom Indicator */}
-                  <div className="w-8 h-0.5 rounded-full bg-slate-300 mx-auto" />
+                  <div className="bg-brand-green text-white p-2 rounded-xl rounded-tr-none shadow-2xs leading-tight font-medium ms-auto max-w-[90%] text-end">
+                    {t("chatbotUserMessage")}
+                  </div>
                 </div>
               </div>
 
-              {/* 3. Android Smartphone Mockup - Top Layer, overlapping Right */}
-              <div className="absolute -right-[5%] -bottom-[4%] w-[24%] aspect-[9/19.5] bg-slate-950 rounded-[16px] sm:rounded-[28px] p-1 sm:p-1.5 border-[2px] sm:border-[4px] border-slate-900 shadow-[0_20px_40px_-8px_rgba(0,0,0,0.7)] z-30 overflow-hidden transform rotate-2 hover:rotate-0 transition-all duration-300">
-                <div className="relative w-full h-full rounded-[12px] sm:rounded-[22px] bg-[#efeae2] border border-slate-200/80 flex flex-col justify-between overflow-hidden">
-                  {/* Phone Screen Glare */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none z-10" />
-
-                  {/* Android Punch Hole Camera */}
-                  <div className="absolute top-1 sm:top-1.5 left-1/2 -translate-x-1/2 w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-black border border-slate-800 z-20" />
-
-                  {/* Top Status Bar Mockup */}
-                  <div className="flex justify-between items-center text-[4px] sm:text-[5px] text-slate-600 font-semibold font-mono px-1.5 sm:px-2.5 pt-0.5 sm:pt-1 z-10">
-                    <span>09:41</span>
-                    <div className="flex items-center gap-0.5">
-                      <span>5G</span>
-                      <div className="w-2 sm:w-2.5 h-1 sm:h-1.5 border border-slate-500 rounded-xs" />
-                    </div>
+              {/* 3. Floating 100% Offline SQLite Architecture Badge */}
+              <div className="absolute -left-[5%] -bottom-[6%] sm:-left-[8%] sm:-bottom-[8%] rounded-2xl p-3 apple-glass-prominent shadow-xl z-20 hidden xs:flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center shrink-0">
+                  <Database className="w-4 h-4 text-brand-green" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-foreground leading-tight">
+                    100% Offline Engine
                   </div>
-
-                  {/* Phone UI Content - WhatsApp Chatbot preview */}
-                  <div className="flex-1 flex flex-col justify-start w-full">
-                    {/* WhatsApp style header */}
-                    <div className="flex items-center gap-1 sm:gap-1.5 bg-[#008069] px-1.5 sm:px-2.5 py-1 sm:py-1.5 shadow-sm text-white">
-                      <div className="relative w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white p-0.5 shadow-xs">
-                        <Image
-                          src="/logo2.png"
-                          alt="Logo"
-                          width={16}
-                          height={16}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[4px] sm:text-[6px] font-bold text-white leading-none">WhatsApp Bot</span>
-                        <span className="text-[3px] sm:text-[4px] text-emerald-100 leading-none">online</span>
-                      </div>
-                    </div>
-
-                    {/* Chat Bubbles */}
-                    <div className="space-y-1 sm:space-y-1.5 flex-1 flex flex-col justify-center px-1.5 py-1">
-                      {/* Bot Message (Left) */}
-                      <div className="bg-white text-slate-800 border border-slate-200/30 shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-md sm:rounded-lg rounded-tl-none p-0.5 sm:p-1 text-[3.5px] sm:text-[5px] leading-normal text-left self-start max-w-[85%]">
-                        {t("chatbotBotMessage1")}
-                      </div>
-                      {/* User Message (Right) */}
-                      <div className="bg-[#e2f9e9] text-slate-800 border border-[#bce8b7] shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-md sm:rounded-lg rounded-tr-none p-0.5 sm:p-1 text-[3.5px] sm:text-[5px] leading-normal text-right self-end max-w-[85%]">
-                        {t("chatbotUserMessage")}
-                      </div>
-                      {/* Bot Message (Left) */}
-                      <div className="bg-white text-slate-800 border border-slate-200/30 shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] rounded-md sm:rounded-lg rounded-tl-none p-0.5 sm:p-1 text-[3.5px] sm:text-[5px] leading-normal text-left self-start max-w-[85%]">
-                        {t("chatbotBotMessage2")}
-                      </div>
-                    </div>
+                  <div className="text-[10px] text-brand-green font-semibold">
+                    No Internet Required
                   </div>
-
-                  {/* Bottom Navigation Pill */}
-                  <div className="w-6 sm:w-10 h-0.5 rounded-full bg-slate-400 mx-auto mb-1 z-10" />
                 </div>
               </div>
+
             </div>
           </motion.div>
         </div>
@@ -254,3 +221,5 @@ export default function Hero() {
     </section>
   );
 }
+
+

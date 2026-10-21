@@ -43,7 +43,7 @@ export default async function SheymssAppDealPage({
     <>
       <Navbar />
       <main
-        className="min-h-screen pt-24 pb-20 bg-[var(--bg-primary)] dark:bg-[#070C0E] text-[var(--text-primary)] selection:bg-pink-500 selection:text-white"
+        className="min-h-screen pt-24 pb-20 bg-[var(--bg-primary)] dark:bg-[#070C0E] text-[var(--text-primary)] theme-sheymss selection:bg-pink-500 selection:text-white"
         dir={isAr ? "rtl" : "ltr"}
       >
         {/* Top Feature Ribbon */}
@@ -57,22 +57,27 @@ export default async function SheymssAppDealPage({
         </div>
 
         <div className="mx-auto max-w-6xl px-4 py-12 md:px-6">
-          
+
           {/* Header Section */}
           <div className="text-center mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full apple-glass border-pink-500/20 text-pink-600 dark:text-pink-400 text-xs font-semibold tracking-wider uppercase mb-1 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+              <span>SHEYMSS B2B • NATIVE SUITE V2.1.0</span>
+            </div>
+
             <div className="flex flex-wrap items-center justify-center gap-2">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 text-xs font-extrabold uppercase tracking-wider shadow-2xs">
-                <Laptop className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full apple-glass text-xs font-semibold tracking-tight shadow-xs">
+                <Laptop className="w-3.5 h-3.5 text-pink-500" />
                 <span>{isAr ? "برنامج سطح المكتب لويندوز (100% محلي بدون إنترنت)" : "Logiciel Bureau Windows 100% Hors-Ligne"}</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-pink-600 text-white text-xs font-extrabold uppercase tracking-wider shadow-sm animate-pulse">
-                <Bell className="w-3.5 h-3.5" />
-                <span>{isAr ? "تحديث جديد متوفر: v2.1.0" : "Nouveau : Version v2.1.0"}</span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-600 text-white text-xs font-semibold tracking-tight shadow-xs">
+                <Bell className="w-3 h-3" />
+                <span>{isAr ? "إصدار v2.1.0 متوفر" : "Version v2.1.0"}</span>
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight font-[var(--font-display)] text-slate-900 dark:text-white leading-tight">
-              SHEYMSS <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">Management Suite v2.1.0</span>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-[var(--font-display)] text-slate-900 dark:text-white leading-tight">
+              SHEYMSS <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">Management Suite</span>
             </h1>
 
             <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
@@ -82,19 +87,19 @@ export default async function SheymssAppDealPage({
             </p>
 
             {/* Quick Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
+            <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
               <a
                 href="/downloads/sheymss-vip-setup.exe"
                 download="sheymss-vip-setup.exe"
-                className="px-7 py-3.5 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-black text-sm shadow-md shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
+                className="apple-press px-7 py-3.5 rounded-2xl bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold text-sm shadow-lg shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
               >
-                <Download className="w-4 h-4 animate-bounce" />
+                <Download className="w-4 h-4" />
                 <span>{isAr ? "تحميل التحديث للكمبيوتر (v2.1.0)" : "Télécharger SHEYMSS (v2.1.0)"}</span>
               </a>
 
               <a
                 href="#pricing-deal"
-                className="px-6 py-3.5 rounded-2xl border border-pink-500/30 bg-pink-500/5 hover:bg-pink-500/10 text-pink-600 dark:text-pink-400 font-bold text-sm flex items-center gap-2 transition-all"
+                className="apple-press px-6 py-3.5 rounded-2xl apple-glass border-pink-500/30 text-pink-600 dark:text-pink-400 font-semibold text-sm flex items-center gap-2 hover:bg-pink-500/5 transition-all cursor-pointer"
               >
                 <Percent className="w-4 h-4" />
                 <span>{isAr ? "باقات الأسعار والتخفيضات" : "Tarifs & Facilités de Paiement"}</span>
@@ -102,9 +107,9 @@ export default async function SheymssAppDealPage({
 
               <a
                 href="#features-list"
-                className="px-6 py-3.5 rounded-2xl border border-border bg-[var(--bg-card)] hover:bg-slate-100 dark:hover:bg-slate-800 text-[var(--text-primary)] font-bold text-sm flex items-center gap-2 transition-all"
+                className="apple-press px-6 py-3.5 rounded-2xl apple-card text-foreground font-semibold text-sm flex items-center gap-2 hover:border-pink-500/30 transition-all cursor-pointer"
               >
-                <Layers className="w-4 h-4" />
+                <Layers className="w-4 h-4 text-pink-500" />
                 <span>{isAr ? "استعراض كافة ميزات البرنامج" : "Découvrir les Fonctionnalités"}</span>
               </a>
             </div>
@@ -132,13 +137,18 @@ export default async function SheymssAppDealPage({
             {/* Discount Summary Cards */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {/* Market Value Card */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-sm relative overflow-hidden">
-                <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="font-mono text-[10px] text-[var(--text-muted)] uppercase tracking-wider mb-2">
+                  [ TIER: STANDARD_BASE ]
+                </div>
+                <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-1">
                   {isAr ? "القيمة السوقية الأصلية" : "Valeur Standard du Marché"}
                 </div>
                 <div dir="ltr" className="inline-flex items-baseline gap-1.5 text-slate-900 dark:text-white">
                   <span className="text-3xl font-black font-mono">35,000</span>
-                  <span className="text-sm font-bold text-slate-500">{isAr ? "دج" : "DA"}</span>
+                  <span className="text-sm font-bold text-slate-500 font-mono">{isAr ? "دج" : "DA"}</span>
                 </div>
                 <p className="text-xs text-[var(--text-secondary)] mt-2">
                   {isAr ? "السعر القياسي لتطوير النظام المخصص وتكامل وحدات الفوترة" : "Tarif de base pour le développement complet et modules"}
@@ -146,9 +156,11 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* Discount 1: Salon DZ Tech Bonus */}
-              <div className="p-6 rounded-3xl border border-pink-500/30 bg-pink-500/5 dark:bg-pink-950/20 shadow-sm relative overflow-hidden">
+              <div className="hairline-card-pink p-6 rounded-2xl relative overflow-hidden group">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-pink-400/60">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-pink-400/60">+</span>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-wider">
+                  <div className="text-xs font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-wider font-mono">
                     {isAr ? "تخفيض الشراكة الخاصة" : "Remise Partenariat"}
                   </div>
                   <span dir="ltr" className="px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-600 dark:text-pink-400 text-xs font-black font-mono">
@@ -157,7 +169,7 @@ export default async function SheymssAppDealPage({
                 </div>
                 <div dir="ltr" className="inline-flex items-baseline gap-1.5 text-pink-600 dark:text-pink-400 font-mono">
                   <span className="text-3xl font-black">-3,500</span>
-                  <span className="text-sm font-bold">{isAr ? "دج" : "DA"}</span>
+                  <span className="text-sm font-bold font-mono">{isAr ? "دج" : "DA"}</span>
                 </div>
                 <p className="text-xs text-[var(--text-secondary)] mt-2">
                   {isAr ? "خصم مباشر ومكافأة خاصة لمتجر SHEYMSS من صالون ديزاد تك" : "Remise directe accordée dans le cadre du partenariat avec Salon DZ Tech"}
@@ -165,9 +177,11 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* Discount 2: Marketing Ad Collaboration */}
-              <div className="p-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/20 shadow-sm relative overflow-hidden">
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-emerald-400/60">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-emerald-400/60">+</span>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                  <div className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider font-mono">
                     {isAr ? "تخفيض التعاون الإعلاني" : "Remise Collaboration Pub"}
                   </div>
                   <span dir="ltr" className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-black font-mono">
@@ -176,7 +190,7 @@ export default async function SheymssAppDealPage({
                 </div>
                 <div dir="ltr" className="inline-flex items-baseline gap-1.5 text-emerald-600 dark:text-emerald-400 font-mono">
                   <span className="text-3xl font-black">-3,500</span>
-                  <span className="text-sm font-bold">{isAr ? "دج" : "DA"}</span>
+                  <span className="text-sm font-bold font-mono">{isAr ? "دج" : "DA"}</span>
                 </div>
                 <p className="text-xs text-[var(--text-secondary)] mt-2">
                   {isAr ? "مقابل نشر منشور + فيديو ريل + ستوري يبرز برنامج صالون ديزاد تك" : "En échange de : 1 Post + 1 Reel Vidéo + 1 Story taguant @salondz.tech"}
@@ -186,16 +200,18 @@ export default async function SheymssAppDealPage({
 
             {/* 2 Payment Options Side by Side */}
             <div className="grid md:grid-cols-2 gap-8">
-              
+
               {/* Option A: Full Cash Discount (28,000 DA) */}
-              <div className="relative overflow-hidden rounded-3xl border-2 border-emerald-500 bg-[var(--bg-card)] dark:bg-[#111B21] p-8 shadow-xl flex flex-col justify-between">
-                <div className="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-black uppercase px-6 py-2 rounded-bl-2xl tracking-wider shadow-sm flex items-center gap-1.5">
+              <div className="hairline-card p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group shadow-xl border-emerald-500/50">
+                <span className="hairline-corner -top-2 -left-2 text-emerald-400">+</span>
+                <span className="hairline-corner -top-2 -right-2 text-emerald-400">+</span>
+                <div className="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-black uppercase px-6 py-1.5 rounded-bl-xl tracking-wider shadow-sm flex items-center gap-1.5 font-mono">
                   <Flame className="w-3.5 h-3.5 fill-current" />
                   <span>{isAr ? "الخيار الأفضل (تخفيض 20% كامل)" : "Option Comptant (-20% Total)"}</span>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono">
                     <span>{isAr ? "الخيار 1: الدفع المباشر 100% كاش" : "Option 1 : Règlement Comptant Direct"}</span>
                   </div>
 
@@ -208,10 +224,10 @@ export default async function SheymssAppDealPage({
                       <span className="text-4xl sm:text-5xl font-black font-mono text-emerald-600 dark:text-emerald-400">
                         28,000
                       </span>
-                      <span className="text-xl font-bold text-slate-700 dark:text-slate-200">{isAr ? "دج" : "DA"}</span>
+                      <span className="text-xl font-bold font-mono text-slate-700 dark:text-slate-200">{isAr ? "دج" : "DA"}</span>
                       <span className="text-xs line-through text-slate-400 font-mono ms-2">35,000 {isAr ? "دج" : "DA"}</span>
                     </div>
-                    <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-1">
+                    <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mt-1 font-mono">
                       {isAr ? "(2.8 ملايين سنتيم — توفير 7,000 دج كاملة)" : "(2,8 Millions de Centimes — 7 000 DA d'économie)"}
                     </p>
                   </div>
@@ -240,7 +256,7 @@ export default async function SheymssAppDealPage({
                   <a
                     href="/downloads/sheymss-vip-setup.exe"
                     download="sheymss-vip-setup.exe"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-500/20 transition-all cursor-pointer font-mono"
                   >
                     <Download className="w-4 h-4" />
                     <span>{isAr ? "تحميل وتثبيت البرنامج فوراً" : "Télécharger & Installer l'Application"}</span>
@@ -249,14 +265,16 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* Option B: 3-Part Installment Plan (31,000 DA) */}
-              <div className="relative overflow-hidden rounded-3xl border-2 border-pink-500/50 bg-[var(--bg-card)] dark:bg-[#111B21] p-8 shadow-xl flex flex-col justify-between">
-                <div className="absolute top-0 right-0 bg-pink-600 text-white text-xs font-black uppercase px-6 py-2 rounded-bl-2xl tracking-wider shadow-sm flex items-center gap-1.5">
+              <div className="hairline-card-pink p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group shadow-xl border-pink-500/50">
+                <span className="hairline-corner -top-2 -left-2 text-pink-400">+</span>
+                <span className="hairline-corner -top-2 -right-2 text-pink-400">+</span>
+                <div className="absolute top-0 right-0 bg-pink-600 text-white text-xs font-black uppercase px-6 py-1.5 rounded-bl-xl tracking-wider shadow-sm flex items-center gap-1.5 font-mono">
                   <Calendar className="w-3.5 h-3.5 fill-current" />
                   <span>{isAr ? "تسهيلات الدفع (على 3 دفعات)" : "Facilités en 3 Mensualités"}</span>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-pink-500/10 text-pink-600 dark:text-pink-400 text-xs font-bold">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-pink-500/10 text-pink-600 dark:text-pink-400 text-xs font-bold font-mono">
                     <span>{isAr ? "الخيار 2: التقسيط المريح على شهرين (+1,000 دج لكل دفعة)" : "Option 2 : Échelonnement sur 2 Mois (+1 000 DA / part)"}</span>
                   </div>
 
@@ -269,21 +287,21 @@ export default async function SheymssAppDealPage({
                       <span className="text-4xl sm:text-5xl font-black font-mono text-pink-600 dark:text-pink-400">
                         31,000
                       </span>
-                      <span className="text-xl font-bold text-slate-700 dark:text-slate-200">{isAr ? "دج" : "DA"}</span>
-                      <span className="text-xs text-[var(--text-muted)] ms-2">{isAr ? "الإجمالي النهائي" : "Total Final"}</span>
+                      <span className="text-xl font-bold font-mono text-slate-700 dark:text-slate-200">{isAr ? "دج" : "DA"}</span>
+                      <span className="text-xs text-[var(--text-muted)] ms-2 font-mono">{isAr ? "الإجمالي النهائي" : "Total Final"}</span>
                     </div>
-                    <p className="text-xs font-semibold text-pink-600 dark:text-pink-400 mt-1">
+                    <p className="text-xs font-semibold text-pink-600 dark:text-pink-400 mt-1 font-mono">
                       {isAr ? "(3.1 ملايين سنتيم — مقسمة على 3 مراحل مريحة)" : "(3,1 Millions de Centimes — Répartis sur 2 mois)"}
                     </p>
                   </div>
 
                   {/* 3 Steps Schedule Box */}
-                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0D151A] border border-slate-200 dark:border-slate-800 space-y-3">
+                  <div className="p-4 rounded-xl bg-slate-50/70 dark:bg-[#070C0E]/70 border border-slate-200/80 dark:border-slate-800/80 space-y-3 font-mono">
                     <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-200 dark:border-slate-800">
                       <span className="font-bold text-slate-800 dark:text-slate-200">
                         {isAr ? "📌 الدفعة 1 (عند التثبيت والاستلام):" : "📌 Part 1 (À l'installation & remise) :"}
                       </span>
-                      <span dir="ltr" className="font-black font-mono text-pink-600 dark:text-pink-400 text-sm">
+                      <span dir="ltr" className="font-black text-pink-600 dark:text-pink-400 text-sm">
                         11,000 {isAr ? "دج" : "DA"}
                       </span>
                     </div>
@@ -292,7 +310,7 @@ export default async function SheymssAppDealPage({
                       <span className="font-bold text-slate-800 dark:text-slate-200">
                         {isAr ? "📌 الدفعة 2 (بعد مرور 1 شهر):" : "📌 Part 2 (Après 1 mois) :"}
                       </span>
-                      <span dir="ltr" className="font-black font-mono text-slate-900 dark:text-white text-sm">
+                      <span dir="ltr" className="font-black text-slate-900 dark:text-white text-sm">
                         10,000 {isAr ? "دج" : "DA"}
                       </span>
                     </div>
@@ -301,7 +319,7 @@ export default async function SheymssAppDealPage({
                       <span className="font-bold text-slate-800 dark:text-slate-200">
                         {isAr ? "📌 الدفعة 3 (بعد مرور 2 شهرين):" : "📌 Part 3 (Après 2 mois) :"}
                       </span>
-                      <span dir="ltr" className="font-black font-mono text-slate-900 dark:text-white text-sm">
+                      <span dir="ltr" className="font-black text-slate-900 dark:text-white text-sm">
                         10,000 {isAr ? "دج" : "DA"}
                       </span>
                     </div>
@@ -323,7 +341,7 @@ export default async function SheymssAppDealPage({
                   <a
                     href="/downloads/sheymss-vip-setup.exe"
                     download="sheymss-vip-setup.exe"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-sm shadow-md shadow-pink-500/20 transition-all cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-bold text-sm shadow-md shadow-pink-500/20 transition-all cursor-pointer font-mono"
                   >
                     <Download className="w-4 h-4" />
                     <span>{isAr ? "تحميل وبدء التجربة المجانية" : "Télécharger & Essayer Gratuitement"}</span>
@@ -357,11 +375,18 @@ export default async function SheymssAppDealPage({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* 1. Dashboard */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Flame className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Flame className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-01 // DASHBOARD ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "1. لوحة التحكم والإحصائيات الحية (Dashboard)" : "1. Tableau de Bord & KPIs en Temps Réel"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -372,11 +397,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 2. Products Catalog */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Package className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Package className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-02 // CATALOG ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "2. كتالوج منتجات الأظافر (Press-on Nails)" : "2. Catalogue Produits Grossiste (Press-on Nails)"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -387,11 +419,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 3. Raw Materials Stock */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Box className="w-6 h-6" />
+              <div className="hairline-card-pink p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-pink-400/60">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-pink-400/60">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Box className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-03 // PACKAGING_STOCK ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "3. مخزون المواد الأولية والتغليف (Packaging)" : "3. Stock Matières Premières & Packaging"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -402,11 +441,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 4. Vernis Matrix */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Palette className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Palette className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-04 // VERNIS_UV ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "4. تتبع قارورات طلاء الأظافر الفردية (Vernis UV Tracker)" : "4. Matrice & Traçabilité des Vernis UV/LED"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -417,11 +463,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 5. 5-Stage Order Pipeline */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Clock className="w-6 h-6" />
+              <div className="hairline-card-pink p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-pink-400/60">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-pink-400/60">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-05 // PIPELINE_5_STEPS ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "5. خط معالجة الطلبيات في 5 مراحل (Order Pipeline)" : "5. Pipeline de Traitement des Commandes (5 Étapes)"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -432,11 +485,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 6. Universal Multi-Carrier Thermal Shipping Labels */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Printer className="w-6 h-6" />
+              <div className="hairline-card-pink p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-pink-400/60">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-pink-400/60">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Printer className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-06 // LOGISTICS_58W ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "6. ملصقات الشحن وتوصيل الطرود لجميع مكاتب التوصيل (10x15 سم لـ 58 ولاية)" : "6. Étiquettes Thermiques Multi-Transporteurs (10x15 cm - 58 Wilayas)"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -447,11 +507,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 7. Installments & Dual Finance */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <CreditCard className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <CreditCard className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-07 // FINANCE_CREDIT ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "7. محرك الأقساط والدفع المزدوج (Échéanciers & Dettes)" : "7. Moteur d'Échéances & Gestion des Crédits"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -462,11 +529,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 8. Suppliers & Purchasing History */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Truck className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Truck className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-08 // SUPPLIERS ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "8. دليل الموردين وتتبع أسعار الشراء السابقة (Fournisseurs & Historique)" : "8. Répertoire Fournisseurs & Historique des Prix d'Achat"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -477,11 +551,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 9. Client CRM */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Building2 className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-slate-300 dark:text-slate-700">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Building2 className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-09 // CRM_SALONS ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "9. دليل الصالونات والزبائن (Client CRM & Boutiques)" : "9. Répertoire Salons & Historique d'Achats (CRM)"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -491,12 +572,19 @@ export default async function SheymssAppDealPage({
                 </p>
               </div>
 
-              {/* 10. Security & 100% Offline */}
-              <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-[var(--bg-card)] dark:bg-[#111B21] shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Database className="w-6 h-6" />
+              {/* 10. Security & 100% Offline (Vault Figure) */}
+              <div className="hairline-card-pink p-6 rounded-2xl relative overflow-hidden group space-y-3">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-pink-400/60">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-pink-400/60">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Database className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-10 // ENCRYPTED_CORE ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "10. أمان فائق وتشغيل محلي بدون إنترنت (100% Offline)" : "10. Sécurité Maximale & 100% Hors-Ligne"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -507,11 +595,18 @@ export default async function SheymssAppDealPage({
               </div>
 
               {/* 11. Custom Theme & Logo on Demand */}
-              <div className="p-6 rounded-3xl border-2 border-pink-500/30 bg-gradient-to-br from-pink-500/10 via-[var(--bg-card)] to-[var(--bg-card)] dark:from-pink-950/25 dark:via-[#111B21] dark:to-[#111B21] shadow-xs space-y-3 md:col-span-2 lg:col-span-1">
-                <div className="w-12 h-12 rounded-2xl bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
-                  <Palette className="w-6 h-6" />
+              <div className="hairline-card p-6 rounded-2xl relative overflow-hidden group space-y-3 md:col-span-2 lg:col-span-1 border-pink-500/40">
+                <span className="hairline-corner -top-1.5 -left-1.5 text-pink-400">+</span>
+                <span className="hairline-corner -top-1.5 -right-1.5 text-pink-400">+</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0">
+                    <Palette className="w-5 h-5" />
+                  </div>
+                  <span className="font-mono text-[10px] text-pink-600 dark:text-pink-400 font-bold tracking-wider">
+                    [ MOD-11 // CUSTOM_THEME ]
+                  </span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                   {isAr ? "11. تخصيص الثيم والشعار مجاناً عند الشراء" : "11. Thème & Logo Personnalisés à l'Achat"}
                 </h3>
                 <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
@@ -527,7 +622,16 @@ export default async function SheymssAppDealPage({
           {/* ========================================================================= */}
           {/* SECTION 3: DOWNLOAD APP & QUICK INSTALL */}
           {/* ========================================================================= */}
-          <div className="max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl border-2 border-pink-500/30 bg-gradient-to-b from-pink-500/10 via-[var(--bg-card)] to-[var(--bg-card)] dark:from-pink-950/20 dark:via-[#111B21] dark:to-[#111B21] shadow-xl text-center space-y-6">
+          <div className="hairline-card-pink hairline-grid max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl relative overflow-hidden text-center space-y-6 shadow-2xl">
+            <span className="hairline-corner -top-2 -left-2 text-pink-400">+</span>
+            <span className="hairline-corner -top-2 -right-2 text-pink-400">+</span>
+            <span className="hairline-corner -bottom-2 -left-2 text-pink-400">+</span>
+            <span className="hairline-corner -bottom-2 -right-2 text-pink-400">+</span>
+
+            <div className="font-mono text-[10px] text-pink-600 dark:text-pink-400 tracking-widest uppercase">
+              [ DEPLOY_PAYLOAD: sheymss-vip-setup.exe // 99_MB // OS: WIN_10_11_X64 ]
+            </div>
+
             <div className="w-16 h-16 rounded-2xl bg-pink-500/15 text-pink-600 dark:text-pink-400 flex items-center justify-center mx-auto shadow-xs">
               <Download className="w-8 h-8 animate-bounce" />
             </div>
@@ -546,7 +650,7 @@ export default async function SheymssAppDealPage({
               <a
                 href="/downloads/sheymss-vip-setup.exe"
                 download="sheymss-vip-setup.exe"
-                className="px-8 py-4 rounded-2xl bg-pink-600 hover:bg-pink-700 text-white font-black text-sm shadow-lg shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
+                className="px-8 py-4 rounded-xl bg-pink-600 hover:bg-pink-700 text-white font-mono font-black text-sm shadow-lg shadow-pink-500/25 flex items-center gap-2.5 transition-all cursor-pointer"
               >
                 <Download className="w-5 h-5" />
                 <span>{isAr ? "تحميل التطبيق للكمبيوتر (99 MB)" : "Télécharger SHEYMSS pour Windows (99 MB)"}</span>
@@ -554,14 +658,14 @@ export default async function SheymssAppDealPage({
 
               <Link
                 href="/nails_app_dowload"
-                className="px-8 py-4 rounded-2xl border border-pink-500/30 bg-[var(--bg-card)] hover:bg-pink-500/5 text-pink-600 dark:text-pink-400 font-bold text-sm flex items-center gap-2.5 transition-all"
+                className="px-8 py-4 rounded-xl border border-pink-500/30 bg-[var(--bg-card)] hover:bg-pink-500/5 text-pink-600 dark:text-pink-400 font-mono font-bold text-sm flex items-center gap-2.5 transition-all"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>{isAr ? "صفحة التحميل ودليل التثبيت" : "Guide d'Installation & Détails"}</span>
               </Link>
             </div>
 
-            <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-[var(--text-muted)] font-medium">
+            <div className="pt-6 border-t border-border/80 flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-[var(--text-muted)] font-mono">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-500" />
                 <span>{isAr ? "تثبيت آمن وسريع • Windows 10 / 11 (64-bit)" : "Installation sécurisée • Windows 10 / 11"}</span>

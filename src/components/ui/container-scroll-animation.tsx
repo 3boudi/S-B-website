@@ -91,9 +91,25 @@ export const Card = ({
         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
         willChange: "transform",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[20rem] sm:h-[30rem] md:h-[40rem] w-full border-4 border-brand-green/30 p-2 md:p-6 dark:bg-[#151E19] bg-white rounded-[30px] shadow-2xl"
+      className="max-w-5xl -mt-12 mx-auto h-[20rem] sm:h-[30rem] md:h-[42rem] w-full apple-card rounded-[28px] p-2 md:p-4 shadow-2xl relative overflow-hidden"
     >
-      <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
+      {/* Apple Window Chrome Titlebar */}
+      <div className="flex items-center justify-between px-3 py-2 border-b border-black/[0.06] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.03] rounded-t-[20px] mb-2">
+        <div className="flex items-center gap-2">
+          <div className="h-3 w-3 rounded-full bg-[#FF5F57] opacity-80" />
+          <div className="h-3 w-3 rounded-full bg-[#FFBD2E] opacity-80" />
+          <div className="h-3 w-3 rounded-full bg-[#28C840] opacity-80" />
+        </div>
+        <div className="text-[11px] font-medium text-muted-foreground font-mono">
+          salondztech-workstation • POS & Stock
+        </div>
+        <div className="flex items-center gap-1.5 text-[10px] text-brand-green font-semibold px-2 py-0.5 rounded-full bg-brand-green/10">
+          <span className="h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse" />
+          <span>Active</span>
+        </div>
+      </div>
+
+      <div className="h-[calc(100%-42px)] w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900">
         {children}
       </div>
     </motion.div>

@@ -99,6 +99,14 @@ html {
     --text-primary: #1c1e21;
     --text-secondary: #5e5e5e;
     --text-muted: #5e5e5e;
+
+    /* Hairline Theme Variables (Light) */
+    --hairline-stroke: 0.9;
+    --hairline-plate: #ffffff;
+    --hairline-hi: #25d366;
+    --hairline-edge: #0e1f0e;
+    --hairline-mid: #c8d8c8;
+    --hairline-lo: #e8f4e8;
   }
 
   .dark {
@@ -128,6 +136,31 @@ html {
     --text-primary: #ffffff;
     --text-secondary: #8696a0;
     --text-muted: #8696a0;
+
+    /* Hairline Theme Variables (Dark) */
+    --hairline-stroke: 0.9;
+    --hairline-plate: #090e0c;
+    --hairline-hi: #25d366;
+    --hairline-edge: #86efac;
+    --hairline-mid: #1d3627;
+    --hairline-lo: #122118;
+  }
+
+  /* SHEYMSS Brand Hairline Colors */
+  .theme-sheymss,
+  [data-brand="sheymss"] {
+    --hairline-hi: #f43f5e;
+    --hairline-edge: #fb7185;
+    --hairline-mid: #fecdd3;
+    --hairline-lo: #fff1f2;
+  }
+
+  .dark.theme-sheymss,
+  .dark [data-brand="sheymss"] {
+    --hairline-hi: #f43f5e;
+    --hairline-edge: #f472b6;
+    --hairline-mid: #4c1d2e;
+    --hairline-lo: #240c15;
   }
 
   * {
@@ -146,6 +179,144 @@ html {
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
+}
+
+@layer utilities {
+  /* Hairline Precision Utilities */
+  .hairline-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--bg-card);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .hairline-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+}
+.hairline-card:hover {
+  border-color: rgba(37, 211, 102, 0.45);
+  box-shadow: 0 0 25px -4px rgba(37, 211, 102, 0.15);
+}
+
+.hairline-card-pink {
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  background: var(--bg-card);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hairline-card-pink:hover {
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 0 25px -4px rgba(244, 63, 94, 0.2);
+}
+
+.hairline-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.dark .hairline-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hairline-dots {
+  background-image: radial-gradient(circle, rgba(37, 211, 102, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ==========================================================================
+   Apple Design System Tokens & Utilities (HIG Compliant)
+   ========================================================================== */
+
+/* Apple Liquid Glass: Functional floating chrome (navbars, toolbars, sheets) */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.dark .apple-glass {
+  background: rgba(9, 15, 12, 0.75);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.apple-glass-prominent {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+}
+.dark .apple-glass-prominent {
+  background: rgba(14, 23, 18, 0.88);
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Apple Card Surface: Solid/refined content layer */
+.apple-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px -4px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .apple-card {
+  background: #0d1511;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 34px -8px rgba(0, 0, 0, 0.65);
+}
+.apple-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 211, 102, 0.45);
+  box-shadow: 0 14px 38px -8px rgba(37, 211, 102, 0.14);
+}
+
+/* Apple Physical Top Specular Edge Highlight */
+.apple-specular-edge {
+  position: relative;
+}
+.apple-specular-edge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  pointer-events: none;
+}
+.dark .apple-specular-edge::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+}
+
+/* Apple Tactile Press Compression */
+.apple-press {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
+}
+.apple-press:active {
+  transform: scale(0.975);
+}
+
+/* Apple Prominent Primary Button */
+.apple-btn-primary {
+  background: linear-gradient(180deg, #2ae36f 0%, #25d366 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 8px 20px -4px rgba(37, 211, 102, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-btn-primary:hover {
+  background: linear-gradient(180deg, #2df077 0%, #22c75e 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 12px 28px -6px rgba(37, 211, 102, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.apple-btn-primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* RTL flip utility */
@@ -171,3 +342,5 @@ html[dir="rtl"] {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
+}
+

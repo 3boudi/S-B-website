@@ -41,48 +41,61 @@ export default function Pricing() {
   const plans = t.raw("plans") as Plan[];
 
   return (
-    <section id="pricing" className="py-20 md:py-28 bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)]">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
+    <section id="pricing" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Hairline subtle background grid */}
+      <div className="absolute inset-0 hairline-grid opacity-30 pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-[var(--text-primary)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full apple-glass border-black/[0.06] dark:border-white/[0.1] text-brand-green text-xs font-semibold tracking-wider uppercase mb-4 shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+            <span>LICENSING & PRICING</span>
+          </div>
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-[var(--text-primary)]">
             {t("title")}
           </h2>
-          <p className="mt-4 text-lg text-[var(--text-secondary)] mb-6">
+          <p className="mt-4 text-base sm:text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
             {t("subtitle")}
           </p>
 
-          {/* Currency Switcher */}
-          <div className="inline-flex p-1 bg-[var(--bg-card)] border border-border rounded-xl shadow-xs justify-center mx-auto">
+          {/* Apple Segmented Control for Currency */}
+          <div className="relative inline-flex p-1.5 apple-glass rounded-full shadow-xs justify-center mx-auto border border-black/[0.08] dark:border-white/[0.1]">
             <button
+              type="button"
               onClick={() => setCurrency("DZD")}
-              className={`relative z-10 px-4 py-2 text-xs font-bold rounded-lg transition-colors cursor-pointer ${
-                currency === "DZD" ? "text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+              className={`relative px-5 py-2 text-xs font-bold rounded-full transition-colors cursor-pointer ${
+                currency === "DZD"
+                  ? "text-emerald-600 dark:text-brand-green font-extrabold"
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold"
               }`}
             >
               {currency === "DZD" && (
                 <motion.div
                   layoutId="active-currency-bg"
-                  className="absolute inset-0 bg-brand-green rounded-lg -z-10"
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  className="absolute inset-0 bg-white dark:bg-zinc-800/90 rounded-full shadow-md border border-black/[0.06] dark:border-white/[0.1]"
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
                 />
               )}
-              {t("toggleDzd")}
+              <span className="relative z-10">{t("toggleDzd")}</span>
             </button>
             <button
+              type="button"
               onClick={() => setCurrency("USD")}
-              className={`relative z-10 px-4 py-2 text-xs font-bold rounded-lg transition-colors cursor-pointer ${
-                currency === "USD" ? "text-white" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+              className={`relative px-5 py-2 text-xs font-bold rounded-full transition-colors cursor-pointer ${
+                currency === "USD"
+                  ? "text-emerald-600 dark:text-brand-green font-extrabold"
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold"
               }`}
             >
               {currency === "USD" && (
                 <motion.div
                   layoutId="active-currency-bg"
-                  className="absolute inset-0 bg-brand-green rounded-lg -z-10"
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  className="absolute inset-0 bg-white dark:bg-zinc-800/90 rounded-full shadow-md border border-black/[0.06] dark:border-white/[0.1]"
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
                 />
               )}
-              {t("toggleUsd")}
+              <span className="relative z-10">{t("toggleUsd")}</span>
             </button>
           </div>
         </div>
@@ -101,30 +114,36 @@ export default function Pricing() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="flex flex-col h-full"
               >
-                {/* Gradient border wrapper for highlighted card, default border for others */}
+                {/* Apple Card Styling */}
                 <div
-                  className={`flex flex-col h-full rounded-2xl p-px ${
+                  className={`relative flex flex-col justify-between h-full rounded-3xl apple-card p-6 sm:p-8 transition-all duration-300 ${
                     isHighlighted
-                      ? "bg-gradient-to-br from-brand-green-light via-brand-green to-brand-green-dark shadow-xl shadow-brand-green/10"
-                      : "border border-border bg-[var(--bg-card)]"
+                      ? "apple-specular-edge border-2 border-brand-green/70 shadow-2xl shadow-brand-green/15"
+                      : "hover:border-brand-green/40 shadow-lg"
                   }`}
                 >
-                  <div className={`relative flex flex-col justify-between h-full rounded-2xl bg-[var(--bg-card)] p-6 sm:p-8`}>
-                    
-                    {/* Highlight Badge */}
-                    {isHighlighted && (
-                      <div className="absolute -top-3 right-4 sm:right-6">
-                        <span className="rounded-full bg-brand-green px-3 py-1 text-xs font-semibold text-white">
-                          {t("bestChoice")}
-                        </span>
-                      </div>
-                    )}
+                  {/* Highlight Badge */}
+                  {isHighlighted && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
+                      <span className="rounded-full bg-gradient-to-r from-emerald-600 via-[#25d366] to-emerald-600 text-white px-4 py-1.5 text-xs font-extrabold tracking-wide uppercase shadow-lg shadow-brand-green/30 border border-white/30 flex items-center gap-1.5 whitespace-nowrap">
+                        <span className="text-amber-300 drop-shadow-xs text-sm leading-none">★</span>
+                        <span className="drop-shadow-xs font-black">{t("bestChoice")}</span>
+                      </span>
+                    </div>
+                  )}
 
-                    <div>
-                      {/* Plan Name */}
-                      <h3 className="text-xl font-bold font-[var(--font-display)] text-[var(--text-primary)]">
-                        {plan.name}
-                      </h3>
+                  <div>
+                    {/* Plan Header */}
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <div>
+                        <div className="text-[11px] font-semibold text-brand-green tracking-wider uppercase mb-1">
+                          {isHighlighted ? "Flagship Edition" : `Tier 0${index + 1}`}
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-bold font-[var(--font-display)] text-[var(--text-primary)]">
+                          {plan.name}
+                        </h3>
+                      </div>
+                    </div>
 
                       {/* Price */}
                       <div className="mt-4 flex flex-col justify-start">
@@ -275,64 +294,68 @@ export default function Pricing() {
                     </div>
 
                     {/* CTA Button */}
-                    <Button
-                      size="lg"
-                      className="w-full mt-auto"
-                      variant={isHighlighted ? "default" : "outline"}
+                    <button
+                      className={`w-full mt-auto h-12 rounded-2xl font-bold text-sm flex items-center justify-center gap-2.5 cursor-pointer apple-press transition-all ${
+                        isHighlighted
+                          ? "apple-btn-primary shadow-md"
+                          : "apple-card hover:border-brand-green/50 text-foreground"
+                      }`}
                       onClick={() => openModal(plan.name)}
                     >
-                      <ShoppingCart className="h-5 w-5" />
-                      {plan.cta}
-                    </Button>
+                      <ShoppingCart className="h-4 w-4" />
+                      <span>{plan.cta}</span>
+                    </button>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+                </motion.div>
+              );
+            })}
+          </div>
 
         {/* Payment Methods Showcase */}
-        <div className="mt-16 text-center max-w-xl mx-auto bg-[var(--bg-card)] border border-border p-6 rounded-2xl shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-wider text-brand-green font-[var(--font-display)] mb-4">
-            {t("paymentsTitle")}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
+        <div className="mt-16 text-center max-w-xl mx-auto apple-card p-6 sm:p-8 rounded-3xl shadow-lg">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-semibold tracking-wider uppercase font-[var(--font-display)] mb-4">
+            <Zap className="h-3.5 w-3.5 fill-current" />
+            <span>{t("paymentsTitle")}</span>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3.5 mb-5">
             {/* BaridiMob */}
             <a
               href="https://play.google.com/store/apps/details?id=ru.bpc.mobilebank.bpc"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center bg-[var(--bg-primary)] border border-border px-3 py-1.5 rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.03] hover:border-brand-green/40 cursor-pointer"
+              className="flex items-center justify-center apple-glass px-3.5 py-2 rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.03] hover:border-brand-green/40 cursor-pointer apple-press"
               title="BaridiMob App"
             >
-              <img src="/baridimob.png" alt="BaridiMob" className="h-6 w-auto object-contain mr-2" />
-              <span className="text-[11px] font-semibold text-[var(--text-primary)]">BaridiMob</span>
+              <img src="/baridimob.png" alt="BaridiMob" className="h-5 w-auto object-contain mr-2" />
+              <span className="text-xs font-semibold text-foreground">BaridiMob</span>
             </a>
             {/* CCP */}
             <a
               href="https://en.wikipedia.org/wiki/Alg%C3%A9rie_Poste"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center bg-[var(--bg-primary)] border border-border px-3 py-1.5 rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.03] hover:border-brand-green/40 cursor-pointer"
+              className="flex items-center justify-center apple-glass px-3.5 py-2 rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.03] hover:border-brand-green/40 cursor-pointer apple-press"
               title="Algérie Poste CCP"
             >
-              <img src="/ccp.svg" alt="CCP" className="h-6 w-auto object-contain mr-2" />
-              <span className="text-[11px] font-semibold text-[var(--text-primary)]">CCP</span>
+              <img src="/ccp.svg" alt="CCP" className="h-5 w-auto object-contain mr-2" />
+              <span className="text-xs font-semibold text-foreground">CCP</span>
             </a>
             {/* Visa */}
-            <div className="flex items-center justify-center bg-[var(--bg-primary)] border border-border px-3 py-1.5 rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.03]" title="Visa">
-              <FaCcVisa className="h-6 w-9 text-[#151D8F] dark:text-white mr-2" />
-              <span className="text-[11px] font-semibold text-[var(--text-primary)]">Visa</span>
+            <div className="flex items-center justify-center apple-glass px-3.5 py-2 rounded-xl shadow-xs" title="Visa">
+              <FaCcVisa className="h-5 w-8 text-[#151D8F] dark:text-white mr-2" />
+              <span className="text-xs font-semibold text-foreground">Visa</span>
             </div>
             {/* Mastercard */}
-            <div className="flex items-center justify-center bg-[var(--bg-primary)] border border-border px-3 py-1.5 rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.03]" title="Mastercard">
-              <FaCcMastercard className="h-6 w-9 text-[#EB001B] mr-2" />
-              <span className="text-[11px] font-semibold text-[var(--text-primary)]">Mastercard</span>
+            <div className="flex items-center justify-center apple-glass px-3.5 py-2 rounded-xl shadow-xs" title="Mastercard">
+              <FaCcMastercard className="h-5 w-8 text-[#EB001B] mr-2" />
+              <span className="text-xs font-semibold text-foreground">Mastercard</span>
             </div>
           </div>
-          <div className="inline-block bg-brand-green/10 text-brand-green px-4 py-2 rounded-xl border border-brand-green/20 mb-3">
-            <span className="text-sm font-bold flex items-center justify-center gap-1.5">
-              <Zap className="h-4 w-4 fill-current shrink-0" />
+
+          <div className="inline-block bg-brand-green/10 text-brand-green px-4 py-2 rounded-full border border-brand-green/20 mb-3">
+            <span className="text-xs font-bold flex items-center justify-center gap-1.5">
+              <Zap className="h-3.5 w-3.5 fill-current shrink-0" />
               <span>{t("activationNotice")}</span>
             </span>
           </div>

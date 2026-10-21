@@ -11,17 +11,18 @@ export default function Dashboard() {
   const t = useTranslations("dashboard");
 
   return (
-    <section id="dashboard" className="relative overflow-hidden bg-[#F8FAF9] dark:bg-[#111815]">
+    <section id="dashboard" className="relative overflow-hidden py-10">
       <ContainerScroll
         titleComponent={
           <div className="space-y-4 mb-8">
-            <span className="inline-block text-sm font-semibold uppercase tracking-widest text-brand-green">
-              {t("livePreview")}
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full apple-glass border-black/[0.06] dark:border-white/[0.1] text-xs font-semibold text-brand-green tracking-wider uppercase shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+              <span>{t("livePreview")}</span>
             </span>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-[var(--text-primary)] px-2">
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-[var(--text-primary)] px-2">
               {t("title")}
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-[var(--text-secondary)]">
+            <p className="mx-auto max-w-2xl text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
               {t("subtitle")}
             </p>
           </div>

@@ -1,10 +1,7 @@
 "use client";
-// Design intent: Full-width green gradient CTA section to drive conversions.
-// White text on green gradient background. Two buttons: Try Free (white) and Buy (white outline).
-// Accessibility: semantic heading, clear button labels, adequate contrast.
 
 import { useTranslations } from "next-intl";
-import { MonitorPlay, ShoppingCart, Download } from "lucide-react";
+import { Download, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBuyModal } from "@/components/ui/BuyModal";
 import { Link } from "@/i18n/routing";
@@ -14,45 +11,59 @@ export default function CTA() {
   const { openModal } = useBuyModal();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-green-dark to-brand-green py-20 md:py-28">
-      {/* Decorative pattern */}
+    <section className="relative overflow-hidden py-20 md:py-28 text-white">
+      {/* Hairline grid pattern */}
+      <div className="absolute inset-0 hairline-grid opacity-20 pointer-events-none" />
+
+      {/* Radial emerald glow */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
+          background:
+            "radial-gradient(ellipse at 50% 50%, rgba(37,211,102,0.18) 0%, transparent 70%)",
         }}
       />
 
-      <div className="relative mx-auto max-w-3xl px-4 text-center md:px-6">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl font-[var(--font-display)]">
-          {t("title")}
-        </h2>
-        <p className="mt-4 text-lg text-white/80 leading-relaxed">
-          {t("subtitle")}
-        </p>
-
-        <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto w-full">
-          <Button
-            size="lg"
-            className="bg-white text-brand-green-dark hover:bg-white/90 active:scale-[0.98] w-full justify-center"
-            asChild
-          >
-            <Link href="/download">
-              <Download className="h-5 w-5" />
-              {t("downloadApp")}
-            </Link>
-          </Button>
-          <div className="flex flex-col sm:flex-row gap-3 w-full">
-
+      <div className="relative mx-auto max-w-4xl px-4 md:px-6 z-10">
+        <div className="relative rounded-3xl p-8 sm:p-12 md:p-16 border border-brand-green/30 apple-specular-edge bg-gradient-to-b from-brand-green/15 via-[#0D1913] to-[#070D0A] shadow-2xl overflow-hidden text-center">
+          <div className="mx-auto w-16 h-16 mb-6 rounded-2xl bg-brand-green/15 border border-brand-green/30 flex items-center justify-center text-brand-green shadow-md">
+            <Download className="w-7 h-7" />
           </div>
-        </div>
 
-        <p className="mt-6 text-sm text-white/60">
-          {t("offlineNote")}
-        </p>
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-white">
+            {t("title")}
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
+            {t("subtitle")}
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto w-full">
+            <Button
+              size="lg"
+              className="apple-btn-primary apple-press font-bold h-12 px-7 rounded-2xl w-full sm:w-auto shadow-lg flex items-center justify-center gap-2.5 cursor-pointer text-sm whitespace-nowrap shrink-0"
+              asChild
+            >
+              <Link href="/download" className="flex items-center justify-center gap-2.5 whitespace-nowrap">
+                <Download className="h-4 w-4 shrink-0" />
+                <span className="whitespace-nowrap">{t("downloadApp")}</span>
+              </Link>
+            </Button>
+
+            <button
+              className="apple-card apple-press hover:border-brand-green/50 text-white font-bold h-12 px-7 rounded-2xl w-full sm:w-auto flex items-center justify-center gap-2 cursor-pointer text-sm bg-black/40 backdrop-blur-md whitespace-nowrap shrink-0"
+              onClick={() => openModal()}
+            >
+              <ShoppingCart className="h-4 w-4 text-brand-green shrink-0" />
+              <span className="whitespace-nowrap">{t("buyNow")}</span>
+            </button>
+          </div>
+
+          <p className="mt-6 text-xs text-emerald-300/70 font-medium">
+            {t("offlineNote")}
+          </p>
+        </div>
       </div>
     </section>
   );
 }
+

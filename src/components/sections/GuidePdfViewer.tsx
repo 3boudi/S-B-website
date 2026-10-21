@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   BookOpen,
@@ -103,129 +104,151 @@ export default function GuidePdfViewer() {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Header Section */}
-      <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green text-xs font-semibold mb-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full apple-glass border-black/[0.06] dark:border-white/[0.1] text-brand-green text-xs font-semibold tracking-tight shadow-xs mb-4">
           <Sparkles className="h-3.5 w-3.5" />
           <span>{t("badge")}</span>
         </div>
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] font-[var(--font-display)] tracking-tight mb-3">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] font-[var(--font-display)] tracking-tight mb-3">
           {t("title")}
         </h1>
-        <p className="text-sm sm:text-lg text-[var(--text-secondary)] leading-relaxed px-2">
+        <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed max-w-2xl mx-auto">
           {t("desc")}
         </p>
 
-        {/* Quick Action Header Buttons */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
-          <Button
-            asChild
-            className="bg-brand-green hover:bg-brand-green/90 text-brand-black font-bold shadow-lg shadow-brand-green/20 text-xs sm:text-sm"
+        {/* Quick Action Apple Buttons */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={pdfUrl}
+            download="salondztech_user_guide.pdf"
+            className="apple-btn-primary apple-press rounded-2xl h-11 px-6 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-lg cursor-pointer"
           >
-            <a href={pdfUrl} download="salondztech_user_guide.pdf">
-              <Download className="h-4 w-4" />
-              {t("downloadPdf")}
-            </a>
-          </Button>
+            <Download className="h-4 w-4" />
+            <span>{t("downloadPdf")}</span>
+          </a>
 
-          <Button
-            variant="outline"
-            className="border-border hover:bg-black/5 dark:hover:bg-white/5 font-semibold text-xs sm:text-sm"
-            asChild
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="apple-card apple-press rounded-2xl h-11 px-5 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 text-foreground cursor-pointer shadow-xs hover:border-brand-green/50"
           >
-            <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4" />
-              {t("openNewTab")}
-            </a>
-          </Button>
+            <ExternalLink className="h-4 w-4 text-brand-green" />
+            <span>{t("openNewTab")}</span>
+          </a>
 
-          <Button
-            variant="outline"
+          <button
             onClick={handlePrint}
-            className="border-border hover:bg-black/5 dark:hover:bg-white/5 font-semibold text-xs sm:text-sm hidden sm:inline-flex"
+            className="apple-card apple-press rounded-2xl h-11 px-5 text-xs sm:text-sm font-semibold hidden sm:inline-flex items-center justify-center gap-2 text-foreground cursor-pointer shadow-xs hover:border-brand-green/50"
           >
-            <Printer className="h-4 w-4" />
-            {t("printPdf")}
-          </Button>
+            <Printer className="h-4 w-4 text-brand-green" />
+            <span>{t("printPdf")}</span>
+          </button>
         </div>
       </div>
 
-      {/* Main Interactive PDF Viewer Card */}
+      {/* Main Interactive PDF Viewer Card with macOS styling */}
       <div
         ref={containerRef}
-        className={`relative transition-all duration-300 rounded-2xl sm:rounded-3xl border border-border bg-[var(--bg-card)] dark:bg-[#111B21] shadow-2xl overflow-hidden ${
-          isFullscreen ? "fixed inset-0 z-50 rounded-none border-none" : "mb-12"
+        className={`relative transition-all duration-300 rounded-3xl apple-card apple-specular-edge shadow-2xl border border-black/[0.08] dark:border-white/[0.12] overflow-hidden ${
+          isFullscreen ? "fixed inset-0 z-50 rounded-none border-none" : "mb-14"
         }`}
       >
-        {/* Toolbar Header */}
-        <div className="flex flex-wrap items-center justify-between gap-2 px-3 sm:px-4 py-2.5 sm:py-3 border-b border-border bg-black/5 dark:bg-black/40 backdrop-blur-md">
-          {/* Document Title Badge */}
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green font-bold">
-              <BookOpen className="h-4 w-4" />
+        {/* macOS Style Titlebar Toolbar */}
+        <div className="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-3.5 apple-glass border-b border-black/[0.06] dark:border-white/[0.08]">
+          {/* Left: Window Controls + Document Title */}
+          <div className="flex items-center gap-3">
+            {/* macOS Window Controls */}
+            <div className="hidden sm:flex items-center gap-1.5 me-1">
+              <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/40" />
+              <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/40" />
+              <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/40" />
             </div>
-            <div>
-              <h2 className="text-xs sm:text-sm font-bold text-[var(--text-primary)] leading-tight truncate max-w-[150px] sm:max-w-none">
-                salondztech Guide.pdf
-              </h2>
-              <span className="text-[10px] text-emerald-500 flex items-center gap-1 font-medium">
-                <CheckCircle2 className="h-3 w-3 inline" /> HD Verified PDF Document
-              </span>
+
+            <div className="flex items-center gap-2.5">
+              <div className="h-8 w-8 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center font-bold shadow-xs">
+                <BookOpen className="h-4 w-4" />
+              </div>
+              <div>
+                <h2 className="text-xs sm:text-sm font-bold text-foreground leading-tight truncate max-w-[150px] sm:max-w-none">
+                  salondztech Guide.pdf
+                </h2>
+                <span className="text-[10px] text-brand-green flex items-center gap-1 font-semibold">
+                  <CheckCircle2 className="h-3 w-3 inline" /> HD Verified PDF Document
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Controls Bar */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            {/* Viewer Engine Selector */}
-            <div className="flex items-center bg-black/10 dark:bg-white/5 rounded-xl p-1 border border-border/50">
+          {/* Right: Controls & Engine Selector */}
+          <div className="flex items-center gap-2">
+            {/* Apple Segmented Control for Engine */}
+            <div className="relative inline-flex p-1 rounded-full apple-glass border border-black/[0.08] dark:border-white/[0.1] shadow-xs">
               <button
+                type="button"
                 onClick={() => setViewerMode("native")}
-                className={`px-2 py-1 rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors ${
+                className={`relative px-3 py-1 text-xs font-bold rounded-full transition-colors cursor-pointer flex items-center gap-1.5 ${
                   viewerMode === "native"
-                    ? "bg-brand-green text-brand-black shadow-sm"
-                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                    ? "text-white"
+                    : "text-slate-700 dark:text-slate-300 hover:text-foreground"
                 }`}
                 title="Native Engine"
               >
-                <Monitor className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Native</span>
+                {viewerMode === "native" && (
+                  <motion.div
+                    layoutId="guide-engine-pill"
+                    className="absolute inset-0 apple-btn-primary rounded-full shadow-xs"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  />
+                )}
+                <Monitor className="h-3.5 w-3.5 relative z-10" />
+                <span className="relative z-10 hidden sm:inline">Native</span>
               </button>
               <button
+                type="button"
                 onClick={() => setViewerMode("google")}
-                className={`px-2 py-1 rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors ${
+                className={`relative px-3 py-1 text-xs font-bold rounded-full transition-colors cursor-pointer flex items-center gap-1.5 ${
                   viewerMode === "google"
-                    ? "bg-brand-green text-brand-black shadow-sm"
-                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                    ? "text-white"
+                    : "text-slate-700 dark:text-slate-300 hover:text-foreground"
                 }`}
                 title="Google Docs Engine"
               >
-                <Globe className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Google</span>
+                {viewerMode === "google" && (
+                  <motion.div
+                    layoutId="guide-engine-pill"
+                    className="absolute inset-0 apple-btn-primary rounded-full shadow-xs"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  />
+                )}
+                <Globe className="h-3.5 w-3.5 relative z-10" />
+                <span className="relative z-10 hidden sm:inline">Google</span>
               </button>
             </div>
 
-            {/* Print & External Link */}
+            {/* Print & External Link in Apple Glass */}
             <a
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
               title={t("openNewTab")}
-              className="p-1.5 sm:p-2 rounded-xl border border-border bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-[var(--text-primary)] transition-colors"
+              className="h-8 w-8 rounded-full apple-glass apple-press border border-black/[0.08] dark:border-white/[0.1] flex items-center justify-center text-foreground hover:text-brand-green transition-colors cursor-pointer"
             >
-              <ExternalLink className="h-4 w-4" />
+              <ExternalLink className="h-3.5 w-3.5" />
             </a>
 
             {/* Fullscreen Button */}
             <button
               onClick={toggleFullscreen}
               title={isFullscreen ? t("exitFullscreen") : t("fullscreen")}
-              className="p-1.5 sm:p-2 rounded-xl border border-brand-green/30 bg-brand-green/10 hover:bg-brand-green/20 text-brand-green transition-colors flex items-center justify-center font-semibold text-xs"
+              className="h-8 w-8 rounded-full apple-glass apple-press border border-black/[0.08] dark:border-white/[0.1] flex items-center justify-center text-foreground hover:text-brand-green transition-colors cursor-pointer"
             >
               {isFullscreen ? (
-                <Minimize2 className="h-4 w-4" />
+                <Minimize2 className="h-3.5 w-3.5" />
               ) : (
-                <Maximize2 className="h-4 w-4" />
+                <Maximize2 className="h-3.5 w-3.5" />
               )}
             </button>
           </div>
@@ -233,7 +256,7 @@ export default function GuidePdfViewer() {
 
         {/* PDF Embedded Viewport */}
         <div
-          className={`w-full bg-[#1A1E21] relative overflow-hidden transition-all duration-300 ${
+          className={`w-full bg-[#111B21] relative overflow-hidden transition-all duration-300 ${
             isFullscreen ? "h-[calc(100vh-57px)]" : "h-[600px] sm:h-[780px] lg:h-[880px]"
           }`}
           style={{ WebkitOverflowScrolling: "touch" }}
@@ -253,39 +276,38 @@ export default function GuidePdfViewer() {
           )}
         </div>
 
-        {/* Bottom Bar Info */}
-        <div className="px-4 py-2.5 bg-black/5 dark:bg-black/40 border-t border-border flex flex-wrap items-center justify-between text-xs text-[var(--text-secondary)] gap-2">
-          <p className="text-xs">{t("mobileNotice")}</p>
+        {/* Bottom Bar Info with Liquid Glass */}
+        <div className="px-5 py-3 apple-glass border-t border-black/[0.06] dark:border-white/[0.08] flex flex-wrap items-center justify-between text-xs text-[var(--text-secondary)] gap-2">
+          <p className="text-xs font-medium">{t("mobileNotice")}</p>
           <a
             href={pdfUrl}
             download="salondztech_user_guide.pdf"
-            className="text-brand-green font-semibold hover:underline flex items-center gap-1 ms-auto"
+            className="text-brand-green font-bold hover:underline flex items-center gap-1.5 ms-auto cursor-pointer"
           >
-            <Download className="h-3.5 w-3.5 inline" /> {t("downloadPdf")}
+            <Download className="h-3.5 w-3.5" />
+            <span>{t("downloadPdf")}</span>
           </a>
         </div>
       </div>
 
       {/* Chapters Grid Section */}
-      <div className="mt-12 mb-12">
-        <h2 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] text-center mb-8 font-[var(--font-display)]">
+      <div className="mt-14 mb-14">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] text-center mb-8 font-[var(--font-display)] tracking-tight">
           {t("chaptersTitle")}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {chapters.map((ch, idx) => {
             const Icon = ch.icon;
             return (
               <div
                 key={idx}
-                className="group p-5 sm:p-6 rounded-2xl border border-border bg-[var(--bg-card)] dark:bg-[#111B21] hover:border-brand-green/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden"
+                className="apple-card apple-press apple-specular-edge group p-6 rounded-3xl border border-black/[0.08] dark:border-white/[0.1] hover:border-brand-green/50 transition-all duration-300 shadow-sm hover:shadow-xl relative overflow-hidden"
               >
-                <div
-                  className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${ch.color} mb-3.5 border`}
-                >
+                <div className="inline-flex p-3 rounded-2xl apple-glass text-brand-green border border-brand-green/30 mb-4 shadow-xs">
                   <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[var(--text-primary)] mb-1.5 group-hover:text-brand-green transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-[var(--text-primary)] mb-2 group-hover:text-brand-green transition-colors font-[var(--font-display)]">
                   {ch.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
@@ -298,15 +320,15 @@ export default function GuidePdfViewer() {
       </div>
 
       {/* Back to Home CTA */}
-      <div className="text-center mt-8">
+      <div className="text-center mt-10">
         <Button
           variant="outline"
-          className="border-border hover:bg-black/5 dark:hover:bg-white/5 font-bold px-6 py-5 rounded-2xl text-xs sm:text-sm"
+          className="apple-card apple-press font-bold px-8 h-12 rounded-2xl text-sm border-black/[0.08] dark:border-white/[0.1] hover:border-brand-green/50 text-foreground cursor-pointer inline-flex items-center gap-2"
           asChild
         >
           <Link href="/">
             <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
-            {t("backHome")}
+            <span>{t("backHome")}</span>
           </Link>
         </Button>
       </div>

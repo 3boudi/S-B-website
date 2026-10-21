@@ -14,7 +14,7 @@ export default async function GuidePage({
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-24 pb-16 bg-[var(--bg-primary)] dark:bg-[#0A0F0D]">
+      <main className="relative min-h-screen pt-24 sm:pt-28 pb-16 z-10">
         <GuidePdfViewer />
       </main>
       <Footer />

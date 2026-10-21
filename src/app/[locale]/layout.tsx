@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BuyModalProvider } from "@/components/ui/BuyModal";
+import BarberBackground from "@/components/ui/BarberBackground";
 import { routing } from "@/i18n/routing";
 import Script from "next/script";
 
@@ -65,7 +66,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className="min-h-screen bg-transparent text-foreground antialiased">
         <Script id="theme-loader" strategy="beforeInteractive">
           {`(function(){try{var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`}
         </Script>
@@ -81,6 +82,7 @@ export default async function LocaleLayout({
         />
 
         <ThemeProvider>
+          <BarberBackground />
           <NextIntlClientProvider messages={messages}>
             <BuyModalProvider>{children}</BuyModalProvider>
           </NextIntlClientProvider>
