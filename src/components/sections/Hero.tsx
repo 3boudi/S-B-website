@@ -7,7 +7,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MonitorPlay, ShoppingCart, ShieldCheck, Download, Database } from "lucide-react";
+import { MonitorPlay, ShoppingCart, Download, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBuyModal } from "@/components/ui/BuyModal";
 import { Link } from "@/i18n/routing";
@@ -116,10 +116,6 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-2.5 pt-2 text-xs text-muted-foreground font-medium"
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass border-black/[0.05] dark:border-white/[0.07] text-[11px]">
-                <ShieldCheck className="h-3.5 w-3.5 text-brand-green" />
-                <span>100% Offline SQLite</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass border-black/[0.05] dark:border-white/[0.07] text-[11px]">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 <span>WhatsApp Bot AI</span>
               </span>
@@ -199,7 +195,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* 3. Floating 100% Offline SQLite Architecture Badge */}
+              {/* 3. Floating 100% Offline Engine Architecture Badge */}
               <div className="absolute -left-[5%] -bottom-[6%] sm:-left-[8%] sm:-bottom-[8%] rounded-2xl p-3 apple-glass-prominent shadow-xl z-20 hidden xs:flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center shrink-0">
                   <Database className="w-4 h-4 text-brand-green" />
