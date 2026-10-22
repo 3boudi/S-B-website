@@ -38,25 +38,77 @@
     "title": "Every Tool Your Salon Needs",
     "subtitle": "salondztech replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
     "list": [
-      { "key": "dashboard", "title": "Command Center Dashboard", "description": "Live revenue tracking, top client leaderboard, today's appointments and completed transactions — the moment you open the app." },
-      { "key": "pos", "title": "Lightning-Fast Point of Sale", "description": "Add services and products in seconds, apply smart loyalty discounts, and print professional receipts instantly." },
-      { "key": "appointments", "title": "Smart Appointment Booking", "description": "Visual barber schedule with conflict prevention. The system stops double-bookings automatically and marks no-shows at midnight." },
-      { "key": "payroll", "title": "Automated Employee Payroll", "description": "One-click attendance marking. The system calculates daily salary, tracks advances, and manages withdrawals with zero math errors." },
-      { "key": "inventory", "title": "Intelligent Inventory Control", "description": "Track every product — shampoos, blades, gels, towels. Visual low-stock alerts tell you exactly what to reorder." },
-      { "key": "loyalty", "title": "Built-in Loyalty Program", "description": "Automatic points for every service. Complete client history — services, frequency, and lifetime spend — always at your fingertips." },
-      { "key": "analytics", "title": "Advanced Business Analytics", "description": "Best-seller services, automated net profit calculation after expenses and salaries, and one-click PDF financial reports." },
-      { "key": "whatsapp", "title": "Automated WhatsApp Integration", "description": "Send instant booking confirmations, 1-hour appointment reminders, late warnings, and digital checkout receipts automatically to client phones." },
-      { "key": "chatbot", "title": "Smart WhatsApp Booking Chatbot", "description": "An intelligent auto-responder robot that chats with your clients on WhatsApp, proposes open time slots, and automatically saves bookings (Available in VIP & Subscription)." },
-      { "key": "multilang", "title": "Arabic, French & English", "description": "Switch the entire interface between three languages instantly. Full RTL layout when Arabic is selected. Dark and light mode included." }
+      {
+        "key": "dashboard",
+        "title": "Command Center Dashboard",
+        "description": "Live revenue tracking, top client leaderboard, today's appointments and completed transactions — the moment you open the app."
+      },
+      {
+        "key": "pos",
+        "title": "Lightning-Fast Point of Sale",
+        "description": "Add services and products in seconds, apply smart loyalty discounts, and print professional receipts instantly."
+      },
+      {
+        "key": "appointments",
+        "title": "Smart Appointment Booking",
+        "description": "Visual barber schedule with conflict prevention. The system stops double-bookings automatically and marks no-shows at midnight."
+      },
+      {
+        "key": "payroll",
+        "title": "Automated Employee Payroll",
+        "description": "One-click attendance marking. The system calculates daily salary, tracks advances, and manages withdrawals with zero math errors."
+      },
+      {
+        "key": "inventory",
+        "title": "Intelligent Inventory Control",
+        "description": "Track every product — shampoos, blades, gels, towels. Visual low-stock alerts tell you exactly what to reorder."
+      },
+      {
+        "key": "loyalty",
+        "title": "Built-in Loyalty Program",
+        "description": "Automatic points for every service. Complete client history — services, frequency, and lifetime spend — always at your fingertips."
+      },
+      {
+        "key": "analytics",
+        "title": "Advanced Business Analytics",
+        "description": "Best-seller services, automated net profit calculation after expenses and salaries, and one-click PDF financial reports."
+      },
+      {
+        "key": "whatsapp",
+        "title": "Automated WhatsApp Integration",
+        "description": "Send instant booking confirmations, 1-hour appointment reminders, late warnings, and digital checkout receipts automatically to client phones."
+      },
+      {
+        "key": "chatbot",
+        "title": "Smart WhatsApp Booking Chatbot",
+        "description": "An intelligent auto-responder robot that chats with your clients on WhatsApp, proposes open time slots, and automatically saves bookings (Available in VIP & Subscription)."
+      },
+      {
+        "key": "multilang",
+        "title": "Arabic, French & English",
+        "description": "Switch the entire interface between three languages instantly. Full RTL layout when Arabic is selected. Dark and light mode included."
+      }
     ]
   },
   "howItWorks": {
     "title": "Up and Running in Minutes",
     "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon.",
     "steps": [
-      { "number": "01", "title": "Install on Your Windows PC", "description": "Download and install salondztech on your reception computer. Local database, no internet needed for daily use." },
-      { "number": "02", "title": "Set Up Your Services & Staff", "description": "Enter your barbers, services, and prices once. The system handles everything from there." },
-      { "number": "03", "title": "Start Running Your Business", "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard." }
+      {
+        "number": "01",
+        "title": "Install on Your Windows PC",
+        "description": "Download and install salondztech on your reception computer. Local database, no internet needed for daily use."
+      },
+      {
+        "number": "02",
+        "title": "Set Up Your Services & Staff",
+        "description": "Enter your barbers, services, and prices once. The system handles everything from there."
+      },
+      {
+        "number": "03",
+        "title": "Start Running Your Business",
+        "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard."
+      }
     ]
   },
   "pricing": {
@@ -76,7 +128,7 @@
         "priceUsd": "$149",
         "originalPriceDzd": "46,000 DA",
         "originalPriceUsd": "$210",
-        "discountBadgeDzd": "14,000 DA OFF",
+        "discountBadgeDzd": "10,000 DA OFF",
         "discountBadgeUsd": "$61 OFF",
         "promoNoticeDzd": "Promo price for first 20 salons only",
         "promoNoticeUsd": "First 20 salons only",
@@ -160,13 +212,34 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know before buying.",
     "items": [
-      { "q": "Does salondztech require an internet connection?", "a": "The application runs locally and stores all your data offline on your PC (meaning no cloud fees and no loading screens). However, you will need an active internet connection for the initial license activation and for sending automated WhatsApp messages to clients." },
-      { "q": "What operating systems are supported?", "a": "salondztech runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer." },
-      { "q": "Can I try the software before buying?", "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster." },
-      { "q": "How do I purchase a license?", "a": "Click 'Buy Now' and choose to contact us on WhatsApp, Facebook Messenger, or Instagram. Once paid, we send you the activation code." },
-      { "q": "Is there Arabic and RTL support?", "a": "Yes. You can switch the entire interface to Arabic at any time. The layout automatically flips to right-to-left." },
-      { "q": "Can I use it for multiple shops?", "a": "Each license covers one installation. Contact us for multi-shop pricing." },
-      { "q": "What happens after I buy?", "a": "We deliver your activation code and help you set up the application. Setup takes less than 15 minutes." }
+      {
+        "q": "Does salondztech require an internet connection?",
+        "a": "The application runs locally and stores all your data offline on your PC (meaning no cloud fees and no loading screens). However, you will need an active internet connection for the initial license activation and for sending automated WhatsApp messages to clients."
+      },
+      {
+        "q": "What operating systems are supported?",
+        "a": "salondztech runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer."
+      },
+      {
+        "q": "Can I try the software before buying?",
+        "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster."
+      },
+      {
+        "q": "How do I purchase a license?",
+        "a": "Click 'Buy Now' and choose to contact us on WhatsApp, Facebook Messenger, or Instagram. Once paid, we send you the activation code."
+      },
+      {
+        "q": "Is there Arabic and RTL support?",
+        "a": "Yes. You can switch the entire interface to Arabic at any time. The layout automatically flips to right-to-left."
+      },
+      {
+        "q": "Can I use it for multiple shops?",
+        "a": "Each license covers one installation. Contact us for multi-shop pricing."
+      },
+      {
+        "q": "What happens after I buy?",
+        "a": "We deliver your activation code and help you set up the application. Setup takes less than 15 minutes."
+      }
     ]
   },
   "cta": {
