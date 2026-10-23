@@ -351,9 +351,72 @@
     "backHome": "Retour à l'accueil"
   },
   "tutorialsPage": {
-    "title": "Série d'apprentissage",
-    "comingSoon": "Série de vidéos tutoriels - Bientôt disponible...",
-    "desc": "Nous publierons bientôt une série de vidéos éducatives expliquant comment utiliser l'écran d'encaissement, gérer les employés, suivre les avances et consulter les rapports financiers.",
-    "backHome": "Retour à l'accueil"
+    "badge": "Académie Vidéo Officielle",
+    "title": "Série d'apprentissage Salon DZ Tech",
+    "desc": "Apprenez à maîtriser le logiciel étape par étape, de la configuration initiale à l'encaissement automatisé. Regardez les leçons directement ici ou sur YouTube en un clic.",
+    "playlistCount": "5 vidéos de formation",
+    "playlistChannel": "Salon DZ tech",
+    "watchOnYouTube": "Regarder sur YouTube",
+    "openPlaylist": "Ouvrir la playlist sur YouTube",
+    "subscribeChannel": "S'abonner à la chaîne",
+    "nowPlaying": "En cours de lecture",
+    "playVideo": "Lire cette vidéo",
+    "nextVideo": "Vidéo suivante",
+    "prevVideo": "Vidéo précédente",
+    "videoIndex": "Vidéo {current} sur {total}",
+    "duration": "Durée",
+    "fullHdBadge": "Qualité Full HD 1080p",
+    "shortsBadge": "Format Court Shorts",
+    "guidePrompt": "Vous préférez lire le guide avec captures d'écran ?",
+    "viewGuide": "Guide d'utilisation PDF",
+    "downloadApp": "Télécharger l'application",
+    "backHome": "Retour à l'accueil",
+    "videos": [
+      {
+        "id": "7BZ7nqZUWSs",
+        "isShort": true,
+        "badge": "Teaser Promo",
+        "duration": "0:37",
+        "title": "Lancement de la formation vidéo (Salon DZ Tech)",
+        "desc": "Vidéo promotionnelle présentant les atouts majeurs de Salon DZ Tech pour salons de coiffure et l'automatisation intelligente des alertes WhatsApp.",
+        "youtubeUrl": "https://youtube.com/shorts/7BZ7nqZUWSs?feature=share"
+      },
+      {
+        "id": "2aAGp-V9TII",
+        "isShort": false,
+        "badge": "Épisode 01",
+        "duration": "2:52",
+        "title": "Épisode 01 : Site web officiel & Téléchargement",
+        "desc": "Guide complet pour naviguer sur le site officiel, choisir votre licence et installer l'application sur Windows en quelques minutes.",
+        "youtubeUrl": "https://youtu.be/2aAGp-V9TII"
+      },
+      {
+        "id": "tV0Lj7xr3no",
+        "isShort": false,
+        "badge": "Épisode 02",
+        "duration": "4:58",
+        "title": "Épisode 02 : Paramètres, Tableau de bord & Rapports",
+        "desc": "Configuration initiale du salon, lecture des indicateurs clés de performance et génération des bilans financiers détaillés.",
+        "youtubeUrl": "https://youtu.be/tV0Lj7xr3no"
+      },
+      {
+        "id": "0de9Q_4BJx4",
+        "isShort": false,
+        "badge": "Épisode 03",
+        "duration": "3:13",
+        "title": "Épisode 03 : Gestion du Stock & Produits 📦",
+        "desc": "Suivi des consommables et produits de revente, enregistrement des entrées et alertes visuelles de rupture de stock.",
+        "youtubeUrl": "https://youtu.be/0de9Q_4BJx4"
+      },
+      {
+        "id": "Jrv37kZNew8",
+        "isShort": false,
+        "badge": "Épisode 04",
+        "duration": "1:55",
+        "title": "Épisode 04 : Configuration des Prestations & Soins 💇🏻‍♀️",
+        "desc": "Ajout des catégories de soins, tarification des prestations et calcul instantané et transparent des commissions des coiffeurs.",
+        "youtubeUrl": "https://youtu.be/Jrv37kZNew8"
+      }
+    ]
   }
 }

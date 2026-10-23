@@ -351,9 +351,72 @@
     "backHome": "Back to Home"
   },
   "tutorialsPage": {
-    "title": "Program Learning Series",
-    "comingSoon": "Tutorial Video Series - Coming Soon...",
-    "desc": "We will soon release a detailed series of video lessons explaining how to use the cash checkout screen, manage employees, track advances, and check analytics.",
-    "backHome": "Back to Home"
+    "badge": "Official Video Academy",
+    "title": "Salon DZ Tech Learning Series",
+    "desc": "Master the software step by step from setup to full checkout automation. Watch the video tutorials directly here or open them on YouTube with one click.",
+    "playlistCount": "5 Training Videos",
+    "playlistChannel": "Salon DZ tech",
+    "watchOnYouTube": "Watch on YouTube",
+    "openPlaylist": "Open Full Playlist on YouTube",
+    "subscribeChannel": "Subscribe to Channel",
+    "nowPlaying": "Now Playing",
+    "playVideo": "Play this Video",
+    "nextVideo": "Next Video",
+    "prevVideo": "Previous Video",
+    "videoIndex": "Video {current} of {total}",
+    "duration": "Duration",
+    "fullHdBadge": "Full HD 1080p",
+    "shortsBadge": "YouTube Shorts",
+    "guidePrompt": "Prefer reading the manual with screenshots?",
+    "viewGuide": "User Guide PDF",
+    "downloadApp": "Download App",
+    "backHome": "Back to Home",
+    "videos": [
+      {
+        "id": "7BZ7nqZUWSs",
+        "isShort": true,
+        "badge": "Promo Intro",
+        "duration": "0:37",
+        "title": "Official Intro & Promo (Salon DZ Tech)",
+        "desc": "Showcase highlighting key features of the Salon DZ Tech system, smart WhatsApp notifications, and VIP edition perks.",
+        "youtubeUrl": "https://youtube.com/shorts/7BZ7nqZUWSs?feature=share"
+      },
+      {
+        "id": "2aAGp-V9TII",
+        "isShort": false,
+        "badge": "Lesson 01",
+        "duration": "2:52",
+        "title": "Episode 01: Official Website & App Download",
+        "desc": "Step-by-step walkthrough on browsing the official website, selecting your plan, and installing the software on Windows.",
+        "youtubeUrl": "https://youtu.be/2aAGp-V9TII"
+      },
+      {
+        "id": "tV0Lj7xr3no",
+        "isShort": false,
+        "badge": "Lesson 02",
+        "duration": "4:58",
+        "title": "Episode 02: Settings, Dashboard & Financial Reports",
+        "desc": "Configuring initial salon preferences, understanding dashboard metrics, and exporting detailed financial profit & loss statements.",
+        "youtubeUrl": "https://youtu.be/tV0Lj7xr3no"
+      },
+      {
+        "id": "0de9Q_4BJx4",
+        "isShort": false,
+        "badge": "Lesson 03",
+        "duration": "3:13",
+        "title": "Episode 03: Inventory & Supplies Management 📦",
+        "desc": "Managing salon consumables and retail products, tracking stock levels, and automated low-inventory alerts.",
+        "youtubeUrl": "https://youtu.be/0de9Q_4BJx4"
+      },
+      {
+        "id": "Jrv37kZNew8",
+        "isShort": false,
+        "badge": "Lesson 04",
+        "duration": "1:55",
+        "title": "Episode 04: Services & Haircut Catalog Setup 💇🏻‍♀️",
+        "desc": "Adding service categories, setting haircut prices, and automated staff commission tracking with zero friction.",
+        "youtubeUrl": "https://youtu.be/Jrv37kZNew8"
+      }
+    ]
   }
 }
