@@ -354,7 +354,7 @@
     "badge": "Official Video Academy",
     "title": "Salon DZ Tech Learning Series",
     "desc": "Master the software step by step from setup to full checkout automation. Watch the video tutorials directly here or open them on YouTube with one click.",
-    "playlistCount": "5 Training Videos",
+    "playlistCount": "7 Training Videos",
     "playlistChannel": "Salon DZ tech",
     "watchOnYouTube": "Watch on YouTube",
     "openPlaylist": "Open Full Playlist on YouTube",
@@ -416,6 +416,24 @@
         "title": "Episode 04: Services & Haircut Catalog Setup 💇🏻‍♀️",
         "desc": "Adding service categories, setting haircut prices, and automated staff commission tracking with zero friction.",
         "youtubeUrl": "https://youtu.be/Jrv37kZNew8"
+      },
+      {
+        "id": "KAPy9bm93AI",
+        "isShort": false,
+        "badge": "Lesson 05",
+        "duration": "4:44",
+        "title": "Episode 05: Staff & Barbers Management 👨‍💼👩‍💼",
+        "desc": "Adding staff and barbers, attendance tracking, automated commission calculations, and managing advances and withdrawals.",
+        "youtubeUrl": "https://youtu.be/KAPy9bm93AI"
+      },
+      {
+        "id": "L3l-Fkgsf9k",
+        "isShort": false,
+        "badge": "Lesson 06",
+        "duration": "2:05",
+        "title": "Episode 06: Customers & Client Directory 👥️",
+        "desc": "Registering customer profiles, tracking visit histories, loyalty points rewards, and automated WhatsApp messaging.",
+        "youtubeUrl": "https://youtu.be/L3l-Fkgsf9k"
       }
     ]
   }

@@ -354,7 +354,7 @@
     "badge": "Académie Vidéo Officielle",
     "title": "Série d'apprentissage Salon DZ Tech",
     "desc": "Apprenez à maîtriser le logiciel étape par étape, de la configuration initiale à l'encaissement automatisé. Regardez les leçons directement ici ou sur YouTube en un clic.",
-    "playlistCount": "5 vidéos de formation",
+    "playlistCount": "7 vidéos de formation",
     "playlistChannel": "Salon DZ tech",
     "watchOnYouTube": "Regarder sur YouTube",
     "openPlaylist": "Ouvrir la playlist sur YouTube",
@@ -416,6 +416,24 @@
         "title": "Épisode 04 : Configuration des Prestations & Soins 💇🏻‍♀️",
         "desc": "Ajout des catégories de soins, tarification des prestations et calcul instantané et transparent des commissions des coiffeurs.",
         "youtubeUrl": "https://youtu.be/Jrv37kZNew8"
+      },
+      {
+        "id": "KAPy9bm93AI",
+        "isShort": false,
+        "badge": "Épisode 05",
+        "duration": "4:44",
+        "title": "Épisode 05 : Gestion du Personnel & Coiffeurs 👨‍💼👩‍💼",
+        "desc": "Ajout des coiffeurs et employés, suivi des présences, calcul automatisé des commissions et gestion des avances.",
+        "youtubeUrl": "https://youtu.be/KAPy9bm93AI"
+      },
+      {
+        "id": "L3l-Fkgsf9k",
+        "isShort": false,
+        "badge": "Épisode 06",
+        "duration": "2:05",
+        "title": "Épisode 06 : Répertoire Clients & Fidélité 👥️",
+        "desc": "Enregistrement des fiches clients, historique des visites, points de fidélité et notifications WhatsApp automatiques.",
+        "youtubeUrl": "https://youtu.be/L3l-Fkgsf9k"
       }
     ]
   }
