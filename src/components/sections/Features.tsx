@@ -55,8 +55,8 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Apple Bento Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Apple Bento Cards Grid (2x2 Layout) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl lg:max-w-6xl mx-auto">
           {list.map((item, index) => {
             const Icon = ICON_MAP[item.key];
 
