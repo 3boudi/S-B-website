@@ -42,12 +42,12 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[45rem] sm:h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      className="h-[40rem] sm:h-[54rem] md:h-[70rem] flex items-center justify-center relative p-2 sm:p-4 md:p-6"
       style={{ position: "relative" }}
       ref={containerRef}
     >
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-6 sm:py-10 md:py-16 w-full relative"
         style={{ perspective: "1000px" }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
@@ -88,28 +88,12 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
-        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        boxShadow: "0 20px 50px -15px rgba(0, 0, 0, 0.08)",
         willChange: "transform",
       }}
-      className="max-w-5xl -mt-12 mx-auto h-[20rem] sm:h-[30rem] md:h-[42rem] w-full apple-card rounded-[28px] p-2 md:p-4 shadow-2xl relative overflow-hidden"
+      className="max-w-6xl xl:max-w-7xl -mt-4 sm:-mt-8 mx-auto w-full aspect-video rounded-2xl sm:rounded-3xl relative overflow-hidden p-0 border-0 bg-transparent"
     >
-      {/* Apple Window Chrome Titlebar */}
-      <div className="flex items-center justify-between px-3 py-2 border-b border-black/[0.06] dark:border-white/[0.08] bg-black/[0.02] dark:bg-white/[0.03] rounded-t-[20px] mb-2">
-        <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-full bg-[#FF5F57] opacity-80" />
-          <div className="h-3 w-3 rounded-full bg-[#FFBD2E] opacity-80" />
-          <div className="h-3 w-3 rounded-full bg-[#28C840] opacity-80" />
-        </div>
-        <div className="text-[11px] font-medium text-muted-foreground font-mono">
-          salondztech-workstation • POS & Stock
-        </div>
-        <div className="flex items-center gap-1.5 text-[10px] text-brand-green font-semibold px-2 py-0.5 rounded-full bg-brand-green/10">
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-green animate-pulse" />
-          <span>Active</span>
-        </div>
-      </div>
-
-      <div className="h-[calc(100%-42px)] w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900">
+      <div className="h-full w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-transparent">
         {children}
       </div>
     </motion.div>

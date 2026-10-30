@@ -5,6 +5,26 @@ import { BuyModalProvider } from "@/components/ui/BuyModal";
 import BarberBackground from "@/components/ui/BarberBackground";
 import { routing } from "@/i18n/routing";
 import Script from "next/script";
+import { Inter, DM_Sans, Noto_Kufi_Arabic } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const notoKufiArabic = Noto_Kufi_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-noto-kufi",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -65,7 +85,13 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang={locale}
+      dir={isRTL ? "rtl" : "ltr"}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${dmSans.variable} ${notoKufiArabic.variable}`}
+    >
       <body className="min-h-screen bg-transparent text-foreground antialiased">
         <Script id="theme-loader" strategy="beforeInteractive">
           {`(function(){try{var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`}

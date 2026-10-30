@@ -54,23 +54,35 @@ export default function Navbar() {
       }
     }
 
-    const handleScrollSpy = () => {
-      const scrollPos = window.scrollY + 250;
-      const pricingEl = document.getElementById("pricing");
-      const featuresEl = document.getElementById("features");
+    let ticking = false;
+    let rafId = 0;
 
-      if (pricingEl && scrollPos >= pricingEl.offsetTop - 80) {
-        setActiveNav("pricing");
-      } else if (featuresEl && scrollPos >= featuresEl.offsetTop - 80) {
-        setActiveNav("features");
-      } else if (window.scrollY < 200) {
-        setActiveNav(null);
+    const handleScrollSpy = () => {
+      if (!ticking) {
+        rafId = requestAnimationFrame(() => {
+          const scrollPos = window.scrollY + 250;
+          const pricingEl = document.getElementById("pricing");
+          const featuresEl = document.getElementById("features");
+
+          if (pricingEl && scrollPos >= pricingEl.offsetTop - 80) {
+            setActiveNav("pricing");
+          } else if (featuresEl && scrollPos >= featuresEl.offsetTop - 80) {
+            setActiveNav("features");
+          } else if (window.scrollY < 200) {
+            setActiveNav(null);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
     window.addEventListener("scroll", handleScrollSpy, { passive: true });
     handleScrollSpy();
-    return () => window.removeEventListener("scroll", handleScrollSpy);
+    return () => {
+      window.removeEventListener("scroll", handleScrollSpy);
+      cancelAnimationFrame(rafId);
+    };
   }, [pathname]);
 
   // Lock body scroll when mobile menu is open

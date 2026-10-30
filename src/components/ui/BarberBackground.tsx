@@ -8,9 +8,9 @@ import React, { useEffect, useRef } from "react";
  * Adjust these values to tweak appearance, physics, and interaction feel.
  */
 export const BARBER_CONFIG = {
-  // Density & Counts (Enhanced for richer presence across the entire canvas)
-  iconCountDesktop: 88,        // Total scattered icons on desktop screens
-  iconCountMobile: 42,         // Total scattered icons on mobile (<768px)
+  // Density & Counts (Optimized for silky 60fps without GPU thermal throttling)
+  iconCountDesktop: 64,        // High-density visual scatter on desktop screens
+  iconCountMobile: 28,         // Optimized lightweight scatter on mobile (<768px)
 
   // Icon Size Range (px)
   sizeMin: 24,                 // Smallest icon size (back layer)
@@ -764,12 +764,19 @@ export default function BarberBackground() {
       }
     };
 
+    const TARGET_FRAME_MS = 1000 / 60;
     let lastTime = performance.now();
 
-    // Main 60fps Physics & Render Loop
+    // Main 60fps Physics & Render Loop (capped at 60fps for battery & GPU savings)
     const renderLoop = (currentTime: number) => {
-      const dt = Math.min((currentTime - lastTime) / 1000, 0.1);
-      lastTime = currentTime;
+      animationFrameId = requestAnimationFrame(renderLoop);
+
+      const elapsed = currentTime - lastTime;
+      if (elapsed < TARGET_FRAME_MS) {
+        return;
+      }
+      lastTime = currentTime - (elapsed % TARGET_FRAME_MS);
+      const dt = Math.min(elapsed / 1000, 0.1);
 
       // 1. Mouse interpolation and velocity calculation
       if (mouse.active) {
@@ -925,8 +932,6 @@ export default function BarberBackground() {
 
         ctx.restore();
       }
-
-      animationFrameId = requestAnimationFrame(renderLoop);
     };
 
     // Pause animation when the browser tab is hidden to save battery

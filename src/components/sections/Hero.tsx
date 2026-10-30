@@ -163,6 +163,7 @@ export default function Hero() {
                     src="/dashboard.png"
                     alt="salondztech Desktop Dashboard"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
                     className="object-cover object-top"
                     priority
                   />
