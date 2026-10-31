@@ -44,6 +44,27 @@
       padding-bottom: 80px;
     }
 
+    /* Suppress Netlify injected badge and floating widgets */
+    iframe[src*="netlify"],
+    iframe[id*="netlify"],
+    iframe[title*="Netlify" i],
+    div[id*="netlify"],
+    div[class*="netlify"],
+    [data-netlify-badge],
+    .netlify-badge,
+    netlify-drawer,
+    #netlify-badge {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      z-index: -999999 !important;
+      width: 0 !important;
+      height: 0 !important;
+      clip: rect(0, 0, 0, 0) !important;
+    }
+
     [dir="rtl"],
     [dir="rtl"] *,
     body[dir="rtl"],

@@ -96,6 +96,9 @@ export default async function LocaleLayout({
         <Script id="theme-loader" strategy="beforeInteractive">
           {`(function(){try{var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`}
         </Script>
+        <Script id="remove-netlify-badge" strategy="afterInteractive">
+          {`(function(){function r(){var s=['iframe[src*="netlify"]','iframe[id*="netlify"]','iframe[title*="Netlify" i]','div[id*="netlify"]','div[class*="netlify"]','[data-netlify-badge]','.netlify-badge','netlify-drawer','#netlify-badge'];s.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){el.remove()})})}r();if(typeof MutationObserver!=='undefined'){new MutationObserver(r).observe(document.documentElement,{childList:true,subtree:true})}})()`}
+        </Script>
 
         {/* SEO Structured Data */}
         <script
