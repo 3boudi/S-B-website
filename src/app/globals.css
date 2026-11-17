@@ -362,3 +362,24 @@ netlify-drawer,
   clip: rect(0, 0, 0, 0) !important;
 }
 
+@media print {
+  canvas[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111b21 !important;
+  }
+
+  .apple-card,
+  .apple-glass,
+  .hairline-card {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    break-inside: avoid;
+  }
+}
+
