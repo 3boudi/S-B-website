@@ -237,7 +237,7 @@ export default function EcomShymssOfferView() {
               </div>
             </div>
 
-            <div className="relative rounded-2xl p-5 text-center space-y-1.5 bg-gradient-to-br from-brand-green/15 via-emerald-500/10 to-transparent border-2 border-brand-green/60 shadow-lg shadow-brand-green/10">
+            <div className="relative rounded-2xl p-5 text-center space-y-2.5 bg-gradient-to-br from-brand-green/15 via-emerald-500/10 to-transparent border-2 border-brand-green/60 shadow-lg shadow-brand-green/10">
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-brand-green text-white text-[10px] font-extrabold mb-0.5">
                 <Tag className="w-3 h-3" />
                 <span>{content.kpiPromoBadge}</span>
@@ -248,8 +248,9 @@ export default function EcomShymssOfferView() {
               >
                 124,000 DA
               </div>
-              <div className="text-[11px] font-bold text-foreground">
-                {content.kpiPromoSub}
+              <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-red-600/10 dark:bg-red-500/15 border-2 border-red-600/50 dark:border-red-500/60 text-red-600 dark:text-red-400 text-base sm:text-lg font-black leading-snug shadow-xs">
+                <AlertCircle className="w-5 h-5 shrink-0" />
+                <span>{content.kpiPromoSub}</span>
               </div>
             </div>
           </div>
@@ -561,9 +562,9 @@ export default function EcomShymssOfferView() {
                   </span>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-gradient-to-br from-brand-green/15 to-emerald-500/5 border border-brand-green/40 space-y-1">
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-brand-green/15 to-emerald-500/5 border border-brand-green/40 space-y-2.5">
                   <div className="flex items-center justify-between gap-3 flex-wrap">
-                    <span className="text-xs sm:text-sm font-extrabold text-brand-green">
+                    <span className="text-sm sm:text-base font-extrabold text-brand-green">
                       {content.promoPriceLabel}
                     </span>
                     <span className="text-2xl sm:text-3xl font-black font-mono text-brand-green">
@@ -573,6 +574,10 @@ export default function EcomShymssOfferView() {
                   <p className="text-xs font-bold text-[var(--text-secondary)]">
                     {content.promoPriceWords}
                   </p>
+                  <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-red-600/10 dark:bg-red-500/15 border border-red-600/45 dark:border-red-500/55 text-red-600 dark:text-red-400 text-sm sm:text-base font-black">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{content.kpiPromoSub}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -713,12 +718,17 @@ export default function EcomShymssOfferView() {
                   </span>
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-extrabold font-[var(--font-display)] text-[var(--text-primary)] mb-5">
+                <h3 className="text-lg sm:text-xl font-extrabold font-[var(--font-display)] text-[var(--text-primary)] mb-3">
                   {content.option2Title} —{" "}
                   <span dir="ltr" className="font-mono text-brand-green">
                     124,000 DA
                   </span>
                 </h3>
+
+                <div className="mb-5 inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-red-600/10 dark:bg-red-500/15 border-2 border-red-600/45 dark:border-red-500/55 text-red-600 dark:text-red-400 text-sm sm:text-base font-black">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>{content.kpiPromoSub}</span>
+                </div>
 
                 <div className="overflow-x-auto rounded-2xl border border-brand-green/25 mb-6">
                   <table className="w-full text-start border-collapse">
@@ -911,13 +921,13 @@ export default function EcomShymssOfferView() {
         {/* ================================================================ */}
         {/* PROMOTIONAL DISCOUNT TERMS                                       */}
         {/* ================================================================ */}
-        <section className="apple-card apple-specular-edge rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
-          <div className="flex items-center gap-3 pb-4 border-b border-black/[0.06] dark:border-white/[0.08]">
-            <div className="w-11 h-11 rounded-2xl bg-brand-green/10 border border-brand-green/25 text-brand-green flex items-center justify-center shrink-0">
+        <section className="apple-card apple-specular-edge rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-red-600/35 dark:border-red-500/40 space-y-5">
+          <div className="flex items-center gap-3 pb-4 border-b border-red-600/20 dark:border-red-500/25">
+            <div className="w-11 h-11 rounded-2xl bg-red-600/10 dark:bg-red-500/15 border border-red-600/30 text-red-600 dark:text-red-400 flex items-center justify-center shrink-0">
               <Megaphone className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl font-extrabold font-[var(--font-display)] text-[var(--text-primary)]">
+              <h2 className="text-xl sm:text-2xl font-extrabold font-[var(--font-display)] text-red-600 dark:text-red-400">
                 {content.promoTermsTitle}
               </h2>
             </div>
@@ -927,12 +937,12 @@ export default function EcomShymssOfferView() {
             {content.promoTerms.map((rule, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-3 p-3.5 rounded-2xl apple-glass border border-black/[0.05] dark:border-white/[0.07]"
+                className="flex items-start gap-3 p-3.5 rounded-2xl apple-glass border border-red-600/15 dark:border-red-500/20"
               >
-                <span className="w-6 h-6 rounded-full bg-brand-green/15 text-brand-green font-mono font-black text-xs flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-6 h-6 rounded-full bg-red-600/15 text-red-600 dark:text-red-400 font-mono font-black text-xs flex items-center justify-center shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <span className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-medium">
+                <span className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-semibold">
                   {rule}
                 </span>
               </li>
