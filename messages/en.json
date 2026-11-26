@@ -54,6 +54,11 @@
         "description": "Visual barber schedule with conflict prevention. The system stops double-bookings automatically and marks no-shows at midnight."
       },
       {
+        "key": "queue",
+        "title": "Live Waiting Queue Management",
+        "description": "Organize walk-in guests alongside booked appointments with automatic ticket numbers, fair barber & chair dispatching, live estimated wait times, fullscreen Lounge TV display mode, and one-click POS checkout handoff."
+      },
+      {
         "key": "payroll",
         "title": "Automated Employee Payroll",
         "description": "One-click attendance marking. The system calculates daily salary, tracks advances, and manages withdrawals with zero math errors."
@@ -112,133 +117,575 @@
     ]
   },
   "pricing": {
-    "title": "Simple Pricing Plans",
-    "subtitle": "Choose the perfect license for your business. Pay and get your activation code instantly.",
-    "contactToBuy": "Contact Us for Purchase and Instant Activation",
-    "whatsIncluded": "What's included",
-    "bestChoice": "Best Choice",
-    "paymentsTitle": "Accepted Payment Methods for Instant Activation",
-    "activationNotice": "Pay, we send you the activation code instantly",
-    "toggleDzd": "Algerian Dinar (DZD)",
-    "toggleUsd": "US Dollar (USD)",
-    "plans": [
-      {
-        "name": "Essential License",
-        "priceDzd": "32,000 DA",
-        "priceUsd": "$149",
-        "originalPriceDzd": "46,000 DA",
-        "originalPriceUsd": "$210",
-        "discountBadgeDzd": "10,000 DA OFF",
-        "discountBadgeUsd": "$61 OFF",
-        "promoNoticeDzd": "Promo price for first 20 salons only",
-        "promoNoticeUsd": "First 20 salons only",
-        "periodDzd": "one-time payment",
-        "periodUsd": "one-time payment",
-        "description": "A strong start to organize your daily work easily... and full control over your business from the very first use.",
-        "features": [
-          "Full statistics & net profit dashboard",
-          "Integrated POS & client checkout payments",
-          "Appointment booking with system notifications",
-          "Product inventory with timer reminders",
-          "Worker management & salaries calculation",
-          "Up to 5 workers/barbers maximum",
-          "FREE custom branding (colors & logo)",
-          "Lifetime offline database",
-          "Free installation and setup support"
-        ],
-        "cta": "Buy Essential",
-        "highlighted": false
+    "eyebrow": "LICENSING & BESPOKE ENGINEERING",
+    "title": "Transparent Pricing Built to Scale",
+    "subtitle": "Start locally with instant activation on Desktop, upgrade to full WhatsApp automation with VIP, or commission a bespoke website or app engineered from scratch for your beauty brand.",
+    "billingSelectorLabel": "Select billing cycle",
+    "currencySelectorLabel": "Select currency",
+    "toggleDzdShort": "DZD",
+    "toggleUsdShort": "USD",
+    "paymentsTitle": "Accepted Payment Methods",
+    "activationNotice": "Pay & receive your activation code instantly",
+    "cycles": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "lifetime": "Lifetime",
+      "yearlyShortBadge": "Save up to 42%"
+    },
+    "tiers": {
+      "standard": {
+        "id": "standard",
+        "eyebrow": "TIER 01 · ESSENTIAL",
+        "name": "Standard",
+        "subtitle": "Everything a modern barbershop or beauty salon needs to run offline POS, bookings, queue, and payroll cleanly.",
+        "cta": "Get Started",
+        "pricing": {
+          "DZD": {
+            "monthly": {
+              "price": "1,500 DA",
+              "period": "/ month",
+              "subline": "Flexible monthly license · Upgrade anytime"
+            },
+            "yearly": {
+              "price": "10,990 DA",
+              "period": "/ year",
+              "originalPrice": "18,000 DA",
+              "savingsBadge": "Save ~39%",
+              "subline": "Equivalent to ~916 DA / month · Save 7,010 DA/yr"
+            },
+            "lifetime": {
+              "price": "31,000 DA",
+              "period": "one-time",
+              "savingsBadge": "Pay once · Own forever",
+              "subline": "Zero renewals · Offline lifetime desktop license"
+            }
+          },
+          "USD": {
+            "monthly": {
+              "price": "$8",
+              "period": "/ month",
+              "subline": "Flexible monthly license · Upgrade anytime"
+            },
+            "yearly": {
+              "price": "$59",
+              "period": "/ year",
+              "originalPrice": "$96",
+              "savingsBadge": "Save ~39%",
+              "subline": "Equivalent to ~$4.90 / month · Save $37/yr"
+            },
+            "lifetime": {
+              "price": "$149",
+              "period": "one-time",
+              "savingsBadge": "Pay once · Own forever",
+              "subline": "Zero renewals · Offline lifetime desktop license"
+            }
+          }
+        },
+        "categories": [
+          {
+            "title": "CORE MANAGEMENT",
+            "items": [
+              {
+                "label": "Full statistics & net profit dashboard",
+                "tooltip": "Track daily revenue, expenses, net margins, and top-performing services in real time."
+              },
+              {
+                "label": "Integrated POS & client checkout",
+                "tooltip": "Fast walk-in and booked checkout with receipt printing and split payment support."
+              },
+              {
+                "label": "Appointments & live waiting queue",
+                "tooltip": "Manage booked appointments alongside walk-in queue tickets and Lounge TV display."
+              },
+              {
+                "label": "Up to 5 barbers / staff & payroll",
+                "tooltip": "Manage up to 5 staff members with commission percentages and salary calculations."
+              },
+              {
+                "label": "Product inventory & stock reminders"
+              }
+            ]
+          },
+          {
+            "title": "WHATSAPP & AUTOMATION",
+            "items": [
+              {
+                "label": "System alerts & appointment notifications",
+                "tooltip": "In-app desktop alerts for upcoming bookings and low product inventory."
+              },
+              {
+                "label": "Offline-first encrypted SQLite database",
+                "tooltip": "Runs 100% locally on Windows without internet dependency; online only for activation."
+              }
+            ]
+          },
+          {
+            "title": "SUPPORT & DELIVERY",
+            "items": [
+              {
+                "label": "Instant activation code delivery"
+              },
+              {
+                "label": "Free remote installation & onboarding",
+                "tooltip": "Our team helps install, configure services, and verify your first checkout."
+              }
+            ]
+          }
+        ]
       },
-      {
-        "name": "Premium License (VIP)",
-        "priceDzd": "39,000 DA",
-        "priceUsd": "$249",
-        "originalPriceDzd": "59,000 DA",
-        "originalPriceUsd": "$380",
-        "discountBadgeDzd": "20,000 DA OFF",
-        "discountBadgeUsd": "$131 OFF",
-        "promoNoticeDzd": "Promo price for first 20 salons only",
-        "promoNoticeUsd": "First 20 salons only",
-        "periodDzd": "one-time payment",
-        "periodUsd": "one-time payment",
-        "description": "Elevate your salon to a new level of success and distinction. Increase bookings and turn your clients into loyal, lifetime customers. (7-Day Free Trial available)",
-        "features": [
-          "7-Day Free Trial (Download & try all features free)",
-          "Everything in Standard License",
-          "Unlimited workers & barbers",
-          "Smart WhatsApp Chatbot for auto-replies & booking (Chatbot)",
-          "Automated client WhatsApp notifications & receipts",
-          "Worker WhatsApp messages (appointments & presence)",
-          "Weekly client visit-reminders (WhatsApp Broadcast)",
-          "Consumables auto-stock deduction on checkouts",
-          "Advanced payroll, commissions, advances & withdrawals tracking",
-          "Customer loyalty program, points & purchase history",
-          "Professional PDF financial reports (P&L statements)",
-          "FREE custom branding (colors & logo)",
-          "FREE professional showcase website",
-          "Priority lifetime installation and support"
-        ],
-        "cta": "Join the Top 1% (VIP)",
-        "highlighted": true
+      "vip": {
+        "id": "vip",
+        "eyebrow": "TIER 02 · FLAGSHIP",
+        "name": "VIP",
+        "subtitle": "Full-scale automation for growing salons: unlimited staff, smart WhatsApp AI booking bot, loyalty, and PDF financials.",
+        "recommendedBadge": "Recommended",
+        "cta": "Start VIP Now",
+        "pricing": {
+          "DZD": {
+            "monthly": {
+              "price": "2,000 DA",
+              "period": "/ month",
+              "subline": "7-day free trial included · Full VIP unlocked"
+            },
+            "yearly": {
+              "price": "13,990 DA",
+              "period": "/ year",
+              "originalPrice": "24,000 DA",
+              "savingsBadge": "Save ~42%",
+              "subline": "Equivalent to ~1,166 DA / month · Save 10,010 DA/yr"
+            },
+            "lifetime": {
+              "price": "35,500 DA",
+              "period": "one-time",
+              "savingsBadge": "Best Long-Term Value",
+              "subline": "Includes custom branding & free showcase website"
+            }
+          },
+          "USD": {
+            "monthly": {
+              "price": "$10",
+              "period": "/ month",
+              "subline": "7-day free trial included · Full VIP unlocked"
+            },
+            "yearly": {
+              "price": "$69",
+              "period": "/ year",
+              "originalPrice": "$120",
+              "savingsBadge": "Save ~42%",
+              "subline": "Equivalent to ~$5.75 / month · Save $51/yr"
+            },
+            "lifetime": {
+              "price": "$169",
+              "period": "one-time",
+              "savingsBadge": "Best Long-Term Value",
+              "subline": "Includes custom branding & free showcase website"
+            }
+          }
+        },
+        "categories": [
+          {
+            "title": "CORE MANAGEMENT",
+            "items": [
+              {
+                "label": "Everything in Standard + Unlimited staff",
+                "tooltip": "Add unlimited barbers, stylists, or beauticians with individual role permissions."
+              },
+              {
+                "label": "Smart chair dispatching & Lounge TV mode",
+                "tooltip": "Broadcast live waiting queue over Wi-Fi (QR / salontv.local) or HDMI 2nd screen."
+              },
+              {
+                "label": "Advanced payroll, commissions & advances",
+                "tooltip": "Automatically calculate variable commissions, salary advances, and withdrawals."
+              },
+              {
+                "label": "Loyalty points & PDF P&L financial reports",
+                "tooltip": "Reward repeat clients with points and export clean monthly Profit & Loss PDFs."
+              }
+            ]
+          },
+          {
+            "title": "WHATSAPP & AUTOMATION",
+            "items": [
+              {
+                "label": "Smart WhatsApp auto-reply & booking bot",
+                "tooltip": "24/7 automated WhatsApp assistant that answers questions and books salon slots directly."
+              },
+              {
+                "label": "Auto client receipts & appointment alerts",
+                "tooltip": "Send instant booking confirmations, reminders, and digital checkout receipts on WhatsApp."
+              },
+              {
+                "label": "Weekly client return broadcast campaigns",
+                "tooltip": "Re-engage past clients automatically with scheduled weekly visit reminders."
+              },
+              {
+                "label": "Worker WhatsApp shift & booking alerts"
+              }
+            ]
+          },
+          {
+            "title": "SUPPORT & DELIVERY",
+            "items": [
+              {
+                "label": "7-day free trial before purchasing"
+              },
+              {
+                "label": "Custom salon branding & showcase site (Lifetime)",
+                "tooltip": "VIP Lifetime includes custom app branding and a free public showcase webpage for your salon."
+              },
+              {
+                "label": "Priority direct WhatsApp & setup support"
+              }
+            ]
+          }
+        ]
       },
-      {
-        "name": "Flexible Plan",
-        "priceDzd": "2,500 DA",
-        "priceUsd": "$10",
-        "periodDzd": "/month (billed annually 30,000 DA)",
-        "periodUsd": "/month (billed annually $120)",
-        "description": "Get all the power of the VIP version with a monthly subscription. For less than 100 DA per day, start organizing your salon professionally, keeping bookings and clients under easy control.",
-        "features": [
-          "All Premium VIP advanced features",
-          "No large upfront setup fee",
-          "Unlimited workers & barbers",
-          "Smart WhatsApp Chatbot for auto-replies & booking",
-          "Automated client & worker WhatsApp alerts",
-          "Excludes promotional showcase website",
-          "Excludes custom branded interface theme",
-          "Cancel or transfer subscription anytime",
-          "Continuous customer support and updates"
-        ],
-        "cta": "Subscribe Now",
-        "highlighted": false
+      "custom": {
+        "id": "custom",
+        "eyebrow": "TIER 03 · ENTERPRISE & BRANDS",
+        "badge": "BESPOKE ENGINEERING",
+        "name": "Custom",
+        "scopeStrip": "Website · Desktop · Mobile",
+        "ownershipTag": "100% Yours",
+        "deliveryTag": "01 → 06 Structured Delivery",
+        "priceLabel": "Custom Quote",
+        "priceSubline": "Scoped transparently after discovery & specification",
+        "subtitle": "Any idea you envision — custom website, desktop software, or mobile app — engineered from scratch with 100% full ownership belonging to you.",
+        "ctaPrimary": "Discuss Your Project",
+        "ctaSecondary": "See how we build your project",
+        "modalPlanLabel": "Custom Project — Beauty & Salon Website / App",
+        "whatsappMessage": "Hello! I would like to discuss a Custom Project (tailored website, desktop system, or mobile app) for my beauty / salon business.",
+        "categories": [
+          {
+            "title": "BESPOKE PLATFORMS",
+            "items": [
+              {
+                "label": "Custom salon booking & brand website",
+                "tooltip": "High-speed SEO website tailored to your brand identity with online booking & services."
+              },
+              {
+                "label": "Custom Windows/Cloud desktop management",
+                "tooltip": "Multi-branch dashboards, central cloud sync, custom workflows, and tailored reporting."
+              },
+              {
+                "label": "iOS & Android mobile app for your clients",
+                "tooltip": "Native-feel booking, push notifications, loyalty wallet, and store checkout for your brand."
+              }
+            ]
+          },
+          {
+            "title": "ENGINEERING & OWNERSHIP",
+            "items": [
+              {
+                "label": "Official work contract & fixed milestones",
+                "tooltip": "Clear contractual agreement covering exact deliverables, timeline, and confidentiality."
+              },
+              {
+                "label": "100% ownership & intellectual rights",
+                "tooltip": "Upon final handover, full project rights and deployment assets belong entirely to you."
+              },
+              {
+                "label": "Complete technical & user documentation (DOC)",
+                "tooltip": "Delivered with clear operational manuals and technical documentation for your team."
+              }
+            ]
+          },
+          {
+            "title": "DELIVERY & SUPPORT",
+            "items": [
+              {
+                "label": "Live trial & testing phase before handover"
+              },
+              {
+                "label": "Dedicated engineer onboarding & training"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    },
+    "matrix": {
+      "eyebrow": "FEATURE MATRIX",
+      "title": "Compare Every Capability Side by Side",
+      "subtitle": "Clear architectural breakdown across Standard, VIP, and Custom bespoke builds so you pick the exact tool your salon needs.",
+      "capabilitiesHeader": "Capabilities",
+      "scrollHint": "Swipe horizontally to compare →",
+      "categories": [
+        {
+          "title": "CORE OPERATIONS & POS",
+          "rows": [
+            {
+              "feature": "Statistics & Net Profit Dashboard",
+              "subtitle": "Daily revenue, expenses, and service performance overview",
+              "standard": true,
+              "vip": true,
+              "custom": "Custom KPIs"
+            },
+            {
+              "feature": "Integrated POS & Checkout",
+              "subtitle": "Fast service + product checkout with receipt generation",
+              "standard": true,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Appointments & Calendar Notifications",
+              "subtitle": "Schedule bookings by worker with instant conflict alerts",
+              "standard": true,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Product Inventory & Auto-Deduction",
+              "subtitle": "Track consumables and trigger restock reminders",
+              "standard": "Manual & Alerts",
+              "vip": "Auto-Deduction",
+              "custom": "Multi-Branch Sync"
+            },
+            {
+              "feature": "Offline-First Local Database",
+              "subtitle": "Zero internet lag during daily cash & salon operations",
+              "standard": true,
+              "vip": true,
+              "custom": "Offline / Cloud"
+            }
+          ]
+        },
+        {
+          "title": "WAITING QUEUE & LOUNGE TV",
+          "rows": [
+            {
+              "feature": "Live Waiting Queue & Ticket Numbers",
+              "subtitle": "Organize walk-in clients and active chairs effortlessly",
+              "standard": true,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Lounge TV Display (Wi-Fi / HDMI / QR)",
+              "subtitle": "Real-time waiting screen on any Smart TV or 2nd monitor",
+              "standard": true,
+              "vip": "Smart Dispatch + TV",
+              "custom": "Branded TV App"
+            }
+          ]
+        },
+        {
+          "title": "WHATSAPP BOT & AUTOMATION",
+          "rows": [
+            {
+              "feature": "Smart WhatsApp Auto-Booking Chatbot",
+              "subtitle": "24/7 automated replies, service menu & slot booking",
+              "standard": false,
+              "vip": true,
+              "custom": "Custom AI Flows"
+            },
+            {
+              "feature": "Automated Client WhatsApp Receipts & Reminders",
+              "subtitle": "Instant confirmations and post-visit receipts via WhatsApp",
+              "standard": false,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Weekly Client Broadcast Campaigns",
+              "subtitle": "Automated follow-up messages to boost repeat bookings",
+              "standard": false,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Worker WhatsApp Presence & Booking Alerts",
+              "subtitle": "Notify staff immediately when new clients book their chair",
+              "standard": false,
+              "vip": true,
+              "custom": true
+            }
+          ]
+        },
+        {
+          "title": "TEAM, LOYALTY & FINANCIALS",
+          "rows": [
+            {
+              "feature": "Barbers / Staff Capacity",
+              "subtitle": "Number of active workers managed inside the system",
+              "standard": "Up to 5",
+              "vip": "Unlimited",
+              "custom": "Unlimited / Multi-Branch"
+            },
+            {
+              "feature": "Advanced Payroll, Commissions & Advances",
+              "subtitle": "Commission tiers, withdrawals, and automated payout slips",
+              "standard": "Basic",
+              "vip": true,
+              "custom": "Custom Rules"
+            },
+            {
+              "feature": "Customer Loyalty Program & Points",
+              "subtitle": "Reward repeat visits and track full client history",
+              "standard": false,
+              "vip": true,
+              "custom": "Mobile Wallet"
+            },
+            {
+              "feature": "PDF Financial Reports (P&L)",
+              "subtitle": "Exportable monthly profit, loss, and worker reports",
+              "standard": false,
+              "vip": true,
+              "custom": "Custom Exports"
+            }
+          ]
+        },
+        {
+          "title": "BRANDING, OWNERSHIP & SUPPORT",
+          "rows": [
+            {
+              "feature": "Custom Salon Branding & Showcase Website",
+              "subtitle": "Custom logo/theme & public webpage for your salon",
+              "standard": false,
+              "vip": "Lifetime Plan",
+              "custom": "Full Custom Web/App"
+            },
+            {
+              "feature": "Official Contract, Full Rights & DOC",
+              "subtitle": "100% project ownership with technical & user documentation",
+              "standard": false,
+              "vip": false,
+              "custom": "100% Owned + DOC"
+            },
+            {
+              "feature": "Installation & Technical Support",
+              "subtitle": "Direct onboarding, troubleshooting, and updates",
+              "standard": "Standard",
+              "vip": "Priority VIP",
+              "custom": "Dedicated Engineer"
+            }
+          ]
+        }
+      ]
+    },
+    "customProject": {
+      "eyebrow": "CUSTOM PROJECTS · ANY IDEA · 100% YOUR OWNERSHIP",
+      "title": "Any Idea That Comes to Your Mind — Built From Scratch & 100% Owned by You",
+      "subtitle": "Have a unique vision for your beauty salon, aesthetic clinic, brand store, or any tailored software idea? Whether it's a website, desktop system, or mobile app, we engineer it step by step under an official contract and hand over 100% full ownership, rights, and complete documentation (DOC).",
+      "scopes": {
+        "website": "Custom Beauty Website",
+        "desktop": "Bespoke Desktop System",
+        "mobile": "iOS & Android App"
+      },
+      "steps": [
+        {
+          "number": "01",
+          "title": "Discovery & Turning Your Idea Into a Clear Plan",
+          "description": "We listen to any idea on your mind, analyze your daily challenges and business goals, and map out the exact experience your clients and team need."
+        },
+        {
+          "number": "02",
+          "title": "Solution Design, Features & Pricing",
+          "description": "We structure the ideal technical architecture, compile the exact feature specification, set realistic delivery milestones, and provide a transparent custom quote."
+        },
+        {
+          "number": "03",
+          "title": "Approval & Official Contract Signing",
+          "description": "Once you review and approve the scope and quotation, we sign a clear official work contract protecting timelines, deliverables, confidentiality, and rights."
+        },
+        {
+          "number": "04",
+          "title": "Project Engineering & Development",
+          "description": "We build your bespoke website or application with precision UI/UX, fast architecture, and structured progress updates at every engineering milestone."
+        },
+        {
+          "number": "05",
+          "title": "Testing & Hands-On Client Trial",
+          "description": "You test the live system across real salon scenarios, validate every workflow, and share feedback so we polish every last detail before official launch."
+        },
+        {
+          "number": "06",
+          "title": "Full Handover, Rights & Documentation",
+          "description": "Complete production handover with 100% exclusive ownership and intellectual rights transferred entirely to you, accompanied by full technical & user documentation (DOC)."
+        }
+      ],
+      "guarantees": [
+        "Full Ownership & Rights",
+        "Official Work Contract",
+        "Complete Documentation (DOC)",
+        "Tailored for Beauty & Salons"
+      ],
+      "cta": "Start Your Custom Project",
+      "modalPlanLabel": "Custom Project — Beauty & Salon Website / App",
+      "whatsappMessage": "Hello! I want to start a Custom Project (website, desktop system, or mobile app) tailored to my beauty/salon business. Let's schedule Step 01 (Discovery)."
+    }
   },
   "testimonials": {
     "title": "Trusted by Salon Owners",
     "subtitle": "Real feedback from barbershop and salon owners who trust our system."
   },
   "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Everything you need to know before buying.",
+    "eyebrow": "FREQUENTLY ASKED QUESTIONS",
+    "title": "Everything You Need to Know",
+    "subtitle": "Clear answers about Standard & VIP licensing, 7-day free trial, Lounge TV display, WhatsApp automation, and 100%-owned Custom Projects.",
+    "categories": {
+      "all": "All Questions",
+      "plans": "Plans & Pricing",
+      "features": "Features & TV",
+      "custom": "Custom Projects"
+    },
     "items": [
       {
-        "q": "Does salondztech require an internet connection?",
-        "a": "The application runs locally and stores all your data offline on your PC (meaning no cloud fees and no loading screens). However, you will need an active internet connection for the initial license activation and for sending automated WhatsApp messages to clients."
+        "category": "plans",
+        "q": "What is the exact difference between Standard and VIP?",
+        "a": "Standard (1,500 DA/mo · 10,990 DA/yr · 31,000 DA lifetime) is a lightweight offline desktop app for salons with up to 5 workers, covering POS checkout, appointments, live waiting queue, Lounge TV display, manual inventory, basic payroll, and on-screen stats. VIP (2,000 DA/mo · 13,990 DA/yr · 35,500 DA lifetime) unlocks unlimited workers, 24/7 Smart WhatsApp AI Booking Chatbot, automatic client receipts & weekly return reminders, worker WhatsApp alerts, loyalty points, auto consumables deduction, advanced payroll/withdrawals, and printable PDF P&L financial reports (plus custom branding & free showcase website on VIP Lifetime)."
       },
       {
-        "q": "What operating systems are supported?",
-        "a": "salondztech runs on Windows 10 and Windows 11. It is installed directly on your reception or office computer."
+        "category": "plans",
+        "q": "Do both Standard and VIP include a 7-day free trial?",
+        "a": "Yes! Both Standard (salondztech-standard-setup.exe) and VIP (salondztech-vip-setup.exe) include a full 7-day free trial directly on your Windows PC so you can test every workflow on real salon data before purchasing an activation code. You can also try the instant web demo anytime."
       },
       {
-        "q": "Can I try the software before buying?",
-        "a": "Yes. Click the 'Try Free Demo' button to access a live web preview of the system. The full installed version is even faster."
+        "category": "plans",
+        "q": "How do Monthly, Yearly, and Lifetime activation codes work?",
+        "a": "After payment via BaridiMob, CCP, Visa, or Mastercard, you immediately receive your activation code directly on WhatsApp: 12-character codes for Monthly (30 days) or Weekly (7 days), 10-character codes for Yearly (365 days — saving ~39% on Standard and ~42% on VIP), and 8-character codes for Lifetime (one-time payment, zero renewals). Each edition has its own dedicated activation codes."
       },
       {
-        "q": "How do I purchase a license?",
-        "a": "Click 'Buy Now' and choose to contact us on WhatsApp, Facebook Messenger, or Instagram. Once paid, we send you the activation code."
+        "category": "features",
+        "q": "Does Salon DZ Tech work offline without internet?",
+        "a": "Yes — 100% offline-first! Your POS, appointments, queue, inventory, staff, and local SQLite database run directly on your Windows 10/11 PC with zero cloud fees and zero internet lag. Internet is only needed briefly when activating a license code and (in VIP) for sending automated WhatsApp messages."
       },
       {
-        "q": "Is there Arabic and RTL support?",
-        "a": "Yes. You can switch the entire interface to Arabic at any time. The layout automatically flips to right-to-left."
+        "category": "features",
+        "q": "How does the Lounge TV Waiting Queue Display work?",
+        "a": "Included in both Standard and VIP! With one click inside the Queue page, you can either broadcast live over your shop Wi-Fi to any Smart TV / Android TV (via QR scan, salontv.local, or a 4-digit pairing code at salondz.tech/tv) OR open a dedicated fullscreen HDMI window on a 2nd monitor — updating in real time while the cashier freely uses POS, appointments, and settings."
       },
       {
-        "q": "Can I use it for multiple shops?",
-        "a": "Each license covers one installation. Contact us for multi-shop pricing."
+        "category": "features",
+        "q": "How does the VIP WhatsApp Chatbot & auto-reminders work?",
+        "a": "In VIP, link your salon's WhatsApp once by scanning a QR code inside Settings. The built-in assistant automatically answers client inquiries 24/7 within your working hours, books appointments directly into your calendar, sends 1-hour appointment reminders, delivers digital receipts after checkout, notifies workers of new bookings, and sends weekly return reminders to past clients."
       },
       {
-        "q": "What happens after I buy?",
-        "a": "We deliver your activation code and help you set up the application. Setup takes less than 15 minutes."
+        "category": "custom",
+        "q": "What is the Custom Project service? Can you build any idea I have in mind?",
+        "a": "Yes! Our Custom service turns any digital idea that comes to your mind into a real, production-ready product — whether it's a bespoke beauty/salon website with online booking, an iOS & Android mobile app, a multi-branch cloud or desktop management system, an online store, or a completely unique workflow tailored to your business."
+      },
+      {
+        "category": "custom",
+        "q": "Do I get 100% full ownership and rights to my Custom Project?",
+        "a": "Absolutely — 100% full ownership belongs to you! Every Custom Project follows our transparent 6-step vertical process: (01) Idea & problem discovery, (02) Solution architecture, features & transparent quote, (03) Official signed work contract, (04) Engineering & progress updates, (05) Hands-on testing & client trial, and (06) Full handover with 100% exclusive ownership/rights transferred to you plus complete technical & user documentation (DOC)."
+      },
+      {
+        "category": "features",
+        "q": "Are Arabic RTL, French, English, and thermal receipt printers supported?",
+        "a": "Yes. You can switch the entire interface seamlessly between Arabic (automatic Right-to-Left layout), French, and English at any time, toggle Light & Dark Mode, and print receipts directly on standard 58mm and 80mm thermal printers as well as A4 printers."
+      },
+      {
+        "category": "plans",
+        "q": "Can I upgrade from Standard to VIP later, or use it across multiple branches?",
+        "a": "Yes, you can upgrade to VIP anytime while preserving your salon database via built-in JSON backup/import. Each desktop license is bound securely to one machine; for multi-branch chains needing live cloud sync across branches, our Custom Project team can build a tailored multi-branch architecture."
+      },
+      {
+        "category": "plans",
+        "q": "What happens after I pay for a license?",
+        "a": "We send your activation code immediately on WhatsApp and assist you remotely with installation, service setup, printer calibration, and your first checkout — the entire onboarding takes under 15 minutes."
       }
     ]
   },
@@ -296,10 +743,10 @@
     "vipDesc": "Complete version to download and try free for 7 days with all advanced features enabled (WhatsApp, inventory, staff). Contact us after the trial to purchase an activation code.",
     "vipCta": "Download Free Trial (7 Days)",
     "downloadLinkVip": "/download/salondztech-vip-setup.exe",
-    "standardTitle": "Essential License (Purchase Only)",
-    "standardDesc": "Essential version for growing salons (up to 5 workers). This version requires a purchased license and active activation code to operate.",
-    "standardCta": "Download for Activation",
-    "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
+    "standardTitle": "Standard Edition (7-Day Free Trial)",
+    "standardDesc": "Lightweight offline desktop edition for salons (up to 5 workers) — POS, bookings, live queue & Lounge TV display. Includes a 7-day free trial before activating with a Standard code.",
+    "standardCta": "Download Standard Trial (7 Days)",
+    "downloadLinkStandard": "/download/salondztech-standard-setup.exe",
     "pricingTitle": "Pricing Plans & License Offers",
     "androidSectionTitle": "Android OS (Tablets & Phones)",
     "windowsSectionTitle": "Windows OS (PC / Laptop)",

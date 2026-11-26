@@ -100,10 +100,20 @@ function DownloadContent() {
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold font-[var(--font-display)] text-foreground flex items-center gap-2 mb-3">
-                <Sparkles className="h-5 w-5 text-brand-green shrink-0" />
-                <span>{t("vipTitle")}</span>
-              </h3>
+              <div className="flex items-center gap-3.5 mb-3">
+                <div className="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border border-brand-green/30 shadow-sm bg-white">
+                  <Image
+                    src="/logo.png"
+                    alt="Salon DZ Tech VIP"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-[var(--font-display)] text-foreground leading-tight">
+                  {t("vipTitle")}
+                </h3>
+              </div>
               <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-8">
                 {t("vipDesc")}
               </p>
@@ -122,10 +132,20 @@ function DownloadContent() {
                 </span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold font-[var(--font-display)] text-foreground flex items-center gap-2 mb-3">
-                <ShieldCheck className="h-5 w-5 text-brand-green shrink-0" />
-                <span>{t("standardTitle")}</span>
-              </h3>
+              <div className="flex items-center gap-3.5 mb-3">
+                <div className="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border border-black/[0.08] dark:border-white/[0.15] shadow-sm bg-white">
+                  <Image
+                    src="/logo-standard.png"
+                    alt="Salon DZ Tech Standard"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-[var(--font-display)] text-foreground leading-tight">
+                  {t("standardTitle")}
+                </h3>
+              </div>
               <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-8">
                 {t("standardDesc")}
               </p>
@@ -236,7 +256,7 @@ function DownloadContent() {
       </div>
 
       {/* Pricing component */}
-      <div className="rounded-3xl overflow-hidden bg-transparent">
+      <div className="rounded-3xl overflow-x-clip bg-transparent">
         <Pricing />
       </div>
     </div>

@@ -12,7 +12,7 @@ import { X, Zap } from "lucide-react";
 
 interface BuyModalContextValue {
   open: boolean;
-  openModal: (plan?: string) => void;
+  openModal: (plan?: string, customMessage?: string) => void;
   closeModal: () => void;
 }
 
@@ -29,21 +29,34 @@ export function useBuyModal() {
 export function BuyModalProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [customMessage, setCustomMessage] = useState<string | null>(null);
 
-  const openModal = useCallback((plan?: string) => {
+  const openModal = useCallback((plan?: string, messageOverride?: string) => {
     setSelectedPlan(plan || null);
+    setCustomMessage(messageOverride || null);
     setOpen(true);
   }, []);
 
   const closeModal = useCallback(() => {
     setSelectedPlan(null);
+    setCustomMessage(null);
     setOpen(false);
   }, []);
 
   return (
     <BuyModalContext.Provider value={{ open, openModal, closeModal }}>
       {children}
-      <BuyModalDialog open={open} onOpenChange={setOpen} selectedPlan={selectedPlan} />
+      <BuyModalDialog
+        open={open}
+        onOpenChange={(nextOpen) => {
+          setOpen(nextOpen);
+          if (!nextOpen) {
+            setCustomMessage(null);
+          }
+        }}
+        selectedPlan={selectedPlan}
+        customMessage={customMessage}
+      />
     </BuyModalContext.Provider>
   );
 }
@@ -52,17 +65,21 @@ function BuyModalDialog({
   open,
   onOpenChange,
   selectedPlan,
+  customMessage,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   selectedPlan: string | null;
+  customMessage: string | null;
 }) {
   const t = useTranslations("buyModal");
   const locale = useLocale();
 
-  // Create custom pre-filled message based on selected locale and plan
+  // Create custom pre-filled message based on selected locale and plan (or explicit custom project message)
   let message = "";
-  if (locale === "ar") {
+  if (customMessage) {
+    message = customMessage;
+  } else if (locale === "ar") {
     message = selectedPlan
       ? `مرحباً! أنا مهتم بشراء برنامج صالون الحلاقة: ${selectedPlan}`
       : "مرحباً! أنا مهتم بشراء رخصة برنامج صالون الحلاقة (salondztech)";
@@ -85,7 +102,7 @@ function BuyModalDialog({
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
         <Dialog.Content className="fixed left-[50%] top-[50%] z-50 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-3xl apple-glass-prominent border border-black/[0.08] dark:border-white/[0.12] p-6 sm:p-8 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
-          <Dialog.Close className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full opacity-70 transition-all hover:opacity-100 hover:bg-black/5 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-ring">
+          <Dialog.Close className="absolute end-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full opacity-70 transition-all hover:opacity-100 hover:bg-black/5 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-ring">
             <X className="h-5 w-5" />
             <span className="sr-only">Close</span>
           </Dialog.Close>
@@ -189,7 +206,19 @@ function BuyModalDialog({
             <div className="text-center bg-brand-green/10 border border-brand-green/20 rounded-2xl p-3">
               <p className="text-xs font-bold text-brand-green flex items-center justify-center gap-1.5">
                 <Zap className="h-3.5 w-3.5 fill-current shrink-0" />
-                <span>{locale === "ar" ? "تدفع نرسلك كود التفعيل مباشرة" : locale === "fr" ? "Payez, nous vous envoyons le code d'activation immédiatement" : "Pay, we send you the activation code instantly"}</span>
+                <span>
+                  {customMessage
+                    ? locale === "ar"
+                      ? "تواصل معنا لنناقش رؤية مشروعك ونعدّ لك عرضاً تفصيلياً مجاناً"
+                      : locale === "fr"
+                      ? "Contactez-nous pour discuter de votre projet et recevoir votre devis détaillé"
+                      : "Message us to discuss your vision and receive a tailored project quote"
+                    : locale === "ar"
+                    ? "تدفع نرسلك كود التفعيل مباشرة"
+                    : locale === "fr"
+                    ? "Payez, nous vous envoyons le code d'activation immédiatement"
+                    : "Pay, we send you the activation code instantly"}
+                </span>
               </p>
             </div>
           </div>

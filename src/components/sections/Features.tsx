@@ -13,13 +13,14 @@ import {
   Globe,
   MessageSquare,
   Bot,
-  Sparkles,
+  ListOrdered,
 } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   dashboard: LayoutDashboard,
   pos: CreditCard,
   appointments: CalendarCheck,
+  queue: ListOrdered,
   payroll: Users,
   inventory: Package,
   loyalty: Star,
@@ -59,6 +60,8 @@ export default function Features() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl lg:max-w-6xl mx-auto">
           {list.map((item, index) => {
             const Icon = ICON_MAP[item.key];
+            const isCenteredLastOdd =
+              list.length % 2 === 1 && index === list.length - 1;
 
             return (
               <motion.article
@@ -67,7 +70,9 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative rounded-2xl apple-card p-6 sm:p-7 flex flex-col justify-between overflow-hidden cursor-default transition-all duration-300"
+                className={`group relative rounded-2xl apple-card p-6 sm:p-7 flex flex-col justify-between overflow-hidden cursor-default transition-all duration-300 ${
+                  isCenteredLastOdd ? "sm:col-span-2 sm:max-w-xl sm:mx-auto w-full" : ""
+                }`}
               >
                 <div>
                   {/* Top Bar with Icon Tile */}

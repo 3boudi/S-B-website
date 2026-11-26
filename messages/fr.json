@@ -54,6 +54,11 @@
         "description": "Planning visuel par coiffeur avec prévention des conflits. Le système bloque les doubles réservations et marque les absences automatiquement."
       },
       {
+        "key": "queue",
+        "title": "Gestion de File d'Attente en Direct",
+        "description": "Organisez les clients sans rendez-vous et coordonnez les réservations avec tickets numérotés, attribution équitable des coiffeurs, temps d'attente estimé en temps réel, mode écran TV salon et passage direct en caisse."
+      },
+      {
         "key": "payroll",
         "title": "Paie automatisée",
         "description": "Pointage en un clic. Le système calcule le salaire journalier, suit les avances et gère les retraits sans erreur."
@@ -112,133 +117,575 @@
     ]
   },
   "pricing": {
-    "title": "Tarification simple et flexible",
-    "subtitle": "Choisissez la licence idéale pour votre salon. Payez, nous envoyons le code d'activation.",
-    "contactToBuy": "Contactez-nous pour acheter et activer instantanément",
-    "whatsIncluded": "Ce qui est inclus",
-    "bestChoice": "Meilleur choix",
-    "paymentsTitle": "Moyens de paiement acceptés pour activation immédiate",
-    "activationNotice": "Payez, nous vous envoyons le code d'activation immédiatement",
-    "toggleDzd": "Dinar algérien (DZD)",
-    "toggleUsd": "Dollar américain (USD)",
-    "plans": [
-      {
-        "name": "Licence Essentielle",
-        "priceDzd": "32 000 DA",
-        "priceUsd": "149 $",
-        "originalPriceDzd": "46 000 DA",
-        "originalPriceUsd": "210 $",
-        "discountBadgeDzd": "RÉDUCTION 14 000 DA",
-        "discountBadgeUsd": "RÉDUCTION 61 $",
-        "promoNoticeDzd": "Offre valable pour les 20 premiers salons",
-        "promoNoticeUsd": "20 premiers salons uniquement",
-        "periodDzd": "paiement unique",
-        "periodUsd": "paiement unique",
-        "description": "Un démarrage solide pour organiser votre travail quotidien en toute simplicité... et un contrôle total sur votre activité dès la première utilisation.",
-        "features": [
-          "Tableau de bord avec statistiques & bénéfices nets",
-          "Système de caisse & paiement client intégré (POS)",
-          "Réservation de rendez-vous avec alertes système",
-          "Gestion des stocks & alertes de produits bas",
-          "Gestion des employés & calcul des salaires",
-          "Jusqu'à 5 employés/coiffeurs max",
-          "Design de l'interface personnalisé GRATUIT (couleurs & logo)",
-          "Base de données locale à vie (hors ligne)",
-          "Support d'installation et de configuration gratuit"
-        ],
-        "cta": "Acheter Essentielle",
-        "highlighted": false
+    "eyebrow": "LICENCES & INGÉNIERIE SUR MESURE",
+    "title": "Des Tarifs Clairs Conçus Pour Grandir",
+    "subtitle": "Démarrez en local avec activation immédiate sur PC, passez à l'automatisation WhatsApp complète avec VIP, ou faites concevoir un site web ou une application sur mesure pour votre institut ou salon.",
+    "billingSelectorLabel": "Choisir la durée d'abonnement",
+    "currencySelectorLabel": "Choisir la devise",
+    "toggleDzdShort": "DZD",
+    "toggleUsdShort": "USD",
+    "paymentsTitle": "Moyens de paiement acceptés",
+    "activationNotice": "Payez et recevez votre code d'activation immédiatement",
+    "cycles": {
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "lifetime": "À vie",
+      "yearlyShortBadge": "Jusqu'à -42%"
+    },
+    "tiers": {
+      "standard": {
+        "id": "standard",
+        "eyebrow": "OFFRE 01 · ESSENTIEL",
+        "name": "Standard",
+        "subtitle": "Tout ce qu'un salon moderne requiert pour gérer la caisse hors ligne, les rendez-vous, la file d'attente et le personnel.",
+        "cta": "Commencer",
+        "pricing": {
+          "DZD": {
+            "monthly": {
+              "price": "1 500 DA",
+              "period": "/ mois",
+              "subline": "Abonnement mensuel souple · Évolutif à tout moment"
+            },
+            "yearly": {
+              "price": "10 990 DA",
+              "period": "/ an",
+              "originalPrice": "18 000 DA",
+              "savingsBadge": "Économisez ~39%",
+              "subline": "Soit ~916 DA / mois · 7 010 DA économisés/an"
+            },
+            "lifetime": {
+              "price": "31 000 DA",
+              "period": "paiement unique",
+              "savingsBadge": "Payez 1 fois · À vie",
+              "subline": "Aucun renouvellement · Licence bureau hors ligne à vie"
+            }
+          },
+          "USD": {
+            "monthly": {
+              "price": "$8",
+              "period": "/ mois",
+              "subline": "Abonnement mensuel souple · Évolutif à tout moment"
+            },
+            "yearly": {
+              "price": "$59",
+              "period": "/ an",
+              "originalPrice": "$96",
+              "savingsBadge": "Économisez ~39%",
+              "subline": "Soit ~4,90 $ / mois · 37 $ économisés/an"
+            },
+            "lifetime": {
+              "price": "$149",
+              "period": "paiement unique",
+              "savingsBadge": "Payez 1 fois · À vie",
+              "subline": "Aucun renouvellement · Licence bureau hors ligne à vie"
+            }
+          }
+        },
+        "categories": [
+          {
+            "title": "GESTION PRINCIPALE",
+            "items": [
+              {
+                "label": "Tableau de bord statistiques & bénéfices nets",
+                "tooltip": "Suivez le chiffre d'affaires quotidien, les charges et vos prestations les plus rentables."
+              },
+              {
+                "label": "Caisse intégrée (POS) & encaissement rapide",
+                "tooltip": "Encaissement fluide clients avec ou sans rendez-vous, tickets et suivi journalier."
+              },
+              {
+                "label": "Rendez-vous & file d'attente en direct",
+                "tooltip": "Gérez les réservations, les tickets d'attente et l'affichage sur écran TV en salle."
+              },
+              {
+                "label": "Jusqu'à 5 coiffeurs / employés & salaires",
+                "tooltip": "Gestion complète jusqu'à 5 collaborateurs avec commissions et calcul de paie."
+              },
+              {
+                "label": "Gestion du stock & alertes produits"
+              }
+            ]
+          },
+          {
+            "title": "WHATSAPP & AUTOMATISATION",
+            "items": [
+              {
+                "label": "Alertes système & rappels de rendez-vous",
+                "tooltip": "Notifications locales instantanées dans l'application pour les rendez-vous et le stock."
+              },
+              {
+                "label": "Base SQLite locale hors ligne chiffrée",
+                "tooltip": "Fonctionne 100% hors connexion sous Windows ; internet requis uniquement à l'activation."
+              }
+            ]
+          },
+          {
+            "title": "SUPPORT & LIVRAISON",
+            "items": [
+              {
+                "label": "Livraison immédiate du code d'activation"
+              },
+              {
+                "label": "Installation et configuration assistées offertes",
+                "tooltip": "Notre équipe vous accompagne à distance pour installer et paramétrer votre salon."
+              }
+            ]
+          }
+        ]
       },
-      {
-        "name": "Licence Premium (VIP)",
-        "priceDzd": "39 000 DA",
-        "priceUsd": "249 $",
-        "originalPriceDzd": "59 000 DA",
-        "originalPriceUsd": "380 $",
-        "discountBadgeDzd": "RÉDUCTION 20 000 DA",
-        "discountBadgeUsd": "RÉDUCTION 131 $",
-        "promoNoticeDzd": "Offre valable pour les 20 premiers salons",
-        "promoNoticeUsd": "20 premiers salons uniquement",
-        "periodDzd": "paiement unique",
-        "periodUsd": "paiement unique",
-        "description": "Élevez votre salon à un nouveau niveau de succès et de distinction. Boostez vos réservations et transformez vos clients en clients fidèles à vie. (Essai gratuit de 7 jours disponible)",
-        "features": [
-          "Essai gratuit de 7 jours (Téléchargez & testez toutes les fonctions gratuitement)",
-          "Tout ce qui est inclus dans Licence Standard",
-          "Nombre de coiffeurs et employés illimité",
-          "Chatbot WhatsApp intelligent pour réponses & réservation automatique (Chatbot)",
-          "Notifications et reçus WhatsApp automatiques (clients)",
-          "Notifications WhatsApp pour les coiffeurs (rdv & présence)",
-          "Rappels de visite hebdomadaires (WhatsApp Broadcast)",
-          "Déduction automatique des consommables lors du paiement",
-          "Calcul avancé des commissions, avances, retraits et salaires",
-          "Programme de fidélité, points & historique complet clients",
-          "Rapports financiers PDF détaillés (états Pertes & Profits)",
-          "Design de l'interface personnalisé GRATUIT (couleurs & logo)",
-          "Site web vitrine professionnel GRATUIT pour le salon",
-          "Support prioritaire d'installation et mises à jour à vie"
-        ],
-        "cta": "Rejoindre le top 1% (VIP)",
-        "highlighted": true
+      "vip": {
+        "id": "vip",
+        "eyebrow": "OFFRE 02 · PHARE",
+        "name": "VIP",
+        "subtitle": "Automatisation complète pour salons ambitieux : équipe illimitée, Chatbot WhatsApp intelligent, fidélité et bilans PDF.",
+        "recommendedBadge": "Recommandé",
+        "cta": "Passer au VIP",
+        "pricing": {
+          "DZD": {
+            "monthly": {
+              "price": "2 000 DA",
+              "period": "/ mois",
+              "subline": "Essai gratuit 7 jours inclus · Toutes fonctions VIP"
+            },
+            "yearly": {
+              "price": "13 990 DA",
+              "period": "/ an",
+              "originalPrice": "24 000 DA",
+              "savingsBadge": "Économisez ~42%",
+              "subline": "Soit ~1 166 DA / mois · 10 010 DA économisés/an"
+            },
+            "lifetime": {
+              "price": "35 500 DA",
+              "period": "paiement unique",
+              "savingsBadge": "Meilleur Choix Long Terme",
+              "subline": "Inclut thème personnalisé & site vitrine offert"
+            }
+          },
+          "USD": {
+            "monthly": {
+              "price": "$10",
+              "period": "/ mois",
+              "subline": "Essai gratuit 7 jours inclus · Toutes fonctions VIP"
+            },
+            "yearly": {
+              "price": "$69",
+              "period": "/ an",
+              "originalPrice": "$120",
+              "savingsBadge": "Économisez ~42%",
+              "subline": "Soit ~5,75 $ / mois · 51 $ économisés/an"
+            },
+            "lifetime": {
+              "price": "$169",
+              "period": "paiement unique",
+              "savingsBadge": "Meilleur Choix Long Terme",
+              "subline": "Inclut thème personnalisé & site vitrine offert"
+            }
+          }
+        },
+        "categories": [
+          {
+            "title": "GESTION PRINCIPALE",
+            "items": [
+              {
+                "label": "Tout Standard + Employés illimités",
+                "tooltip": "Ajoutez un nombre illimité de coiffeurs et esthéticiennes avec rôles dédiés."
+              },
+              {
+                "label": "Dispatch intelligent des fauteuils & TV Salle",
+                "tooltip": "Diffusez la file d'attente en direct sur Smart TV via Wi-Fi (QR / salontv.local) ou HDMI."
+              },
+              {
+                "label": "Paie avancée, commissions, avances & retraits",
+                "tooltip": "Suivi précis des pourcentages, avances sur salaire et bilans par employé."
+              },
+              {
+                "label": "Programme fidélité & rapports financiers PDF",
+                "tooltip": "Fidélisez vos clients par points et exportez vos bilans mensuels profits & pertes."
+              }
+            ]
+          },
+          {
+            "title": "WHATSAPP & AUTOMATISATION",
+            "items": [
+              {
+                "label": "Chatbot WhatsApp réponses & réservations auto",
+                "tooltip": "Assistant WhatsApp actif 24h/24 qui répond aux clients et enregistre leurs rendez-vous."
+              },
+              {
+                "label": "Reçus & rappels WhatsApp automatiques",
+                "tooltip": "Confirmations, rappels de créneaux et reçus envoyés automatiquement sur WhatsApp."
+              },
+              {
+                "label": "Campagnes hebdomadaires de relance clients",
+                "tooltip": "Rappelez automatiquement vos anciens clients chaque semaine pour augmenter la récurrence."
+              },
+              {
+                "label": "Alertes WhatsApp équipe (présence & RDV)"
+              }
+            ]
+          },
+          {
+            "title": "SUPPORT & LIVRAISON",
+            "items": [
+              {
+                "label": "Essai gratuit de 7 jours sans engagement"
+              },
+              {
+                "label": "Branding salon & site vitrine offerts (À vie)",
+                "tooltip": "La licence VIP À vie inclut le thème aux couleurs du salon et un site vitrine offert."
+              },
+              {
+                "label": "Support prioritaire WhatsApp & installation"
+              }
+            ]
+          }
+        ]
       },
-      {
-        "name": "Abonnement Flexible",
-        "priceDzd": "2 500 DA",
-        "priceUsd": "10 $",
-        "periodDzd": "/mois (facturé annuellement 30 000 DA)",
-        "periodUsd": "/mois (facturé annuellement 120 $)",
-        "description": "Profitez de toute la puissance de la version VIP avec un abonnement mensuel. Pour moins de 100 DA par jour, commencez à organiser votre salon de manière professionnelle, en gardant vos rendez-vous et vos clients sous contrôle.",
-        "features": [
-          "Toutes les fonctionnalités avancées de la Licence VIP",
-          "Pas de frais de licence initiaux importants",
-          "Nombre de coiffeurs et employés illimité",
-          "Chatbot WhatsApp intelligent pour réponses & réservation automatique",
-          "Alertes WhatsApp automatiques clients et employés",
-          "Sans site web vitrine professionnel",
-          "Sans design d'interface personnalisé à la marque",
-          "Résiliable ou transférable à tout moment",
-          "Support client et mises à jour continus"
-        ],
-        "cta": "S'abonner maintenant",
-        "highlighted": false
+      "custom": {
+        "id": "custom",
+        "eyebrow": "OFFRE 03 · PROJET SUR MESURE",
+        "badge": "INGÉNIERIE SUR MESURE",
+        "name": "Sur Mesure",
+        "scopeStrip": "Site Web · Desktop · Mobile",
+        "ownershipTag": "100% À Vous",
+        "deliveryTag": "Livraison structurée 01 → 06",
+        "priceLabel": "Sur devis",
+        "priceSubline": "Tarification transparente établie après analyse",
+        "subtitle": "Toute idée qui vous vient à l'esprit — site web, logiciel bureau ou application mobile — développée de zéro et 100% votre propriété.",
+        "ctaPrimary": "Discuter du projet",
+        "ctaSecondary": "Voir comment nous créons votre projet",
+        "modalPlanLabel": "Projet Sur Mesure — Site Web / App Beauté & Salon",
+        "whatsappMessage": "Bonjour ! Je souhaite discuter d'un projet sur mesure (site web, logiciel ou application mobile) pour mon salon / activité beauté.",
+        "categories": [
+          {
+            "title": "PLATEFORMES SUR MESURE",
+            "items": [
+              {
+                "label": "Site web vitrine & réservation en ligne",
+                "tooltip": "Site rapide optimisé SEO reflétant l'image de votre maison de beauté avec réservation."
+              },
+              {
+                "label": "Système bureau / cloud multi-succursales",
+                "tooltip": "Tableaux de bord centralisés, synchronisation cloud et flux métiers personnalisés."
+              },
+              {
+                "label": "Application mobile iOS & Android dédiée",
+                "tooltip": "Application de marque avec notifications push, carte de fidélité et suivi client."
+              }
+            ]
+          },
+          {
+            "title": "INGÉNIERIE & PROPRIÉTÉ",
+            "items": [
+              {
+                "label": "Contrat officiel & jalons garantis",
+                "tooltip": "Contrat de prestation clair encadrant délais, périmètre, confidentialité et livrables."
+              },
+              {
+                "label": "100% de droits & propriété intégrale",
+                "tooltip": "À la livraison finale, le projet complet et ses droits vous appartiennent intégralement."
+              },
+              {
+                "label": "Documentation complète technique & guide (DOC)",
+                "tooltip": "Livré avec manuel d'utilisation et documentation technique claire pour votre équipe."
+              }
+            ]
+          },
+          {
+            "title": "LIVRAISON & ACCOMPAGNEMENT",
+            "items": [
+              {
+                "label": "Phase de test réel et validation client"
+              },
+              {
+                "label": "Formation dédiée & accompagnement au lancement"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    },
+    "matrix": {
+      "eyebrow": "MATRICE DE COMPARAISON",
+      "title": "Comparez Chaque Fonctionnalité en Détail",
+      "subtitle": "Vue d'ensemble transparente entre Standard, VIP et Sur Mesure pour choisir l'architecture exacte adaptée à votre salon.",
+      "capabilitiesHeader": "Fonctionnalités",
+      "scrollHint": "Glissez horizontalement pour comparer →",
+      "categories": [
+        {
+          "title": "GESTION QUOTIDIENNE & CAISSE",
+          "rows": [
+            {
+              "feature": "Tableau de bord & bénéfices nets",
+              "subtitle": "Recettes journalières, dépenses et rentabilité par prestation",
+              "standard": true,
+              "vip": true,
+              "custom": "KPIs sur mesure"
+            },
+            {
+              "feature": "Caisse intégrée (POS) & reçus",
+              "subtitle": "Encaissement rapide services + produits et historique",
+              "standard": true,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Agenda rendez-vous & notifications",
+              "subtitle": "Planification par employé avec alertes de créneaux",
+              "standard": true,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Stock produits & déduction automatique",
+              "subtitle": "Suivi des consommables et alertes de réapprovisionnement",
+              "standard": "Manuel + Alertes",
+              "vip": "Déduction auto",
+              "custom": "Sync multi-salons"
+            },
+            {
+              "feature": "Base de données locale hors ligne",
+              "subtitle": "Zéro latence en caisse même sans connexion internet",
+              "standard": true,
+              "vip": true,
+              "custom": "Local / Cloud"
+            }
+          ]
+        },
+        {
+          "title": "FILE D'ATTENTE & ÉCRAN TV",
+          "rows": [
+            {
+              "feature": "File d'attente en direct & tickets",
+              "subtitle": "Gestion fluide des clients sans rendez-vous et fauteuils",
+              "standard": true,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Affichage TV Salle (Wi-Fi / HDMI / QR)",
+              "subtitle": "Écran d'attente temps réel sur Smart TV ou 2ᵉ moniteur",
+              "standard": true,
+              "vip": "Dispatch + TV Live",
+              "custom": "App TV dédiée"
+            }
+          ]
+        },
+        {
+          "title": "BOT WHATSAPP & AUTOMATISATION",
+          "rows": [
+            {
+              "feature": "Chatbot WhatsApp réservation automatique",
+              "subtitle": "Réponses automatiques 24h/24, tarifs et prise de RDV",
+              "standard": false,
+              "vip": true,
+              "custom": "Scénarios IA dédiés"
+            },
+            {
+              "feature": "Reçus & rappels clients sur WhatsApp",
+              "subtitle": "Confirmations instantanées et reçus après encaissement",
+              "standard": false,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Campagnes hebdomadaires de rappel",
+              "subtitle": "Relances automatisées pour fidéliser votre clientèle",
+              "standard": false,
+              "vip": true,
+              "custom": true
+            },
+            {
+              "feature": "Alertes WhatsApp pour l'équipe",
+              "subtitle": "Notifications instantanées de nouveaux RDV aux coiffeurs",
+              "standard": false,
+              "vip": true,
+              "custom": true
+            }
+          ]
+        },
+        {
+          "title": "ÉQUIPE, FIDÉLITÉ & FINANCES",
+          "rows": [
+            {
+              "feature": "Nombre de coiffeurs / employés",
+              "subtitle": "Capacité de comptes collaborateurs gérés",
+              "standard": "Jusqu'à 5",
+              "vip": "Illimité",
+              "custom": "Illimité / Multi-sites"
+            },
+            {
+              "feature": "Paie avancée, commissions & avances",
+              "subtitle": "Calcul auto des parts, avances et retraits",
+              "standard": "Basique",
+              "vip": true,
+              "custom": "Règles sur mesure"
+            },
+            {
+              "feature": "Programme de fidélité & points clients",
+              "subtitle": "Récompenses automatiques et historique complet",
+              "standard": false,
+              "vip": true,
+              "custom": "Carte mobile"
+            },
+            {
+              "feature": "Rapports financiers PDF (P&L)",
+              "subtitle": "Bilans mensuels profits & pertes exportables en PDF",
+              "standard": false,
+              "vip": true,
+              "custom": "Exports sur mesure"
+            }
+          ]
+        },
+        {
+          "title": "IMAGE DE MARQUE, DROITS & SUPPORT",
+          "rows": [
+            {
+              "feature": "Thème personnalisé & site vitrine",
+              "subtitle": "Couleurs du salon et page web publique offerte",
+              "standard": false,
+              "vip": "Licence À vie",
+              "custom": "Site / App complet"
+            },
+            {
+              "feature": "Contrat officiel, droits complets & DOC",
+              "subtitle": "Propriété 100% cédée avec documentation complète",
+              "standard": false,
+              "vip": false,
+              "custom": "100% Propriété + DOC"
+            },
+            {
+              "feature": "Installation & support technique",
+              "subtitle": "Accompagnement direct, mises à jour et assistance",
+              "standard": "Standard",
+              "vip": "Prioritaire VIP",
+              "custom": "Ingénieur dédié"
+            }
+          ]
+        }
+      ]
+    },
+    "customProject": {
+      "eyebrow": "PROJETS SUR MESURE · TOUTE IDÉE · 100% PROPRIÉTÉ",
+      "title": "Toute Idée Qui Vous Vient à l'Esprit — Construite de Zéro et 100% Votre Propriété",
+      "subtitle": "Vous avez une idée précise pour votre salon, clinique esthétique, boutique beauté ou tout autre projet digital ? Site web, logiciel ou application mobile, nous la concevons étape par étape sous contrat officiel et vous remettons 100% de la propriété, des droits et de la documentation complète (DOC).",
+      "scopes": {
+        "website": "Site Web Beauté",
+        "desktop": "Logiciel Sur Mesure",
+        "mobile": "App iOS & Android"
+      },
+      "steps": [
+        {
+          "number": "01",
+          "title": "Écoute de votre idée, vision & analyse des besoins",
+          "description": "Nous écoutons toute idée qui vous vient à l'esprit, analysons vos défis quotidiens et définissons exactement ce dont vos clients et votre activité ont besoin."
+        },
+        {
+          "number": "02",
+          "title": "Architecture, fonctionnalités & tarification",
+          "description": "Nous structurons la solution technique optimale, listons l'ensemble des fonctionnalités du système, le planning de réalisation et un devis transparent."
+        },
+        {
+          "number": "03",
+          "title": "Validation & signature du contrat de travail",
+          "description": "Après approbation du périmètre et du devis, nous signons un contrat officiel clair qui garantit les délais, les livrables et la confidentialité."
+        },
+        {
+          "number": "04",
+          "title": "Développement & construction du projet",
+          "description": "Conception et développement de votre site ou application avec un design soigné, des performances rapides et des points d'avancement réguliers."
+        },
+        {
+          "number": "05",
+          "title": "Tests & période d'essai avec vous",
+          "description": "Phase d'essai réelle pour tester chaque scénario métier avec votre équipe, valider toutes les fonctionnalités et ajuster les derniers détails."
+        },
+        {
+          "number": "06",
+          "title": "Livraison complète, droits & documentation (DOC)",
+          "description": "Remise complète du projet avec transfert intégral de propriété et de tous les droits à votre nom, accompagné de sa documentation technique et utilisateur dédiée (DOC)."
+        }
+      ],
+      "guarantees": [
+        "Propriété & Droits Complets",
+        "Contrat de Travail Officiel",
+        "Documentation Complète (DOC)",
+        "Spécialisé Beauté & Salons"
+      ],
+      "cta": "Lancer Votre Projet Sur Mesure",
+      "modalPlanLabel": "Projet Sur Mesure — Site Web / App Beauté & Salon",
+      "whatsappMessage": "Bonjour ! Je souhaite lancer un projet sur mesure (site web, logiciel ou application mobile) pour mon salon / activité beauté. Planifions l'étape 01."
+    }
   },
   "testimonials": {
     "title": "La confiance des propriétaires de salons",
     "subtitle": "Retours réels des propriétaires de salons de coiffure qui nous font confiance."
   },
   "faq": {
-    "title": "Questions fréquentes",
-    "subtitle": "Tout ce que vous devez savoir avant d'acheter.",
+    "eyebrow": "QUESTIONS FRÉQUENTES",
+    "title": "Tout Ce Que Vous Devez Savoir",
+    "subtitle": "Réponses claires sur les licences Standard & VIP, l'essai gratuit 7 jours, l'écran TV, le Chatbot WhatsApp et les Projets Sur Mesure dont vous gardez 100% de la propriété.",
+    "categories": {
+      "all": "Toutes",
+      "plans": "Offres & Tarifs",
+      "features": "Fonctions & TV",
+      "custom": "Sur Mesure"
+    },
     "items": [
       {
-        "q": "Est-ce que salondztech nécessite une connexion internet ?",
-        "a": "L'application fonctionne et stocke vos données localement sur votre PC (sans frais cloud ni lenteurs). Cependant, une connexion internet est nécessaire uniquement pour l'activation initiale de la licence et pour l'envoi des messages WhatsApp automatisés."
+        "category": "plans",
+        "q": "Quelle est la différence exacte entre Standard et VIP ?",
+        "a": "Standard (1 500 DA/mois · 10 990 DA/an · 31 000 DA à vie) est une version bureau légère hors ligne jusqu'à 5 employés : caisse POS, rendez-vous, file d'attente en direct, écran TV salle, stock manuel, paie basique et statistiques à l'écran. VIP (2 000 DA/mois · 13 990 DA/an · 35 500 DA à vie) ajoute : employés illimités, Chatbot WhatsApp réservation 24h/24, reçus et relances hebdomadaires auto, alertes équipe WhatsApp, programme fidélité, déduction auto des consommables, paie avancée (avances/retraits) et bilans PDF P&L (plus thème personnalisé et site vitrine offerts en VIP À vie)."
       },
       {
-        "q": "Quels systèmes d'exploitation sont supportés ?",
-        "a": "salondztech fonctionne sous Windows 10 et Windows 11. Il s'installe directement sur votre ordinateur d'accueil ou de bureau."
+        "category": "plans",
+        "q": "Les versions Standard et VIP incluent-elles toutes deux un essai gratuit de 7 jours ?",
+        "a": "Oui ! Les deux installateurs — Standard (salondztech-standard-setup.exe) et VIP (salondztech-vip-setup.exe) — incluent un essai gratuit complet de 7 jours directement sur votre PC Windows pour tester votre flux réel avant d'acheter un code d'activation."
       },
       {
-        "q": "Puis-je essayer le logiciel avant de nous rejoindre ?",
-        "a": "Oui. Cliquez sur le bouton 'Essai Gratuit' pour accéder à un aperçu web en direct du système. La version installée est encore plus rapide."
+        "category": "plans",
+        "q": "Comment fonctionnent les codes Mensuel, Annuel et À vie ?",
+        "a": "Après paiement via BaridiMob, CCP, Visa ou Mastercard, vous recevez instantanément votre code sur WhatsApp : 12 caractères pour Mensuel (30 jours) ou 7 jours, 10 caractères pour Annuel (365 jours — jusqu'à -39% en Standard et -42% en VIP), et 8 caractères pour À vie (paiement unique sans renouvellement)."
       },
       {
-        "q": "Comment rejoindre le top 1% ?",
-        "a": "Cliquez sur 'Rejoindre le top 1%' et contactez-nous sur WhatsApp, Facebook Messenger ou Instagram. Une fois validé, nous vous envoyons votre code d'activation immédiatement."
+        "category": "features",
+        "q": "Le logiciel fonctionne-t-il hors ligne sans connexion internet ?",
+        "a": "Oui, 100% hors ligne au quotidien ! La caisse, les rendez-vous, la file d'attente, le stock et la base SQLite locale tournent directement sur votre PC Windows 10/11 sans frais cloud ni lenteurs. Internet est uniquement requis pour activer la licence et (en VIP) pour envoyer les messages WhatsApp."
       },
       {
-        "q": "Y a-t-il un support arabe et RTL ?",
-        "a": "Oui. Vous pouvez basculer toute l'interface en arabe à tout moment. La mise en page se retourne automatiquement de droite à gauche."
+        "category": "features",
+        "q": "Comment fonctionne l'affichage de la file d'attente sur TV ?",
+        "a": "Inclus en Standard et VIP ! En un clic depuis la page File d'attente, diffusez l'écran en direct sur n'importe quelle Smart TV / Android TV via Wi-Fi (QR code, salontv.local ou code 4 chiffres sur salondz.tech/tv) ou ouvrez une fenêtre plein écran sur un 2ᵉ écran HDMI — pendant que le caissier continue d'utiliser le logiciel librement."
       },
       {
-        "q": "Puis-je l'utiliser pour plusieurs salons ?",
-        "a": "Chaque licence couvre une installation. Contactez-nous pour un tarif multi-salons."
+        "category": "features",
+        "q": "Comment fonctionne le Chatbot WhatsApp automatique en version VIP ?",
+        "a": "Dans la version VIP, reliez le WhatsApp du salon une seule fois par QR code dans les Paramètres. L'assistant répond automatiquement 24h/24 selon vos horaires, enregistre les rendez-vous dans l'agenda, envoie les rappels 1h avant, transmet les reçus après paiement, alerte les coiffeurs et relance vos clients chaque semaine."
       },
       {
-        "q": "Que se passe-t-il après l'achat ?",
-        "a": "Nous vous envoyons le code d'activation et nous vous aidons à le configurer. L'installation prend moins de 15 minutes."
+        "category": "custom",
+        "q": "En quoi consiste le service Sur Mesure ? Pouvez-vous réaliser toute idée qui me vient à l'esprit ?",
+        "a": "Oui ! Notre service Sur Mesure transforme toute idée digitale qui vous vient à l'esprit en un véritable produit clé en main : site web beauté & réservation, application mobile iOS/Android, logiciel bureau ou cloud multi-salons, boutique en ligne ou tout outil métier personnalisé."
+      },
+      {
+        "category": "custom",
+        "q": "Est-ce que je garde 100% de la propriété et des droits de mon projet Sur Mesure ?",
+        "a": "Absolument — 100% de la propriété vous appartient ! Chaque projet suit notre parcours vertical en 6 étapes : (01) Écoute de votre idée et analyse, (02) Architecture, fonctionnalités & devis clair, (03) Signature d'un contrat officiel, (04) Développement avec suivi régulier, (05) Phase de test réel avec vous, et (06) Livraison intégrale avec transfert complet des droits et propriété + documentation complète (DOC)."
+      },
+      {
+        "category": "features",
+        "q": "Le support arabe (RTL), français, anglais et les imprimantes thermiques sont-ils pris en charge ?",
+        "a": "Oui. Changez instantanément toute l'interface entre arabe (RTL automatique), français et anglais, passez du mode clair au mode sombre, et imprimez sur les imprimantes thermiques 58 mm / 80 mm ainsi qu'en A4."
+      },
+      {
+        "category": "plans",
+        "q": "Puis-je passer de Standard à VIP plus tard ou gérer plusieurs salons ?",
+        "a": "Oui, vous pouvez migrer vers VIP à tout moment en conservant toutes vos données grâce à l'export/import intégré. Chaque licence bureau couvre un poste ; pour les chaînes multi-salons avec synchronisation cloud, notre service Sur Mesure réalise une architecture dédiée."
+      },
+      {
+        "category": "plans",
+        "q": "Que se passe-t-il immédiatement après le paiement ?",
+        "a": "Nous envoyons votre code d'activation immédiatement sur WhatsApp et vous accompagnons à distance pour l'installation, le paramétrage des services et de l'imprimante en moins de 15 minutes."
       }
     ]
   },
@@ -296,10 +743,10 @@
     "vipDesc": "Version complète à télécharger et à essayer gratuitement pendant 7 jours avec toutes les fonctionnalités avancées activées (WhatsApp, stocks, employés). Contactez-nous après l'essai pour acheter un code d'activation.",
     "vipCta": "Télécharger l'essai (7 jours gratuit)",
     "downloadLinkVip": "/download/salondztech-vip-setup.exe",
-    "standardTitle": "Licence Essentielle (Achat uniquement)",
-    "standardDesc": "Version essentielle pour salons en croissance (jusqu'à 5 employés). Cette version nécessite une licence achetée et un code d'activation pour fonctionner.",
-    "standardCta": "Télécharger pour activation",
-    "downloadLinkStandard": "https://salondz.tech/download/salondztech-standard-setup.exe",
+    "standardTitle": "Version Standard (Essai 7 jours gratuit)",
+    "standardDesc": "Version bureau légère hors ligne pour salons (jusqu’à 5 employés) — caisse POS, rendez-vous, file d’attente & écran TV. Essai gratuit 7 jours inclus avant activation par code Standard.",
+    "standardCta": "Télécharger Standard (Essai 7 jours)",
+    "downloadLinkStandard": "/download/salondztech-standard-setup.exe",
     "pricingTitle": "Bans de Tarifs & Activation de la licence",
     "androidSectionTitle": "Système Android (Tablettes & Téléphones)",
     "windowsSectionTitle": "Système Windows (PC / Ordinateur)",

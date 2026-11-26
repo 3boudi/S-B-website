@@ -52,8 +52,8 @@ export default async function LocaleLayout({
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "DZD",
-      "lowPrice": "19000",
-      "highPrice": "35000",
+      "lowPrice": "1500",
+      "highPrice": "35500",
       "offerCount": "3"
     },
     "description": locale === "ar"
