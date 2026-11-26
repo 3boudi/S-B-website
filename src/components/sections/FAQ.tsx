@@ -40,7 +40,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 relative overflow-x-clip">
+    <section id="faq" className="py-14 sm:py-20 md:py-28 relative overflow-x-clip scroll-mt-20">
       {/* Hairline subtle background grid */}
       <div
         aria-hidden="true"
@@ -49,22 +49,22 @@ export default function FAQ() {
 
       <div className="mx-auto max-w-4xl px-4 md:px-6 relative z-10">
         {/* Header with Hairline Query Figure */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-10 text-center sm:text-start">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-10 text-center sm:text-start">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm border border-black/10 dark:border-white/15 bg-white/80 dark:bg-[#0a0a0a]/90 text-emerald-700 dark:text-[#25d366] text-[11px] font-bold tracking-[0.16em] uppercase">
               <span className="h-1.5 w-1.5 bg-[#25d366]" />
               <span>{t("eyebrow")}</span>
             </div>
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-black dark:text-white">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-[var(--font-display)] text-black dark:text-white">
               {t("title")}
             </h2>
-            <p className="text-base sm:text-lg text-black/60 dark:text-white/60 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-lg text-black/60 dark:text-white/60 max-w-xl leading-relaxed">
               {t("subtitle")}
             </p>
           </div>
 
-          {/* Interactive Hairline Query Figure */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-sm border border-black/10 dark:border-white/15 bg-white dark:bg-[#050505] p-2 shrink-0 flex items-center justify-center hover:border-[#25d366]/50 transition-colors">
+          {/* Interactive Hairline Query Figure (compact on phones) */}
+          <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-sm border border-black/10 dark:border-white/15 bg-white dark:bg-[#050505] p-1.5 sm:p-2 shrink-0 flex items-center justify-center hover:border-[#25d366]/50 transition-colors">
             <HairlineFigure
               name="query"
               intensity={0.8}
@@ -75,10 +75,10 @@ export default function FAQ() {
           </div>
         </div>
 
-        {/* Category Filter Tabs */}
+        {/* Swipeable Ergonomic Category Filter Tabs */}
         <div
           role="tablist"
-          className="mb-6 flex flex-wrap items-center gap-2"
+          className="mb-5 sm:mb-6 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1"
         >
           {CATEGORY_KEYS.map((cat) => {
             const active = activeCategory === cat;
@@ -92,7 +92,7 @@ export default function FAQ() {
                   setActiveCategory(cat);
                   setOpenKey(null);
                 }}
-                className={`px-3.5 py-1.5 text-xs font-bold rounded-full border transition-colors cursor-pointer ${
+                className={`min-h-[40px] px-4 py-2 text-xs font-bold rounded-full border transition-colors cursor-pointer whitespace-nowrap shrink-0 ${
                   active
                     ? "border-[#25d366] bg-[#25d366] text-[#050505]"
                     : "border-black/15 dark:border-white/15 bg-white dark:bg-[#0a0a0a] text-black/65 dark:text-white/65 hover:border-black/35 dark:hover:border-white/35 hover:text-black dark:hover:text-white"
@@ -122,7 +122,7 @@ export default function FAQ() {
                   type="button"
                   onClick={() => toggleItem(item.id)}
                   onKeyDown={(e) => handleKeyDown(e, item.id)}
-                  className="flex w-full items-center justify-between gap-4 px-5 sm:px-6 py-4.5 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] cursor-pointer"
+                  className="flex w-full min-h-[56px] items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-4 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] cursor-pointer"
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${item.id}`}
                 >

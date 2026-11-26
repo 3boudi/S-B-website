@@ -11,7 +11,7 @@ export default function CTA() {
   const { openModal } = useBuyModal();
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28 text-white">
+    <section className="relative overflow-hidden py-14 sm:py-20 md:py-28 text-white">
       {/* Hairline grid pattern */}
       <div className="absolute inset-0 hairline-grid opacity-20 pointer-events-none" />
 
@@ -25,15 +25,15 @@ export default function CTA() {
       />
 
       <div className="relative mx-auto max-w-4xl px-4 md:px-6 z-10">
-        <div className="relative rounded-3xl p-8 sm:p-12 md:p-16 border border-brand-green/30 apple-specular-edge bg-gradient-to-b from-brand-green/15 via-[#0D1913] to-[#070D0A] shadow-2xl overflow-hidden text-center">
-          <div className="mx-auto w-16 h-16 mb-6 rounded-2xl bg-brand-green/15 border border-brand-green/30 flex items-center justify-center text-brand-green shadow-md">
-            <Download className="w-7 h-7" />
+        <div className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-16 border border-brand-green/30 apple-specular-edge bg-gradient-to-b from-brand-green/15 via-[#0D1913] to-[#070D0A] shadow-2xl overflow-hidden text-center">
+          <div className="mx-auto w-14 h-14 sm:w-16 sm:h-16 mb-5 sm:mb-6 rounded-2xl bg-brand-green/15 border border-brand-green/30 flex items-center justify-center text-brand-green shadow-md">
+            <Download className="w-6 h-6 sm:w-7 sm:h-7" />
           </div>
 
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl font-[var(--font-display)] text-white">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-[var(--font-display)] text-white">
             {t("title")}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-emerald-100/80 max-w-2xl mx-auto leading-relaxed">
             {t("subtitle")}
           </p>
 

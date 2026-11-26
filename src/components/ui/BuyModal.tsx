@@ -6,6 +6,7 @@
 
 import React, { createContext, useContext, useState, useCallback } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { FaWhatsapp, FaFacebook, FaInstagram, FaCcVisa, FaCcMastercard } from "react-icons/fa";
 import { X, Zap } from "lucide-react";
@@ -100,38 +101,46 @@ function BuyModalDialog({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/40 backdrop-blur-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-        <Dialog.Content className="fixed left-[50%] top-[50%] z-50 w-full max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-3xl apple-glass-prominent border border-black/[0.08] dark:border-white/[0.12] p-6 sm:p-8 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
-          <Dialog.Close className="absolute end-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full opacity-70 transition-all hover:opacity-100 hover:bg-black/5 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-ring">
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/45 backdrop-blur-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+        <Dialog.Content className="fixed z-50 inset-x-0 bottom-0 top-auto sm:inset-auto sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] w-full sm:max-w-lg max-h-[90dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl apple-glass-prominent border-t sm:border border-black/[0.08] dark:border-white/[0.12] px-5 pt-3 pb-[calc(1.25rem+env(safe-area-inset-bottom))] sm:p-8 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0">
+          {/* Mobile Native Sheet Drag Handle */}
+          <div
+            aria-hidden="true"
+            className="sm:hidden mx-auto mb-3 h-1.5 w-11 rounded-full bg-black/15 dark:bg-white/20"
+          />
+
+          <Dialog.Close className="absolute end-3.5 top-3.5 sm:end-4 sm:top-4 inline-flex h-11 w-11 items-center justify-center rounded-full opacity-75 transition-all hover:opacity-100 hover:bg-black/5 dark:hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer">
             <X className="h-5 w-5" />
             <span className="sr-only">Close</span>
           </Dialog.Close>
 
-          <div className="text-center mb-6">
-            <Dialog.Title className="text-2xl font-bold tracking-tight font-[var(--font-display)] text-foreground">
+          <div className="text-center mb-5 sm:mb-6 pt-1 sm:pt-0 px-8 sm:px-0">
+            <Dialog.Title className="text-xl sm:text-2xl font-bold tracking-tight font-[var(--font-display)] text-foreground">
               {t("title")}
             </Dialog.Title>
-            <Dialog.Description className="mt-2 text-muted-foreground text-sm leading-relaxed">
+            <Dialog.Description className="mt-1.5 sm:mt-2 text-muted-foreground text-xs sm:text-sm leading-relaxed">
               {t("subtitle")}
             </Dialog.Description>
             {selectedPlan && (
-              <div className="mt-3 inline-flex items-center rounded-full bg-brand-green/10 px-3.5 py-1 text-xs font-semibold text-brand-green border border-brand-green/20">
-                {selectedPlan}
+              <div className="mt-2.5 inline-flex items-center rounded-full bg-brand-green/10 px-3.5 py-1 text-xs font-semibold text-brand-green border border-brand-green/20 max-w-full">
+                <span className="truncate">{selectedPlan}</span>
               </div>
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5 mb-5 sm:mb-6">
             {/* WhatsApp Card */}
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group apple-press flex flex-col items-center justify-center text-center gap-2.5 rounded-2xl bg-[#25D366] p-4 text-white shadow-md shadow-[#25D366]/20 cursor-pointer"
+              className="group apple-press flex flex-row sm:flex-col items-center justify-start sm:justify-center text-start sm:text-center gap-3.5 sm:gap-2.5 min-h-[58px] rounded-2xl bg-[#25D366] px-4 py-3 sm:p-4 text-white shadow-md shadow-[#25D366]/20 cursor-pointer"
             >
-              <FaWhatsapp className="h-8 w-8 transition-transform duration-200 group-hover:scale-105" />
-              <span className="text-xs font-bold leading-tight">{t("whatsapp")}</span>
-              <span className="text-[10px] text-white/85 leading-tight">{t("chatDescription")}</span>
+              <FaWhatsapp className="h-7 w-7 sm:h-8 sm:w-8 shrink-0 transition-transform duration-200 group-hover:scale-105" />
+              <div className="flex flex-col sm:items-center min-w-0">
+                <span className="text-sm sm:text-xs font-bold leading-tight">{t("whatsapp")}</span>
+                <span className="text-[11px] sm:text-[10px] text-white/85 leading-tight mt-0.5">{t("chatDescription")}</span>
+              </div>
             </a>
 
             {/* Instagram Card */}
@@ -139,11 +148,13 @@ function BuyModalDialog({
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group apple-press flex flex-col items-center justify-center text-center gap-2.5 rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 p-4 text-white shadow-md shadow-pink-500/20 cursor-pointer"
+              className="group apple-press flex flex-row sm:flex-col items-center justify-start sm:justify-center text-start sm:text-center gap-3.5 sm:gap-2.5 min-h-[58px] rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 px-4 py-3 sm:p-4 text-white shadow-md shadow-pink-500/20 cursor-pointer"
             >
-              <FaInstagram className="h-8 w-8 transition-transform duration-200 group-hover:scale-105" />
-              <span className="text-xs font-bold leading-tight">{t("instagram")}</span>
-              <span className="text-[10px] text-white/85 leading-tight">{t("chatDescription")}</span>
+              <FaInstagram className="h-7 w-7 sm:h-8 sm:w-8 shrink-0 transition-transform duration-200 group-hover:scale-105" />
+              <div className="flex flex-col sm:items-center min-w-0">
+                <span className="text-sm sm:text-xs font-bold leading-tight">{t("instagram")}</span>
+                <span className="text-[11px] sm:text-[10px] text-white/85 leading-tight mt-0.5">{t("chatDescription")}</span>
+              </div>
             </a>
 
             {/* Facebook Card */}
@@ -151,11 +162,13 @@ function BuyModalDialog({
               href={facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group apple-press flex flex-col items-center justify-center text-center gap-2.5 rounded-2xl bg-[#1877F2] p-4 text-white shadow-md shadow-[#1877F2]/20 cursor-pointer"
+              className="group apple-press flex flex-row sm:flex-col items-center justify-start sm:justify-center text-start sm:text-center gap-3.5 sm:gap-2.5 min-h-[58px] rounded-2xl bg-[#1877F2] px-4 py-3 sm:p-4 text-white shadow-md shadow-[#1877F2]/20 cursor-pointer"
             >
-              <FaFacebook className="h-8 w-8 transition-transform duration-200 group-hover:scale-105" />
-              <span className="text-xs font-bold leading-tight">{t("facebook")}</span>
-              <span className="text-[10px] text-white/85 leading-tight">{t("chatDescription")}</span>
+              <FaFacebook className="h-7 w-7 sm:h-8 sm:w-8 shrink-0 transition-transform duration-200 group-hover:scale-105" />
+              <div className="flex flex-col sm:items-center min-w-0">
+                <span className="text-sm sm:text-xs font-bold leading-tight">{t("facebook")}</span>
+                <span className="text-[11px] sm:text-[10px] text-white/85 leading-tight mt-0.5">{t("chatDescription")}</span>
+              </div>
             </a>
           </div>
 
@@ -177,7 +190,7 @@ function BuyModalDialog({
                     className="transition-transform duration-200 hover:scale-105 cursor-pointer"
                     title="BaridiMob Play Store"
                   >
-                    <img src="/baridimob.png" alt="BaridiMob" className="h-5 w-auto object-contain" />
+                    <Image src="/baridimob.png" alt="BaridiMob" width={24} height={24} className="h-6 w-6 object-contain" />
                   </a>
                   <a
                     href="https://en.wikipedia.org/wiki/Alg%C3%A9rie_Poste"
@@ -186,7 +199,7 @@ function BuyModalDialog({
                     className="transition-transform duration-200 hover:scale-105 cursor-pointer"
                     title="Algérie Poste CCP"
                   >
-                    <img src="/ccp.svg" alt="CCP" className="h-5 w-auto object-contain" />
+                    <Image src="/ccp.svg" alt="CCP" width={20} height={24} className="h-6 w-auto object-contain" />
                   </a>
                 </div>
                 <span className="text-[11px] font-semibold text-foreground mt-1.5">BaridiMob / CCP</span>
@@ -211,13 +224,13 @@ function BuyModalDialog({
                     ? locale === "ar"
                       ? "تواصل معنا لنناقش رؤية مشروعك ونعدّ لك عرضاً تفصيلياً مجاناً"
                       : locale === "fr"
-                      ? "Contactez-nous pour discuter de votre projet et recevoir votre devis détaillé"
-                      : "Message us to discuss your vision and receive a tailored project quote"
+                        ? "Contactez-nous pour discuter de votre projet et recevoir votre devis détaillé"
+                        : "Message us to discuss your vision and receive a tailored project quote"
                     : locale === "ar"
-                    ? "تدفع نرسلك كود التفعيل مباشرة"
-                    : locale === "fr"
-                    ? "Payez, nous vous envoyons le code d'activation immédiatement"
-                    : "Pay, we send you the activation code instantly"}
+                      ? "تدفع نرسلك كود التفعيل مباشرة"
+                      : locale === "fr"
+                        ? "Payez, nous vous envoyons le code d'activation immédiatement"
+                        : "Pay, we send you the activation code instantly"}
                 </span>
               </p>
             </div>

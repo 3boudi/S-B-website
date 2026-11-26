@@ -1,16 +1,21 @@
 import { setRequestLocale } from "next-intl/server";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import Hero from "@/components/sections/Hero";
 import dynamic from "next/dynamic";
-import Features from "@/components/sections/Features";
-import HowItWorks from "@/components/sections/HowItWorks";
-import Pricing from "@/components/sections/Pricing";
-import FAQ from "@/components/sections/FAQ";
-import CTA from "@/components/sections/CTA";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/sections/Hero";
 
+// Code-split below-the-fold sections while preserving full SSR HTML for SEO & zero CLS
 const Dashboard = dynamic(() => import("@/components/sections/Dashboard"), { ssr: true });
-import DemoButton from "@/components/ui/DemoButton";
+const Features = dynamic(() => import("@/components/sections/Features"), { ssr: true });
+const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks"), { ssr: true });
+const Pricing = dynamic(() => import("@/components/sections/Pricing"), { ssr: true });
+const FAQ = dynamic(() => import("@/components/sections/FAQ"), { ssr: true });
+const CTA = dynamic(() => import("@/components/sections/CTA"), { ssr: true });
+const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true });
+const MobileBottomDock = dynamic(
+  () => import("@/components/layout/MobileBottomDock"),
+  { ssr: true }
+);
+const DemoButton = dynamic(() => import("@/components/ui/DemoButton"), { ssr: true });
 
 export default async function HomePage({
   params,
@@ -26,13 +31,26 @@ export default async function HomePage({
       <main>
         <Hero />
         <Dashboard />
-        <Features />
-        <HowItWorks />
-        <Pricing />
-        <FAQ />
-        <CTA />
+        <div className="cv-auto">
+          <Features />
+        </div>
+        <div className="cv-auto">
+          <HowItWorks />
+        </div>
+        <div className="cv-auto">
+          <Pricing />
+        </div>
+        <div className="cv-auto">
+          <FAQ />
+        </div>
+        <div className="cv-auto">
+          <CTA />
+        </div>
       </main>
-      <Footer />
+      <div className="cv-auto">
+        <Footer />
+      </div>
+      <MobileBottomDock />
       <DemoButton />
     </>
   );

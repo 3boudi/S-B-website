@@ -5,14 +5,14 @@
 // Accessibility: all nav links have focus-visible rings, mobile menu is keyboard accessible.
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { Menu, X, MonitorPlay, ShoppingCart, Download } from "lucide-react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { Menu, X, ShoppingCart, Download } from "lucide-react";
+import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
-import { Link, usePathname, useRouter } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import { useBuyModal } from "@/components/ui/BuyModal";
 
 const NAV_ITEMS = [
@@ -24,9 +24,16 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale();
+  const isRtl = locale === "ar";
   const pathname = usePathname();
-  const router = useRouter();
-  const [activeNav, setActiveNav] = useState<string | null>(null);
+  const routeNav = pathname.includes("guide")
+    ? "guide"
+    : pathname.includes("tutorials")
+    ? "tutorials"
+    : null;
+  const [scrollNav, setScrollNav] = useState<string | null>(null);
+  const activeNav = routeNav ?? scrollNav;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -36,22 +43,10 @@ export default function Navbar() {
     setScrolled(latest > 20);
   });
 
-  // Sync active nav item with route or scroll position
+  // Sync active nav item with scroll position on home route
   useEffect(() => {
-    if (pathname.includes("guide")) {
-      setActiveNav("guide");
+    if (routeNav) {
       return;
-    }
-    if (pathname.includes("tutorials")) {
-      setActiveNav("tutorials");
-      return;
-    }
-
-    if (typeof window !== "undefined" && window.location.hash) {
-      const hash = window.location.hash.replace("#", "");
-      if (hash === "pricing" || hash === "features") {
-        setActiveNav(hash);
-      }
     }
 
     let ticking = false;
@@ -65,11 +60,12 @@ export default function Navbar() {
           const featuresEl = document.getElementById("features");
 
           if (pricingEl && scrollPos >= pricingEl.offsetTop - 80) {
-            setActiveNav("pricing");
+            setScrollNav("pricing");
           } else if (featuresEl && scrollPos >= featuresEl.offsetTop - 80) {
-            setActiveNav("features");
+            setScrollNav("features");
           } else if (window.scrollY < 200) {
-            setActiveNav(null);
+            const hash = window.location.hash.replace("#", "");
+            setScrollNav(hash === "pricing" || hash === "features" ? hash : null);
           }
           ticking = false;
         });
@@ -83,7 +79,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScrollSpy);
       cancelAnimationFrame(rafId);
     };
-  }, [pathname]);
+  }, [routeNav]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -98,7 +94,7 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const handleNavClick = (e: React.MouseEvent, key: string, href: string) => {
-    setActiveNav(key);
+    setScrollNav(key);
     setMobileOpen(false);
     if (href.startsWith("#") && pathname === "/") {
       e.preventDefault();
@@ -193,110 +189,125 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Hamburger (44pt accessible target) */}
-          <button
-            className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-black/[0.05] dark:hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="h-5 w-5" />
-          </button>
+          {/* Mobile Quick Controls: Theme Toggle + 44pt Accessible Hamburger */}
+          <div className="flex md:hidden items-center gap-1.5">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-black/[0.05] dark:hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </div>
         </nav>
       </motion.header>
 
-      {/* Mobile Sheet (Apple HIG Compliant Drawer) */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          <div
-            className="absolute inset-0 bg-black/40 backdrop-blur-md transition-opacity"
-            onClick={() => setMobileOpen(false)}
-          />
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 350 }}
-            className="absolute right-0 top-0 h-full w-[85%] max-w-sm apple-glass-prominent border-l border-black/[0.08] dark:border-white/[0.1] p-6 shadow-2xl flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-black/[0.06] dark:border-white/[0.08]">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/logo.png"
-                    alt="salondztech logo"
-                    width={32}
-                    height={32}
-                    className="rounded-lg"
-                  />
-                  <span className="text-base font-bold tracking-tight font-[var(--font-display)]">
-                    Salon DZ tech
-                  </span>
+      {/* Mobile Sheet (Apple HIG Compliant RTL-Aware Drawer) */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <div className="fixed inset-0 z-50 md:hidden">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/45 backdrop-blur-md"
+              onClick={() => setMobileOpen(false)}
+            />
+            <motion.div
+              initial={{ x: isRtl ? "-100%" : "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: isRtl ? "-100%" : "100%" }}
+              transition={{ type: "spring", damping: 32, stiffness: 360 }}
+              className="absolute end-0 top-0 h-full w-[84%] max-w-sm apple-glass-prominent border-s border-black/[0.08] dark:border-white/[0.1] p-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl flex flex-col justify-between overflow-y-auto"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-black/[0.06] dark:border-white/[0.08]">
+                  <div className="flex items-center gap-2.5">
+                    <Image
+                      src="/logo.png"
+                      alt="salondztech logo"
+                      width={34}
+                      height={34}
+                      className="rounded-lg"
+                    />
+                    <span className="text-base font-bold tracking-tight font-[var(--font-display)]">
+                      Salon DZ tech
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setMobileOpen(false)}
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-black/[0.05] dark:hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
+                    aria-label="Close menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-black/[0.05] dark:hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
-                  aria-label="Close menu"
+
+                <div className="flex flex-col gap-1.5">
+                  {NAV_ITEMS.map((item) => {
+                    const isActive = activeNav === item.key;
+                    return (
+                      <Link
+                        key={item.key}
+                        href={`/${item.href}`}
+                        onClick={(e) => handleNavClick(e, item.key, item.href)}
+                        className={`min-h-[48px] rounded-xl px-4 py-3 text-sm font-semibold transition-all flex items-center justify-between ${
+                          isActive
+                            ? "bg-brand-green/15 text-brand-green font-bold border border-brand-green/30"
+                            : "text-foreground hover:bg-brand-green/10 hover:text-brand-green"
+                        }`}
+                      >
+                        <span>{t(item.key)}</span>
+                        <span className={isActive ? "text-brand-green font-bold text-sm" : "text-muted-foreground text-sm"}>
+                          {isRtl ? "‹" : "›"}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="pt-5 mt-6 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-col gap-3">
+                <div className="flex items-center justify-between px-1 mb-1">
+                  <span className="text-xs font-semibold text-muted-foreground">
+                    {t("settingsLabel")}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    <LanguageSwitcher />
+                    <ThemeToggle />
+                  </div>
+                </div>
+
+                <Button
+                  variant="outline"
+                  className="w-full h-12 rounded-xl text-sm font-semibold border-black/[0.08] dark:border-white/[0.1]"
+                  asChild
                 >
-                  <X className="h-5 w-5" />
+                  <Link href="/download" onClick={() => setMobileOpen(false)}>
+                    <Download className="h-4 w-4" />
+                    {t("download")}
+                  </Link>
+                </Button>
+
+                <button
+                  type="button"
+                  className="apple-btn-primary apple-press w-full h-12 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    openModal();
+                  }}
+                >
+                  <ShoppingCart className="h-4 w-4" />
+                  <span>{t("buy")}</span>
                 </button>
               </div>
-
-              <div className="flex flex-col gap-1.5">
-                {NAV_ITEMS.map((item) => {
-                  const isActive = activeNav === item.key;
-                  return (
-                    <Link
-                      key={item.key}
-                      href={`/${item.href}`}
-                      onClick={(e) => handleNavClick(e, item.key, item.href)}
-                      className={`rounded-xl px-4 py-3 text-sm font-semibold transition-all flex items-center justify-between ${
-                        isActive
-                          ? "bg-brand-green/15 text-brand-green font-bold border border-brand-green/30"
-                          : "text-foreground hover:bg-brand-green/10 hover:text-brand-green"
-                      }`}
-                    >
-                      <span>{t(item.key)}</span>
-                      <span className={isActive ? "text-brand-green font-bold text-xs" : "text-muted-foreground text-xs"}>›</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="pt-6 border-t border-black/[0.06] dark:border-white/[0.08] flex flex-col gap-3">
-              <div className="flex items-center justify-between px-1 mb-1">
-                <span className="text-xs font-medium text-muted-foreground">Settings</span>
-                <div className="flex items-center gap-2">
-                  <LanguageSwitcher />
-                  <ThemeToggle />
-                </div>
-              </div>
-
-              <Button
-                variant="outline"
-                className="w-full h-11 rounded-xl text-sm font-semibold border-black/[0.08] dark:border-white/[0.1]"
-                asChild
-              >
-                <Link href="/download" onClick={() => setMobileOpen(false)}>
-                  <Download className="h-4 w-4" />
-                  {t("download")}
-                </Link>
-              </Button>
-
-              <button
-                className="apple-btn-primary apple-press w-full h-11 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer"
-                onClick={() => {
-                  setMobileOpen(false);
-                  openModal();
-                }}
-              >
-                <ShoppingCart className="h-4 w-4" />
-                <span>{t("buy")}</span>
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

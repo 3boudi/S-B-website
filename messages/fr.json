@@ -10,7 +10,11 @@
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "downloadPage": "Télécharger l'app",
     "guide": "Guide de l'utilisateur",
-    "tutorials": "Tutoriels"
+    "tutorials": "Tutoriels",
+    "mobileDockAria": "Navigation rapide mobile",
+    "dockDownload": "Télécharger",
+    "dockOrder": "Commander",
+    "settingsLabel": "Préférences"
   },
   "hero": {
     "badge": "Système intelligent de Chatbot WhatsApp et de gestion de salon",
@@ -25,18 +29,115 @@
     "demoLink": "https://salonsoftware.netlify.app/",
     "chatbotBotMessage1": "Bienvenue ! Comment puis-je vous aider à réserver aujourd'hui ? 🤖",
     "chatbotUserMessage": "Je veux réserver un créneau pour une coupe",
-    "chatbotBotMessage2": "Nous avons un créneau libre à 14h00 aujourd'hui. Je confirme ?"
+    "chatbotBotMessage2": "Nous avons un créneau libre à 14h00 aujourd'hui. Je confirme ?",
+    "simulation": {
+      "ariaLabel": "Simulation isométrique 3D en direct d'un salon géré avec salondztech",
+      "controlsAria": "Filtres de mise en valeur de la simulation",
+      "posLabel": "Caisse",
+      "currency": "DA",
+      "whatsappTitle": "WhatsApp 24/7",
+      "whatsappBooking": "Réserver coupe · 14h00",
+      "whatsappConfirmed": "Confirmé auto ✓",
+      "whatsappReceipt": "Reçu + Fidélité ✓",
+      "waitingLabel": "En attente",
+      "tvLabel": "TV Suivant",
+      "entranceLabel": "Arrivées directes",
+      "stockToast": "Stock",
+      "loyaltyToast": "Fidélité",
+      "ticketToast": "Ticket",
+      "addClient": "Nouveau client",
+      "pause": "Mettre en pause",
+      "resume": "Reprendre",
+      "summaryCuts": "{count} coupes terminées",
+      "summaryStock": "Stock : {count} articles",
+      "summaryLoyalty": "Fidélité : {count} pts",
+      "modes": {
+        "all": "Direct Auto",
+        "whatsapp": "Bot WhatsApp",
+        "tv": "File TV",
+        "pos": "Caisse & Stock"
+      }
+    }
   },
   "dashboard": {
     "title": "Tout au même endroit",
     "subtitle": "Visualisez votre activité en un coup d'œil — revenus, rendez-vous, clients et employés, dans un tableau de bord rapide et élégant.",
     "caption": "Tableau de bord salondztech — Aperçu en direct",
     "livePreview": "Aperçu en direct",
-    "tryFree": "Essai Gratuit"
+    "tryFree": "Essai Gratuit",
+    "showcase": {
+      "realAppBadge": "Capture réelle du logiciel",
+      "storyboardAria": "Navigation des scènes vidéo de l'application",
+      "play": "Lancer la lecture",
+      "pause": "Mettre en pause",
+      "speedTooltip": "Changer la vitesse de lecture",
+      "fullscreen": "Plein écran",
+      "closeFullscreen": "Fermer",
+      "scenes": {
+        "dashboard": {
+          "title": "Tableau de bord",
+          "short": "Revenus & graphiques live",
+          "beat1Tag": "ANALYSE EN DIRECT",
+          "beat1Title": "Recette du jour et bénéfice net instantanés",
+          "beat1Desc": "Basculez en un clic entre Hebdomadaire, Mensuel et Annuel avec suivi de rentabilité automatique.",
+          "beat2Tag": "GRAPHIQUES FINANCIERS",
+          "beat2Title": "Revenus vs Dépenses en un coup d'œil",
+          "beat2Desc": "Courbes de croissance, barres comparatives et répartition des dépenses mises à jour en temps réel."
+        },
+        "pos": {
+          "title": "Caisse POS rapide",
+          "short": "Fidélité & ticket thermique",
+          "beat1Tag": "POINT DE VENTE",
+          "beat1Title": "Client, Coiffeur et Prestations en 1 clic",
+          "beat1Desc": "Sélectionnez le client, attribuez le coiffeur pour sa commission et appliquez les remises fidélité.",
+          "beat2Tag": "REÇU INSTANTANÉ",
+          "beat2Title": "Paiement validé et impression thermique",
+          "beat2Desc": "Génère immédiatement un reçu propre tout en créditant les points fidélité et la caisse du jour."
+        },
+        "queue": {
+          "title": "File & Écran TV",
+          "short": "Kanban + Kiosque TV salon",
+          "beat1Tag": "FILE D'ATTENTE",
+          "beat1Title": "Gérez sans rendez-vous et réservations",
+          "beat1Desc": "Appelez le ticket suivant au fauteuil avec répartition équitable des coiffeurs et temps d'attente.",
+          "beat2Tag": "SMART TV SALON",
+          "beat2Title": "Affichage plein écran salle d'attente",
+          "beat2Desc": "Diffusez les numéros en cours et les prochains tours sur votre téléviseur via Wi-Fi ou HDMI."
+        },
+        "appointments": {
+          "title": "Rendez-vous",
+          "short": "Planning & rappels WhatsApp",
+          "beat1Tag": "PLANNING VISUEL",
+          "beat1Title": "Chronologie multi-coiffeurs sans conflits",
+          "beat1Desc": "Suivez chaque coiffeur par colonne avec indicateur d'heure actuelle et statuts colorés.",
+          "beat2Tag": "SYNCHRO WHATSAPP",
+          "beat2Title": "Rappels WhatsApp en un clic",
+          "beat2Desc": "Consultez chaque réservation en détail et envoyez un rappel WhatsApp directement au client."
+        },
+        "reports": {
+          "title": "Équipe & Rapports",
+          "short": "Paie & marge bénéficiaire",
+          "beat1Tag": "PAIE AUTOMATISÉE",
+          "beat1Title": "Commissions et présence en direct",
+          "beat1Desc": "Suivez automatiquement les pourcentages, soldes et présences de chaque coiffeur sans erreur.",
+          "beat2Tag": "RAPPORTS PDF",
+          "beat2Title": "Marge nette et détail par prestation",
+          "beat2Desc": "Visualisez votre rentabilité globale, le détail des services et exportez vos rapports Z en PDF."
+        }
+      }
+    }
   },
   "features": {
+    "eyebrow": "Modules Complets",
     "title": "Tous les outils pour votre salon",
     "subtitle": "salondztech remplace les carnets papier, la paie manuelle et les cahiers désordonnés par un système rapide et élégant.",
+    "offlineBadge": "100% Hors ligne",
+    "includedBadge": "Inclus ✓",
+    "tabs": {
+      "all": "Tous les outils (11)",
+      "operations": "Caisse, File & Équipe",
+      "growth": "WhatsApp & Analyses"
+    },
     "list": [
       {
         "key": "dashboard",
@@ -96,23 +197,43 @@
     ]
   },
   "howItWorks": {
-    "title": "Opérationnel en quelques minutes",
-    "subtitle": "Aucune connaissance technique requise. Pas de configuration cloud. Installez et commencez.",
+    "eyebrow": "EN 3 ÉTAPES SIMPLES",
+    "title": "Opérationnel en Quelques Minutes",
+    "subtitle": "Aucune compétence technique requise. Pas de configuration cloud complexe. Installez et pilotez votre salon immédiatement.",
+    "durationLabel": "Durée estimée",
     "steps": [
       {
         "number": "01",
-        "title": "Installez sur votre PC Windows",
-        "description": "Téléchargez et installez salondztech sur votre ordinateur d'accueil. Base locale, pas d'internet requis pour la gestion quotidienne."
+        "tag": "Étape 01 · Installation",
+        "title": "Installez sur Votre PC Windows",
+        "description": "Téléchargez Standard ou VIP avec essai gratuit 7 jours et installez le logiciel sur le poste d’accueil. Base locale rapide et 100% hors ligne.",
+        "duration": "Moins de 3 min",
+        "highlights": [
+          "Essai gratuit 7 jours",
+          "Base locale hors ligne"
+        ]
       },
       {
         "number": "02",
-        "title": "Configurez vos services et employés",
-        "description": "Entrez vos coiffeurs, services et prix une seule fois. Le système gère tout le reste."
+        "tag": "Étape 02 · Configuration",
+        "title": "Ajoutez Vos Services et Votre Équipe",
+        "description": "Enregistrez vos coiffeurs, prestations, tarifs et horaires une seule fois. Connectez votre écran TV ou WhatsApp (VIP) en quelques secondes.",
+        "duration": "10 min",
+        "highlights": [
+          "Services & Tarifs",
+          "Équipe & Imprimante"
+        ]
       },
       {
         "number": "03",
-        "title": "Lancez votre activité",
-        "description": "Réservez des rendez-vous, encaissez, suivez l'inventaire et regardez votre business grandir — depuis un seul tableau de bord."
+        "tag": "Étape 03 · Lancement",
+        "title": "Pilotez Votre Salon au Quotidien",
+        "description": "Gérez la file d’attente, les rendez-vous, la caisse POS, le stock et suivez vos bénéfices nets depuis un seul tableau de bord.",
+        "duration": "Instantané",
+        "highlights": [
+          "Caisse & File en direct",
+          "Suivi des bénéfices"
+        ]
       }
     ]
   },
@@ -718,7 +839,9 @@
       "youtube": "YouTube",
       "tiktok": "TikTok"
     },
-    "copyright": "© 2026 salondztech. Tous droits réservés."
+    "copyright": "© 2026 salondztech. Tous droits réservés.",
+    "settingsTitle": "Paramètres",
+    "privacy": "Politique de confidentialité & CGU"
   },
   "buyModal": {
     "title": "Choisissez comment nous contacter",

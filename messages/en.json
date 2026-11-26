@@ -10,7 +10,11 @@
     "downloadLink": "https://salondz.tech/download/salondztech-setup.exe",
     "downloadPage": "Download App",
     "guide": "User Guide",
-    "tutorials": "Tutorials"
+    "tutorials": "Tutorials",
+    "mobileDockAria": "Quick mobile navigation",
+    "dockDownload": "Download",
+    "dockOrder": "Order Now",
+    "settingsLabel": "Preferences"
   },
   "hero": {
     "badge": "Intelligent WhatsApp Booking Chatbot & Salon Management System",
@@ -25,18 +29,115 @@
     "demoLink": "https://salonsoftware.netlify.app/",
     "chatbotBotMessage1": "Welcome! How can I help you book today? 🤖",
     "chatbotUserMessage": "I want to book a haircut appointment",
-    "chatbotBotMessage2": "We have an opening at 2:00 PM today. Shall I confirm?"
+    "chatbotBotMessage2": "We have an opening at 2:00 PM today. Shall I confirm?",
+    "simulation": {
+      "ariaLabel": "Interactive 3D isometric simulation of a salon powered by salondztech",
+      "controlsAria": "Simulation spotlight filters",
+      "posLabel": "POS",
+      "currency": "DA",
+      "whatsappTitle": "WhatsApp 24/7",
+      "whatsappBooking": "Book haircut · 14:00",
+      "whatsappConfirmed": "Auto-confirmed ✓",
+      "whatsappReceipt": "Receipt + Loyalty ✓",
+      "waitingLabel": "Waiting",
+      "tvLabel": "TV Next",
+      "entranceLabel": "Live Arrivals",
+      "stockToast": "Stock",
+      "loyaltyToast": "Loyalty",
+      "ticketToast": "Ticket",
+      "addClient": "New Client",
+      "pause": "Pause simulation",
+      "resume": "Resume simulation",
+      "summaryCuts": "{count} cuts completed today",
+      "summaryStock": "Stock: {count} items",
+      "summaryLoyalty": "Loyalty: {count} pts",
+      "modes": {
+        "all": "Live Auto",
+        "whatsapp": "WhatsApp Bot",
+        "tv": "TV Queue",
+        "pos": "POS & Stock"
+      }
+    }
   },
   "dashboard": {
     "title": "Everything in One Place",
     "subtitle": "See your entire business at a glance — revenue, appointments, clients, and staff, all in a clean, fast dashboard.",
     "caption": "salondztech Dashboard — Live preview",
     "livePreview": "Live Preview",
-    "tryFree": "Try Free Demo"
+    "tryFree": "Try Free Demo",
+    "showcase": {
+      "realAppBadge": "Real App Screen Capture",
+      "storyboardAria": "Real app video scenes navigation",
+      "play": "Play showcase",
+      "pause": "Pause showcase",
+      "speedTooltip": "Switch playback speed",
+      "fullscreen": "Expand fullscreen",
+      "closeFullscreen": "Close",
+      "scenes": {
+        "dashboard": {
+          "title": "Command Dashboard",
+          "short": "Live revenue & charts",
+          "beat1Tag": "LIVE ANALYTICS",
+          "beat1Title": "Instant Today's Income & Net Profit",
+          "beat1Desc": "Switch seamlessly between Weekly, Monthly, and Yearly totals with automatic profit indicators.",
+          "beat2Tag": "REVENUE CHARTS",
+          "beat2Title": "Income vs Expenses at a Glance",
+          "beat2Desc": "Interactive bar charts, revenue trends, and expense breakdown update on every single checkout."
+        },
+        "pos": {
+          "title": "Fast POS Checkout",
+          "short": "Loyalty & thermal receipt",
+          "beat1Tag": "POINT OF SALE",
+          "beat1Title": "1-Click Client, Barber & Service Cart",
+          "beat1Desc": "Pick the client, assign the barber for automatic commission, and apply built-in loyalty tiers.",
+          "beat2Tag": "INSTANT RECEIPT",
+          "beat2Title": "Confirmed Payment & Thermal Print",
+          "beat2Desc": "Generates a clean thermal receipt instantly while updating loyalty points and cash totals."
+        },
+        "queue": {
+          "title": "Live Queue & TV",
+          "short": "Kanban + Smart TV kiosk",
+          "beat1Tag": "QUEUE DISPATCH",
+          "beat1Title": "Organize Walk-Ins & Booked Guests",
+          "beat1Desc": "Move clients smoothly from Waiting to In Chair with fair barber assignment and live wait timers.",
+          "beat2Tag": "LOUNGE SMART TV",
+          "beat2Title": "Fullscreen TV Queue Display Mode",
+          "beat2Desc": "Broadcast active chair tickets and next turns live to your waiting room TV over Wi-Fi or HDMI."
+        },
+        "appointments": {
+          "title": "Smart Appointments",
+          "short": "Barber timeline & WhatsApp",
+          "beat1Tag": "VISUAL SCHEDULE",
+          "beat1Title": "Multi-Barber Conflict-Free Timeline",
+          "beat1Desc": "Track every barber's column with live current-time line and instant status tracking.",
+          "beat2Tag": "WHATSAPP SYNC",
+          "beat2Title": "1-Click WhatsApp Client Reminders",
+          "beat2Desc": "Inspect full booking details and trigger automated WhatsApp reminders directly from the schedule."
+        },
+        "reports": {
+          "title": "Team & Reports",
+          "short": "Payroll & profit margin",
+          "beat1Tag": "AUTO PAYROLL",
+          "beat1Title": "Live Barber Commissions & Attendance",
+          "beat1Desc": "Track each barber's commission rate, balance, and daily presence with zero manual math.",
+          "beat2Tag": "FINANCIAL REPORTS",
+          "beat2Title": "Profit Margin & Service Breakdown",
+          "beat2Desc": "Review net profit trends, top-earning services, and export clean PDF financial Z-reports."
+        }
+      }
+    }
   },
   "features": {
+    "eyebrow": "Modular Capabilities",
     "title": "Every Tool Your Salon Needs",
     "subtitle": "salondztech replaces paper schedules, manual payroll, and messy notebooks with one fast, beautiful system.",
+    "offlineBadge": "Native Offline",
+    "includedBadge": "Included ✓",
+    "tabs": {
+      "all": "All Tools (11)",
+      "operations": "POS, Queue & Team",
+      "growth": "WhatsApp & Analytics"
+    },
     "list": [
       {
         "key": "dashboard",
@@ -96,23 +197,43 @@
     ]
   },
   "howItWorks": {
+    "eyebrow": "3 SIMPLE STEPS",
     "title": "Up and Running in Minutes",
-    "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon.",
+    "subtitle": "No technical knowledge required. No cloud setup. Just install and start managing your salon effortlessly.",
+    "durationLabel": "Estimated time",
     "steps": [
       {
         "number": "01",
+        "tag": "Step 01 · Install",
         "title": "Install on Your Windows PC",
-        "description": "Download and install salondztech on your reception computer. Local database, no internet needed for daily use."
+        "description": "Download Standard or VIP with a 7-day free trial and install it on your reception computer. Your encrypted local SQLite database runs 100% offline.",
+        "duration": "Under 3 min",
+        "highlights": [
+          "7-Day Free Trial",
+          "Offline Local Database"
+        ]
       },
       {
         "number": "02",
-        "title": "Set Up Your Services & Staff",
-        "description": "Enter your barbers, services, and prices once. The system handles everything from there."
+        "tag": "Step 02 · Configure",
+        "title": "Add Your Services & Team",
+        "description": "Enter your barbers, services, prices, and working hours once. Optionally link WhatsApp (VIP) or your Lounge TV screen in seconds.",
+        "duration": "10 min",
+        "highlights": [
+          "Services & Prices",
+          "Staff & Thermal Printer"
+        ]
       },
       {
         "number": "03",
-        "title": "Start Running Your Business",
-        "description": "Book appointments, process payments, track inventory, and watch your business grow — all from one dashboard."
+        "tag": "Step 03 · Go Live",
+        "title": "Start Running Your Salon",
+        "description": "Manage walk-in queues, book appointments, process POS checkouts, track inventory, and watch your net profit grow from one clean dashboard.",
+        "duration": "Instant",
+        "highlights": [
+          "Live POS & Queue",
+          "Daily Profit Insights"
+        ]
       }
     ]
   },
@@ -718,7 +839,9 @@
       "youtube": "YouTube",
       "tiktok": "TikTok"
     },
-    "copyright": "© 2026 salondztech. All rights reserved."
+    "copyright": "© 2026 salondztech. All rights reserved.",
+    "settingsTitle": "Settings",
+    "privacy": "Privacy Policy & Terms"
   },
   "buyModal": {
     "title": "Choose How to Contact Us",

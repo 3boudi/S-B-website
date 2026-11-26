@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import * as Tooltip from "@radix-ui/react-tooltip";
@@ -36,6 +37,7 @@ function FeatureCategoryList({
   categories: FeatureCategory[];
   accent: "standard" | "vip" | "custom";
 }) {
+  const [openNoteKey, setOpenNoteKey] = useState<string | null>(null);
   const bulletClass =
     accent === "vip"
       ? "bg-[#25d366]"
@@ -44,56 +46,78 @@ function FeatureCategoryList({
       : "bg-black/35 dark:bg-white/40";
 
   return (
-    <div className="mt-7">
+    <div className="mt-6 sm:mt-7">
       {categories.map((category, idx) => (
         <div
           key={category.title}
           className={
             idx === 0
-              ? "pt-6 border-t border-black/10 dark:border-white/15"
-              : "mt-6 pt-5 border-t border-black/10 dark:border-white/15"
+              ? "pt-5 sm:pt-6 border-t border-black/10 dark:border-white/15"
+              : "mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-black/10 dark:border-white/15"
           }
         >
-          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-black/45 dark:text-white/45 mb-3.5 text-start">
+          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-black/45 dark:text-white/45 mb-3 text-start">
             {category.title}
           </p>
-          <ul className="space-y-2.5">
-            {category.items.map((item) => (
-              <li
-                key={item.label}
-                className="flex items-start justify-between gap-2 text-start text-[13px] leading-snug text-black/80 dark:text-white/80"
-              >
-                <span className="flex items-start gap-2.5 min-w-0">
-                  <span
-                    aria-hidden="true"
-                    className={`inline-block h-[5px] w-[5px] shrink-0 mt-[7px] ${bulletClass}`}
-                  />
-                  <span className="break-words">{item.label}</span>
-                </span>
-                {item.tooltip && (
-                  <Tooltip.Root>
-                    <Tooltip.Trigger asChild>
-                      <button
-                        type="button"
-                        aria-label={item.label}
-                        className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-black/35 dark:text-white/35 hover:text-black/80 dark:hover:text-white/85 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#25d366] transition-colors cursor-help"
-                      >
-                        <Info className="h-3.5 w-3.5" />
-                      </button>
-                    </Tooltip.Trigger>
-                    <Tooltip.Portal>
-                      <Tooltip.Content
-                        sideOffset={6}
-                        className="z-50 max-w-[250px] rounded-sm border border-black/15 dark:border-white/20 bg-[#0a0a0a] px-3 py-2 text-xs leading-relaxed text-white dark:bg-white dark:text-[#050505] shadow-xl animate-in fade-in-0 zoom-in-95"
-                      >
-                        {item.tooltip}
-                        <Tooltip.Arrow className="fill-[#0a0a0a] dark:fill-white" />
-                      </Tooltip.Content>
-                    </Tooltip.Portal>
-                  </Tooltip.Root>
-                )}
-              </li>
-            ))}
+          <ul className="space-y-2">
+            {category.items.map((item) => {
+              const itemKey = `${category.title}-${item.label}`;
+              const noteOpen = openNoteKey === itemKey;
+              return (
+                <li
+                  key={item.label}
+                  className="text-start text-[13px] leading-snug text-black/80 dark:text-white/80"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="flex items-start gap-2.5 min-w-0 py-0.5">
+                      <span
+                        aria-hidden="true"
+                        className={`inline-block h-[5px] w-[5px] shrink-0 mt-[7px] ${bulletClass}`}
+                      />
+                      <span className="break-words">{item.label}</span>
+                    </span>
+                    {item.tooltip && (
+                      <Tooltip.Root>
+                        <Tooltip.Trigger asChild>
+                          <button
+                            type="button"
+                            aria-label={item.label}
+                            aria-expanded={noteOpen}
+                            onClick={() =>
+                              setOpenNoteKey((prev) =>
+                                prev === itemKey ? null : itemKey
+                              )
+                            }
+                            className={`-my-1 inline-flex h-8 w-8 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25d366] ${
+                              noteOpen
+                                ? "bg-[#25d366]/15 text-emerald-700 dark:text-[#25d366]"
+                                : "text-black/40 dark:text-white/40 hover:text-black/85 dark:hover:text-white/85"
+                            }`}
+                          >
+                            <Info className="h-3.5 w-3.5" />
+                          </button>
+                        </Tooltip.Trigger>
+                        <Tooltip.Portal>
+                          <Tooltip.Content
+                            sideOffset={6}
+                            className="hidden md:block z-50 max-w-[250px] rounded-sm border border-black/15 dark:border-white/20 bg-[#0a0a0a] px-3 py-2 text-xs leading-relaxed text-white dark:bg-white dark:text-[#050505] shadow-xl animate-in fade-in-0 zoom-in-95"
+                          >
+                            {item.tooltip}
+                            <Tooltip.Arrow className="fill-[#0a0a0a] dark:fill-white" />
+                          </Tooltip.Content>
+                        </Tooltip.Portal>
+                      </Tooltip.Root>
+                    )}
+                  </div>
+                  {/* Tap-to-read inline note for touch & mobile devices */}
+                  {item.tooltip && noteOpen && (
+                    <p className="mt-1.5 ms-4 rounded-sm border border-[#25d366]/30 bg-[#25d366]/10 px-2.5 py-2 text-[11.5px] leading-relaxed text-black/80 dark:text-white/85">
+                      {item.tooltip}
+                    </p>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}
@@ -126,7 +150,7 @@ function InlineCycleSelector({
             role="tab"
             aria-selected={active}
             onClick={() => onChange(cycle)}
-            className={`px-2 py-1 text-[11px] font-semibold tracking-tight transition-colors rounded-[2px] cursor-pointer truncate ${
+            className={`min-h-[38px] sm:min-h-[32px] px-2 py-1.5 text-[11px] font-semibold tracking-tight transition-colors rounded-[2px] cursor-pointer truncate ${
               active
                 ? isVip
                   ? "bg-[#25d366] text-[#050505] font-bold"
@@ -154,6 +178,7 @@ export default function PricingGrid({
   activationNotice,
   onSelectPlan,
 }: PricingGridProps) {
+  const [mobileTier, setMobileTier] = useState<"standard" | "vip" | "custom">("vip");
   const stdPrice = standard.pricing[currency][billingCycle];
   const vipPrice = vip.pricing[currency][billingCycle];
 
@@ -166,7 +191,44 @@ export default function PricingGrid({
 
   return (
     <div className="w-full">
-      {/* Flush 3-Column Architectural Hairline Grid */}
+      {/* Mobile-Native 1-Tap Plan Switcher (md:hidden — eliminates 3-card endless mobile scroll) */}
+      <div className="md:hidden sticky top-[68px] z-30 mb-3 bg-[#fcf5eb]/90 dark:bg-black/90 backdrop-blur-md py-1.5 -mx-1 px-1">
+        <div
+          role="tablist"
+          aria-label="Select pricing plan"
+          className="grid grid-cols-3 p-1 border border-black/15 dark:border-white/15 bg-white dark:bg-[#0a0a0a] rounded-xl shadow-xs gap-1"
+        >
+          {(
+            [
+              { id: "standard", label: standard.name, highlight: false },
+              { id: "vip", label: `${vip.name} ★`, highlight: true },
+              { id: "custom", label: custom.name, highlight: false },
+            ] as const
+          ).map((tab) => {
+            const active = mobileTier === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => setMobileTier(tab.id)}
+                className={`min-h-[46px] px-1.5 py-1.5 rounded-lg text-[11px] leading-[1.2] font-extrabold transition-all cursor-pointer flex items-center justify-center text-center ${
+                  active
+                    ? tab.highlight
+                      ? "bg-[#25d366] text-[#050505] shadow-xs"
+                      : "bg-black text-white dark:bg-white dark:text-[#050505] shadow-xs"
+                    : "text-black/60 dark:text-white/65 hover:text-black dark:hover:text-white"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Flush 3-Column Architectural Hairline Grid (Desktop shows all 3; Mobile focuses selected plan) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-black/10 dark:border-white/15 bg-white dark:bg-[#050505] rounded-none divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-black/10 dark:divide-white/15">
         {/* ================= COLUMN 1: STANDARD ================= */}
         <motion.article
@@ -174,7 +236,9 @@ export default function PricingGrid({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.35 }}
-          className="relative flex flex-col justify-between p-6 sm:p-8 bg-white dark:bg-[#050505]"
+          className={`${
+            mobileTier === "standard" ? "flex" : "hidden md:flex"
+          } relative flex-col justify-between p-5 sm:p-8 bg-white dark:bg-[#050505]`}
         >
           <div>
             {/* Eyebrow & Name */}
@@ -259,7 +323,9 @@ export default function PricingGrid({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.35, delay: 0.06 }}
-          className="relative flex flex-col justify-between p-6 sm:p-8 bg-[#f4fbf7] dark:bg-[#08100b] overflow-hidden"
+          className={`${
+            mobileTier === "vip" ? "flex" : "hidden md:flex"
+          } relative flex-col justify-between p-5 sm:p-8 bg-[#f4fbf7] dark:bg-[#08100b] overflow-hidden`}
         >
           {/* Crisp 2px Top Emerald Hairline Accent */}
           <div
@@ -363,7 +429,9 @@ export default function PricingGrid({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.35, delay: 0.12 }}
-          className="relative flex flex-col justify-between p-6 sm:p-8 bg-zinc-50/85 dark:bg-[#0a0a0a]"
+          className={`${
+            mobileTier === "custom" ? "flex" : "hidden md:flex"
+          } relative flex-col justify-between p-5 sm:p-8 bg-zinc-50/85 dark:bg-[#0a0a0a]`}
         >
           <div>
             {/* Eyebrow & Bespoke Accent Badge */}

@@ -39,7 +39,7 @@ export default function Pricing() {
     <Tooltip.Provider delayDuration={150}>
       <section
         id="pricing"
-        className="py-20 md:py-28 relative overflow-x-clip"
+        className="py-14 sm:py-20 md:py-28 relative overflow-x-clip scroll-mt-20"
       >
         {/* Subtle Architectural Background Grid */}
         <div
@@ -63,12 +63,12 @@ export default function Pricing() {
             </p>
 
             {/* Controls Row: 3-Mode Billing Duration Selector + Compact DZD/USD Toggle */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               {/* 3-Mode Billing Cycle Segmented Control */}
               <div
                 role="tablist"
                 aria-label={t("billingSelectorLabel")}
-                className="relative inline-flex items-center p-1 border border-black/15 dark:border-white/15 bg-white dark:bg-[#0a0a0a] rounded-full shadow-xs"
+                className="relative inline-flex items-center p-1 border border-black/15 dark:border-white/15 bg-white dark:bg-[#0a0a0a] rounded-full shadow-xs max-w-full"
               >
                 {CYCLES.map((cycle) => {
                   const isActive = billingCycle === cycle;
@@ -79,7 +79,7 @@ export default function Pricing() {
                       role="tab"
                       aria-selected={isActive}
                       onClick={() => setBillingCycle(cycle)}
-                      className={`relative px-4 sm:px-5 py-2 text-xs font-bold rounded-full transition-colors cursor-pointer flex items-center gap-1.5 ${
+                      className={`relative min-h-[40px] px-3 sm:px-5 py-2 text-[11px] sm:text-xs font-bold rounded-full transition-colors cursor-pointer flex items-center gap-1 sm:gap-1.5 ${
                         isActive
                           ? "text-[#050505]"
                           : "text-black/65 dark:text-white/65 hover:text-black dark:hover:text-white"
@@ -101,7 +101,7 @@ export default function Pricing() {
                       </span>
                       {cycle === "yearly" && (
                         <span
-                          className={`relative z-10 text-[10px] font-extrabold px-1.5 py-0.5 rounded-full leading-none whitespace-nowrap ${
+                          className={`relative z-10 hidden xs:inline-flex sm:inline-flex text-[9.5px] sm:text-[10px] font-extrabold px-1.5 py-0.5 rounded-full leading-none whitespace-nowrap ${
                             isActive
                               ? "bg-[#050505]/15 text-[#050505]"
                               : "bg-[#25d366]/15 text-emerald-700 dark:text-[#25d366]"
@@ -128,7 +128,7 @@ export default function Pricing() {
                       key={curr}
                       type="button"
                       onClick={() => setCurrency(curr)}
-                      className={`relative px-3.5 py-2 text-[11px] font-bold rounded-full transition-colors cursor-pointer ${
+                      className={`relative min-h-[40px] min-w-[52px] px-3.5 py-2 text-xs font-bold rounded-full transition-colors cursor-pointer ${
                         active
                           ? "text-white dark:text-[#050505]"
                           : "text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"

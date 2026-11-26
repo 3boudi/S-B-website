@@ -334,6 +334,33 @@ html[dir="rtl"] {
   --font-sans: var(--font-noto-kufi), 'Noto Kufi Arabic', ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Below-the-fold rendering optimization (zero visual change) */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+
+/* Mobile ergonomics & touch polish */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+button,
+a,
+[role="button"],
+[role="tab"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 /* Focus visible global */
 :focus-visible {
   outline: 2px solid hsl(var(--ring));

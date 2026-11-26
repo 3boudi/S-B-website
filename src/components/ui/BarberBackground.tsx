@@ -93,6 +93,7 @@ interface ScatteredIcon {
   driftFactor: number;
   phase: number;
   color: string;
+  rgb: string;
   hasFill: boolean;
 }
 
@@ -458,6 +459,33 @@ export default function BarberBackground() {
 
     let icons: ScatteredIcon[] = [];
     const toolDefs = createBarberToolPaths();
+    let cachedBgGrad: CanvasGradient | null = null;
+    let cachedRadialGrad: CanvasGradient | null = null;
+    let cachedFrontRgb = hexToRgbTuple(
+      (isDark ? BARBER_CONFIG.dark : BARBER_CONFIG.light).frontLayerColor
+    );
+
+    const rebuildCachedGradients = () => {
+      const palette = isDark ? BARBER_CONFIG.dark : BARBER_CONFIG.light;
+      cachedFrontRgb = hexToRgbTuple(palette.frontLayerColor);
+
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
+      bgGrad.addColorStop(0, palette.bgTop);
+      bgGrad.addColorStop(1, palette.bgBottom);
+      cachedBgGrad = bgGrad;
+
+      const radialGrad = ctx.createRadialGradient(
+        width * 0.5,
+        height * 0.35,
+        50,
+        width * 0.5,
+        height * 0.5,
+        Math.max(width, height) * 0.85
+      );
+      radialGrad.addColorStop(0, palette.vignette);
+      radialGrad.addColorStop(0.7, "rgba(0, 0, 0, 0)");
+      cachedRadialGrad = radialGrad;
+    };
 
     /**
      * Scatter icons using a jittered grid with relaxation to ensure organic,
@@ -554,6 +582,7 @@ export default function BarberBackground() {
           driftFactor: 0.7 + Math.random() * 0.6,
           phase: Math.random() * Math.PI * 2,
           color,
+          rgb: hexToRgbTuple(color),
           hasFill: hasFill && !!def.hasFill,
         });
       }
@@ -592,11 +621,11 @@ export default function BarberBackground() {
       });
     };
 
-    // Canvas resize handler with DPR cap of 2 for sharp 60fps rendering
+    // Canvas resize handler with DPR cap of 1.5 for crisp vector lines & 44% less GPU fill on Retina
     const handleResize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
@@ -606,6 +635,7 @@ export default function BarberBackground() {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
 
+      rebuildCachedGradients();
       initScatteredIcons();
     };
 
@@ -629,12 +659,14 @@ export default function BarberBackground() {
       const currentlyDark = document.documentElement.classList.contains("dark");
       if (currentlyDark !== isDark) {
         isDark = currentlyDark;
-        // Update icon color assignments
+        rebuildCachedGradients();
+        // Update icon color & pre-parsed RGB assignments
         const palette = isDark ? BARBER_CONFIG.dark : BARBER_CONFIG.light;
         for (const icon of icons) {
           if (icon.layer === "back") icon.color = palette.backLayerColor;
           else if (icon.layer === "front") icon.color = palette.frontLayerColor;
           else icon.color = palette.midLayerColor;
+          icon.rgb = hexToRgbTuple(icon.color);
         }
         if (prefersReducedMotion) {
           renderStaticFrame();
@@ -712,34 +744,24 @@ export default function BarberBackground() {
     window.addEventListener("touchmove", onTouchMove, { passive: true });
     window.addEventListener("touchend", onTouchEnd);
 
-    // Draw the soft deep gradient base behind the icons
+    // Draw the cached soft gradient base (zero per-frame gradient allocation)
     const drawBackgroundBase = () => {
-      const palette = isDark ? BARBER_CONFIG.dark : BARBER_CONFIG.light;
-      const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
-      bgGrad.addColorStop(0, palette.bgTop);
-      bgGrad.addColorStop(1, palette.bgBottom);
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
-
-      // Subtle atmospheric emerald radial vignette
-      const radialGrad = ctx.createRadialGradient(
-        width * 0.5,
-        height * 0.35,
-        50,
-        width * 0.5,
-        height * 0.5,
-        Math.max(width, height) * 0.85
-      );
-      radialGrad.addColorStop(0, palette.vignette);
-      radialGrad.addColorStop(0.7, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = radialGrad;
-      ctx.fillRect(0, 0, width, height);
+      if (!cachedBgGrad || !cachedRadialGrad) {
+        rebuildCachedGradients();
+      }
+      if (cachedBgGrad) {
+        ctx.fillStyle = cachedBgGrad;
+        ctx.fillRect(0, 0, width, height);
+      }
+      if (cachedRadialGrad) {
+        ctx.fillStyle = cachedRadialGrad;
+        ctx.fillRect(0, 0, width, height);
+      }
     };
 
     // Static frame renderer for prefers-reduced-motion users
     const renderStaticFrame = () => {
       drawBackgroundBase();
-      const palette = isDark ? BARBER_CONFIG.dark : BARBER_CONFIG.light;
 
       for (let i = 0; i < icons.length; i++) {
         const icon = icons[i];
@@ -751,11 +773,11 @@ export default function BarberBackground() {
         ctx.scale(scale, scale);
 
         if (icon.hasFill) {
-          ctx.fillStyle = hexToRgba(palette.frontLayerColor, 0.05);
+          ctx.fillStyle = `rgba(${cachedFrontRgb}, 0.05)`;
           ctx.fill(icon.def.path);
         }
 
-        ctx.strokeStyle = hexToRgba(icon.color, icon.baseAlpha);
+        ctx.strokeStyle = `rgba(${icon.rgb}, ${icon.baseAlpha.toFixed(3)})`;
         ctx.lineWidth = icon.lineWidth / scale;
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
@@ -764,19 +786,23 @@ export default function BarberBackground() {
       }
     };
 
-    const TARGET_FRAME_MS = 1000 / 60;
+    const ACTIVE_FRAME_MS = 1000 / 60;
+    const IDLE_FRAME_MS = 1000 / 30;
     let lastTime = performance.now();
 
-    // Main 60fps Physics & Render Loop (capped at 60fps for battery & GPU savings)
+    // Adaptive Physics & Render Loop (60fps during cursor interaction, 30fps on gentle idle drift)
     const renderLoop = (currentTime: number) => {
       animationFrameId = requestAnimationFrame(renderLoop);
 
+      const isInteracting =
+        mouse.active || Math.abs(mouse.vx) > 0.12 || Math.abs(mouse.vy) > 0.12;
+      const targetFrameMs = isInteracting ? ACTIVE_FRAME_MS : IDLE_FRAME_MS;
+
       const elapsed = currentTime - lastTime;
-      if (elapsed < TARGET_FRAME_MS) {
+      if (elapsed < targetFrameMs) {
         return;
       }
-      lastTime = currentTime - (elapsed % TARGET_FRAME_MS);
-      const dt = Math.min(elapsed / 1000, 0.1);
+      lastTime = currentTime - (elapsed % targetFrameMs);
 
       // 1. Mouse interpolation and velocity calculation
       if (mouse.active) {
@@ -907,27 +933,29 @@ export default function BarberBackground() {
         ctx.translate(icon.x, icon.y);
         ctx.rotate(icon.rot);
         ctx.scale(finalScale, finalScale);
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
 
-        // Soft glow for front layer or proximity hover
-        if (icon.currentGlow > 0.08 || icon.layer === "front") {
-          ctx.shadowColor = palette.glowColor;
-          ctx.shadowBlur = (6 + icon.currentGlow * 14);
+        // Fast GPU-friendly soft halo for front/hovered tools (avoids heavy software shadowBlur on every frame)
+        if (icon.currentGlow > 0.12) {
+          ctx.strokeStyle = palette.glowColor;
+          ctx.lineWidth = (icon.lineWidth * (2.2 + icon.currentGlow * 1.4)) / finalScale;
+          ctx.stroke(icon.def.path);
+        } else if (icon.layer === "front") {
+          ctx.strokeStyle = `rgba(${icon.rgb}, 0.09)`;
+          ctx.lineWidth = (icon.lineWidth * 2.2) / finalScale;
+          ctx.stroke(icon.def.path);
         }
 
         // Soft gradient fill for select front tools
         if (icon.hasFill) {
-          ctx.fillStyle = hexToRgba(
-            palette.frontLayerColor,
-            0.05 + icon.currentGlow * 0.12
-          );
+          ctx.fillStyle = `rgba(${cachedFrontRgb}, ${(0.05 + icon.currentGlow * 0.12).toFixed(3)})`;
           ctx.fill(icon.def.path);
         }
 
         // Thin elegant outline
-        ctx.strokeStyle = hexToRgba(icon.color, effectiveAlpha);
+        ctx.strokeStyle = `rgba(${icon.rgb}, ${effectiveAlpha.toFixed(3)})`;
         ctx.lineWidth = icon.lineWidth / finalScale;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
         ctx.stroke(icon.def.path);
 
         ctx.restore();
@@ -987,12 +1015,12 @@ export default function BarberBackground() {
 }
 
 /**
- * Utility: converts 6-character hex color to rgba string
+ * Utility: converts 6-character hex color to pre-parsed "r, g, b" tuple once
  */
-function hexToRgba(hex: string, alpha: number): string {
+function hexToRgbTuple(hex: string): string {
   const cleanHex = hex.replace("#", "");
   const r = parseInt(cleanHex.substring(0, 2), 16);
   const g = parseInt(cleanHex.substring(2, 4), 16);
   const b = parseInt(cleanHex.substring(4, 6), 16);
-  return `rgba(${r}, ${g}, ${b}, ${alpha.toFixed(3)})`;
+  return `${r}, ${g}, ${b}`;
 }

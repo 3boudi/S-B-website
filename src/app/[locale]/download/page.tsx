@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import MobileBottomDock from "@/components/layout/MobileBottomDock";
 import Pricing from "@/components/sections/Pricing";
 import { Button } from "@/components/ui/button";
 import { Download, Sparkles, ShieldCheck, AlertCircle, Laptop } from "lucide-react";
@@ -26,6 +27,7 @@ export default async function DownloadPage({
         <DownloadContent />
       </main>
       <Footer />
+      <MobileBottomDock />
     </>
   );
 }
@@ -67,7 +69,7 @@ function DownloadContent() {
 
       {/* OS Section: Windows (PC) */}
       <div className="mb-20">
-        <div className="flex items-center gap-3.5 mb-8 p-3 rounded-2xl apple-glass border border-black/[0.06] dark:border-white/[0.08] shadow-xs max-w-fit px-5">
+        <div className="flex items-center gap-3 mb-6 sm:mb-8 p-3 rounded-2xl apple-glass border border-black/[0.06] dark:border-white/[0.08] shadow-xs max-w-full sm:max-w-fit px-4 sm:px-5">
           <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl apple-card p-1.5 flex items-center justify-center shadow-xs shrink-0">
             <Image
               src="/icons8-windows-11-480.png"
@@ -77,17 +79,17 @@ function DownloadContent() {
               className="w-full h-full object-contain"
             />
           </div>
-          <div>
-            <h2 className="text-sm xs:text-base sm:text-lg font-bold font-[var(--font-display)] text-foreground leading-none whitespace-nowrap">
+          <div className="min-w-0">
+            <h2 className="text-sm sm:text-lg font-bold font-[var(--font-display)] text-foreground leading-snug">
               {t("windowsSectionTitle")}
             </h2>
-            <p className="text-[10px] sm:text-xs text-brand-green font-semibold mt-1">Windows 10 / 11</p>
+            <p className="text-[10px] sm:text-xs text-brand-green font-semibold mt-0.5">Windows 10 / 11</p>
           </div>
         </div>
 
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 max-w-4xl mx-auto items-stretch">
+        <div className="grid gap-5 sm:gap-8 md:grid-cols-2 max-w-4xl mx-auto items-stretch">
           {/* VIP Card (Free Trial) - Apple Highlighted Card */}
-          <div className="apple-card apple-specular-edge p-7 sm:p-8 rounded-3xl relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-brand-green/60 flex flex-col justify-between">
+          <div className="apple-card apple-specular-edge p-5 sm:p-8 rounded-3xl relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-brand-green/60 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full apple-glass text-[10px] text-brand-green font-bold tracking-wider uppercase border border-brand-green/20">
